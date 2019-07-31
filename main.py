@@ -165,6 +165,12 @@ def register0():
     return render_template('register.html', params=params)
 
 
+@app.route("/login")
+def login():
+    #return "Blank"
+    return render_template('login.html', params=params)
+
+
 @app.route("/scorecard")
 def scorecard():
     return render_template('scorecard.html', params=params)

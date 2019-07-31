@@ -11,3 +11,6 @@ vim: esc + : + wq + enter
 
 git config --global http.proxy http://proxy 172.16.2.30:8080
 git config --global https.proxy http://proxy 172.16.2.30:8080
+git add .
+git commit -a -m " "
+git push -f --set-upstream https://github.com/shashi1iitk/interIITweb.git master
