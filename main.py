@@ -77,83 +77,46 @@ class Match(db.Model):
 def home():
     return render_template('index.html', params=params)
 
-@app.route("/test", methods=['GET', 'POST'])
-def test():
-    name = request.form['name']
-    email = request.form['email']
-    mobile = request.form['mobile']
-    jursey_name = request.form['jursey_name']
-    fav_athelete = request.form['fav_athelete']
-    biggest_motivator = request.form['biggest_motivator']
-    fitness_mantra = request.form['fitness_mantra']
-
-
-    food = request.form['food']
-    gender = request.form['gender']
-    blood_group = request.form['blood_group']
-
-    college = request.form['college']
-    password = request.form['password']
-    selected_sports = request.form['selected_sports']
-
-    hash = oracle10.hash(password, user="player")
-    cnt = int(Players.query.count()) + 1
-    print(cnt)
-    #return selected_sports
-    filename = str(cnt)+'.jpg'
-    #return str(filename)
-
-    # entry = Players(name=name, email=email, mobile=mobile, jursey_name=jursey_name, fav_athelete=fav_athelete,
-    #                 biggest_motivator=biggest_motivator, fitness_mantra=fitness_mantra, food=food, gender=gender,
-    #                 blood_group=blood_group, college_id=college, password=hash, reg_status=0, game_gold=0,
-    #                 game_silver=0, profile_image_url=filename, id=cnt, game_bronze=0)
-    # db.session.add(entry)
-    # db.session.commit()
-    # return "Registration successful"
-
-
-
-    entry = Players( id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name, fav_athelete=fav_athelete,
-                    biggest_motivator=biggest_motivator, fitness_mantra=fitness_mantra, food=food, gender=gender,
-                    blood_group=blood_group, college_id=college, password=hash, reg_status=0, game_gold=0,
-                    game_silver=0, game_bronze=0, profile_image_url=filename)
-    db.session.add(entry)
-    db.session.commit()
-    return "Registration successful"
-
-@app.route("/scorecard")
-def scorecard():
-
-    return render_template('scorecard.html', params=params)
-
-
-@app.route("/livescore")
-def livescore():
-    #return "Blank"
-    return render_template('table.html', params=params)
-
-
-@app.route("/schedule")
-def schedule():
-    return render_template('schedule.html', params=params)
-
-
-@app.route("/gallery")
-def gallery():
-    return render_template('gallery.html', params=params)
-
-
-@app.route("/info")
-def info():
-    return render_template('info.html', params=params)
-
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    if (request.method == 'POST'):
+
+        name = request.form['name']
+        email = request.form['email']
+        mobile = request.form['mobile']
+        jursey_name = request.form['jursey_name']
+        fav_athelete = request.form['fav_athelete']
+        biggest_motivator = request.form['biggest_motivator']
+        fitness_mantra = request.form['fitness_mantra']
+
+
+        food = request.form['food']
+        gender = request.form['gender']
+        blood_group = request.form['blood_group']
+
+        college = request.form['college']
+        password = request.form['password']
+        selected_sports = request.form['selected_sports']
+
+        hash = oracle10.hash(password, user="player")
+        cnt = int(Players.query.count()) + 1
+        print(cnt)
+        #return selected_sports
+        filename = str(cnt)+'.jpg'
+        #return str(filename)
+
+        entry = Players( id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name, fav_athelete=fav_athelete,
+                        biggest_motivator=biggest_motivator, fitness_mantra=fitness_mantra, food=food, gender=gender,
+                        blood_group=blood_group, college_id=college, password=hash, reg_status=0, game_gold=0,
+                        game_silver=0, game_bronze=0, profile_image_url=filename)
+        db.session.add(entry)
+        db.session.commit()
+        return "Registration successful"
+    return render_template('register.html', params=params)
+
+
+@app.route("/register0", methods=['GET', 'POST'])
+def register0():
     if (request.method == 'POST'):
         '''Add entry to the database'''
         cnt = Players.query.count() + 1
@@ -200,6 +163,37 @@ def register():
     #                   body = sport + "\n" + mobile
     #                   )
     return render_template('register.html', params=params)
+
+
+@app.route("/scorecard")
+def scorecard():
+    return render_template('scorecard.html', params=params)
+
+
+@app.route("/livescore")
+def livescore():
+    #return "Blank"
+    return render_template('table.html', params=params)
+
+
+@app.route("/schedule")
+def schedule():
+    return render_template('schedule.html', params=params)
+
+
+@app.route("/gallery")
+def gallery():
+    return render_template('gallery.html', params=params)
+
+
+@app.route("/info")
+def info():
+    return render_template('info.html', params=params)
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 
 @app.route('/see')
