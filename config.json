@@ -1,0 +1,13 @@
+{
+
+	"params":
+	{
+		"local_server": "True",
+		"local_uri": "mysql://root:@localhost/interiit2019_1",
+		"prod_uri": "mysql://root:@digitalocean/interiit",
+        "fb_url": "https://facebook.com/interiit",
+        "tw_url": "https://twitter.com/interiit",
+        "gmail-user": "hulkz4586@gmail.com",
+        "gmail-password": "hulkzPassCode"
+	}
+}

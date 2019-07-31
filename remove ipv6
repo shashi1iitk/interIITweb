@@ -1,0 +1,1 @@
+rm /etc/sysctl.d/99-disable-ipv6.conf

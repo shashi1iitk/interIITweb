@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <script type="text/javascript">
+
+$(document).ready(function() {
+
+  var live_ids = [];
+
+      {% for match in live %}
+
+      var t = parseInt('{{ match.id }}')
+      live_ids.push(t);
+      {% endfor %}
+
+    console.log('current live ids: ' + live_ids);
+
+
+// $("#button").on('click', function(event) {
+
+ setInterval(function(){
+    console.log('current live ids: ' + live_ids);
+    $.ajax({
+        data : {},
+        type : 'POST',
+        url : '/getLiveMatches_Ajax'
+    })
+    .done(function(data) {
+      //alert(data);
+
+      data = JSON.parse(data);
+
+      var new_live_ids = [];
+
+     for (var i in data["live"]){
+       new_live_ids.push(data["live"][i]['id']);
+    }
+        console.log('new live ids: ' + new_live_ids);
+
+
+      if(JSON.stringify(live_ids)==JSON.stringify(new_live_ids)){
+        console.log('Matching');
+        for(j in data["live"]){
+            $('#score1_'+ data["live"][j]['id']).html(data["live"][j]['score1']);
+            console.log('id: ' +  data["live"][j]['id'] + ' score1: ' + data["live"][j]['score1']);
+            $('#score2_'+ data["live"][j]['id']).html(data["live"][j]['score2']);
+            console.log('id: ' +  data["live"][j]['id'] + ' score2: ' + data["live"][j]['score2']);
+            $('#commentry_'+ data["live"][j]['id']).html(data["live"][j]['commentry']);
+            console.log('commentry: ' + data["live"][j]['id'] + data["live"][j]['commentry']);
+       }
+     }else{
+       console.log('Not Matching');
+        location.reload();
+        }
+    });
+
+   }, 10000);
+
+});
+  </script>
+
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    </style>
+
+
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <h1 class="text-light"><a href="#header"><span>Inter IIT</span></a></h1>
+        <!-- <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li ><a href="/scorecard">Scorecard</a></li>
+          <li class="active"><a href="/getLiveMatches">Live Score</a></li>
+          <li><a href="/schedule">Schedule</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/info">Info</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Signup</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+   <br><br><br>
+
+    <main role="main">
+<br><br>
+
+      <!--<p>{{live}}</p>-->
+      <!--<p>{{prev}}</p>-->
+      <!--<button id = "button">Live</button>-->
+
+      <center><h2>Live Matches</h2></center>
+      <table align="center">
+      <tr>
+        <th>Sports</th>
+        <th>College 1</th>
+        <th>College 2</th>
+        <th>Start Time</th>
+        <th>Venue</th>
+        <th>Level</th>
+        <th>Score 1</th>
+        <th>Score 2</th>
+        <th>Commentry</th>
+      </tr>
+      {% for match in live %}
+      <tr>
+        <td>{{ match.sports_id }}</td>
+        <td>{{ match.clg_id1 }}</td>
+        <td>{{ match.clg_id2 }}</td>
+        <td>{{ match.date_time }}</td>
+        <td>{{ match.venue }}</td>
+        <td>{{ match.level }}</td>
+        <td id="score1_{{ match.id }}">{{ match.score1 }}</td>
+        <td id="score2_{{ match.id }}">{{ match.score2 }}</td>
+        <td id="commentry_{{ match.id }}">{{ match.commentry }}</td>
+      </tr>
+       {% endfor %}
+
+    </table>
+
+<br><br>
+
+       <center><h2>Previous Matches</h2></center>
+      <table style="width:80%" align="center">
+      <tr>
+        <th>Sports</th>
+        <th>College 1</th>
+        <th>College 2</th>
+        <!--<th>Date-Time</th>-->
+        <th>Venue</th>
+        <th>Level</th>
+        <th>Score 1</th>
+        <th>Score 2</th>
+        <th>Commentry</th>
+        <th>Winner College</th>
+        <th>Status</th>
+      </tr>
+      {% for pmatch in prev.prev %}
+      <tr>
+        <td>{{ pmatch.sports_id }}</td>
+        <td>{{ pmatch.clg_id1 }}</td>
+        <td>{{ pmatch.clg_id2 }}</td>
+        <!--<td>{{ pmatch.date_time }}</td>-->
+        <td>{{ pmatch.venue }}</td>
+        <td>{{ pmatch.level }}</td>
+        <td>{{ pmatch.score1 }}</td>
+        <td>{{ pmatch.score2 }}</td>
+        <td>{{ pmatch.commentry }}</td>
+        <td>{{ pmatch.winner_clg_id }}</td>
+        <td>{{ pmatch.status }}</td>
+
+      </tr>
+       {% endfor %}
+
+    </table>
+<br><br>
+
+    </main>
+{% endblock %}
