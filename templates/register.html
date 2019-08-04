@@ -31,7 +31,7 @@
         alert(selected_string);
 
 		$.ajax({
-			data: new FormData(this),
+			//data: new FormData(this),
 			data : {
 				name : $('#name').val(),
 				email : $('#email').val(),
@@ -83,9 +83,7 @@
 
 </head>
 
-<body>
-
-  <!--==========================
+<bo  <!--==========================
   Header
   ============================-->
   <header id="header" class="fixed-top">
@@ -120,11 +118,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        
+
 
 
           <br><br>
-          <form name="sentMessage" id="registerForm" novalidate>
+          <form name="sentMessage" id="registerForm" validate>
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
@@ -241,7 +239,7 @@
                 </div>
             </div>
           </div>
-          
+
 
         <div class="control-group">
            <div class="form-group floating-label-form-group controls">
@@ -298,7 +296,9 @@
       </div>
     </div>
 
-    <br><br>
+    <br><br>dy>
+
+
 
 
 

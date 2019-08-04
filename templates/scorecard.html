@@ -2,6 +2,100 @@
 
 {% block body %}
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  var colleges = [];
+
+      {% for college in college_list %}
+
+      colleges.push({
+          id:   {{ college.id }},
+          college_name: '{{ college.college_name }}',
+          college_nickname: '{{ college.college_nickname }}',
+          college_logo: '{{ college.college_logo }}'
+      });
+      {% endfor %}
+
+     console.log('colleges: ' + colleges[0].id);
+     console.log('colleges: ' + colleges);
+
+     $('#fetch').on('click', function(event) {
+         event.preventDefault();
+         // console.log(typeof parseInt($('#sport option:selected').val()));
+      $.ajax({
+        //data: new FormData(this),
+        data : {
+          sport_id : parseInt($('#sport option:selected').val()),
+        },
+        type : 'POST',
+        url : '/scorecard'
+      })
+      .done(function(data) {
+        console.log(data);
+
+        // alert(data);
+        data = JSON.parse(data);
+        $("#name_table").html("");
+        $("#here_table").html("");
+      var content = "<table><tr><th>College</th><th>Point</th></tr>"
+      console.log(data);
+      // console.log(data['c_' + i]);
+         for(j in colleges){
+            var i = parseInt(j)+1;
+            console.log('c_' + i);
+            content += '<tr><td>' + colleges[j]['college_name'] + '</td><td>' + data['c_' + i] + '</td></tr>';
+        }
+        content += "</table>"
+     $('#name_table').append('<h2>' + $('#sport option:selected').html() +  '</h2>');
+        $('#here_table').append(content);
+      });
+    });
+
+      $('#fetchAll').on('click', function(event) {
+         event.preventDefault();
+         // console.log(typeof parseInt($('#sport option:selected').val()));
+      $.ajax({
+        //data: new FormData(this),
+        data : {
+          sport_id :0,
+        },
+        type : 'POST',
+        url : '/scorecard'
+      })
+      .done(function(data) {
+
+        console.log(data);
+        // alert(data);
+        data = JSON.parse(data);
+        $("#name_table").html("");
+        $("#here_table").html("");
+      var content = "<table><tr><th>College</th><th>Point</th></tr>"
+         for(j in data){
+            content += '<tr><td>' + colleges[j]['college_name'] + '</td><td>' + data[j]['point'] + '</td></tr>';
+        }
+        content += "</table>"
+        $('#name_table').append('<h2>Master Points Table</h2>');
+        $('#here_table').append(content);
+
+      });
+    });
+
+
+});
+
+</script>
 </head>
 
 <body>
@@ -33,42 +127,47 @@
 
     </div>
   </header><!-- #header -->
-   <br><br><br>
 
-    <main role="main">
+   <br><br><br><br>
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Hello, Scorecard Page!</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+       <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+      <form>
+      <div class="control-group">
+           <div class="form-group floating-label-form-group controls">
+          <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
+            <select class="form-control" id="sport" data-live-search="true" name="sport" validate>
+                <option selected >Selet Sport</option>
+                {% for sport in sports_list %}
+                <option value={{  sport.id  }}>{{  sport.sport_name  }} - {{  sport.category  }}</option>
+                {% endfor %}
+            </select>
+
+
+          </div>
+        </div>
+
+        <div id="success"></div>
+            <div class="form-group">
+              <button class="btn btn-primary" id="fetch">Fetch</button>
+        </div>
+
+
+           <div id="success1"></div>
+            <div class="form-group">
+              <button class="btn btn-primary" id="fetchAll">Fetch Master</button>
+        </div>
+
+        </form>
+        <center><div id="name_table"></div></center>
+        <center><div id="here_table"></div></center>
+
         </div>
       </div>
-
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-        </div>
-
-        <hr>
-
-      </div> <!-- /container -->
-
-    </main>
+    </div>
+  <br/>
 {% endblock %}
+
