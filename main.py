@@ -19,7 +19,7 @@ app.config.update(
     MAIL_USE_SSL=True,
     MAIL_USERNAME=params['gmail-user'],
     MAIL_PASSWORD=params['gmail-password'],
-    UPLOAD_FOLDER=os.getcwd() + "/profile_images"
+    UPLOAD_FOLDER=os.getcwd() + "/static/profile_images"
 )
 mail = Mail(app)
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -187,9 +187,9 @@ def register0():
         password = request.form.get('password')
         hash = oracle10.hash(password, user="player")
         if ("profile_img" not in request.files):
+            profile_img = request.files['profile_img']
             flash('Give proper profile image')
             return redirect(url_for('register'))
-        profile_img = request.files['profile_img']
         if profile_img.filename == '':
             flash('Give proper profile image')
             return redirect(url_for('register'))
@@ -263,10 +263,40 @@ def scorecard():
         return render_template('scorecard.html', params=params, sports_list = sports_list, college_list = college_list)
 
 
-@app.route("/livescore")
-def livescore():
-    #return "Blank"
-    return render_template('table.html', params=params)
+@app.route("/test", methods=['GET', 'POST'])
+def test():
+    if (request.method == 'POST'):
+        print('Hello')
+        #email = request.form.get("email")
+        #print(email)
+        cnt = Players.query.count() + 1
+        profile_img = request.files['profile_img']
+        if ("profile_img" not in request.files):
+            profile_img = request.files['profile_img']
+            flash('Give proper profile image')
+            return redirect(url_for('test'))
+        if profile_img.filename == '':
+            flash('Give proper profile image')
+            return redirect(url_for('test'))
+        if profile_img and allowed_file(profile_img.filename):
+            filename = secure_filename(str(cnt) + "." + profile_img.filename.rsplit('.', 1)[1].lower())
+            profile_img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+            entry = Players(id=cnt, profile_image_url=filename)
+            db.session.add(entry)
+            db.session.commit()
+
+            play = Players.query.filter(Players.id == cnt).first()
+            play.name = 1
+
+            #return "Image successful"
+        else:
+            flash('Give proper profile image')
+            return redirect(url_for('test'))
+
+        return "all well"
+    else:
+        return render_template('test.html', params=params)
 
 
 @app.route("/schedule")
