@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, get_flashed_messages, jsonify
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 from passlib.hash import oracle10
 import json
@@ -23,6 +24,12 @@ app.config.update(
 )
 mail = Mail(app)
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "log_in"
+login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
+
 
 if (local_server):
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
@@ -127,7 +134,7 @@ class Point_main(db.Model):
     c_23 = db.Column(db.Integer(), nullable=False)
 
 
-class Admins(db.Model):
+class Admins(UserMixin, db.Model):
     __tablename__ = 'admins'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False)
@@ -151,7 +158,11 @@ class Participation(db.Model):
 def home():
     return render_template('index.html', params=params)
 
+@login_manager.user_loader
+def load_user(user_id):
+    return Admins.query.get(user_id)
 
+@login_required
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if (request.method == 'POST'):
@@ -206,6 +217,12 @@ def register():
     return render_template('register.html', allSports = sports, college = college)
 
 
+@login_manager.unauthorized_handler
+def unauthorized():
+    flash('You must be logged in to view that page.')
+    return redirect(url_for('login'))
+
+@login_required
 @app.route("/showCandidates")
 def showCandidates():
     return render_template('showCandidates.html')
@@ -213,10 +230,7 @@ def showCandidates():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    # return "Blank"
-
     if (request.method == 'POST'):
-        print('Hello')
         email = request.form['username']
         password = request.form['password']
         # hash = oracle10.hash(password, user="player")
@@ -224,6 +238,7 @@ def login():
         if (user.password != password):
             return "Fail"
         else:
+            login_user(user, remember=True)
             return "Success"
     else:
         return render_template('login.html')
@@ -239,10 +254,8 @@ def scorecard():
             for point in points:
                 points_dict = {"clg_id": point.clg_id, "point": point.points}
                 points_master.append(points_dict)
-            print(points_master)
             return json.dumps(points_master)
         else:
-            print(type(int(sports_id)))
             sport_points = Point_main.query.filter(Point_main.sports_id == int(sports_id)).all()
             for sport_point in sport_points:
                 point_dict = {"c_1": sport_point.c_1, "c_2": sport_point.c_2, "c_3": sport_point.c_3,
@@ -253,7 +266,6 @@ def scorecard():
                               "c_16": sport_point.c_16, "c_17": sport_point.c_17, "c_18": sport_point.c_18,
                               "c_19": sport_point.c_19, "c_20": sport_point.c_20, "c_21": sport_point.c_21,
                               "c_22": sport_point.c_22, "c_23": sport_point.c_23}
-            print(point_dict)
             return json.dumps(point_dict)
     else:
         sports = Sports.query.all()
@@ -261,51 +273,13 @@ def scorecard():
         for sport in sports:
             sports_dict = {"id": sport.id, "sport_name": sport.sports_name, "category": sport.category}
             sports_list.append(sports_dict)
-        print(sports_list)
         colleges = College.query.all()
         college_list = []
         for college in colleges:
             college_dict = {"id": college.id, "college_name": college.clg_name,
                             "college_nickname": college.clg_nickname, "college_logo": college.logo_url}
             college_list.append(college_dict)
-        print(college_list)
         return render_template('scorecard.html', params=params, sports_list=sports_list, college_list=college_list)
-
-
-@app.route("/test", methods=['GET', 'POST'])
-def test():
-    if (request.method == 'POST'):
-        print('Hello')
-        # email = request.form.get("email")
-        # print(email)
-        cnt = Players.query.count() + 1
-        profile_img = request.files['profile_img']
-        if ("profile_img" not in request.files):
-            profile_img = request.files['profile_img']
-            flash('Give proper profile image')
-            return redirect(url_for('test'))
-        if profile_img.filename == '':
-            flash('Give proper profile image')
-            return redirect(url_for('test'))
-        if profile_img and allowed_file(profile_img.filename):
-            filename = secure_filename(str(cnt) + "." + profile_img.filename.rsplit('.', 1)[1].lower())
-            profile_img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-            entry = Players(id=cnt, profile_image_url=filename)
-            db.session.add(entry)
-            db.session.commit()
-
-            play = Players.query.filter(Players.id == cnt).first()
-            play.name = 1
-
-            # return "Image successful"
-        else:
-            flash('Give proper profile image')
-            return redirect(url_for('test'))
-
-        return "all well"
-    else:
-        return render_template('test.html', params=params)
 
 
 @app.route("/schedule")

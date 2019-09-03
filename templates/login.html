@@ -23,7 +23,6 @@
     })
     .done(function(data){
       console.log(data);
-      if(data === "Success") window.location.href = "scorecard";
       if(data === "Fail") alert("Wrong Password");
     });
 
