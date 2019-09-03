@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}">
-  
+
  
   <!-- Main Stylesheet File -->
   <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -65,11 +65,38 @@
   <!-- Bootstrap Select Main JavaScript -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
-
+</head>
 
   <!-- Bootstrap Select Language JavaScript -->
   
 
+<!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <h1 class="text-light"><a href="#header"><span>Inter IIT</span></a></h1>
+        <!-- <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/scorecard">Scorecard</a></li>
+          <li><a href="/getLiveMatches">Live Score</a></li>
+          <li><a href="/schedule">Schedule</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/info">Info</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+   <br><br><br>
 
 
 

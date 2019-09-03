@@ -19,7 +19,7 @@ app.config.update(
     MAIL_USE_SSL=True,
     MAIL_USERNAME=params['gmail-user'],
     MAIL_PASSWORD=params['gmail-password'],
-    UPLOAD_FOLDER=os.getcwd() + "/static/profile_images"
+    UPLOAD_FOLDER=os.path.join(os.getcwd(), "static", "profile_images")
 )
 mail = Mail(app)
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -40,10 +40,11 @@ class Players(db.Model):
     email = db.Column(db.String(100), nullable=False)
     mobile = db.Column(db.String(12), nullable=False)
     college_id = db.Column(db.Integer, nullable=False)
+    selected_sports = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(50), nullable=False)
     food = db.Column(db.String(10), nullable=False)
     blood_group = db.Column(db.String(5), nullable=False)
-    profile_image_url = db.Column(db.String(200), nullable=False)
+    profile_image_url = db.Column(db.String(200), nullable=True)
     jursey_name = db.Column(db.String(50), nullable=False)
     biggest_motivator = db.Column(db.String(400), nullable=False)
     fav_athelete = db.Column(db.String(100), nullable=False)
@@ -72,6 +73,7 @@ class Match(db.Model):
     commentry = db.Column(db.String(10000), nullable=False)
     lineup1 = db.Column(db.String(1000), nullable=False)
 
+
 class Sports(db.Model):
     __tablename__ = 'sports'
     id = db.Column(db.Integer, primary_key=True)
@@ -80,6 +82,7 @@ class Sports(db.Model):
     max_player = db.Column(db.Integer, nullable=False)
     type = db.Column(db.String(20), nullable=False)
 
+
 class College(db.Model):
     __tablename__ = 'college'
     id = db.Column(db.Integer, primary_key=True)
@@ -87,11 +90,13 @@ class College(db.Model):
     clg_nickname = db.Column(db.String(200), nullable=False)
     logo_url = db.Column(db.String(600), nullable=False)
 
+
 class Point_master(db.Model):
     __tablename__ = 'point_master'
     id = db.Column(db.Integer, primary_key=True)
     clg_id = db.Column(db.Integer(), nullable=False)
     points = db.Column(db.Integer(), nullable=False)
+
 
 class Point_main(db.Model):
     __tablename__ = 'point_main'
@@ -122,14 +127,35 @@ class Point_main(db.Model):
     c_23 = db.Column(db.Integer(), nullable=False)
 
 
+class Admins(db.Model):
+    __tablename__ = 'admins'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+    role = db.Column(db.String(100), nullable=False)
+    role = db.Column(db.String(100), nullable=False)
+    privilege = db.Column(db.Integer, nullable=False)
+    college_id = db.Column(db.String(10), nullable=False)
+    sports_id = db.Column(db.String(10), nullable=False)
+
+
+class Participation(db.Model):
+    __tablename__ = 'participation'
+    id = db.Column(db.Integer, primary_key=True)
+    player_id = db.Column(db.Integer, nullable=False)
+    sports_id = db.Column(db.Integer, nullable=False)
+    college_id = db.Column(db.Integer, nullable=False)
+
+
 @app.route("/")
 def home():
     return render_template('index.html', params=params)
 
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if (request.method == 'POST'):
-
+        print(request.form)
         name = request.form['name']
         email = request.form['email']
         mobile = request.form['mobile']
@@ -137,102 +163,77 @@ def register():
         fav_athelete = request.form['fav_athelete']
         biggest_motivator = request.form['biggest_motivator']
         fitness_mantra = request.form['fitness_mantra']
-
-
         food = request.form['food']
         gender = request.form['gender']
         blood_group = request.form['blood_group']
-
         college = request.form['college']
         password = request.form['password']
         selected_sports = request.form['selected_sports']
-
         hash = oracle10.hash(password, user="player")
         cnt = int(Players.query.count()) + 1
-        print(cnt)
-        #return selected_sports
-        filename = str(cnt)+'.jpg'
-        #return str(filename)
-
-        entry = Players( id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name, fav_athelete=fav_athelete,
+        filename = str(cnt) + '.jpg'
+        if ("profile_img" not in request.files):
+            flash('Give proper profile image')
+            return "Fail"
+        profile_img = request.files['profile_img']
+        if profile_img.filename == '':
+            flash('Give proper profile image')
+            return "Fail"
+        profile_img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        entry = Players(id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name,
+                        fav_athelete=fav_athelete, selected_sports = selected_sports,
                         biggest_motivator=biggest_motivator, fitness_mantra=fitness_mantra, food=food, gender=gender,
                         blood_group=blood_group, college_id=college, password=hash, reg_status=0, game_gold=0,
                         game_silver=0, game_bronze=0, profile_image_url=filename)
         db.session.add(entry)
-        db.session.commit()
-        return "Registration successful"
-    return render_template('register.html', params=params)
+        selected_sports = selected_sports.strip(' ').split(',')
+        selected_sports = [int(x.strip(' ')) for x in selected_sports]
+        try:
+            db.session.commit()
+        except:
+            return "Fail"
+        for p in selected_sports:
+            cntt = int(Participation.query.count()) + 1
+            entry = Participation(id = cntt, player_id = cnt, sports_id = p, college_id = int(college))
+            db.session.add(entry)
+            try:
+                db.session.commit()
+            except:
+                return "Fail"
+        return "Success"
+    sports = Sports.query.all()
+    college = College.query.all()
+    return render_template('register.html', allSports = sports, college = college)
 
 
-@app.route("/register0", methods=['GET', 'POST'])
-def register0():
-    if (request.method == 'POST'):
-        '''Add entry to the database'''
-        cnt = Players.query.count() + 1
-        name = request.form.get('name')
-        email = request.form.get('email')
-        email_tab = Players.query.filter(Players.email == email).count()
-        if (email_tab > 0):
-            flash('Email already present')
-            return redirect(url_for('register'))
-        mobile = request.form.get('mobile')
-        jursey_name = request.form.get('jursey_name')
-        fav_athelete = request.form.get('fav_athelete')
-        biggest_motivator = request.form.get('biggest_motivator')
-        fitness_mantra = request.form.get('fitness_mantra')
-        food = request.form.get('food')
-        gender = request.form.get('gender')
-        blood_group = request.form.get('blood_group')
-        college = int(request.form.get('college'))
-        password = request.form.get('password')
-        hash = oracle10.hash(password, user="player")
-        if ("profile_img" not in request.files):
-            profile_img = request.files['profile_img']
-            flash('Give proper profile image')
-            return redirect(url_for('register'))
-        if profile_img.filename == '':
-            flash('Give proper profile image')
-            return redirect(url_for('register'))
-        if profile_img and allowed_file(profile_img.filename):
-            filename = secure_filename(str(cnt) + "." + profile_img.filename.rsplit('.', 1)[1].lower())
-            profile_img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        else:
-            flash('Give proper profile image')
-            return redirect(url_for('register'))
-        entry = Players(name=name, email=email, mobile=mobile, jursey_name=jursey_name, fav_athelete=fav_athelete,
-                        biggest_motivator=biggest_motivator, fitness_mantra=fitness_mantra, food=food, gender=gender,
-                        blood_group=blood_group, college_id=college, password=hash, reg_status=0, game_gold=0,
-                        game_silver=0, profile_image_url=filename, id=cnt, game_bronze=0)
-        db.session.add(entry)
-        db.session.commit()
-        return "Registration successful"
-    # mail.send_message('New message from ' + name,
-    #                   sender=email,
-    #                   recipients = [params['gmail-user']],
-    #                   body = sport + "\n" + mobile
-    #                   )
-    return render_template('register.html', params=params)
+@app.route("/showCandidates")
+def showCandidates():
+    return render_template('showCandidates.html')
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    #return "Blank"
+    # return "Blank"
 
     if (request.method == 'POST'):
         print('Hello')
-        email = request.form['email']
+        email = request.form['username']
         password = request.form['password']
-        hash = oracle10.hash(password, user="player")
-        return hash
+        # hash = oracle10.hash(password, user="player")
+        user = Admins.query.filter_by(username=email).first()
+        if (user.password != password):
+            return "Fail"
+        else:
+            return "Success"
     else:
-        return render_template('login.html', params=params)
+        return render_template('login.html')
 
 
 @app.route("/scorecard", methods=['GET', 'POST'])
 def scorecard():
     if request.method == 'POST':
         sports_id = request.form['sport_id']
-        if (sports_id=='0'):
+        if (sports_id == '0'):
             points = Point_master.query.all()
             points_master = []
             for point in points:
@@ -244,12 +245,19 @@ def scorecard():
             print(type(int(sports_id)))
             sport_points = Point_main.query.filter(Point_main.sports_id == int(sports_id)).all()
             for sport_point in sport_points:
-                point_dict = {"c_1": sport_point.c_1, "c_2": sport_point.c_2,  "c_3": sport_point.c_3, "c_4": sport_point.c_4, "c_5": sport_point.c_5, "c_6": sport_point.c_6, "c_7": sport_point.c_7, "c_8": sport_point.c_8, "c_9": sport_point.c_9, "c_10": sport_point.c_10, "c_11": sport_point.c_11, "c_12": sport_point.c_12, "c_13": sport_point.c_13, "c_14": sport_point.c_14, "c_15": sport_point.c_15, "c_16": sport_point.c_16, "c_17": sport_point.c_17, "c_18": sport_point.c_18, "c_19": sport_point.c_19, "c_20": sport_point.c_20, "c_21": sport_point.c_21, "c_22": sport_point.c_22, "c_23": sport_point.c_23}
+                point_dict = {"c_1": sport_point.c_1, "c_2": sport_point.c_2, "c_3": sport_point.c_3,
+                              "c_4": sport_point.c_4, "c_5": sport_point.c_5, "c_6": sport_point.c_6,
+                              "c_7": sport_point.c_7, "c_8": sport_point.c_8, "c_9": sport_point.c_9,
+                              "c_10": sport_point.c_10, "c_11": sport_point.c_11, "c_12": sport_point.c_12,
+                              "c_13": sport_point.c_13, "c_14": sport_point.c_14, "c_15": sport_point.c_15,
+                              "c_16": sport_point.c_16, "c_17": sport_point.c_17, "c_18": sport_point.c_18,
+                              "c_19": sport_point.c_19, "c_20": sport_point.c_20, "c_21": sport_point.c_21,
+                              "c_22": sport_point.c_22, "c_23": sport_point.c_23}
             print(point_dict)
             return json.dumps(point_dict)
     else:
         sports = Sports.query.all()
-        sports_list= []
+        sports_list = []
         for sport in sports:
             sports_dict = {"id": sport.id, "sport_name": sport.sports_name, "category": sport.category}
             sports_list.append(sports_dict)
@@ -257,18 +265,19 @@ def scorecard():
         colleges = College.query.all()
         college_list = []
         for college in colleges:
-            college_dict = {"id": college.id, "college_name": college.clg_name, "college_nickname": college.clg_nickname, "college_logo": college.logo_url}
+            college_dict = {"id": college.id, "college_name": college.clg_name,
+                            "college_nickname": college.clg_nickname, "college_logo": college.logo_url}
             college_list.append(college_dict)
         print(college_list)
-        return render_template('scorecard.html', params=params, sports_list = sports_list, college_list = college_list)
+        return render_template('scorecard.html', params=params, sports_list=sports_list, college_list=college_list)
 
 
 @app.route("/test", methods=['GET', 'POST'])
 def test():
     if (request.method == 'POST'):
         print('Hello')
-        #email = request.form.get("email")
-        #print(email)
+        # email = request.form.get("email")
+        # print(email)
         cnt = Players.query.count() + 1
         profile_img = request.files['profile_img']
         if ("profile_img" not in request.files):
@@ -289,7 +298,7 @@ def test():
             play = Players.query.filter(Players.id == cnt).first()
             play.name = 1
 
-            #return "Image successful"
+            # return "Image successful"
         else:
             flash('Give proper profile image')
             return redirect(url_for('test'))
@@ -318,17 +327,17 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-
 @app.route('/see')
 def see():
     stds = Players.query.all()
     print(stds[1].name)
     return stds[1].name
 
-@app.route('/getLiveMatches_Ajax', methods=['GET','POST'])
+
+@app.route('/getLiveMatches_Ajax', methods=['GET', 'POST'])
 def getLiveMatches_Ajax():
-    #live_ids = request.form('live_id')
-    #print(live_ids)
+    # live_ids = request.form('live_id')
+    # print(live_ids)
     time_now = datetime.now()
 
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
@@ -338,15 +347,13 @@ def getLiveMatches_Ajax():
         list_live.append(dict1)
     live = {"live": list_live}
 
-
-    #return render_template('livescore.html', params=params, live=live, prev = prev)
-    print (type(list_live))
+    # return render_template('livescore.html', params=params, live=live, prev = prev)
+    print(type(list_live))
     print(type(live))
 
-
-    #return jsonify(json.dumps(live))
+    # return jsonify(json.dumps(live))
     return json.dumps(live)
-    #return list_live
+    # return list_live
 
 
 @app.route('/getLiveMatches', methods=['GET', 'POST'])
@@ -357,24 +364,24 @@ def getLiveMatches():
     list_prev = []
     for match in prev_matches:
         dict0 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg_id1": match.clg_id1,
-                "clg_id2": match.clg_id2, "sports_id": match.sports_id, "venue": match.venue, "level": match.level,
-                "id": match.id, "winner_clg_id" :  match.winner_clg_id, "status" : match.status}
+                 "clg_id2": match.clg_id2, "sports_id": match.sports_id, "venue": match.venue, "level": match.level,
+                 "id": match.id, "winner_clg_id": match.winner_clg_id, "status": match.status}
         list_prev.append(dict0)
     prev = {"prev": list_prev}
-    #print(prev)
+    # print(prev)
 
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
     list_live = []
     for match in live_matches:
         dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg_id1": match.clg_id1,
-                "clg_id2": match.clg_id2, "sports_id": match.sports_id, "venue": match.venue, "level": match.level,
-                "id": match.id, "date_time": match.date_time}
+                 "clg_id2": match.clg_id2, "sports_id": match.sports_id, "venue": match.venue, "level": match.level,
+                 "id": match.id, "date_time": match.date_time}
         list_live.append(dict1)
     live = {"live": list_live}
-    #print(live)
+    # print(live)
 
-    return render_template('livescore.html', params=params, live=list_live, prev = prev)
-    #return json.dumps(dict)
+    return render_template('livescore.html', params=params, live=list_live, prev=prev)
+    # return json.dumps(dict)
 
 
 @app.route('/setMatchDetails/<id>', methods=['GET', 'POST'])

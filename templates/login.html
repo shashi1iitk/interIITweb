@@ -15,7 +15,7 @@
 
     $.ajax({
       data : {
-        email : $('#email').val(),
+        username : $('#username').val(),
         password : $('#password').val()
       },
       type : 'POST',
@@ -23,7 +23,8 @@
     })
     .done(function(data){
       console.log(data);
-      alert(data);
+      if(data === "Success") window.location.href = "scorecard";
+      if(data === "Fail") alert("Wrong Password");
     });
 
     });
@@ -33,72 +34,31 @@
 </head>
 
 <body>
-
-  <!--==========================
-  Header
-  ============================-->
-  <header id="header" class="fixed-top">
-    <div class="container">
-
-      <div class="logo float-left">
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="#header"><span>Inter IIT</span></a></h1>
-        <!-- <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
-      </div>
-
-      <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/scorecard">Scorecard</a></li>
-          <li><a href="/getLiveMatches">Live Score</a></li>
-          <li><a href="/schedule">Schedule</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/info">Info</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Signup</a></li>
-        </ul>
-      </nav><!-- .main-nav -->
-
-    </div>
-  </header><!-- #header -->
-   <br><br><br>
-
-
-
     <!-- Main Content -->
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        
-
-
           <br><br>
+
           <form validate>
-
-
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
-                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                <input type="text" class="form-control" placeholder="Username" id="username" name="username" required data-validation-required-message="Please enter your username ">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
 
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <input type="password" id="password" placeholder="Password" class="form-control" aria-describedby="passwordHelpBlock" name="password">
+              </div>
+            </div>
 
-          <div class="control-group">
-      <div class="form-group floating-label-form-group controls">
-        <input type="password" id="password" placeholder="Password" class="form-control" aria-describedby="passwordHelpBlock" name="password">
-
-      </div>
-    </div>
-
-
-
-
-        <div id="success"></div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="button">Submit</button>
-        </div>
+            <div id="success"></div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="button">Submit</button>
+              </div>
           </form>
         </div>
       </div>
