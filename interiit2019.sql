@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2019 at 12:19 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Sep 03, 2019 at 09:40 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `interiit2019_1`
+-- Database: `interiit2019`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +44,8 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `username`, `password`, `role`, `privilege`, `college_id`, `sports_id`) VALUES
 (1, 'iiitjgp_representative', 'hjhgjgjm', 'IITKGP Representative', 2, '16', ''),
-(2, 'kgp staff', 'ghjghgjg', 'Cricket score updater', 3, '', '35');
+(2, 'kgp staff', 'ghjghgjg', 'Cricket score updater', 3, '', '35'),
+(3, 'IITKGP', 'IITKGP', 'IIT Kharagpur Coach', 1, '16', '');
 
 -- --------------------------------------------------------
 
@@ -104,8 +107,8 @@ CREATE TABLE `participation` (
 --
 
 INSERT INTO `participation` (`id`, `player_id`, `sports_id`, `college_id`) VALUES
-(1, 1, 4, 16),
-(2, 1, 15, 16);
+(1, 2, 31, 14),
+(2, 2, 32, 14);
 
 -- --------------------------------------------------------
 
@@ -119,7 +122,8 @@ CREATE TABLE `players` (
   `email` varchar(100) NOT NULL,
   `mobile` varchar(12) NOT NULL,
   `college_id` int(2) NOT NULL,
-  `password` varchar(150) NOT NULL,
+  `selected_sports` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `food` varchar(10) NOT NULL,
   `blood_group` varchar(5) NOT NULL,
   `profile_image_url` varchar(200) NOT NULL,
@@ -138,23 +142,9 @@ CREATE TABLE `players` (
 -- Dumping data for table `players`
 --
 
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `password`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `biggest_motivator`, `fav_athelete`, `fitness_mantra`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`) VALUES
-(1, 'Shashi', 'shashi1iitk@gmail.com', '7477797333', 16, 'password', 'veg', 'A+', 'image/static/shashi.jpg', 'test', 'test', 'test', 'test', 'M', 1, 004, 005, 010),
-(2, 'gtjyfjghjn', 'shashi1iitkrerthyh@gmail.com', '757567657', 1, 'B13826A9B2C463EA', 'Veg', 'A+', '2.jpg', 'cbmnbm', 'nmnbm', 'nbmnbm', 'nmbnbm', 'M', 0, 000, 000, 000),
-(3, 'Shashi Ranjan', 'shashi1iitkjhggjhj@gmail.com', '7477797333', 1, '968255560AEBF780', 'Veg', 'A+', '3.png', 's', 's', 's', 's', 'M', 0, 000, 000, 000),
-(4, 'Golu HNU', 'shashi1ii.tkgp@gmail.com', '6204551602', 1, '60199D8973F70E8C', 'Veg', 'A+', '4.jpg', 's', 's', 's', 's', 'M', 0, 000, 000, 000),
-(5, 'gtjyfjghjn', 'shashi1ihjkhjkjhkitk@gmail.com', '765787987967', 1, '9463DBA18C7AD6FC', 'Veg', 'A+', '5.jpg', 'jl;j;;lk;', 'l;lk;', 'kl;lk;', 'lk;lk;kl;lk;', 'M', 0, 000, 000, 000),
-(6, 'gtjyfjghjn', 'shasuyiyoioiuhi1ihjkhjkjhkitk@gmail.com', '765787987967', 1, '9463DBA18C7AD6FC', 'Veg', 'A+', '6.jpg', 'jl;j;;lk;', 'l;lk;', 'kl;lk;', 'lk;lk;kl;lk;', 'M', 0, 000, 000, 000),
-(7, 'gtjyfjghjn', 'shasuyiyoioiutytdudiyihi1ihjkhjkjhkitk@gmail.com', '765787987967', 1, '9463DBA18C7AD6FC', 'Veg', 'A+', '7.jpg', 'jl;j;;lk;', 'l;lk;', 'kl;lk;', 'lk;lk;kl;lk;', 'M', 0, 000, 000, 000),
-(8, 'gtjyfjghjn', 'shashjgjhkjhhjkhjkjhkitk@gmail.com', '765787987967', 1, '9463DBA18C7AD6FC', 'Veg', 'A+', '8.jpg', 'jl;j;;lk;', 'l;lk;', 'kl;lk;', 'lk;lk;kl;lk;', 'M', 0, 000, 000, 000),
-(9, 'hjkfkjhk', 'shashi1itryujkitk@gmail.com', '7477797333', 1, 'C2F296730F0D2534', 'Veg', 'A+', '9.jpg', 'tyyjkh', 'fghjk', 'dfghjk', 'dfghj', 'M', 0, 000, 000, 000),
-(10, 'hjkfkjhk', 'shashi1itryujyrtukitk@gmail.com', '7477797333', 1, 'C2F296730F0D2534', 'Veg', 'A+', '10.jpg', 'tyyjkh', 'fghjk', 'dfghjk', 'dfghj', 'M', 0, 000, 000, 000),
-(11, 'hjkfkjhk', 'shashi1tehyjhkhjitryujyrtukitk@gmail.com', '7477797333', 1, 'C2F296730F0D2534', 'Veg', 'A+', '11.jpg', 'tyyjkh', 'fghjk', 'dfghjk', 'dfghj', 'M', 0, 000, 000, 000),
-(12, 'Shashi Ranjan', 'shashi1rtgfhjygiitk@gmail.com', '7477797333', 1, '3D605B5597350F03', 'Veg', 'A+', '12.jpg', 'fghj', 'fgh', 'fghj', 'gthyj', 'M', 0, 000, 000, 000),
-(13, 'Shashi Rhfstnhtnfgbanjan', 'shashierfrg1iitk@gmail.com', '7477797333', 1, '93BF6B1FACF09DAA', 'Veg', 'A+', '13.jpg', 'aa', 's', 'a', 'kjhkjhk', 'M', 0, 000, 000, 000),
-(14, 'Shashi Ranjan', 'shashdsvfvierfrg1iitk@gmail.com', '7477797333', 1, '93BF6B1FACF09DAA', 'Veg', 'A+', '14.jpg', 'aa', 's', 'a', 'kjhkjhk', 'M', 0, 000, 000, 000),
-(15, 'gtjyfjghjn', 'uyoiugjoiioiliuiiiuyiitk@gmail.com', '656565', 1, '09FE7D15EF2C679C', 'Veg', 'A+', '15.jpg', 'jl;j;;lk;', 'l;lk;', 'kl;lk;', 'lk;lk;kl;lk;', 'M', 0, 000, 000, 000),
-(16, 'gtjyfjghjn', 'shaliklikljklitk@gmail.com', '6865', 1, '6BCFB0BF7EB1F2A1', 'Veg', 'A+', '16.jpg', '+665++65', '6456', '56', 'lpll-[pkp', 'M', 0, 000, 000, 000);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `password`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `biggest_motivator`, `fav_athelete`, `fitness_mantra`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`) VALUES
+(1, 'Aadi', 'aa@ssd.com', '1234567896', 8, '30,31', '44E8E4D377837B1A', 'Non-Veg', 'B+', '1.jpg', 'vhjvhj', 'mvhjv', 'nbvjhv', 'mnvhj', 'M', 0, 000, 000, 000),
+(2, 'Aadi', 'aa@sssd.com', '1234567896', 14, '31,32', '2FB3CFA6CA65B70F', 'Non-Veg', 'B+', '2.jpg', 'vhjvhj', 'mvhjv', 'nbvjhv', 'mnvhj', 'M', 0, 000, 000, 000);
 
 -- --------------------------------------------------------
 
@@ -337,8 +327,8 @@ CREATE TABLE `schedule_result_team` (
   `level` varchar(400) NOT NULL,
   `score1` varchar(100) DEFAULT NULL,
   `score2` varchar(100) DEFAULT NULL,
-  `winner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT '00',
-  `runner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT '00',
+  `winner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT 00,
+  `runner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT 00,
   `status` varchar(2000) DEFAULT NULL,
   `commentry` varchar(10000) DEFAULT NULL,
   `lineup1` varchar(1000) DEFAULT NULL
@@ -497,42 +487,51 @@ ALTER TABLE `sports`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `participation`
 --
 ALTER TABLE `participation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT for table `point_main`
 --
 ALTER TABLE `point_main`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
 --
 -- AUTO_INCREMENT for table `point_master`
 --
 ALTER TABLE `point_master`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `schedule_result_individual`
 --
 ALTER TABLE `schedule_result_individual`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
