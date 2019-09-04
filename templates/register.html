@@ -46,11 +46,13 @@ $(document).ready(function() {
 		})
 		.done(function(id){
 		    console.log(id);
-
+            if(id === 'Success') alert("Registered Candidate");
+            if(id === 'Fail') alert("Try Again");
                 $('#framework option:selected').each(function(){
                  $(this).prop('selected', false);
                 });
                 $('#framework').multiselect('refresh');
+                formData.clear();
 
 		});
 
@@ -225,7 +227,7 @@ $(document).ready(function() {
                     <label>Select Your Sport/Sports: </label>
                     <select id="framework" name="framework[]" multiple="multiple" class="form-control">
                         {% for sport in allSports %}
-                        <option value={{ sport.id }}> {{ sport.sports_name }}</option>
+                        <option value={{ sport.id }}> {{ sport.sports_name + '(' + sport.category + ')' }}</option>
                         {% endfor %}
                     </select>
                 </div>

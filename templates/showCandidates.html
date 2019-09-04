@@ -2,17 +2,36 @@
 
 {% block body %}
 
+<script type="text/javascript">
+function delet(id){
+    console.log(id);
+    $.ajax({
+			data : id,
+            type : 'POST',
+            url : '/deletePlayer',
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: false
+		})
+		.done(function(id){
+		    console.log(id);
+		    window.location.href = '/showCandidates';
+		});
+}
+</script>
+
 <div class="container">
 
-     <br><br>
-
+    <br><br>
+    {% for param in params: %}
     <div class="alert alert-info" style="padding: 20px;">
-        <strong>Info!</strong> Indicates a neutral informative change or action.
-        <button type="button" class="btn btn-danger float-right" >Danger</button>
+        <strong>{{param[0].name}} <br> </strong> {{param[1]}}
+        <button type="button" class="btn btn-danger float-right" onclick="delet({{param[0].id}})">Delete</button>
     </div>
-    <div class="alert alert-info">
-        <strong>Info!</strong> Indicates a neutral informative change or action.
-    </div>
+    {% endfor %}
+    <button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add</button>
+    <br><br>
 
 </div>
 

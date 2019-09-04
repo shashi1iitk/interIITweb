@@ -24,6 +24,7 @@
     .done(function(data){
       console.log(data);
       if(data === "Fail") alert("Wrong Password");
+      if(data === "Success") window.location.href = '/showCandidates'
     });
 
     });

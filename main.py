@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, get_flashed_messages, jsonify
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from passlib.hash import oracle10
 import json
 import os
@@ -162,8 +163,8 @@ def home():
 def load_user(user_id):
     return Admins.query.get(user_id)
 
-@login_required
 @app.route("/register", methods=['GET', 'POST'])
+@login_required
 def register():
     if (request.method == 'POST'):
         print(request.form)
@@ -181,7 +182,13 @@ def register():
         password = request.form['password']
         selected_sports = request.form['selected_sports']
         hash = oracle10.hash(password, user="player")
-        cnt = int(Players.query.count()) + 1
+        lastrec = Players.query.filter_by(id = db.session.query(func.max(Players.id))).all()
+        print(lastrec)
+        if len(lastrec) == 0 :
+            cnt = 1
+        else:
+            cnt = lastrec[-1].id + 1
+        print(cnt)
         filename = str(cnt) + '.jpg'
         if ("profile_img" not in request.files):
             flash('Give proper profile image')
@@ -199,6 +206,7 @@ def register():
         db.session.add(entry)
         selected_sports = selected_sports.strip(' ').split(',')
         selected_sports = [int(x.strip(' ')) for x in selected_sports]
+        db.session.commit()
         try:
             db.session.commit()
         except:
@@ -222,10 +230,20 @@ def unauthorized():
     flash('You must be logged in to view that page.')
     return redirect(url_for('login'))
 
-@login_required
 @app.route("/showCandidates")
+@login_required
 def showCandidates():
-    return render_template('showCandidates.html')
+    students =  Players.query.filter_by(college_id = current_user.college_id).all()
+    print(students)
+    games = []
+    for stud in students:
+        gmlst = []
+        for no in (stud.selected_sports).split(','):
+            sp = Sports.query.filter_by(id=int(no)).first()
+            gmlst.append(sp.sports_name + '(' + sp.category+')')
+        games.append('\n'.join(gmlst))
+    param = [(stud, gm) for stud,gm in zip(students, games)]
+    return render_template('showCandidates.html', params = param)
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -285,6 +303,22 @@ def scorecard():
 @app.route("/schedule")
 def schedule():
     return render_template('schedule.html', params=params)
+
+
+@app.route("/deletePlayer", methods=['GET', 'POST'])
+@login_required
+def deletePlayer():
+    if(request.method=='POST'):
+        id = int(request.data)
+        print(id)
+        try:
+            db.session.delete(Players.query.filter_by(id=id).first())
+            for p in Participation.query.filter_by(player_id=id).all():
+                db.session.delete(p)
+            db.session.commit()
+        except Exception:
+            return "Fail"
+    return "Success"
 
 
 @app.route("/gallery")
