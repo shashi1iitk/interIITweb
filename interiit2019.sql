@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2019 at 09:40 PM
+-- Generation Time: Sep 05, 2019 at 01:26 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -107,8 +107,9 @@ CREATE TABLE `participation` (
 --
 
 INSERT INTO `participation` (`id`, `player_id`, `sports_id`, `college_id`) VALUES
-(1, 2, 31, 14),
-(2, 2, 32, 14);
+(1, 1, 26, 16),
+(2, 1, 27, 16),
+(3, 2, 29, 16);
 
 -- --------------------------------------------------------
 
@@ -143,8 +144,8 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `password`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `biggest_motivator`, `fav_athelete`, `fitness_mantra`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`) VALUES
-(1, 'Aadi', 'aa@ssd.com', '1234567896', 8, '30,31', '44E8E4D377837B1A', 'Non-Veg', 'B+', '1.jpg', 'vhjvhj', 'mvhjv', 'nbvjhv', 'mnvhj', 'M', 0, 000, 000, 000),
-(2, 'Aadi', 'aa@sssd.com', '1234567896', 14, '31,32', '2FB3CFA6CA65B70F', 'Non-Veg', 'B+', '2.jpg', 'vhjvhj', 'mvhjv', 'nbvjhv', 'mnvhj', 'M', 0, 000, 000, 000);
+(1, 'Aadi', 'adsf@dfd.in', '1234567896', 16, '26,27', '17E34CC66DA88B7E', 'Non-Veg', 'B+', '1.jpg', 'vhjvhj', 'mvhjv', 'nbvjhv', 'mnvhj', 'M', 0, 000, 000, 000),
+(2, 'Shashi', 'adsf@dfd.inj', '123456965', 16, '29', '533F85D4AE9A5ACA', 'Non-Veg', 'A-', '2.jpg', 'hjvjhv', 'mvhjv', 'nbvjhv', 'nm k ', 'M', 0, 000, 000, 000);
 
 -- --------------------------------------------------------
 
@@ -499,7 +500,7 @@ ALTER TABLE `college`
 -- AUTO_INCREMENT for table `participation`
 --
 ALTER TABLE `participation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `players`
