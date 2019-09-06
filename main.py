@@ -206,10 +206,10 @@ def register():
         db.session.add(entry)
         selected_sports = selected_sports.strip(' ').split(',')
         selected_sports = [int(x.strip(' ')) for x in selected_sports]
-        try:
-            db.session.commit()
-        except:
-            return "Fail"
+        # try:
+        #     db.session.commit()
+        # except:
+        #     return "Fail"
         for p in selected_sports:
             cntt = int(Participation.query.count()) + 1
             entry = Participation(id=cntt, player_id=cnt, sports_id=p, college_id=int(college))

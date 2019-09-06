@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/profile_images/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/profile_images/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/profile_images/7.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_images/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/profile_images/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_images/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/profile_images/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +122,14 @@
       <option name="presentableId" value="Default" />
       <updated>1558834190399</updated>
     </task>
+    <task id="LOCAL-00001" summary="Changed menu bar">
+      <created>1567771644039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567771644039</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -171,5 +172,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="Changed menu bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed menu bar" />
   </component>
 </project>
