@@ -46,13 +46,18 @@ $(document).ready(function() {
 		})
 		.done(function(id){
 		    console.log(id);
-            if(id === 'Success') alert("Registered Candidate");
+            if(id === 'Success'){
+                alert("Registered Candidate");
+            }
+
             if(id === 'Fail') alert("Try Again");
                 $('#framework option:selected').each(function(){
                  $(this).prop('selected', false);
                 });
                 $('#framework').multiselect('refresh');
-                formData.clear();
+
+            if(id === 'Success' )  window.location.href = '/showCandidates';
+                else formData.clear();
 
 		});
 
@@ -200,17 +205,17 @@ $(document).ready(function() {
                 </div>
 
 
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <!-- <select class="form-control selectpicker" id="select-country" data-live-search="true"> -->
-                        <select class="form-control" id="college" data-live-search="true" name="college">
-                            <option selected>Selet your college</option>
-                            {% for sport in college %}
-                                <option value={{ sport.id }}> {{ sport.clg_name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
+<!--                <div class="control-group">-->
+<!--                    <div class="form-group floating-label-form-group controls">-->
+<!--                        &lt;!&ndash; <select class="form-control selectpicker" id="select-country" data-live-search="true"> &ndash;&gt;-->
+<!--                        <select class="form-control" id="college" data-live-search="true" name="college">-->
+<!--                            <option selected>Selet your college</option>-->
+<!--                            {% for sport in college %}-->
+<!--                                <option value={{ sport.id }}> {{ sport.clg_name }}</option>-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
