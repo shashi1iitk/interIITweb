@@ -214,10 +214,10 @@ def register():
             cntt = int(Participation.query.count()) + 1
             entry = Participation(id=cntt, player_id=cnt, sports_id=p, college_id=int(college))
             db.session.add(entry)
-            try:
-                db.session.commit()
-            except:
-                return "Fail"
+        try:
+            db.session.commit()
+        except:
+            return "Fail"
         return "Success"
     sports = Sports.query.all()
     college = College.query.all()
