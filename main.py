@@ -31,7 +31,6 @@ login_manager.init_app(app)
 login_manager.login_view = "log_in"
 login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
 
-
 if (local_server):
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
 else:
@@ -141,7 +140,6 @@ class Admins(UserMixin, db.Model):
     username = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(100), nullable=False)
     role = db.Column(db.String(100), nullable=False)
-    role = db.Column(db.String(100), nullable=False)
     privilege = db.Column(db.Integer, nullable=False)
     college_id = db.Column(db.String(10), nullable=False)
     sports_id = db.Column(db.String(10), nullable=False)
@@ -159,9 +157,11 @@ class Participation(db.Model):
 def home():
     return render_template('index.html', params=params)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return Admins.query.get(user_id)
+
 
 @app.route("/register", methods=['GET', 'POST'])
 @login_required
@@ -178,13 +178,13 @@ def register():
         food = request.form['food']
         gender = request.form['gender']
         blood_group = request.form['blood_group']
-        college = request.form['college']
+        college = current_user.college_id #request.form['college']
         password = request.form['password']
         selected_sports = request.form['selected_sports']
         hash = oracle10.hash(password, user="player")
-        lastrec = Players.query.filter_by(id = db.session.query(func.max(Players.id))).all()
+        lastrec = Players.query.filter_by(id=db.session.query(func.max(Players.id))).all()
         print(lastrec)
-        if len(lastrec) == 0 :
+        if len(lastrec) == 0:
             cnt = 1
         else:
             cnt = lastrec[-1].id + 1
@@ -199,30 +199,29 @@ def register():
             return "Fail"
         profile_img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         entry = Players(id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name,
-                        fav_athelete=fav_athelete, selected_sports = selected_sports,
+                        fav_athelete=fav_athelete, selected_sports=selected_sports,
                         biggest_motivator=biggest_motivator, fitness_mantra=fitness_mantra, food=food, gender=gender,
                         blood_group=blood_group, college_id=college, password=hash, reg_status=0, game_gold=0,
                         game_silver=0, game_bronze=0, profile_image_url=filename)
         db.session.add(entry)
         selected_sports = selected_sports.strip(' ').split(',')
         selected_sports = [int(x.strip(' ')) for x in selected_sports]
-        db.session.commit()
+        # try:
+        #     db.session.commit()
+        # except:
+        #     return "Fail"
+        for p in selected_sports:
+            cntt = int(Participation.query.count()) + 1
+            entry = Participation(id=cntt, player_id=cnt, sports_id=p, college_id=int(college))
+            db.session.add(entry)
         try:
             db.session.commit()
         except:
             return "Fail"
-        for p in selected_sports:
-            cntt = int(Participation.query.count()) + 1
-            entry = Participation(id = cntt, player_id = cnt, sports_id = p, college_id = int(college))
-            db.session.add(entry)
-            try:
-                db.session.commit()
-            except:
-                return "Fail"
         return "Success"
     sports = Sports.query.all()
     college = College.query.all()
-    return render_template('register.html', allSports = sports, college = college)
+    return render_template('register.html', allSports=sports, college=college)
 
 
 @login_manager.unauthorized_handler
@@ -230,20 +229,21 @@ def unauthorized():
     flash('You must be logged in to view that page.')
     return redirect(url_for('login'))
 
+
 @app.route("/showCandidates")
 @login_required
 def showCandidates():
-    students =  Players.query.filter_by(college_id = current_user.college_id).all()
-    print(students)
+    students = Players.query.filter_by(college_id=current_user.college_id).all()
+    # print(students)
     games = []
     for stud in students:
         gmlst = []
         for no in (stud.selected_sports).split(','):
             sp = Sports.query.filter_by(id=int(no)).first()
-            gmlst.append(sp.sports_name + '(' + sp.category+')')
+            gmlst.append(sp.sports_name + '(' + sp.category + ')')
         games.append('\n'.join(gmlst))
-    param = [(stud, gm) for stud,gm in zip(students, games)]
-    return render_template('showCandidates.html', params = param)
+    param = [(stud, gm) for stud, gm in zip(students, games)]
+    return render_template('showCandidates.html', params=param)
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -256,6 +256,10 @@ def login():
         if (user.password != password):
             return "Fail"
         else:
+            # clg = College.query.filter_by(id=user.college_id).first()
+            # print(clg)
+            # print(clg.clg_name)
+            # # user.clg_name = clg.clg_name
             login_user(user, remember=True)
             return "Success"
     else:
@@ -308,7 +312,7 @@ def schedule():
 @app.route("/deletePlayer", methods=['GET', 'POST'])
 @login_required
 def deletePlayer():
-    if(request.method=='POST'):
+    if (request.method == 'POST'):
         id = int(request.data)
         print(id)
         try:
@@ -321,6 +325,13 @@ def deletePlayer():
     return "Success"
 
 
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
+
 @app.route("/gallery")
 def gallery():
     return render_template('gallery.html', params=params)
@@ -329,6 +340,11 @@ def gallery():
 @app.route("/info")
 def info():
     return render_template('info.html', params=params)
+
+
+@app.route("/live")
+def live():
+    return render_template('live.html', params=params)
 
 
 def allowed_file(filename):

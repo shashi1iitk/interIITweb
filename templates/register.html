@@ -9,14 +9,18 @@
 </style>
 <script type="text/javascript">
 
+function myFunction() {
+  window.location.href = '/showCandidates';
+}
+
 $(document).ready(function() {
 
-		$('#framework').multiselect({
-			  nonSelectedText: 'Select Sports',
-			  enableFiltering: true,
-			  enableCaseInsensitiveFiltering: true,
-			  buttonWidth:'100%'
-			 });
+	$('#framework').multiselect({
+		  nonSelectedText: 'Select Sports',
+		  <!--enableFiltering: true,-->
+		  <!--enableCaseInsensitiveFiltering: true,-->
+		  buttonWidth:'100%'
+		 });
 
 	$('form').on('submit', function(event) {
 
@@ -30,7 +34,7 @@ $(document).ready(function() {
 
         selected_string = selected.toString();
 
-        alert(selected_string);
+        // alert(selected_string);
 
         var formData = new FormData(document.querySelector('#registerForm'));
 		formData.append("selected_sports", selected_string);
@@ -46,13 +50,18 @@ $(document).ready(function() {
 		})
 		.done(function(id){
 		    console.log(id);
-            if(id === 'Success') alert("Registered Candidate");
-            if(id === 'Fail') alert("Try Again");
+            if(id === 'Success'){
+               swal("Awesome!", "Candidate Registered Successfully!", "success");
+               setTimeout(myFunction, 1500);
+
+                // alert("Candidate Registered Successfully!");
+            }
+
+            else if(id === 'Fail') swal("Try Again!", "Something Went Wrong!", "error");
                 $('#framework option:selected').each(function(){
                  $(this).prop('selected', false);
                 });
                 $('#framework').multiselect('refresh');
-                formData.clear();
 
 		});
 
@@ -67,6 +76,7 @@ $(document).ready(function() {
 
 
 <!-- Main Content -->
+<br>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -112,7 +122,8 @@ $(document).ready(function() {
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <input type="text" class="form-control" placeholder="Favourite Player" id="fav_athelete"
-                               name="fav_athelete">
+                               name="fav_athelete" required
+                               data-validation-required-message="Please enter your favourite athelete.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -120,7 +131,8 @@ $(document).ready(function() {
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <input type="text" class="form-control" placeholder="Biggest Motivator" id="biggest_motivator"
-                               name="biggest_motivator">
+                               name="biggest_motivator" required
+                               data-validation-required-message="Please fill this field.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -128,7 +140,8 @@ $(document).ready(function() {
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <input type="text" class="form-control" placeholder="Fitness Mantra" id="fitness_mantra"
-                               name="fitness_mantra">
+                               name="fitness_mantra" required
+                               data-validation-required-message="Please fill this field.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -137,11 +150,11 @@ $(document).ready(function() {
                     <div class="form-group floating-label-form-group controls">
                         <label>Food: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="food" id="veg" value="Veg">
+                            <input class="form-check-input" type="radio" name="food" id="veg" value="Veg" required>
                             <label class="form-check-label" for="veg">Veg</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="food" id="nonveg" value="Non-Veg">
+                            <input class="form-check-input" type="radio" name="food" id="nonveg" value="Non-Veg" required>
                             <label class="form-check-label" for="nonveg">Non-Veg</label>
                         </div>
                     </div>
@@ -151,11 +164,11 @@ $(document).ready(function() {
                     <div class="form-group floating-label-form-group controls">
                         <label>Gender: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="M" value="M">
+                            <input class="form-check-input" type="radio" name="gender" id="M" value="M" required>
                             <label class="form-check-label" for="M">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="F" value="F">
+                            <input class="form-check-input" type="radio" name="gender" id="F" value="F" required>
                             <label class="form-check-label" for="F">Female</label>
                         </div>
                     </div>
@@ -165,57 +178,58 @@ $(document).ready(function() {
                     <div class="form-group floating-label-form-group controls">
                         <label>Blood Group: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="A+" value="A+">
+                            <input class="form-check-input" type="radio" name="blood_group" id="A+" value="A+" required>
                             <label class="form-check-label" for="A+">A+</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="A-" value="A-">
+                            <input class="form-check-input" type="radio" name="blood_group" id="A-" value="A-" required>
                             <label class="form-check-label" for="A-">A-</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="B+" value="B+">
+                            <input class="form-check-input" type="radio" name="blood_group" id="B+" value="B+" required>
                             <label class="form-check-label" for="B+">B+</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="B-" value="B-">
+                            <input class="form-check-input" type="radio" name="blood_group" id="B-" value="B-" required>
                             <label class="form-check-label" for="B-">B-</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="O+" value="O+">
+                            <input class="form-check-input" type="radio" name="blood_group" id="O+" value="O+" required>
                             <label class="form-check-label" for="O+">O+</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="O-" value="O-">
+                            <input class="form-check-input" type="radio" name="blood_group" id="O-" value="O-" required>
                             <label class="form-check-label" for="O-">O-</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="AB+" value="AB+">
+                            <input class="form-check-input" type="radio" name="blood_group" id="AB+" value="AB+" required>
                             <label class="form-check-label" for="AB+">AB+</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="blood_group" id="AB-" value="AB-">
+                            <input class="form-check-input" type="radio" name="blood_group" id="AB-" value="AB-" required>
                             <label class="form-check-label" for="AB-">AB-</label>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <!-- <select class="form-control selectpicker" id="select-country" data-live-search="true"> -->
-                        <select class="form-control" id="college" data-live-search="true" name="college">
-                            <option selected>Selet your college</option>
-                            {% for sport in college %}
-                                <option value={{ sport.id }}> {{ sport.clg_name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
+<!--                <div class="control-group">-->
+<!--                    <div class="form-group floating-label-form-group controls">-->
+<!--                        &lt;!&ndash; <select class="form-control selectpicker" id="select-country" data-live-search="true"> &ndash;&gt;-->
+<!--                        <select class="form-control" id="college" data-live-search="true" name="college">-->
+<!--                            <option selected>Selet your college</option>-->
+<!--                            {% for sport in college %}-->
+<!--                                <option value={{ sport.id }}> {{ sport.clg_name }}</option>-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <input type="password" id="password" placeholder="Password" class="form-control"
-                               aria-describedby="passwordHelpBlock" name="password">
+                               aria-describedby="passwordHelpBlock" name="password" required
+                               data-validation-required-message="Please fill this field.">
                         <small id="passwordHelpBlock" class="form-text text-muted">
                             Your password must be 8-20 characters long, contain letters and numbers, and must not
                             contain spaces, special characters, or emoji.
@@ -224,7 +238,7 @@ $(document).ready(function() {
                 </div>
 
                 <div class="form-group" id="sports_select">
-                    <label>Select Your Sport/Sports: </label>
+                    <label>Select sport/sports from the dropdown: </label>
                     <select id="framework" name="framework[]" multiple="multiple" class="form-control">
                         {% for sport in allSports %}
                         <option value={{ sport.id }}> {{ sport.sports_name + '(' + sport.category + ')' }}</option>
@@ -235,7 +249,8 @@ $(document).ready(function() {
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile" name="profile_img">
+                            <input type="file" class="custom-file-input" id="customFile" name="profile_img" required
+                               data-validation-required-message="Select an image first.">
                             <label class="custom-file-label" for="customFile">Select profile picture</label>
                         </div>
                     </div>
@@ -244,7 +259,7 @@ $(document).ready(function() {
 
                 <div id="success"></div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button>
+                    <center><button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button></center>
                 </div>
 
             </form>

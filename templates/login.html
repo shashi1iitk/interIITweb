@@ -23,7 +23,7 @@
     })
     .done(function(data){
       console.log(data);
-      if(data === "Fail") alert("Wrong Password");
+      if(data === "Fail") swal("Try Again!", "Wrong username or password!", "error");
       if(data === "Success") window.location.href = '/showCandidates'
     });
 
@@ -36,20 +36,20 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <br><br>
-
+          <br><br><br><br>
+          <center><h2  style="margin-top:5%;">Login, only for college adminstration</h2></center>
           <form validate>
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
-                <input type="text" class="form-control" placeholder="Username" id="username" name="username" required data-validation-required-message="Please enter your username ">
+                <input type="text" class="form-control" placeholder="Username" id="username" name="username" required data-validation-required-message="Please enter your username">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
-                <input type="password" id="password" placeholder="Password" class="form-control" aria-describedby="passwordHelpBlock" name="password">
+                <input type="password" id="password" placeholder="Password" class="form-control" aria-describedby="passwordHelpBlock" name="password" required data-validation-required-message="Please enter your password">
               </div>
             </div>
 
