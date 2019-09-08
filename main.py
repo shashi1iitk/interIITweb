@@ -253,7 +253,9 @@ def login():
         password = request.form['password']
         # hash = oracle10.hash(password, user="player")
         user = Admins.query.filter_by(username=email).first()
-        if (user.password != password):
+        if user is None:
+            return "Fail"
+        elif (user.password != password):
             return "Fail"
         else:
             # clg = College.query.filter_by(id=user.college_id).first()
