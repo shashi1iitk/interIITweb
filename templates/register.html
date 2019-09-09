@@ -15,24 +15,42 @@ function myFunction() {
 
 $(document).ready(function() {
 
+     $("#sports_select").hide();
+
+     $("input[name$='type']").click(function() {
+        var test = $(this).val();
+
+        if(test == "P"){
+            $("#sports_select").show();
+        }
+        else
+            $("#sports_select").hide();
+    });
+
 	$('#framework').multiselect({
 		  nonSelectedText: 'Select Sports',
-		  <!--enableFiltering: true,-->
-		  <!--enableCaseInsensitiveFiltering: true,-->
+		  enableFiltering: true,
+		  enableCaseInsensitiveFiltering: true,
 		  buttonWidth:'100%'
 		 });
 
 	$('form').on('submit', function(event) {
 
-		var brands = $('#framework option:selected');
-        var selected = [];
-        $(brands).each(function(index, brand){
-            selected.push([$(this).val()]);
-        });
+        if($("input[name='type']:checked").val() == "S"){
+            selected_string = "staff"
+        }
 
-        console.log(selected);
+            else{
+    		var brands = $('#framework option:selected');
+            var selected = [];
+            $(brands).each(function(index, brand){
+                selected.push([$(this).val()]);
+            });
 
-        selected_string = selected.toString();
+            console.log(selected);
+            selected_string = selected.toString();
+        }
+            
 
         // alert(selected_string);
 
@@ -98,7 +116,19 @@ $(document).ready(function() {
                     <div class="form-group floating-label-form-group controls">
                         <input type="email" class="form-control" placeholder="Email Address" id="email" name="email"
                                required data-validation-required-message="Please enter your email address.">
+                               <small id="passwordHelpBlock" class="form-text text-muted">
+                                    unique for each registration
+                               </small>
                         <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="text" id="roll_no" placeholder="Roll No. / Enrollment Number" class="form-control"
+                               aria-describedby="passwordHelpBlock" name="roll_no" required
+                               data-validation-required-message="Please fill this field.">
+                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
 
@@ -119,10 +149,11 @@ $(document).ready(function() {
                     </div>
                 </div>
 
-                <div class="control-group">
+                <!-- <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" class="form-control" placeholder="Favourite Player" id="fav_athelete"
-                               name="fav_athelete" required
+                        <label>Arrival date</label>
+                        <input type="date" class="form-control" placeholder="Arrival Date" id="arr_date"
+                               name="arr_date" required
                                data-validation-required-message="Please enter your favourite athelete.">
                         <p class="help-block text-danger"></p>
                     </div>
@@ -130,19 +161,30 @@ $(document).ready(function() {
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" class="form-control" placeholder="Biggest Motivator" id="biggest_motivator"
-                               name="biggest_motivator" required
+                        <label>Departure date</label>
+                        <input type="date" class="form-control" placeholder="Departure Date" id="dep_date"
+                               name="dep_date" required
+                               data-validation-required-message="Please fill this field.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div> -->
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="text" class="form-control" placeholder="Any special instruction to organising committee" id="special_inst"
+                               name="special_inst" required
                                data-validation-required-message="Please fill this field.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
 
-                <div class="control-group">
+                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" class="form-control" placeholder="Fitness Mantra" id="fitness_mantra"
-                               name="fitness_mantra" required
-                               data-validation-required-message="Please fill this field.">
-                        <p class="help-block text-danger"></p>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" name="profile_img" required
+                               data-validation-required-message="Select an image first.">
+                            <label class="custom-file-label" for="customFile">Select profile picture</label>
+                        </div>
                     </div>
                 </div>
 
@@ -224,18 +266,22 @@ $(document).ready(function() {
 <!--                        </select>-->
 <!--                    </div>-->
 <!--                </div>-->
-
+                
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="password" id="password" placeholder="Password" class="form-control"
-                               aria-describedby="passwordHelpBlock" name="password" required
-                               data-validation-required-message="Please fill this field.">
-                        <small id="passwordHelpBlock" class="form-text text-muted">
-                            Your password must be 8-20 characters long, contain letters and numbers, and must not
-                            contain spaces, special characters, or emoji.
-                        </small>
+                        <label>Type: </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="P" value="P" required>
+                            <label class="form-check-label" for="P">Player</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="S" value="S" required>
+                            <label class="form-check-label" for="S">Staff</label>
+                        </div>
+        
                     </div>
                 </div>
+                
 
                 <div class="form-group" id="sports_select">
                     <label>Select sport/sports from the dropdown: </label>
@@ -246,15 +292,7 @@ $(document).ready(function() {
                     </select>
                 </div>
 
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile" name="profile_img" required
-                               data-validation-required-message="Select an image first.">
-                            <label class="custom-file-label" for="customFile">Select profile picture</label>
-                        </div>
-                    </div>
-                </div>
+               
 
 
                 <div id="success"></div>

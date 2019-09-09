@@ -12,7 +12,7 @@ function delet(id){
     console.log(id);
     swal({
   title: "Are you sure?",
-  text: "Once deleted, player will be deregistered form the meet and all provided details will be lost!",
+  text: "Once deleted, candidate will be deregistered from the meet and all the provided details will be lost!",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -31,7 +31,7 @@ function delet(id){
         })
         .done(function(id){
             // console.log(id);
-            swal("Poof! Player Removed!", {
+            swal("Poof! Candidate Removed!", {
               icon: "success",
             });
             setTimeout(myFunction, 1500);
@@ -40,7 +40,7 @@ function delet(id){
 
     
   } else {
-    swal("Player still registered!");
+
   }
 });
 
@@ -56,16 +56,29 @@ function delet(id){
 <div class="container" style="margin-top: 3%">
 
     <br><br>
-    <center><h1>Role : {{current_user.role}}</h1></center>
+    <center><h1>Logged in as : {{current_user.role}}</h1></center>
     <hr>
+    <center><h2>Players</h2></center>
     {% for param in params: %}
     <div class="alert alert-info" style="padding: 20px;">
-        <strong>{{param[0].name}} <br> </strong> {{param[1]}}
+        <strong>{{param[0].name}} | {{param[0].email}} </strong>  <br> {{param[1]}}
         <button type="button" class="btn btn-danger float-right" onclick="delet({{param[0].id}})">Delete</button>
     </div>
     {% endfor %}
-    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player</button></center>
+    <hr>
+    <center><h2>Staffs</h2></center>
+    {% for staff in staffs: %}
+    <div class="alert alert-info" style="padding: 20px;">
+        <strong>{{staff.name}} | {{staff.email}} </strong>
+        <button type="button" class="btn btn-danger float-right" onclick="delet({{staff.id}})">Delete</button>
+    </div>
+    {% endfor %}
+    <hr>
+    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center>
     <br><br>
+
+    <h3>Instruction</h3>
+    <p>For changing or modifying any entry, please delete the previous one and add a new one.</p>
 
 </div>
 

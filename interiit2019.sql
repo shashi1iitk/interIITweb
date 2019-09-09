@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2019 at 08:50 PM
+-- Generation Time: Sep 10, 2019 at 12:18 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -56,7 +56,7 @@ INSERT INTO `admins` (`id`, `username`, `password`, `role`, `privilege`, `colleg
 (13, 'IIT@Jammu', 'UwS7nncaRbQ_Ua@K', 'IIT Jammu Admin', 1, '13', ''),
 (14, 'IIT@Jodhpur', 'CbYU9*Q9SPX?EhD-', 'IIT Jodhpur Admin', 1, '14', ''),
 (15, 'IIT@Kanpur', 'CbYU9*Q9SPX?EhD-', 'IIT Kanpur Admin', 1, '15', ''),
-(16, 'IIT@Kharagpur', 'TM-_yP3FGr335FZP', 'IIT Kharagpur Admin', 1, '16', ''),
+(16, '1', '1', 'IIT Kharagpur Admin', 1, '16', ''),
 (17, 'IIT@Madras', 'pp!e8wgJr7aUZas@', 'IIT Madras Admin', 1, '17', ''),
 (18, 'IIT@Mandi', '3kne8Sd&Vth5Ew%W', 'IIT Mandi Admin', 1, '18', ''),
 (19, 'IIT@Palakkad ', 's-XAv!$y9cDA5euV', 'IIT Palakkad  Admin', 1, '19', ''),
@@ -85,7 +85,7 @@ CREATE TABLE `college` (
 INSERT INTO `college` (`id`, `clg_name`, `clg_nickname`, `logo_url`) VALUES
 (1, 'IIT BHU', 'BHU', 'img/clg/bhu.jpg'),
 (2, 'IIT Bhilai', '', ''),
-(3, 'IIT Bhubaneshwar', '', ''),
+(3, 'IIT Bhubaneswar', '', ''),
 (4, 'IIT Bombay', '', ''),
 (5, 'IIT Delhi', '', ''),
 (6, 'IIT Dhanbad', '', ''),
@@ -120,6 +120,14 @@ CREATE TABLE `participation` (
   `college_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `participation`
+--
+
+INSERT INTO `participation` (`id`, `player_id`, `sports_id`, `college_id`) VALUES
+(1, 2, 3, 16),
+(2, 2, 4, 16);
+
 -- --------------------------------------------------------
 
 --
@@ -133,20 +141,26 @@ CREATE TABLE `players` (
   `mobile` varchar(12) NOT NULL,
   `college_id` int(2) NOT NULL,
   `selected_sports` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `roll_no` varchar(100) NOT NULL,
   `food` varchar(10) NOT NULL,
   `blood_group` varchar(5) NOT NULL,
   `profile_image_url` varchar(200) NOT NULL,
   `jursey_name` varchar(50) NOT NULL,
-  `biggest_motivator` varchar(400) NOT NULL,
-  `fav_athelete` varchar(100) NOT NULL,
-  `fitness_mantra` varchar(400) NOT NULL,
+  `special_inst` varchar(1000) NOT NULL,
   `gender` varchar(2) NOT NULL,
   `reg_status` int(1) UNSIGNED ZEROFILL NOT NULL,
   `game_gold` int(3) UNSIGNED ZEROFILL NOT NULL,
   `game_silver` int(3) UNSIGNED ZEROFILL NOT NULL,
   `game_bronze` int(3) UNSIGNED ZEROFILL NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `players`
+--
+
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`) VALUES
+(2, 'Shashi Ranjan', 'sh.ashi1iitkgp@gmail.com', '5436', 16, '3,4', '16MI33014', 'Veg', 'A+', '2.jpg', 'jl;j;;lk;', 'hgjhj', 'M', 0, 000, 000, 000),
+(3, 'GTJYFJGHJN', 'shashi1iitk@gmail.com', '45678', 16, 'staff', '16MI33014', 'Veg', 'A+', '3.jpg', 'fghj', 'fghjk', 'M', 0, 000, 000, 000);
 
 -- --------------------------------------------------------
 
@@ -370,9 +384,48 @@ CREATE TABLE `sports` (
 --
 
 INSERT INTO `sports` (`id`, `sports_name`, `category`, `max_player`, `type`) VALUES
-(38, 'Swimming', 'M', 2, 'individual'),
-(39, 'Swimming', 'W', 2, 'individual'),
-(46, 'Water Polo', 'M', 13, 'team');
+(1, 'Swimming 50m Freestyle', 'M', 2, 'i'),
+(2, 'Swimming 100m Freestyle', 'M', 2, 'i'),
+(3, 'Swimming 200m Freestyle', 'M', 2, 'i'),
+(4, 'Swimming 400m Freestyle', 'M', 2, 'i'),
+(5, 'Swimming 1500m Freestyle', 'M', 2, 'i'),
+(6, 'Swimming 50m Backstroke', 'M', 2, 'i'),
+(7, 'Swimming 100m Backstroke', 'M', 2, 'i'),
+(8, 'Swimming 200m Backstroke', 'M', 2, 'i'),
+(9, 'Swimming 50m Breaststroke', 'M', 2, 'i'),
+(10, 'Swimming 100m Breaststroke', 'M', 2, 'i'),
+(11, 'Swimming 200m Breaststroke', 'M', 2, 'i'),
+(12, 'Swimming 50m Butterfly', 'M', 2, 'i'),
+(13, 'Swimming 100m Butterfly', 'M', 2, 'i'),
+(14, 'Swimming 200m Individual Mixed', 'M', 2, 'i'),
+(15, 'Swimming 4x100m Freestyle relay', 'M', 4, 't'),
+(16, 'Swimming 4x100m Medley Relay', 'M', 4, 't'),
+(17, 'Swimming 50m Freestyle', 'W', 2, 't'),
+(18, 'Swimming 100m Freestyle', 'W', 2, 'i'),
+(19, 'Swimming 50m Backstroke', 'W', 2, 'i'),
+(20, 'Swimming 50m Breaststroke', 'W', 2, 'i'),
+(21, 'Swimming 50m Butterfly', 'W', 2, 'i'),
+(22, 'Swimming 4x50m Freestyle relay', 'W', 4, 't'),
+(23, 'Swimming 4x50m Medley Relay', 'W', 4, 't');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staffs`
+--
+
+CREATE TABLE `staffs` (
+  `id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  `college_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staffs`
+--
+
+INSERT INTO `staffs` (`id`, `player_id`, `college_id`) VALUES
+(3, 3, 16);
 
 --
 -- Indexes for dumped tables
@@ -401,7 +454,8 @@ ALTER TABLE `participation`
 --
 ALTER TABLE `players`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email_UNIQUE` (`email`);
+  ADD UNIQUE KEY `email_UNIQUE` (`email`),
+  ADD UNIQUE KEY `mobile` (`mobile`);
 
 --
 -- Indexes for table `point_main`
@@ -434,6 +488,12 @@ ALTER TABLE `sports`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `staffs`
+--
+ALTER TABLE `staffs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -451,12 +511,12 @@ ALTER TABLE `college`
 -- AUTO_INCREMENT for table `participation`
 --
 ALTER TABLE `participation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `point_main`
 --
@@ -476,7 +536,12 @@ ALTER TABLE `schedule_result_individual`
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `staffs`
+--
+ALTER TABLE `staffs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
