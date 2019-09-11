@@ -15,6 +15,7 @@ function myFunction() {
 
 $(document).ready(function() {
 
+
      $("#sports_select").hide();
 
      $("input[name$='type']").click(function() {
@@ -35,6 +36,9 @@ $(document).ready(function() {
 		 });
 
 	$('form').on('submit', function(event) {
+
+        $("#sendMessageButton").attr("disabled", true);
+        $("#sendMessageButton").html('Please wait...');
 
         if($("input[name='type']:checked").val() == "S"){
             selected_string = "staff"
@@ -67,6 +71,8 @@ $(document).ready(function() {
             async: false
 		})
 		.done(function(id){
+            $("#sendMessageButton").attr("disabled", false);
+            $("#sendMessageButton").html('Register');
 		    console.log(id);
             if(id === 'Success'){
                swal("Awesome!", "Candidate Registered Successfully!", "success");
@@ -171,7 +177,7 @@ $(document).ready(function() {
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" class="form-control" placeholder="Any special instruction to organising committee" id="special_inst"
+                        <input type="text" class="form-control" placeholder="Any special instruction to OC" id="special_inst"
                                name="special_inst" required
                                data-validation-required-message="Please fill this field.">
                         <p class="help-block text-danger"></p>

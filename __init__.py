@@ -9,20 +9,24 @@ from werkzeug.utils import secure_filename
 from flask_mail import Mail
 from datetime import datetime
 
-with open('config.json', 'r') as c:
-    params = json.load(c)["params"]
+# with open('config.json', 'r') as c:
+#     params = json.load(c)["params"]
+
+
 
 local_server = True
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT='465',
     MAIL_USE_SSL=True,
-    MAIL_USERNAME=params['gmail-user'],
-    MAIL_PASSWORD=params['gmail-password'],
+    # MAIL_USERNAME=params['gmail-user'],
+    # MAIL_PASSWORD=params['gmail-password'],
     UPLOAD_FOLDER=os.path.join(os.getcwd(), "static", "profile_images")
 )
+
 mail = Mail(app)
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -31,10 +35,12 @@ login_manager.init_app(app)
 login_manager.login_view = "log_in"
 login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
 
-if (local_server):
-    app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
-else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
+# if (local_server):
+#     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
+# else:
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
+
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:1234@#interiit@localhost/interiit2019"
 
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -162,7 +168,8 @@ class Staffs(db.Model):
 
 @app.route("/")
 def home():
-    return render_template('index.html', params=params)
+    # return render_template('index.html', params=params)
+    return render_template('index.html')
 
 
 @login_manager.user_loader
@@ -225,8 +232,8 @@ def register():
             # except:
             #     return "Fail"
             for p in selected_sports:
-                cntt = int(Participation.query.count()) + 1
-                entry = Participation(id=cntt, player_id=cnt, sports_id=p, college_id=int(college))
+                # cntt = int(Participation.query.count()) + 1
+                entry = Participation(player_id=cnt, sports_id=p, college_id=int(college))
                 db.session.add(entry)
             try:
                 db.session.commit()
@@ -324,12 +331,14 @@ def scorecard():
             college_dict = {"id": college.id, "college_name": college.clg_name,
                             "college_nickname": college.clg_nickname, "college_logo": college.logo_url}
             college_list.append(college_dict)
-        return render_template('scorecard.html', params=params, sports_list=sports_list, college_list=college_list)
+        # return render_template('scorecard.html', params=params, sports_list=sports_list, college_list=college_list)
+        return render_template('scorecard.html', sports_list=sports_list, college_list=college_list)
 
 
 @app.route("/schedule")
 def schedule():
-    return render_template('schedule.html', params=params)
+    # return render_template('schedule.html', params=params)
+    return render_template('schedule.html')
 
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
@@ -359,17 +368,20 @@ def logout():
 
 @app.route("/gallery")
 def gallery():
-    return render_template('gallery.html', params=params)
+    # return render_template('gallery.html', params=params)
+    return render_template('gallery.html')
 
 
 @app.route("/info")
 def info():
-    return render_template('info.html', params=params)
+    # return render_template('info.html', params=params)
+    return render_template('info.html')
 
 
 @app.route("/live")
 def live():
-    return render_template('live.html', params=params)
+    # return render_template('live.html', params=params)
+    return render_template('live.html')
 
 
 def allowed_file(filename):
@@ -429,7 +441,8 @@ def getLiveMatches():
     live = {"live": list_live}
     # print(live)
 
-    return render_template('livescore.html', params=params, live=list_live, prev=prev)
+    # return render_template('livescore.html', params=params, live=list_live, prev=prev)
+    return render_template('livescore.html', live=list_live, prev=prev)
     # return json.dumps(dict)
 
 
@@ -446,4 +459,11 @@ def setMatchDetails(id):
 
 
 
-app.run(host='0.0.0.0', port=5000, debug=True)
+# app.run(host='0.0.0.0', port=5000, debug=True)
+
+# application = app
+#
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=True)
+
+app.run(debug=True)

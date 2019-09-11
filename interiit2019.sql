@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2019 at 12:18 AM
+-- Generation Time: Sep 11, 2019 at 04:03 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -125,8 +125,8 @@ CREATE TABLE `participation` (
 --
 
 INSERT INTO `participation` (`id`, `player_id`, `sports_id`, `college_id`) VALUES
-(1, 2, 3, 16),
-(2, 2, 4, 16);
+(3, 5, 18, 16),
+(4, 5, 19, 16);
 
 -- --------------------------------------------------------
 
@@ -159,8 +159,8 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`) VALUES
-(2, 'Shashi Ranjan', 'sh.ashi1iitkgp@gmail.com', '5436', 16, '3,4', '16MI33014', 'Veg', 'A+', '2.jpg', 'jl;j;;lk;', 'hgjhj', 'M', 0, 000, 000, 000),
-(3, 'GTJYFJGHJN', 'shashi1iitk@gmail.com', '45678', 16, 'staff', '16MI33014', 'Veg', 'A+', '3.jpg', 'fghj', 'fghjk', 'M', 0, 000, 000, 000);
+(3, 'GTJYFJGHJN', 'shashi1iitk@gmail.com', '45678', 16, 'staff', '16MI33014', 'Veg', 'A+', '3.jpg', 'fghj', 'fghjk', 'M', 0, 000, 000, 000),
+(5, 'GFHJKL', 'sh.ashi1iitcvnbmkgp@gmail.com', '3456789', 16, '18,19', 'ghbjkl', 'Veg', 'A+', '5.jpg', 'gfhjk', 'fhgjk', 'M', 0, 000, 000, 000);
 
 -- --------------------------------------------------------
 
@@ -406,7 +406,8 @@ INSERT INTO `sports` (`id`, `sports_name`, `category`, `max_player`, `type`) VAL
 (20, 'Swimming 50m Breaststroke', 'W', 2, 'i'),
 (21, 'Swimming 50m Butterfly', 'W', 2, 'i'),
 (22, 'Swimming 4x50m Freestyle relay', 'W', 4, 't'),
-(23, 'Swimming 4x50m Medley Relay', 'W', 4, 't');
+(23, 'Swimming 4x50m Medley Relay', 'W', 4, 't'),
+(24, 'Water Polo', 'M', 13, 't');
 
 -- --------------------------------------------------------
 
@@ -516,7 +517,7 @@ ALTER TABLE `participation`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `point_main`
 --
@@ -536,12 +537,12 @@ ALTER TABLE `schedule_result_individual`
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `staffs`
 --
 ALTER TABLE `staffs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

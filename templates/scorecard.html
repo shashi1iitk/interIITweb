@@ -109,7 +109,7 @@ $(document).ready(function() {
            <div class="form-group floating-label-form-group controls">
           <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
             <select class="form-control" id="sport" data-live-search="true" name="sport" validate>
-                <option selected >Selet Sport</option>
+                <option selected >Select Sport</option>
                 {% for sport in sports_list %}
                 <option value={{  sport.id  }}>{{  sport.sport_name  }} - {{  sport.category  }}</option>
                 {% endfor %}
