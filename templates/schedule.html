@@ -6,20 +6,16 @@
 
     <main role="main">
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Hello, I'm The Schedule Page!</h1>
-          <p>Sadly, I'm not released yet. Stay tuned to see me shining!</p>
-          <p><a class="btn btn-primary btn-lg" href="/#about" role="button">Explore &raquo;</a></p>
-        </div>
+        <!-- <object data="{{ url_for('static', filename='Schedule.pdf') }}" type="application/pdf">
+          <p>Alternative text - include a link <a href="myfile.pdf">to the PDF!</a></p>
+        </object> -->
+
+        <embed src= "{{ url_for('static', filename='Schedule.pdf') }}" width= "100%" height= "800px">
       </div>
 
       <div class="container">
-       <center>
-       <blockquote class="twitter-tweet"><p lang="en" dir="ltr">India is proud of our scientists! They’ve given their best and have always made India proud. These are moments to be courageous, and courageous we will be! <br><br>Chairman <a href="https://twitter.com/isro?ref_src=twsrc%5Etfw">@isro</a> gave updates on Chandrayaan-2. We remain hopeful and will continue working hard on our space programme.</p>&mdash; Narendra Modi (@narendramodi) <a href="https://twitter.com/narendramodi/status/1170080152895643648?ref_src=twsrc%5Etfw">September 6, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-       </center>
-       <br>
+       
 
       </div> <!-- /container -->
 

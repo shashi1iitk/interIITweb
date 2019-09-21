@@ -25,7 +25,7 @@ app.config.update(
     MAIL_USE_SSL=True,
     # MAIL_USERNAME=params['gmail-user'],
     # MAIL_PASSWORD=params['gmail-password'],
-    UPLOAD_FOLDER=os.path.join(os.getcwd(), "static", "profile_images/1")
+    UPLOAD_FOLDER=os.path.join(os.getcwd(), "static", "profile_images")
 )
 
 mail = Mail(app)
@@ -39,9 +39,9 @@ login_manager.login_message = u"Please log in to access this page\nइस पृ
 # if (local_server):
 #     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
 # else:
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:1234@#interiit@localhost/interiit2019"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:1234@#interiit@localhost/interiit2019"
 
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -177,7 +177,6 @@ def home():
 def load_user(user_id):
     return Admins.query.get(user_id)
 
-
 @app.route("/register", methods=['GET', 'POST'])
 @login_required
 def register():
@@ -263,7 +262,6 @@ def register():
     sports = Sports.query.all()
     college = College.query.all()
     return render_template('register.html', allSports=sports, college=college)
-
 
 @login_manager.unauthorized_handler
 def unauthorized():
@@ -479,10 +477,11 @@ def setMatchDetails(id):
 
 
 
+# app.run(host='0.0.0.0', port=5000, debug=True)
 
-# application = app
+application = app
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
-app.run(debug=True)
+# app.run(debug=True)
