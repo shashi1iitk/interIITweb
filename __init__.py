@@ -69,6 +69,7 @@ class Players(db.Model):
     game_gold = db.Column(db.Integer, nullable=False)
     game_silver = db.Column(db.Integer, nullable=False)
     game_bronze = db.Column(db.Integer, nullable=False)
+    feeded = db.Column(db.Integer, nullable=False)
 
 
 class Match(db.Model):
@@ -224,14 +225,14 @@ def register():
             try:
                 db.session.commit()
 
-                qrname = name + " - " + email + '.svg'
+                qrname = name + " - " + email + '.png'
                 s = email + "^" + roll_no
                 # Generate QR code
                 url = pyqrcode.create(s)
 
                 # url.svg("myqr.svg", scale=8)
                 x = os.path.join(os.getcwd(), "static", "profile_images/" + current_user.college_id)
-                url.svg(os.path.join(x, qrname), scale=8)
+                url.png(os.path.join(x, qrname))
             except:
                 return "Fail"
             print("staff")
@@ -247,14 +248,14 @@ def register():
                 entry = Participation(player_id=cnt, sports_id=p, college_id=int(college))
                 db.session.add(entry)
 
-                qrname = name + " - " + email + '.svg'
+                qrname = name + " - " + email + '.png'
                 s = email + "^" + roll_no
                 # Generate QR code
                 url = pyqrcode.create(s)
 
                 # url.svg("myqr.svg", scale=8)
                 x = os.path.join(os.getcwd(), "static", "profile_images/" + current_user.college_id)
-                url.svg(os.path.join(x, qrname), scale=8)
+                url.png(os.path.join(x, qrname), scale=46, module_color=[0, 0, 0, 128], background=[0xff, 0xff, 0xcc])
             try:
                 db.session.commit()
             except:
@@ -314,6 +315,23 @@ def login():
             return "Success"
     else:
         return render_template('login.html')
+
+@app.route("/qrscanner", methods=['GET', 'POST'])
+def qrscanner():
+    if (request.method == 'POST'):
+        qrcont = request.form['content']
+        email,roll = qrcont.split("^")
+        user = Players.query.filter_by(email=email).first()
+        print(email)
+        print(roll)
+        if(user.feeded == 0):
+            user.feeded = 1
+            db.session.commit()
+            return "Success"
+        else:
+            return "Fail"
+    else:
+    	return render_template('qrscanner.html')
 
 
 @app.route("/scorecard", methods=['GET', 'POST'])

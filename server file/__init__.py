@@ -69,6 +69,7 @@ class Players(db.Model):
     game_gold = db.Column(db.Integer, nullable=False)
     game_silver = db.Column(db.Integer, nullable=False)
     game_bronze = db.Column(db.Integer, nullable=False)
+    feeded = db.Column(db.Integer, nullable=False)
 
 
 class Match(db.Model):
@@ -215,7 +216,7 @@ def register():
         entry = Players(id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name,
                         selected_sports=selected_sports, special_inst=special_inst, food=food, gender=gender,
                         blood_group=blood_group, college_id=college, roll_no=roll_no, reg_status=0, game_gold=0,
-                        game_silver=0, game_bronze=0, profile_image_url=filename)
+                        game_silver=0, game_bronze=0, profile_image_url=filename, feeded=0)
         db.session.add(entry)
         if(selected_sports == "staff"):
             entry = Staffs(player_id=cnt, college_id=int(college))
@@ -357,6 +358,23 @@ def scorecard():
 def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
+
+@app.route("/qrscanner", methods=['GET', 'POST'])
+def qrscanner():
+    if (request.method == 'POST'):
+        qrcont = request.form['content']
+        email,roll = qrcont.split("^")
+        user = Players.query.filter_by(email=email).first()
+        print(email)
+        print(roll)
+        if(user.feeded == 0):
+            user.feeded = 1
+            db.session.commit()
+            return "Success"
+        else:
+            return "Fail"
+    else:
+        return render_template('qrscanner.html')
 
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
