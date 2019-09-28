@@ -4,9 +4,10 @@
 
 
 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-    <video id="preview"></video>
-
+    <center>
+        <video id="preview"></video>
+    </center>
+    <h2>Qr Scanner</h2>
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
@@ -22,8 +23,8 @@
       })
       .done(function(data){
         console.log(data);
-        if(data === "Fail") swal("Failed!", "Already Taken Food!", "error");
-        if(data === "Success") swal("Success!", "Give Food!", "success");
+        if(data === "Fail") swal("Failed!", "Permission Denied!", "error");
+        if(data === "Success") swal("Success!", "Permission Granted!", "success");
       });
 
       });
@@ -41,4 +42,3 @@
     <br><br>
 
 {% endblock %}
-

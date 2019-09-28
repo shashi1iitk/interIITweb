@@ -99,12 +99,18 @@
           <li><a href="/live">Live Stream</a></li>
           <li><a href="/gallery">Gallery</a></li>
           <!-- <li><a href="/info">Info</a></li> -->
+
           {% if current_user.is_authenticated %}
-            <li><a href="/showCandidates">My Contingent</a></li>
-            <li><a href="/logout">Logout</a></li>
+              {% if current_user.privilege == 1 %}
+                <li><a href="/showCandidates">My Contingent</a></li>
+              {% elif current_user.privilege == 2 %}
+                <li><a href="/qrscanner">Qr Scanner</a></li>
+              {% endif %}
+                <li><a href="/logout">Logout</a></li>
           {% else %}
           <li><a href="/login">Login</a></li>
           {% endif %}
+          
         </ul>
       </nav><!-- .main-nav -->
 

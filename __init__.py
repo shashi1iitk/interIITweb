@@ -316,15 +316,22 @@ def login():
     else:
         return render_template('login.html')
 
+@app.route("/loginSuccess")
+@login_required
+def loginSuccess():
+	return render_template('loginSuccess.html')
+
+
 @app.route("/qrscanner", methods=['GET', 'POST'])
+@login_required
 def qrscanner():
     if (request.method == 'POST'):
         qrcont = request.form['content']
         email,roll = qrcont.split("^")
         user = Players.query.filter_by(email=email).first()
-        print(email)
-        print(roll)
-        if(user.feeded == 0):
+        if(user is None):
+            return "Fail"
+        elif(user.feeded == 0):
             user.feeded = 1
             db.session.commit()
             return "Success"
