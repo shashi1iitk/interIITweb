@@ -90,6 +90,27 @@ class Match(db.Model):
     lineup1 = db.Column(db.String(1000), nullable=False)
 
 
+class Match_Individual(db.Model):
+    __tablename__ = 'schedule_result_individual'
+    id = db.Column(db.Integer, primary_key=True)
+    sport_id = db.Column(db.Integer, nullable=False)
+    clgs_playing = db.Column(db.String(400), nullable=False)
+    players = db.Column(db.String(1000), nullable=False)
+    date_time = db.Column(db.String(1000), nullable=False)
+    venue = db.Column(db.String(400), nullable=False)
+    level = db.Column(db.String(400), nullable=False)
+    clg_1st = db.Column(db.Integer)
+    clg_2nd = db.Column(db.Integer)
+    clg_3rd = db.Column(db.Integer)
+    clg_4th = db.Column(db.Integer)
+    clg_1st_player_id = db.Column(db.Integer)
+    clg_2nd_player_id = db.Column(db.Integer)
+    clg_3rd_player_id = db.Column(db.Integer)
+    clg_4th_player_id = db.Column(db.Integer)
+    status = db.Column(db.String(1000))
+    comments = db.Column(db.String(1000))
+
+
 class Sports(db.Model):
     __tablename__ = 'sports'
     id = db.Column(db.Integer, primary_key=True)
@@ -161,6 +182,7 @@ class Participation(db.Model):
     sports_id = db.Column(db.Integer, nullable=False)
     college_id = db.Column(db.Integer, nullable=False)
 
+
 class Staffs(db.Model):
     __tablename__ = 'staffs'
     id = db.Column(db.Integer, primary_key=True)
@@ -178,6 +200,7 @@ def home():
 def load_user(user_id):
     return Admins.query.get(user_id)
 
+
 @app.route("/register", methods=['GET', 'POST'])
 @login_required
 def register():
@@ -192,7 +215,7 @@ def register():
         food = request.form['food']
         gender = request.form['gender']
         blood_group = request.form['blood_group']
-        college = current_user.college_id #request.form['college']
+        college = current_user.college_id  # request.form['college']
         selected_sports = request.form['selected_sports']
         # password = request.form['password']
         # hash = oracle10.hash(password, user="player")
@@ -216,22 +239,22 @@ def register():
         entry = Players(id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name,
                         selected_sports=selected_sports, special_inst=special_inst, food=food, gender=gender,
                         blood_group=blood_group, college_id=college, roll_no=roll_no, reg_status=0, game_gold=0,
-                        game_silver=0, game_bronze=0, profile_image_url=filename, feeded=0)
+                        game_silver=0, game_bronze=0, profile_image_url=filename)
         db.session.add(entry)
-        if(selected_sports == "staff"):
+        if (selected_sports == "staff"):
             entry = Staffs(player_id=cnt, college_id=int(college))
             db.session.add(entry)
             try:
                 db.session.commit()
 
-                qrname = name + " - " + email + '.svg'
+                qrname = name + " - " + email + '.png'
                 s = email + "^" + roll_no
                 # Generate QR code
                 url = pyqrcode.create(s)
 
                 # url.svg("myqr.svg", scale=8)
                 x = os.path.join(os.getcwd(), "static", "profile_images/" + current_user.college_id)
-                url.svg(os.path.join(x, qrname), scale=8)
+                url.png(os.path.join(x, qrname))
             except:
                 return "Fail"
             print("staff")
@@ -247,14 +270,14 @@ def register():
                 entry = Participation(player_id=cnt, sports_id=p, college_id=int(college))
                 db.session.add(entry)
 
-                qrname = name + " - " + email + '.svg'
+                qrname = name + " - " + email + '.png'
                 s = email + "^" + roll_no
                 # Generate QR code
                 url = pyqrcode.create(s)
 
                 # url.svg("myqr.svg", scale=8)
                 x = os.path.join(os.getcwd(), "static", "profile_images/" + current_user.college_id)
-                url.svg(os.path.join(x, qrname), scale=8)
+                url.png(os.path.join(x, qrname), scale=46, module_color=[0, 0, 0, 128], background=[0xff, 0xff, 0xcc])
             try:
                 db.session.commit()
             except:
@@ -263,6 +286,7 @@ def register():
     sports = Sports.query.all()
     college = College.query.all()
     return render_template('register.html', allSports=sports, college=college)
+
 
 @login_manager.unauthorized_handler
 def unauthorized():
@@ -276,11 +300,11 @@ def showCandidates():
     students = Players.query.filter_by(college_id=current_user.college_id).all()
     # print(students)
     games = []
-    staff =[]
+    staff = []
     for stud in students:
         gmlst = []
 
-        if(stud.selected_sports == "staff"):
+        if (stud.selected_sports == "staff"):
             staff.append(stud)
             continue
         for no in (stud.selected_sports).split(','):
@@ -290,7 +314,7 @@ def showCandidates():
     param = [(stud, gm) for stud, gm in zip(students, games)]
     # print(param)
     # print(staff)
-    return render_template('showCandidates.html', params=param, staffs= staff)
+    return render_template('showCandidates.html', params=param, staffs=staff)
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -314,10 +338,47 @@ def login():
     else:
         return render_template('login.html')
 
+
 @app.route("/loginSuccess")
 @login_required
 def loginSuccess():
     return render_template('loginSuccess.html')
+
+
+@app.route("/qrscanner", methods=['GET', 'POST'])
+@login_required
+def qrscanner():
+    if (request.method == 'POST'):
+        qrcont = request.form['content']
+        email, roll = qrcont.split("^")
+        user = Players.query.filter_by(email=email).first()
+        if (user is None):
+            return "Fail"
+        elif (user.feeded == 0):
+            user.feeded = 1
+            db.session.commit()
+            return "Success"
+        else:
+            return "Fail"
+    else:
+        return render_template('qrscanner.html')
+
+
+@app.route("/qrstats", methods=['GET', 'POST'])
+@login_required
+def qrstats():
+    if(request.method == 'POST'):
+        print("Ok")
+        al = Players.query.update({Players.feeded :0})
+        db.session.commit()
+        return redirect(url_for("qrstats"))
+    else:
+        permitted =  Players.query.filter(Players.feeded == 1).count()
+        total = Players.query.count()
+        print(permitted)
+        print(total)
+        stat = {"permitted": permitted, "total": total}
+        return render_template('qrstats.html', stats =stat)
 
 
 @app.route("/scorecard", methods=['GET', 'POST'])
@@ -358,28 +419,12 @@ def scorecard():
         # return render_template('scorecard.html', params=params, sports_list=sports_list, college_list=college_list)
         return render_template('scorecard.html', sports_list=sports_list, college_list=college_list)
 
+
 @app.route("/schedule")
 def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
-@app.route("/qrscanner", methods=['GET', 'POST'])
-@login_required
-def qrscanner():
-    if (request.method == 'POST'):
-        qrcont = request.form['content']
-        email,roll = qrcont.split("^")
-        user = Players.query.filter_by(email=email).first()
-        if(user is None):
-            return "Fail"
-        elif(user.feeded == 0):
-            user.feeded = 1
-            db.session.commit()
-            return "Success"
-        else:
-            return "Fail"
-    else:
-    	return render_template('qrscanner.html')
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
 @login_required
@@ -431,14 +476,12 @@ def allowed_file(filename):
 @app.route('/see')
 def see():
     stds = Players.query.all()
-    print(stds[0].name)
-    return stds[0].name
+    print(stds[-1].name)
+    return stds[-1].name
 
 
 @app.route('/getLiveMatches_Ajax', methods=['GET', 'POST'])
 def getLiveMatches_Ajax():
-    # live_ids = request.form('live_id')
-    # print(live_ids)
     time_now = datetime.now()
 
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
@@ -447,55 +490,96 @@ def getLiveMatches_Ajax():
         dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "id": match.id}
         list_live.append(dict1)
     live = {"live": list_live}
-
-    # return render_template('livescore.html', params=params, live=live, prev = prev)
-    print(type(list_live))
-    print(type(live))
-
-    # return jsonify(json.dumps(live))
     return json.dumps(live)
-    # return list_live
 
 
 @app.route('/getLiveMatches', methods=['GET', 'POST'])
 def getLiveMatches():
     time_now = datetime.now()
 
-    prev_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id != 0).all()
+    prev_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id != 0).order_by(
+        Match.date_time.desc()).all()
     list_prev = []
     for match in prev_matches:
-        dict0 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg_id1": match.clg_id1,
-                 "clg_id2": match.clg_id2, "sports_id": match.sports_id, "venue": match.venue, "level": match.level,
-                 "id": match.id, "winner_clg_id": match.winner_clg_id, "status": match.status}
+        winner_college = College.query.filter(College.id == match.winner_clg_id).first().clg_name
+        clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
+        clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
+        sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sports_id).first().category
+        sport = sport+" - "+category
+        dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1, "clg2": clg2,
+                 "sport": sport, "level": match.level}
         list_prev.append(dict0)
-    prev = {"prev": list_prev}
-    # print(prev)
+
+    prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
+        Match_Individual.clg_1st_player_id != 0).order_by(
+        Match_Individual.date_time.desc()).all()
+    list_prev_individual = []
+    for match in prev_matches_individual:
+        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sport_id).first().category
+        sport = sport+" - "+category
+        player1 = Players.query.filter(Players.id == match.clg_1st_player_id).first()
+        player1 = {"name": player1.name,
+                   "college": College.query.filter(College.id == player1.college_id).first().clg_name}
+        player2 = Players.query.filter(Players.id == match.clg_2nd_player_id).first()
+        player2 = {"name": player2.name,
+                   "college": College.query.filter(College.id == player2.college_id).first().clg_name}
+        player3 = Players.query.filter(Players.id == match.clg_3rd_player_id).first()
+        player3 = {"name": player3.name,
+                   "college": College.query.filter(College.id == player3.college_id).first().clg_name}
+        player4 = Players.query.filter(Players.id == match.clg_4th_player_id).first()
+        player4 = {"name": player4.name,
+                   "college": College.query.filter(College.id == player4.college_id).first().clg_name}
+        dict0 = {"player1": player1, "player2": player2, "player3": player3, "player4": player4, "sport": sport,
+                 "level": match.level}
+        list_prev_individual.append(dict0)
 
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
     list_live = []
     for match in live_matches:
-        dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg_id1": match.clg_id1,
-                 "clg_id2": match.clg_id2, "sports_id": match.sports_id, "venue": match.venue, "level": match.level,
-                 "id": match.id, "date_time": match.date_time}
+        clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
+        clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
+        sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sports_id).first().category
+        sport = sport+" - "+category
+        dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg1": clg1,
+                 "clg2": clg2, "sport": sport, "venue": match.venue, "level": match.level, "id": match.id}
         list_live.append(dict1)
-    live = {"live": list_live}
-    # print(live)
 
-    # return render_template('livescore.html', params=params, live=list_live, prev=prev)
-    return render_template('livescore.html', live=list_live, prev=prev)
-    # return json.dumps(dict)
+    colleges = College.query.all()
+    return render_template('livescore.html', live=list_live, prev=list_prev, prev2=list_prev_individual,
+                           colleges=colleges)
 
 
-@app.route('/setMatchDetails/<id>', methods=['GET', 'POST'])
-def setMatchDetails(id):
+@app.route('/endMatchDetails', methods=['GET', 'POST'])
+@login_required
+def endMatchDetails():
     if (request.method == 'POST'):
-        match = Match.query.filter(Match.id == id).first()
+        match = Match.query.filter(Match.id == int(request.form.get('id'))).first()
         match.winner_clg_id = int(request.form.get('winner_clg_id'))
         cldisd = [match.clg_id2, match.clg_id1]
-        cldisd.remove(int(request.form.get('winner_clg_id')))
+        try:
+            cldisd.remove(int(request.form.get('winner_clg_id')))
+        except:
+            flash("Selected wrong College")
+            return redirect(url_for("getLiveMatches"))
         match.runner_clg_id = int(cldisd[0])
         match.status = request.form.get('status')
-    return "set"
+        db.session.commit()
+    return redirect(url_for("getLiveMatches"))
+
+
+@app.route('/setMatchDetails', methods=['GET', 'POST'])
+@login_required
+def setMatchDetails():
+    if (request.method == 'POST'):
+        match = Match.query.filter(Match.id == int(request.form.get('id'))).first()
+        match.score1 = request.form.get('score1')
+        match.score2 = request.form.get('score2')
+        match.commentry = request.form.get('commentary')
+        db.session.commit()
+    return redirect(url_for("getLiveMatches"))
 
 
 

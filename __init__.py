@@ -363,6 +363,24 @@ def qrscanner():
         return render_template('qrscanner.html')
 
 
+@app.route("/qrstats", methods=['GET', 'POST'])
+@login_required
+def qrstats():
+	if(request.method == 'POST'):
+		print("Ok")
+		al = Players.query.update({Players.feeded :0})
+		db.session.commit()
+		return redirect(url_for("qrstats"))
+	else:
+		permitted =  Players.query.filter(Players.feeded == 1).count()
+		total = Players.query.count()
+		print(permitted)
+		print(total)
+		stat = {"permitted": permitted, "total": total}
+		return render_template('qrstats.html', stats =stat)
+
+
+
 @app.route("/scorecard", methods=['GET', 'POST'])
 def scorecard():
     if request.method == 'POST':
@@ -458,8 +476,8 @@ def allowed_file(filename):
 @app.route('/see')
 def see():
     stds = Players.query.all()
-    print(stds[0].name)
-    return stds[0].name
+    print(stds[-1].name)
+    return stds[-1].name
 
 
 @app.route('/getLiveMatches_Ajax', methods=['GET', 'POST'])
@@ -487,6 +505,8 @@ def getLiveMatches():
         clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
         clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
         sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sports_id).first().category
+        sport = sport+" - "+category
         dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1, "clg2": clg2,
                  "sport": sport, "level": match.level}
         list_prev.append(dict0)
@@ -497,6 +517,8 @@ def getLiveMatches():
     list_prev_individual = []
     for match in prev_matches_individual:
         sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sport_id).first().category
+        sport = sport+" - "+category
         player1 = Players.query.filter(Players.id == match.clg_1st_player_id).first()
         player1 = {"name": player1.name,
                    "college": College.query.filter(College.id == player1.college_id).first().clg_name}
@@ -519,6 +541,8 @@ def getLiveMatches():
         clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
         clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
         sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sports_id).first().category
+        sport = sport+" - "+category
         dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg1": clg1,
                  "clg2": clg2, "sport": sport, "venue": match.venue, "level": match.level, "id": match.id}
         list_live.append(dict1)

@@ -64,13 +64,23 @@
 
   <!-- Bootstrap Select Main JavaScript -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
 
 
 
    <!-- Alert cdns -->
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128422073-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128422073-2');
+</script>
 
 </head>
 
@@ -104,6 +114,7 @@
               {% if current_user.privilege == 1 %}
                 <li><a href="/showCandidates">My Contingent</a></li>
               {% elif current_user.privilege == 2 %}
+                <li><a href="/qrstats">Qr Stats</a></li>
                 <li><a href="/qrscanner">Qr Scanner</a></li>
               {% endif %}
                 <li><a href="/logout">Logout</a></li>

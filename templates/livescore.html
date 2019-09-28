@@ -81,7 +81,7 @@ $(document).ready(function() {
       <strong><center><h2  style="margin-top:5%;">Live scoring of matches will be auto updated on this page. Also, previous matches data will be shown here.</h2></center></strong>
       <hr>
 
-      <center><h2>Live Matches</h2></center>
+      <center><h2>Live Matches[Team]</h2></center>
         <div class="row">
             {% for pmatch in live %}
           <div class="col-md-3">
@@ -92,10 +92,10 @@ $(document).ready(function() {
               <div class="card-body">
                   <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
                 <p class="card-text">
-                    <strong> Venue </strong> {{pmatch.venue}} <br>
-                    <strong> Score1 </strong> <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7> <br>
-                    <strong> Score2 </strong> <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7> <br>
-                  <strong> Commentry </strong> <h7 id="commentry_{{ pmatch.id }}">{{pmatch.commentry}}</h7>
+                    <strong> Venue: </strong> {{pmatch.venue}} <br>
+                    <strong> Score-1: </strong> <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7> <br>
+                    <strong> Score-2: </strong> <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7> <br>
+                    <strong> Comments: </strong> <h7 id="commentry_{{ pmatch.id }}">{{pmatch.commentry}}</h7>
                 </p>
                   {% if current_user.is_authenticated  and current_user.privilege == 3 %}
                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Update</a>
@@ -106,15 +106,15 @@ $(document).ready(function() {
                           <form action="/setMatchDetails" method="POST">
                               <input type="hidden" value="{{pmatch.id}}" name="id">
                               <div class="form-group">
-                                <label for="score1">Score1</label>
+                                <label for="score1">Score-1</label>
                                 <input type="text" class="form-control" id="score1" placeholder="Score 1" name="score1">
                               </div>
                               <div class="form-group">
-                                <label for="score2">Score2</label>
+                                <label for="score2">Score-2</label>
                                 <input type="text" class="form-control" id="score2" placeholder="Score 2" name="score2">
                               </div>
                                <div class="form-group">
-                                <label for="commentary">Commentary</label>
+                                <label for="commentary">Comment</label>
                                 <input type="text" class="form-control" id="commentary" placeholder="Commentary" name="commentary">
                               </div>
                               <button type="submit" class="btn btn-primary" id="update">Submit</button>
@@ -170,9 +170,9 @@ $(document).ready(function() {
               <div class="card-body">
                   <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
                 <p class="card-text">
-                    <strong> Winner </strong> {{pmatch.winner}} <br>
-                    <strong> Score1 </strong> {{pmatch.score1}} <br>
-                    <strong> Score2 </strong> {{pmatch.score2}}
+                    <strong> Winner: </strong> {{pmatch.winner}} <br>
+                    <strong> Score-1: </strong> {{pmatch.score1}} <br>
+                    <strong> Score-2: </strong> {{pmatch.score2}}
                 </p>
               </div>
                 <div class="card-footer text-muted">
@@ -196,10 +196,10 @@ $(document).ready(function() {
                   </div>
               <div class="card-body">
                 <p class="card-text">
-                    <strong> {{pmatch.player1.name}} </strong> {{pmatch.player1.college}} <br>
-                    <strong> {{pmatch.player2.name}} </strong> {{pmatch.player2.college}} <br>
-                    <strong> {{pmatch.player3.name}} </strong> {{pmatch.player3.college}} <br>
-                    <strong> {{pmatch.player4.name}} </strong> {{pmatch.player4.college}} <br>
+                    <strong> {{pmatch.player1.name}} </strong>- {{pmatch.player1.college}} <br>
+                    <strong> {{pmatch.player2.name}} </strong>- {{pmatch.player2.college}} <br>
+                    <strong> {{pmatch.player3.name}} </strong>- {{pmatch.player3.college}} <br>
+                    <strong> {{pmatch.player4.name}} </strong>- {{pmatch.player4.college}} <br>
                 </p>
               </div>
                 <div class="card-footer text-muted">
