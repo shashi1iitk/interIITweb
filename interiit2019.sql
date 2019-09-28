@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Sep 27, 2019 at 11:51 AM
--- Server version: 5.7.27-0ubuntu0.18.04.1
--- PHP Version: 7.2.19-0ubuntu0.18.04.2
+-- Host: 127.0.0.1
+-- Generation Time: Sep 28, 2019 at 08:51 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -63,7 +65,8 @@ INSERT INTO `admins` (`id`, `username`, `password`, `role`, `privilege`, `colleg
 (20, 'IIT@Patna ', '7#NJ2nV62_Lr_TuY', 'IIT Patna Admin', 1, '20', ''),
 (21, 'IIT@Roorkee', 'D&Xg_5B+GLQ9k2!s', 'IIT Roorkee Admin', 1, '21', ''),
 (22, 'IIT@Ropar', 'SzBJh3y-ZC68?rAt', 'IIT Ropar Admin', 1, '22', ''),
-(23, 'IIT@Tirupati', '=mUfm$c8Ye2?pwf7', 'IIT Tirupati Admin', 1, '23', '');
+(23, 'IIT@Tirupati', '=mUfm$c8Ye2?pwf7', 'IIT Tirupati Admin', 1, '23', ''),
+(24, 'IITKGPSCORE', '1234', 'Score Updater', 3, '16', '');
 
 -- --------------------------------------------------------
 
@@ -1048,20 +1051,28 @@ CREATE TABLE `schedule_result_individual` (
   `sport_id` int(11) NOT NULL,
   `clgs_playing` varchar(400) NOT NULL,
   `players` varchar(1000) NOT NULL,
-  `date_time` varchar(1000) NOT NULL,
+  `date_time` datetime NOT NULL,
   `venue` varchar(400) NOT NULL,
   `level` varchar(400) NOT NULL,
-  `clg_1st` varchar(100) NOT NULL,
-  `clg_2nd` varchar(100) NOT NULL,
-  `clg_3rd` varchar(100) NOT NULL,
-  `clg_4th` varchar(100) NOT NULL,
-  `clg_1st_player_id` varchar(100) NOT NULL,
-  `clg_2nd_player_id` varchar(100) NOT NULL,
-  `clg_3rd_player_id` varchar(100) NOT NULL,
-  `clg_4th_player_id` varchar(100) NOT NULL,
+  `clg_1st` int(5) NOT NULL DEFAULT 0,
+  `clg_2nd` int(5) NOT NULL DEFAULT 0,
+  `clg_3rd` int(5) NOT NULL DEFAULT 0,
+  `clg_4th` int(5) NOT NULL DEFAULT 0,
+  `clg_1st_player_id` int(5) NOT NULL DEFAULT 0,
+  `clg_2nd_player_id` int(5) NOT NULL DEFAULT 0,
+  `clg_3rd_player_id` int(5) NOT NULL DEFAULT 0,
+  `clg_4th_player_id` int(5) NOT NULL DEFAULT 0,
   `status` varchar(1000) NOT NULL,
   `comments` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `schedule_result_individual`
+--
+
+INSERT INTO `schedule_result_individual` (`id`, `sport_id`, `clgs_playing`, `players`, `date_time`, `venue`, `level`, `clg_1st`, `clg_2nd`, `clg_3rd`, `clg_4th`, `clg_1st_player_id`, `clg_2nd_player_id`, `clg_3rd_player_id`, `clg_4th_player_id`, `status`, `comments`) VALUES
+(1, 1, '1,2,4,5', '1,2,3', '2019-09-28 18:58:36', 'gymkhana', 'final', 1, 4, 2, 5, 2, 5, 3, 6, '', ''),
+(2, 4, '1,4,2,5', '1,3,5,7', '2019-10-01 06:41:14', 'Tata Steel', '3rd place', 1, 2, 4, 5, 1, 3, 5, 7, 'yes', 'alpha');
 
 -- --------------------------------------------------------
 
@@ -1079,12 +1090,21 @@ CREATE TABLE `schedule_result_team` (
   `level` varchar(400) NOT NULL,
   `score1` varchar(100) DEFAULT NULL,
   `score2` varchar(100) DEFAULT NULL,
-  `winner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT '00',
-  `runner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT '00',
+  `winner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT 00,
+  `runner_clg_id` int(2) UNSIGNED ZEROFILL DEFAULT 00,
   `status` varchar(2000) DEFAULT NULL,
   `commentry` varchar(10000) DEFAULT NULL,
   `lineup1` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `schedule_result_team`
+--
+
+INSERT INTO `schedule_result_team` (`id`, `sports_id`, `clg_id1`, `clg_id2`, `date_time`, `venue`, `level`, `score1`, `score2`, `winner_clg_id`, `runner_clg_id`, `status`, `commentry`, `lineup1`) VALUES
+(1, 1, 2, 3, '2019-09-25 10:00:26', 'gymkhana', 'final', 'sds', 'dscds', 03, 02, 'no', 'no', 'no'),
+(2, 4, 3, 5, '2019-09-28 08:31:14', 'Tata steel', '3rd Place', ' mda c,sd', 'nsc mdnsv ', 03, 05, ',,m', 'nmcsbmdsncds', NULL),
+(3, 5, 3, 10, '2019-09-27 08:31:14', 'kothao', 'semi final', 'amdn', 'anmcbmsd', 00, 00, NULL, 'nmamdndscd', NULL);
 
 -- --------------------------------------------------------
 
@@ -1129,101 +1149,6 @@ INSERT INTO `sports` (`id`, `sports_name`, `category`, `max_player`, `type`) VAL
 (22, 'Swimming 4x50m Freestyle relay', 'W', 4, 't'),
 (23, 'Swimming 4x50m Medley Relay', 'W', 4, 't'),
 (24, 'Water Polo', 'M', 13, 't');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `staffs`
---
-
-CREATE TABLE `staffs` (
-  `id` int(11) NOT NULL,
-  `player_id` int(11) NOT NULL,
-  `college_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `staffs`
---
-
-INSERT INTO `staffs` (`id`, `player_id`, `college_id`) VALUES
-(11, 1, 1),
-(12, 8, 8),
-(13, 13, 9),
-(15, 44, 6),
-(16, 45, 6),
-(17, 63, 15),
-(18, 64, 15),
-(19, 65, 15),
-(20, 68, 5),
-(21, 69, 5),
-(22, 70, 11),
-(23, 83, 21),
-(27, 128, 4),
-(28, 129, 4),
-(29, 131, 21),
-(30, 136, 10),
-(31, 137, 10),
-(36, 182, 17),
-(37, 183, 17),
-(38, 184, 17),
-(40, 189, 16),
-(45, 190, 16),
-(46, 191, 16),
-(47, 192, 16),
-(48, 193, 16),
-(49, 194, 16),
-(50, 195, 16),
-(51, 196, 16),
-(52, 197, 16),
-(53, 198, 16),
-(54, 199, 16),
-(55, 200, 16),
-(56, 201, 16),
-(57, 202, 16),
-(58, 203, 16),
-(59, 204, 16),
-(60, 205, 16),
-(62, 206, 16),
-(63, 207, 16),
-(64, 208, 16),
-(65, 209, 16),
-(69, 213, 16),
-(70, 214, 16),
-(87, 226, 16),
-(94, 231, 16),
-(96, 233, 16),
-(101, 236, 16),
-(106, 240, 16),
-(109, 243, 16),
-(110, 244, 16),
-(111, 245, 16),
-(112, 246, 16),
-(114, 247, 16),
-(115, 248, 16),
-(116, 249, 16),
-(118, 251, 16),
-(120, 252, 16),
-(121, 253, 16),
-(122, 254, 16),
-(123, 255, 16),
-(124, 256, 16),
-(125, 257, 16),
-(129, 258, 16),
-(130, 259, 16),
-(131, 260, 16),
-(140, 265, 16),
-(141, 266, 16),
-(142, 267, 16),
-(143, 268, 16),
-(144, 269, 16),
-(145, 270, 16),
-(146, 271, 16),
-(147, 272, 16),
-(148, 273, 16),
-(149, 274, 16),
-(150, 275, 16),
-(151, 276, 16);
 
 --
 -- Indexes for dumped tables
@@ -1286,12 +1211,6 @@ ALTER TABLE `sports`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `staffs`
---
-ALTER TABLE `staffs`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1299,47 +1218,51 @@ ALTER TABLE `staffs`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `participation`
 --
 ALTER TABLE `participation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=669;
+
 --
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=277;
+
 --
 -- AUTO_INCREMENT for table `point_main`
 --
 ALTER TABLE `point_main`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
 --
 -- AUTO_INCREMENT for table `point_master`
 --
 ALTER TABLE `point_master`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `schedule_result_individual`
 --
 ALTER TABLE `schedule_result_individual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
---
--- AUTO_INCREMENT for table `staffs`
---
-ALTER TABLE `staffs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
