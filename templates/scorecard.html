@@ -41,14 +41,22 @@ $(document).ready(function() {
         url : '/scorecard'
       })
       .done(function(data) {
-        console.log(data);
         data = JSON.parse(data);
         console.log(data.name);
-        for(clg in colleges){
-            console.log(clg);
-            $("#name_"+clg).text(data.name);
-            $("#point_"+clg).html(data[clg]);
-        }
+        $('#sport_card').text("");
+         jQuery.each(data.data, function(index, val) {
+            console.log(val.logo);
+            var content = '<div class="col-md-2">'+
+                '<div class="card m-3">'+
+                  '<div class="card-body">'+
+                       '<img src="/static/logo/'+val.logo+'" class="card-img-top" >'+
+                      '<h5 class="card-title float-center" style="align:center;"><strong>'+val.name+'</strong></h5>'+
+                      '<h5 class="card-text float-center"><strong>Points</strong>   '+val.point+'</h5>'+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+              $('#sport_card').append(content);
+          });
         });
     });
 });
@@ -84,20 +92,8 @@ $(document).ready(function() {
             </div>
           </div>
         </div>
-          <div class="row">
-              {% for val in points %}
-              <div class="col-md-4">
-                <div class="card m-3 p-3">
-                  <div class="card-body">
-                      <h5 class="card-title"><strong>{{val.name}}{{val.rank}}</strong> {{val.point}} </h5>
-                      <p class="card-text">
-                          <strong id="name_{{val.clg_id}}"></strong>
-                          <h7 id="point_{{val.clg_id}}"></h7>
-                      </p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
+          <div class="row" id="sport_card">
+
             </div>
   <br/>
 

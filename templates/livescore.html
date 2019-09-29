@@ -115,9 +115,10 @@ $(document).ready(function() {
    }, 10000);
 
 });
-  </script>
 
-    <style>
+</script>
+
+<style>
     table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
@@ -126,213 +127,274 @@ $(document).ready(function() {
       padding: 5px;
       text-align: left;
     }
-    </style>
+
+</style>
 
 
 </head>
 
 <body>
 
-    <main role="main">
+<main role="main">
 
-      <!--<p>{{live}}</p>-->
-      <!--<p>{{prev}}</p>-->
-      <!--<button id = "button">Live</button>-->
-      <strong><center><h2  style="margin-top:5%;">Live scoring of matches will be auto updated on this page. Also, previous matches data will be shown here.</h2></center></strong>
-      <hr>
+    <!--<p>{{live}}</p>-->
+    <!--<p>{{prev}}</p>-->
+    <!--<button id = "button">Live</button>-->
+    <strong>
+        <center><h2 style="margin-top:5%;">Live scoring of matches will be auto updated on this page. Also, previous
+            matches data will be shown here.</h2></center>
+    </strong>
+    <hr>
 
-      <center><h2>Live Matches[Team]</h2></center>
-        <div class="row">
-            {% for pmatch in live %}
-          <div class="col-md-3">
-            <div class="card p-3 m-3 text-center">
+    <center><h2>Live Matches[Team]</h2></center>
+    <div class="row">
+        {% for pmatch in live %}
+        <div class="col-md-3">
+            <div class="card m-2 text-center">
                 <div class="card-header">
                     <strong>{{ pmatch.sport }}</strong>
-                  </div>
-              <div class="card-body">
-                  <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
-                <p class="card-text">
-                    <strong> Venue: </strong> {{pmatch.venue}} <br>
-                    <strong> Score-1: </strong> <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7> <br>
-                    <strong> Score-2: </strong> <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7> <br>
-                    <strong> Comments: </strong> <h7 id="commentry_{{ pmatch.id }}">{{pmatch.commentry}}</h7>
-                </p>
-                  {% if current_user.is_authenticated  and current_user.privilege == 3 %}
-                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Update</a>
-                  {% endif %}
-                  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content p-3">
-                          <form action="/setMatchDetails" method="POST">
-                              <input type="hidden" value="{{pmatch.id}}" name="id">
-                              <div class="form-group">
-                                <label for="score1">Score-1</label>
-                                <input type="text" class="form-control" id="score1" placeholder="Score 1" name="score1">
-                              </div>
-                              <div class="form-group">
-                                <label for="score2">Score-2</label>
-                                <input type="text" class="form-control" id="score2" placeholder="Score 2" name="score2">
-                              </div>
-                               <div class="form-group">
-                                <label for="commentary">Comment</label>
-                                <input type="text" class="form-control" id="commentary" placeholder="Commentary" name="commentary">
-                              </div>
-                              <button type="submit" class="btn btn-primary" id="update">Submit</button>
-                            </form>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="/static/logo/{{pmatch.logo1}}"
+                                 class="rounded-circle float-right" alt="Cinque Terre" height="70px">
                         </div>
-                      </div>
+                        <div class="col-md-2">
+                            <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
+                        </div>
+                        <div class="col-md-5">
+                            <img src="/static/logo/{{pmatch.logo2}}"
+                                 class="rounded-circle float-left" alt="Cinque Terre" height="70px">
+                        </div>
+                    </div>
+                    <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
+                    <p class="card-text" style="margin:2px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong> Score </strong>
+                                <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7>
+                            </div>
+                            <div class="col-md-6">
+                                <strong> Score </strong>
+                                <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7>
+                            </div>
+                        </div>
+                        <strong> Venue: </strong> {{pmatch.venue}} <br>
+                        <strong> Comments: </strong>
+                        <h7 id="commentry_{{ pmatch.id }}">{{pmatch.commentry}}</h7>
+                    </p>
+                    {% if current_user.is_authenticated and current_user.privilege == 3 %}
+                    <a href="#" class="btn btn-primary" data-toggle="modal"
+                       data-target=".bd-example-modal-lg">Update</a>
+                    {% endif %}
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content p-3">
+                                <form action="/setMatchDetails" method="POST">
+                                    <input type="hidden" value="{{pmatch.id}}" name="id">
+                                    <div class="form-group">
+                                        <label for="score1">Score-1</label>
+                                        <input type="text" class="form-control" id="score1" placeholder="Score 1"
+                                               name="score1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="score2">Score-2</label>
+                                        <input type="text" class="form-control" id="score2" placeholder="Score 2"
+                                               name="score2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="commentary">Comment</label>
+                                        <input type="text" class="form-control" id="commentary" placeholder="Commentary"
+                                               name="commentary">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="update">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     {% if current_user.is_authenticated and current_user.privilege == 3 %}
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal2-lg">End</a>
                     {% endif %}
-                  <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content p-3">
-                          <form action="/endMatchDetails" method="POST">
-                              <input type="hidden" value="{{pmatch.id}}" name="id">
-                              <div class="form-group">
-                                <label for="status">Status</label>
-                                <input type="text" class="form-control" id="status" placeholder="Status" name="status">
-                              </div>
-                              <div class="form-group">
-                                    <label for="colleges">Winner College</label>
-                                      <select class="form-control" id="colleges" name="winner_clg_id">
-                                          {% for val in colleges %}
+                    <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content p-3">
+                                <form action="/endMatchDetails" method="POST">
+                                    <input type="hidden" value="{{pmatch.id}}" name="id">
+                                    <div class="form-group">
+                                        <label for="status">Status</label>
+                                        <input type="text" class="form-control" id="status" placeholder="Status"
+                                               name="status">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="colleges">Winner College</label>
+                                        <select class="form-control" id="colleges" name="winner_clg_id">
+                                            {% for val in colleges %}
                                             <option value="{{val.id}}">{{val.clg_name}}</option>
-                                          {% endfor %}
-                                      </select>
-                              </div>
-                              <button type="submit" class="btn btn-primary" id="end">Submit</button>
-                            </form>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="end">Submit</button>
+                                </form>
+                            </div>
                         </div>
-                      </div>
                     </div>
-              </div>
+                </div>
                 <div class="card-footer text-muted">
                     <strong>{{ pmatch.level }}</strong>
-                  </div>
+                </div>
             </div>
-          </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
 
-<br><br>
+    <br><br>
 
-       <center><h2>Previous Team Matches </h2></center>
+    <center><h2>Previous Team Matches </h2></center>
 
-        <div class="row">
-            {% for pmatch in prev %}
-          <div class="col-md-3">
-            <div class="card p-3 m-3 text-center">
+    <div class="row">
+        {% for pmatch in prev %}
+        <div class="col-md-3">
+            <div class="card m-2 text-center">
                 <div class="card-header">
                     <strong>{{ pmatch.sport }}</strong>
-                  </div>
-              <div class="card-body">
-                  <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
-                <p class="card-text">
-                    <strong> Winner: </strong> {{pmatch.winner}} <br>
-                    <strong> Score-1: </strong> {{pmatch.score1}} <br>
-                    <strong> Score-2: </strong> {{pmatch.score2}}
-                </p>
-              </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="/static/logo/{{pmatch.logo1}}"
+                                 class="rounded-circle float-right" alt="Cinque Terre" height="70px">
+                        </div>
+                        <div class="col-md-2">
+                            <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
+                        </div>
+                        <div class="col-md-5">
+                            <img src="/static/logo/{{pmatch.logo2}}"
+                                 class="rounded-circle float-left" alt="Cinque Terre" height="70px">
+                        </div>
+                    </div>
+                    <h5 class="card-title" style="margin:0px;"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
+                    <p class="card-text">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong> Score </strong>
+                                <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7>
+                            </div>
+                            <div class="col-md-6">
+                                <strong> Score </strong>
+                                <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7>
+                            </div>
+                        </div>
+                        <strong> Winner: </strong> {{pmatch.winner}}
+                    </p>
+                </div>
                 <div class="card-footer text-muted">
                     <strong>{{ pmatch.level }}</strong>
-                  </div>
+                </div>
             </div>
-          </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
 
-        <br><br>
+    <br><br>
 
-        <center><h2>Previous Individual Matches </h2></center>
+    <center><h2>Previous Individual Matches </h2></center>
 
-        {% if current_user.is_authenticated  and current_user.privilege == 3 %}
-        <div class="m-10" style="margin:10px;">
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Score</a>
-            </div>
-        {% endif %}
+    {% if current_user.is_authenticated and current_user.privilege == 3 %}
+    <div class="m-10" style="margin:10px;">
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Score</a>
+    </div>
+    {% endif %}
 
-                <div class="modal fade bd-example-modal3-lg" tabindex="-1" role="dialog"  aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content p-3">
-                          <form action="" method="POST">
-                                <div class="form-group floating-label-form-group controls">
-                                  <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
-                                    <select class="form-control" id="sport_individual" data-live-search="true" name="sport" validate>
-                                        <option selected >Select Sport</option>
-                                        {% for sport in live_individual %}
-                                        <option value={{  sport.id  }}>{{  sport.sport  }}</option>
-                                        {% endfor %}
-                                    </select><br>
-                                    <a id="update_individual" class="btn btn-primary">Update</a>
-                                    <select class="form-control" id="player1" data-live-search="true"  style="display:none;" validate>
-                                        <option selected >Select Player1</option>
-                                    </select><br>
-                                    <select class="form-control" id="player2" data-live-search="true"  style="display:none;" validate>
-                                        <option selected >Select Player2</option>
-                                    </select><br>
-                                    <select class="form-control" id="player3" data-live-search="true"  style="display:none;" validate>
-                                        <option selected >Select Player3</option>
-                                    </select><br>
-                                    <select class="form-control" id="player4" data-live-search="true" style="display:none;" validate>
-                                        <option selected >Select Player4</option>
-                                    </select><br>
-                                    <input type="text" class="form-control" id="status_individual" placeholder="Status" style="display:none;"><br>
-                                    <input type="text" class="form-control" id="comments_individual" placeholder="Comments" style="display:none;"><br>
-                                    <a id="submit_individual" class="btn btn-primary" style="display:none;">Submit</a>
-                                  </div>
-                            </form>
-                        </div>
-                      </div>
+    <div class="modal fade bd-example-modal3-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content p-3">
+                <form action="" method="POST">
+                    <div class="form-group floating-label-form-group controls">
+                        <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
+                        <select class="form-control" id="sport_individual" data-live-search="true" name="sport"
+                                validate>
+                            <option selected>Select Sport</option>
+                            {% for sport in live_individual %}
+                            <option value={{ sport.id }}>{{ sport.sport }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <a id="update_individual" class="btn btn-primary">Update</a>
+                        <select class="form-control" id="player1" data-live-search="true" style="display:none;"
+                                validate>
+                            <option selected>Select Player1</option>
+                        </select><br>
+                        <select class="form-control" id="player2" data-live-search="true" style="display:none;"
+                                validate>
+                            <option selected>Select Player2</option>
+                        </select><br>
+                        <select class="form-control" id="player3" data-live-search="true" style="display:none;"
+                                validate>
+                            <option selected>Select Player3</option>
+                        </select><br>
+                        <select class="form-control" id="player4" data-live-search="true" style="display:none;"
+                                validate>
+                            <option selected>Select Player4</option>
+                        </select><br>
+                        <input type="text" class="form-control" id="status_individual" placeholder="Status"
+                               style="display:none;"><br>
+                        <input type="text" class="form-control" id="comments_individual" placeholder="Comments"
+                               style="display:none;"><br>
+                        <a id="submit_individual" class="btn btn-primary" style="display:none;">Submit</a>
                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        <div class="row">
-            {% for pmatch in prev2 %}
-          <div class="col-md-3">
-            <div class="card p-3 m-3 text-center">
+    <div class="row">
+        {% for pmatch in prev2 %}
+        <div class="col-md-4">
+            <div class="card m-2 text-center">
                 <div class="card-header">
                     <strong>{{ pmatch.sport }}</strong>
-                  </div>
-              <div class="card-body">
-                <p class="card-text">
-                    <strong> {{pmatch.player1.name}} </strong>- {{pmatch.player1.college}} <br>
-                    <strong> {{pmatch.player2.name}} </strong>- {{pmatch.player2.college}} <br>
-                    <strong> {{pmatch.player3.name}} </strong>- {{pmatch.player3.college}} <br>
-                    <strong> {{pmatch.player4.name}} </strong>- {{pmatch.player4.college}} <br>
-                </p>
-              </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong> {{pmatch.player1.name}} </strong>- {{pmatch.player1.college}} <br>
+                        <strong> {{pmatch.player2.name}} </strong>- {{pmatch.player2.college}} <br>
+                        <strong> {{pmatch.player3.name}} </strong>- {{pmatch.player3.college}} <br>
+                        <strong> {{pmatch.player4.name}} </strong>- {{pmatch.player4.college}} <br>
+                    </p>
+                </div>
                 <div class="card-footer text-muted">
                     <strong>{{ pmatch.level }}</strong>
-                  </div>
+                </div>
             </div>
-          </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
 
-    </main>
-
-
-    <!-- JavaScript Libraries -->
-  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-   <!-- Bootstrap 4 JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+</main>
 
 
-   <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+<!-- JavaScript Libraries -->
+<script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-  <!-- Template Main Javascript File -->
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<!-- Bootstrap 4 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+
+<script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 {% endblock %}
