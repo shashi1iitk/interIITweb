@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2019 at 08:51 PM
+-- Generation Time: Sep 29, 2019 at 06:40 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -86,29 +86,29 @@ CREATE TABLE `college` (
 --
 
 INSERT INTO `college` (`id`, `clg_name`, `clg_nickname`, `logo_url`) VALUES
-(1, 'IIT BHU', 'BHU', 'img/clg/bhu.jpg'),
-(2, 'IIT Bhilai', '', ''),
-(3, 'IIT Bhubaneswar', '', ''),
-(4, 'IIT Bombay', '', ''),
-(5, 'IIT Delhi', '', ''),
-(6, 'IIT Dhanbad', '', ''),
-(7, 'IIT Dharwad', '', ''),
-(8, 'IIT Gandhinagar', '', ''),
-(9, 'IIT Goa', '', ''),
-(10, 'IIT Guwahati', '', ''),
-(11, 'IIT Hyderabad', '', ''),
-(12, 'IIT Indore', '', ''),
-(13, 'IIT Jammu', '', ''),
-(14, 'IIT Jodhpur', '', ''),
-(15, 'IIT Kanpur', '', ''),
-(16, 'IIT Kharagpur', '', ''),
-(17, 'IIT Madras', '', ''),
-(18, 'IIT Mandi', '', ''),
-(19, 'IIT Palakkad ', '', ''),
-(20, 'IIT Patna ', '', ''),
-(21, 'IIT Roorkee', '', ''),
-(22, 'IIT Ropar', '', ''),
-(23, 'IIT Tirupati', '', '');
+(1, 'IIT BHU', 'BHU', 'IIT_BHU.png'),
+(2, 'IIT Bhilai', '', 'IIT_Bhilai.png'),
+(3, 'IIT Bhubaneswar', '', 'IIT_Bhubhaneshwar.jpg'),
+(4, 'IIT Bombay', '', 'IIT_Bombay.png'),
+(5, 'IIT Delhi', '', 'IIT_Delhi.png'),
+(6, 'IIT Dhanbad', '', 'IIT_Dhanbad.png'),
+(7, 'IIT Dharwad', '', 'IIT_Dharwad.png'),
+(8, 'IIT Gandhinagar', '', 'IIT_Ghandhinagar.png'),
+(9, 'IIT Goa', '', 'IIT_Goa.png'),
+(10, 'IIT Guwahati', '', 'IIT_Gawhati.png'),
+(11, 'IIT Hyderabad', '', 'IIT_Hyderabad.png'),
+(12, 'IIT Indore', '', 'IIT_Indore.png'),
+(13, 'IIT Jammu', '', 'IIT_Jammu.png'),
+(14, 'IIT Jodhpur', '', 'IIT_Jodhpur.jpg'),
+(15, 'IIT Kanpur', '', 'IIT_Kanpur.jpg'),
+(16, 'IIT Kharagpur', '', 'IIT_Kharagpur.png'),
+(17, 'IIT Madras', '', 'IIT_Madras.png'),
+(18, 'IIT Mandi', '', 'IIT_Mandi.png'),
+(19, 'IIT Palakkad ', '', 'IIT_Pakkad.jpg'),
+(20, 'IIT Patna ', '', 'IIT_Patna.jpg'),
+(21, 'IIT Roorkee', '', 'IIT_Roorkee.jpg'),
+(22, 'IIT Ropar', '', 'IIT_Ropar.png'),
+(23, 'IIT Tirupati', '', 'IIT_Tirupati.jpg');
 
 -- --------------------------------------------------------
 
@@ -1072,7 +1072,8 @@ CREATE TABLE `schedule_result_individual` (
 
 INSERT INTO `schedule_result_individual` (`id`, `sport_id`, `clgs_playing`, `players`, `date_time`, `venue`, `level`, `clg_1st`, `clg_2nd`, `clg_3rd`, `clg_4th`, `clg_1st_player_id`, `clg_2nd_player_id`, `clg_3rd_player_id`, `clg_4th_player_id`, `status`, `comments`) VALUES
 (1, 1, '1,2,4,5', '1,2,3', '2019-09-28 18:58:36', 'gymkhana', 'final', 1, 4, 2, 5, 2, 5, 3, 6, '', ''),
-(2, 4, '1,4,2,5', '1,3,5,7', '2019-10-01 06:41:14', 'Tata Steel', '3rd place', 1, 2, 4, 5, 1, 3, 5, 7, 'yes', 'alpha');
+(2, 4, '1,4,2,5', '1,3,5,7', '2019-10-01 06:41:14', 'Tata Steel', '3rd place', 1, 2, 4, 5, 1, 3, 5, 7, 'yes', 'alpha'),
+(3, 4, '1,2,7,12', '1,4,12,5', '2019-09-29 04:15:00', 'Gymkhana', 'final', 4, 8, 6, 8, 1, 4, 12, 5, 'ssdggdb', 'asfdbgn');
 
 -- --------------------------------------------------------
 
@@ -1254,7 +1255,7 @@ ALTER TABLE `point_master`
 -- AUTO_INCREMENT for table `schedule_result_individual`
 --
 ALTER TABLE `schedule_result_individual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sports`
