@@ -507,7 +507,7 @@ def getLiveMatches():
         category = Sports.query.filter(Sports.id == match.sports_id).first().category
         sport = sport + " - " + category
         dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1, "clg2": clg2,
-                 "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2}
+                 "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": match.status}
         list_prev.append(dict0)
 
     prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(

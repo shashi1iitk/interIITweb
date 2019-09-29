@@ -156,14 +156,14 @@ $(document).ready(function() {
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo1}}"
                                  class="rounded-circle float-right" alt="Cinque Terre" height="70px">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-sm-2">
                             <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo2}}"
                                  class="rounded-circle float-left" alt="Cinque Terre" height="70px">
                         </div>
@@ -171,11 +171,11 @@ $(document).ready(function() {
                     <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
                     <p class="card-text" style="margin:2px;">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <strong> Score </strong>
                                 <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <strong> Score </strong>
                                 <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7>
                             </div>
@@ -261,14 +261,14 @@ $(document).ready(function() {
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo1}}"
                                  class="rounded-circle float-right" alt="Cinque Terre" height="70px">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-sm-2">
                             <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo2}}"
                                  class="rounded-circle float-left" alt="Cinque Terre" height="70px">
                         </div>
@@ -276,16 +276,17 @@ $(document).ready(function() {
                     <h5 class="card-title" style="margin:0px;"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
                     <p class="card-text">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <strong> Score </strong>
                                 <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <strong> Score </strong>
                                 <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7>
                             </div>
                         </div>
-                        <strong> Winner: </strong> {{pmatch.winner}}
+                        <strong> Winner: </strong> {{pmatch.winner}}<br>
+                        <strong> Status: </strong> {{pmatch.status}}
                     </p>
                 </div>
                 <div class="card-footer text-muted">
