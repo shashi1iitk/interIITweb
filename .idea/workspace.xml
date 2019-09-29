@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livescore.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livescore.html" afterDir="false" />
-    </list>
+    <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569773763999</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Inserted status">
+      <created>1569774718704</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569774718704</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -193,6 +196,7 @@
     <MESSAGE value="Scorecard changed" />
     <MESSAGE value="Individual Scorre" />
     <MESSAGE value="Logo inserted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logo inserted" />
+    <MESSAGE value="Inserted status" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inserted status" />
   </component>
 </project>
