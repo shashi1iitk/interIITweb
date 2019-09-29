@@ -19,21 +19,19 @@ $(document).ready(function() {
   var colleges = [];
 
       {% for college in college_list %}
-
       colleges.push({
           id:   {{ college.id }},
-          college_name: '{{ college.college_name }}',
-          college_nickname: '{{ college.college_nickname }}',
-          college_logo: '{{ college.college_logo }}'
+          college_name: '{{ college.clg_name }}'
       });
       {% endfor %}
 
-     console.log('colleges: ' + colleges[0].id);
-     console.log('colleges: ' + colleges);
+      colleges.push({
+          id:   24,
+          college_name: 'None'
+      });
 
      $('#fetch').on('click', function(event) {
          event.preventDefault();
-         // console.log(typeof parseInt($('#sport option:selected').val()));
       $.ajax({
         //data: new FormData(this),
         data : {
@@ -44,55 +42,15 @@ $(document).ready(function() {
       })
       .done(function(data) {
         console.log(data);
-
-        // alert(data);
         data = JSON.parse(data);
-        $("#name_table").html("");
-        $("#here_table").html("");
-      var content = "<table><tr><th>College</th><th>Point</th></tr>"
-      console.log(data);
-      // console.log(data['c_' + i]);
-         for(j in colleges){
-            var i = parseInt(j)+1;
-            console.log('c_' + i);
-            content += '<tr><td>' + colleges[j]['college_name'] + '</td><td>' + data['c_' + i] + '</td></tr>';
+        console.log(data.name);
+        for(clg in colleges){
+            console.log(clg);
+            $("#name_"+clg).text(data.name);
+            $("#point_"+clg).html(data[clg]);
         }
-        content += "</table>"
-     $('#name_table').append('<h2>' + $('#sport option:selected').html() +  '</h2>');
-        $('#here_table').append(content);
-      });
+        });
     });
-
-      $('#fetchAll').on('click', function(event) {
-         event.preventDefault();
-         // console.log(typeof parseInt($('#sport option:selected').val()));
-      $.ajax({
-        //data: new FormData(this),
-        data : {
-          sport_id :0,
-        },
-        type : 'POST',
-        url : '/scorecard'
-      })
-      .done(function(data) {
-
-        console.log(data);
-        // alert(data);
-        data = JSON.parse(data);
-        $("#name_table").html("");
-        $("#here_table").html("");
-      var content = "<table><tr><th>College</th><th>Point</th></tr>"
-         for(j in data){
-            content += '<tr><td>' + colleges[j]['college_name'] + '</td><td>' + data[j]['point'] + '</td></tr>';
-        }
-        content += "</table>"
-        $('#name_table').append('<h2>Master Points Table</h2>');
-        $('#here_table').append(content);
-
-      });
-    });
-
-
 });
 
 </script>
@@ -105,38 +63,42 @@ $(document).ready(function() {
         <div class="col-lg-8 col-md-10 mx-auto">
 
       <form>
-      <div class="control-group">
-           <div class="form-group floating-label-form-group controls">
-          <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
-            <select class="form-control" id="sport" data-live-search="true" name="sport" validate>
-                <option selected >Select Sport</option>
-                {% for sport in sports_list %}
-                <option value={{  sport.id  }}>{{  sport.sport_name  }} - {{  sport.category  }}</option>
-                {% endfor %}
-            </select>
-
-
+          <div class="control-group">
+               <div class="form-group floating-label-form-group controls">
+              <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
+                <select class="form-control" id="sport" data-live-search="true" name="sport" validate>
+                    <option selected >Select Sport</option>
+                    {% for sport in sports_list %}
+                    <option value={{  sport.id  }}>{{  sport.sport_name  }} - {{  sport.category  }}</option>
+                    {% endfor %}
+                </select>
+              </div>
+            </div>
+            <center>
+                <div id="success"></div>
+                <div class="form-group">
+                  <button class="btn btn-primary" id="fetch">Fetch</button>
+                </div>
+            </center>
+        </form>
+            </div>
           </div>
         </div>
-        <center>
-        <div id="success"></div>
-            <div class="form-group">
-              <button class="btn btn-primary" id="fetch">Fetch</button>
-        </div>
-
-
-           <div id="success1"></div>
-            <div class="form-group">
-              <button class="btn btn-primary" id="fetchAll">Fetch Master Points Table</button>
-        </div>
-        </center>
-        </form>
-        <center><div id="name_table"></div></center>
-        <center><div id="here_table"></div></center>
-
-        </div>
-      </div>
-    </div>
+          <div class="row">
+              {% for val in points %}
+              <div class="col-md-4">
+                <div class="card m-3 p-3">
+                  <div class="card-body">
+                      <h5 class="card-title"><strong>{{val.name}}</strong> {{val.point}} </h5>
+                      <p class="card-text">
+                          <strong id="name_{{val.clg_id}}"></strong>
+                          <h7 id="point_{{val.clg_id}}"></h7>
+                      </p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
   <br/>
 
 <!-- JavaScript Libraries -->

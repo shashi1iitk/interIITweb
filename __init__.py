@@ -366,19 +366,18 @@ def qrscanner():
 @app.route("/qrstats", methods=['GET', 'POST'])
 @login_required
 def qrstats():
-	if(request.method == 'POST'):
-		print("Ok")
-		al = Players.query.update({Players.feeded :0})
-		db.session.commit()
-		return redirect(url_for("qrstats"))
-	else:
-		permitted =  Players.query.filter(Players.feeded == 1).count()
-		total = Players.query.count()
-		print(permitted)
-		print(total)
-		stat = {"permitted": permitted, "total": total}
-		return render_template('qrstats.html', stats =stat)
-
+    if (request.method == 'POST'):
+        print("Ok")
+        al = Players.query.update({Players.feeded: 0})
+        db.session.commit()
+        return redirect(url_for("qrstats"))
+    else:
+        permitted = Players.query.filter(Players.feeded == 1).count()
+        total = Players.query.count()
+        print(permitted)
+        print(total)
+        stat = {"permitted": permitted, "total": total}
+        return render_template('qrstats.html', stats=stat)
 
 
 @app.route("/scorecard", methods=['GET', 'POST'])
@@ -386,23 +385,18 @@ def scorecard():
     if request.method == 'POST':
         sports_id = request.form['sport_id']
         if (sports_id == '0'):
-            points = Point_master.query.all()
-            points_master = []
-            for point in points:
-                points_dict = {"clg_id": point.clg_id, "point": point.points}
-                points_master.append(points_dict)
-            return json.dumps(points_master)
+           pass
         else:
-            sport_points = Point_main.query.filter(Point_main.sports_id == int(sports_id)).all()
-            for sport_point in sport_points:
-                point_dict = {"c_1": sport_point.c_1, "c_2": sport_point.c_2, "c_3": sport_point.c_3,
-                              "c_4": sport_point.c_4, "c_5": sport_point.c_5, "c_6": sport_point.c_6,
-                              "c_7": sport_point.c_7, "c_8": sport_point.c_8, "c_9": sport_point.c_9,
-                              "c_10": sport_point.c_10, "c_11": sport_point.c_11, "c_12": sport_point.c_12,
-                              "c_13": sport_point.c_13, "c_14": sport_point.c_14, "c_15": sport_point.c_15,
-                              "c_16": sport_point.c_16, "c_17": sport_point.c_17, "c_18": sport_point.c_18,
-                              "c_19": sport_point.c_19, "c_20": sport_point.c_20, "c_21": sport_point.c_21,
-                              "c_22": sport_point.c_22, "c_23": sport_point.c_23}
+            sport_point = Point_main.query.filter(Point_main.sports_id == int(sports_id)).first()
+            name = Sports.query.filter(Sports.id == int(sports_id)).first().sports_name
+            point_dict = {"1": sport_point.c_1, "2": sport_point.c_2, "3": sport_point.c_3,
+                          "4": sport_point.c_4, "5": sport_point.c_5, "6": sport_point.c_6,
+                          "7": sport_point.c_7, "8": sport_point.c_8, "9": sport_point.c_9,
+                          "10": sport_point.c_10, "11": sport_point.c_11, "12": sport_point.c_12,
+                          "13": sport_point.c_13, "14": sport_point.c_14, "15": sport_point.c_15,
+                          "16": sport_point.c_16, "17": sport_point.c_17, "18": sport_point.c_18,
+                          "19": sport_point.c_19, "20": sport_point.c_20, "21": sport_point.c_21,
+                          "22": sport_point.c_22, "23": sport_point.c_23, "name": name}
             return json.dumps(point_dict)
     else:
         sports = Sports.query.all()
@@ -410,14 +404,13 @@ def scorecard():
         for sport in sports:
             sports_dict = {"id": sport.id, "sport_name": sport.sports_name, "category": sport.category}
             sports_list.append(sports_dict)
-        colleges = College.query.all()
-        college_list = []
-        for college in colleges:
-            college_dict = {"id": college.id, "college_name": college.clg_name,
-                            "college_nickname": college.clg_nickname, "college_logo": college.logo_url}
-            college_list.append(college_dict)
-        # return render_template('scorecard.html', params=params, sports_list=sports_list, college_list=college_list)
-        return render_template('scorecard.html', sports_list=sports_list, college_list=college_list)
+        points = Point_master.query.all()
+        pts = []
+        for val in points:
+            name = College.query.filter(College.id == val.clg_id).first().clg_name
+            pts.append({"name": name, "point": val.points, "clg_id": val.clg_id})
+        college_list = College.query.all()
+        return render_template('scorecard.html', sports_list=sports_list, points=pts, college_list=college_list)
 
 
 @app.route("/schedule")
@@ -506,7 +499,7 @@ def getLiveMatches():
         clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
         sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
         category = Sports.query.filter(Sports.id == match.sports_id).first().category
-        sport = sport+" - "+category
+        sport = sport + " - " + category
         dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1, "clg2": clg2,
                  "sport": sport, "level": match.level}
         list_prev.append(dict0)
@@ -518,7 +511,7 @@ def getLiveMatches():
     for match in prev_matches_individual:
         sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
         category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        sport = sport+" - "+category
+        sport = sport + " - " + category
         player1 = Players.query.filter(Players.id == match.clg_1st_player_id).first()
         player1 = {"name": player1.name,
                    "college": College.query.filter(College.id == player1.college_id).first().clg_name}
@@ -542,7 +535,7 @@ def getLiveMatches():
         clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
         sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
         category = Sports.query.filter(Sports.id == match.sports_id).first().category
-        sport = sport+" - "+category
+        sport = sport + " - " + category
         dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg1": clg1,
                  "clg2": clg2, "sport": sport, "venue": match.venue, "level": match.level, "id": match.id}
         list_live.append(dict1)
