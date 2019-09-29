@@ -69,7 +69,7 @@ $(document).ready(function() {
                 <select class="form-control" id="sport" data-live-search="true" name="sport" validate>
                     <option selected >Select Sport</option>
                     {% for sport in sports_list %}
-                    <option value={{  sport.id  }}>{{  sport.sport_name  }} - {{  sport.category  }}</option>
+                    <option value={{  sport.id  }}>{{  sport.sport_name  }}</option>
                     {% endfor %}
                 </select>
               </div>
@@ -89,7 +89,7 @@ $(document).ready(function() {
               <div class="col-md-4">
                 <div class="card m-3 p-3">
                   <div class="card-body">
-                      <h5 class="card-title"><strong>{{val.name}}</strong> {{val.point}} </h5>
+                      <h5 class="card-title"><strong>{{val.name}}{{val.rank}}</strong> {{val.point}} </h5>
                       <p class="card-text">
                           <strong id="name_{{val.clg_id}}"></strong>
                           <h7 id="point_{{val.clg_id}}"></h7>

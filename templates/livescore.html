@@ -16,6 +16,66 @@ $(document).ready(function() {
 
     console.log('current live ids: ' + live_ids);
 
+    $('#update_individual').on('click', function(event) {
+        event.preventDefault();
+        $.ajax({
+        data : {
+          sport_id : parseInt($('#sport_individual option:selected').val()),
+        },
+        type : 'POST',
+        url : '/getPlayersIndividual'
+      }).done(function(data) {
+        $("#update_individual").css("display", "none");
+        data = JSON.parse(data);
+        $.each(data.name, function (i, item) {
+            console.log(i);
+            $('#player1').append($('<option>', {
+                value: item.id,
+                text : item.option
+            }));
+            $("#player1").css("display", "");
+            $('#player2').append($('<option>', {
+                value: item.id,
+                text : item.option
+            }));
+            $("#player2").css("display", "");
+            $('#player3').append($('<option>', {
+                value: item.id,
+                text : item.option
+            }));
+            $("#player3").css("display", "");
+            $('#player4').append($('<option>', {
+                value: item.id,
+                text : item.option
+            }));
+            $("#player4").css("display", "");
+            $("#submit_individual").css("display", "");
+             $('#status_individual').css("display", "");
+             $('#comments_individual').css("display", "");
+        });
+      });
+    });
+
+    $('#submit_individual').on('click', function(event) {
+        event.preventDefault();
+        $.ajax({
+        data : {
+          id : parseInt($('#sport_individual option:selected').val()),
+          player1 : parseInt($('#player1 option:selected').val()),
+          player2 : parseInt($('#player2 option:selected').val()),
+          player3 : parseInt($('#player3 option:selected').val()),
+          player4 : parseInt($('#player4 option:selected').val()),
+          status : $('#status_individual').val(),
+          comments : $('#comments_individual').val()
+        },
+        type : 'POST',
+        url : '/endIndividualMatch'
+      }).done(function(data) {
+       console.log(data);
+       location.reload();
+      });
+     });
+
  setInterval(function(){
     console.log('current live ids: ' + live_ids);
     $.ajax({
@@ -186,6 +246,46 @@ $(document).ready(function() {
         <br><br>
 
         <center><h2>Previous Individual Matches </h2></center>
+
+        {% if current_user.is_authenticated  and current_user.privilege == 3 %}
+        <div class="m-10" style="margin:10px;">
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Score</a>
+            </div>
+        {% endif %}
+
+                <div class="modal fade bd-example-modal3-lg" tabindex="-1" role="dialog"  aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content p-3">
+                          <form action="" method="POST">
+                                <div class="form-group floating-label-form-group controls">
+                                  <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
+                                    <select class="form-control" id="sport_individual" data-live-search="true" name="sport" validate>
+                                        <option selected >Select Sport</option>
+                                        {% for sport in live_individual %}
+                                        <option value={{  sport.id  }}>{{  sport.sport  }}</option>
+                                        {% endfor %}
+                                    </select><br>
+                                    <a id="update_individual" class="btn btn-primary">Update</a>
+                                    <select class="form-control" id="player1" data-live-search="true"  style="display:none;" validate>
+                                        <option selected >Select Player1</option>
+                                    </select><br>
+                                    <select class="form-control" id="player2" data-live-search="true"  style="display:none;" validate>
+                                        <option selected >Select Player2</option>
+                                    </select><br>
+                                    <select class="form-control" id="player3" data-live-search="true"  style="display:none;" validate>
+                                        <option selected >Select Player3</option>
+                                    </select><br>
+                                    <select class="form-control" id="player4" data-live-search="true" style="display:none;" validate>
+                                        <option selected >Select Player4</option>
+                                    </select><br>
+                                    <input type="text" class="form-control" id="status_individual" placeholder="Status" style="display:none;"><br>
+                                    <input type="text" class="form-control" id="comments_individual" placeholder="Comments" style="display:none;"><br>
+                                    <a id="submit_individual" class="btn btn-primary" style="display:none;">Submit</a>
+                                  </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
 
         <div class="row">
             {% for pmatch in prev2 %}

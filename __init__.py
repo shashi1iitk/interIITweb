@@ -389,6 +389,7 @@ def scorecard():
         else:
             sport_point = Point_main.query.filter(Point_main.sports_id == int(sports_id)).first()
             name = Sports.query.filter(Sports.id == int(sports_id)).first().sports_name
+            category = Sports.query.filter(Sports.id == int(sports_id)).first().category
             point_dict = {"1": sport_point.c_1, "2": sport_point.c_2, "3": sport_point.c_3,
                           "4": sport_point.c_4, "5": sport_point.c_5, "6": sport_point.c_6,
                           "7": sport_point.c_7, "8": sport_point.c_8, "9": sport_point.c_9,
@@ -396,19 +397,19 @@ def scorecard():
                           "13": sport_point.c_13, "14": sport_point.c_14, "15": sport_point.c_15,
                           "16": sport_point.c_16, "17": sport_point.c_17, "18": sport_point.c_18,
                           "19": sport_point.c_19, "20": sport_point.c_20, "21": sport_point.c_21,
-                          "22": sport_point.c_22, "23": sport_point.c_23, "name": name}
+                          "22": sport_point.c_22, "23": sport_point.c_23, "name": name+' - '+category}
             return json.dumps(point_dict)
     else:
         sports = Sports.query.all()
         sports_list = []
         for sport in sports:
-            sports_dict = {"id": sport.id, "sport_name": sport.sports_name, "category": sport.category}
+            sports_dict = {"id": sport.id, "sport_name": sport.sports_name + " - " + sport.category, "category": sport.category}
             sports_list.append(sports_dict)
-        points = Point_master.query.all()
+        points = Point_master.query.order_by(Point_master.points.desc()).all()
         pts = []
-        for val in points:
+        for rank, val in enumerate(points):
             name = College.query.filter(College.id == val.clg_id).first().clg_name
-            pts.append({"name": name, "point": val.points, "clg_id": val.clg_id})
+            pts.append({"name": name, "point": val.points, "clg_id": val.clg_id, "rank":' (' + str(rank+1) + ')'})
         college_list = College.query.all()
         return render_template('scorecard.html', sports_list=sports_list, points=pts, college_list=college_list)
 
@@ -528,6 +529,16 @@ def getLiveMatches():
                  "level": match.level}
         list_prev_individual.append(dict0)
 
+    live_match_individual =  Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
+        Match_Individual.clg_1st_player_id == 0).order_by(
+        Match_Individual.date_time.desc()).all()
+    list_live_individual = []
+    for match in live_match_individual:
+        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sport_id).first().category
+        sport = sport + " - " + category
+        list_live_individual.append({"sport": sport, "id": match.id})
+
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
     list_live = []
     for match in live_matches:
@@ -542,7 +553,7 @@ def getLiveMatches():
 
     colleges = College.query.all()
     return render_template('livescore.html', live=list_live, prev=list_prev, prev2=list_prev_individual,
-                           colleges=colleges)
+                           colleges=colleges, live_individual = list_live_individual)
 
 
 @app.route('/endMatchDetails', methods=['GET', 'POST'])
@@ -574,7 +585,42 @@ def setMatchDetails():
         db.session.commit()
     return redirect(url_for("getLiveMatches"))
 
+@app.route("/getPlayersIndividual", methods=['GET','POST'])
+@login_required
+def getPlayers():
+    if(request.method == 'POST'):
+        id_match = request.form.get('sport_id')
+        match = Match_Individual.query.filter(id_match == Match_Individual.id).first()
+        players = match.players.strip().split(',')
+        player_list = []
+        for player in players:
+            plyr = Players.query.filter(int(player) == Players.id).first()
+            name, college = plyr.name, College.query.filter(plyr.college_id == College.id).first().clg_name
+            player_list.append({"option" : name+' - '+college, "id": int(player)})
+        player_list = {"name": player_list}
+        #print(player_list)
+        return json.dumps(player_list)
+    return "error"
 
+@app.route('/endIndividualMatch', methods=['GET','POST'])
+@login_required
+def endIndividualMatch():
+    if (request.method == 'POST'):
+        sport_id = request.form.get('id')
+        match = Match_Individual.query.filter(Match_Individual.id == int(sport_id)).first()
+        match.clg_1st_player_id = int(request.form.get('player1'))
+        match.clg_2nd_player_id = int(request.form.get('player2'))
+        match.clg_3rd_player_id = int(request.form.get('player3'))
+        match.clg_4th_player_id = int(request.form.get('player4'))
+        match.clg_1st = Players.query.filter(Players.id == int(request.form.get('player1'))).first().college_id
+        match.clg_2nd = Players.query.filter(Players.id == int(request.form.get('player2'))).first().college_id
+        match.clg_3rd = Players.query.filter(Players.id == int(request.form.get('player3'))).first().college_id
+        match.clg_4th = Players.query.filter(Players.id == int(request.form.get('player4'))).first().college_id
+        match.status = request.form.get('status')
+        match.comments = request.form.get('comments')
+        db.session.commit()
+        return redirect(url_for("getLiveMatches"))
+    return "error"
 # application = app
 
 # if __name__ == '__main__':
