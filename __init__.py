@@ -38,7 +38,7 @@ login_manager.login_message = u"Please log in to access this page\nइस पृ
 # if (local_server):
 #     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
 # else:
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019_2"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:1234@#interiit@localhost/interiit2019"
 
@@ -541,7 +541,8 @@ def getLiveMatches():
     for match in live_match_individual:
         sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
         category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        sport = sport + " - " + category
+        level = Sports.query.filter(Sports.id == match.sport_id).first().level
+        sport = sport + " - " + category + ' - ' + level
         list_live_individual.append({"sport": sport, "id": match.id})
 
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
