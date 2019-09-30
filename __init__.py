@@ -633,6 +633,47 @@ def endIndividualMatch():
     return "error"
 
 
+@app.route('/addMatch', methods=['GET', 'POST'])
+@login_required
+def addMatches():
+    if(current_user.privilege!=4):
+        return redirect(url_for('login'))
+    if (request.method == 'POST'):
+        if (request.form.get('type') == "team"):
+            entry = Match(id=Match.query.count() + 1, sports_id=request.form.get('sport'),
+                          clg_id1=request.form.get('college1'), clg_id2=request.form.get('college2'),
+                          date_time=request.form.get('datetime'), venue=request.form.get('venue'),
+                          level=request.form.get('level'))
+            db.session.add(entry)
+        elif (request.form.get('type') == "individual"):
+            players = request.form.getlist('players')
+            players = [int(x) for x in players]
+            colleges = [Players.query.filter(Players.id == x).first().college_id for x in players]
+            colleges = list(set(colleges))
+            players = ",".join([str(x) for x in players])
+            colleges = ",".join([str(x) for x in colleges])
+            entry = Match_Individual(id=Match_Individual.query.count() + 1, sport_id=request.form.get('sport'),
+                                     clgs_playing=colleges, players=players, date_time=request.form.get('datetime'),
+                                     venue=request.form.get('venue'), clg_1st=0, clg_2nd=0, clg_3rd=0, clg_4th=0,
+                                     clg_1st_player_id=0, clg_2nd_player_id=0, clg_3rd_player_id=0, clg_4th_player_id=0,
+                                     level=request.form.get('level'), status="", comments="")
+            db.session.add(entry)
+            db.session.commit()
+        try:
+            db.session.commit()
+            flash("Match added")
+            return redirect(url_for('addMatches'))
+        except:
+            flash("Try Again")
+            return redirect(url_for('addMatches'))
+    sport = Sports.query.all()
+    college = College.query.all()
+    players = Players.query.all()
+    players = [{"id": x.id, "name": x.name, "roll_no": x.roll_no} for x in players if x.selected_sports != "staff"]
+    players.sort(key=lambda x: x["name"])
+    return render_template('addMatch.html', sports=sport, colleges=college, players=players)
+
+
 # application = app
 
 # if __name__ == '__main__':

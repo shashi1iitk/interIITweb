@@ -8,6 +8,10 @@
     <br><br>
     <center><h2>Logged in as : {{current_user.role}}</h2></center><hr>
     <center><h3>Explore option's from the menu provided.</h3></center>
+
+    {% if current_user.is_authenticated and current_user.privilege==4 %}
+    <button type="button" class="btn btn-primary m-3 " onclick="window.location.href='/addMatch'">Add Matches</button>
+    {% endif %}
     
 </div>
 
