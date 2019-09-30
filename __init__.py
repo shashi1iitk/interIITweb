@@ -38,7 +38,7 @@ login_manager.login_message = u"Please log in to access this page\nइस पृ
 # if (local_server):
 #     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
 # else:
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019_2"
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:1234@#interiit@localhost/interiit2019"
 
@@ -238,7 +238,7 @@ def register():
         entry = Players(id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name,
                         selected_sports=selected_sports, special_inst=special_inst, food=food, gender=gender,
                         blood_group=blood_group, college_id=college, roll_no=roll_no, reg_status=0, game_gold=0,
-                        game_silver=0, game_bronze=0, profile_image_url=filename)
+                        game_silver=0, game_bronze=0, profile_image_url=filename, feeded=0)
         db.session.add(entry)
         if (selected_sports == "staff"):
             entry = Staffs(player_id=cnt, college_id=int(college))
@@ -246,14 +246,14 @@ def register():
             try:
                 db.session.commit()
 
-                qrname = name + " - " + email + '.png'
+                qrname = name + " - " + email + '.svg'
                 s = email + "^" + roll_no
                 # Generate QR code
                 url = pyqrcode.create(s)
 
                 # url.svg("myqr.svg", scale=8)
                 x = os.path.join(os.getcwd(), "static", "profile_images/" + current_user.college_id)
-                url.png(os.path.join(x, qrname))
+                url.svg(os.path.join(x, qrname), scale=8)
             except:
                 return "Fail"
             print("staff")
@@ -269,14 +269,14 @@ def register():
                 entry = Participation(player_id=cnt, sports_id=p, college_id=int(college))
                 db.session.add(entry)
 
-                qrname = name + " - " + email + '.png'
+                qrname = name + " - " + email + '.svg'
                 s = email + "^" + roll_no
                 # Generate QR code
                 url = pyqrcode.create(s)
 
                 # url.svg("myqr.svg", scale=8)
                 x = os.path.join(os.getcwd(), "static", "profile_images/" + current_user.college_id)
-                url.png(os.path.join(x, qrname), scale=46, module_color=[0, 0, 0, 128], background=[0xff, 0xff, 0xcc])
+                url.svg(os.path.join(x, qrname), scale=8)
             try:
                 db.session.commit()
             except:
@@ -408,7 +408,7 @@ def scorecard():
             return json.dumps({"data": pts, "name": sport_name + ' - ' + category})
     else:
         sports = Sports.query.all()
-        sports_list = [{"id": 0, "sport_name": "master", "category": "N"}]
+        sports_list = [{"id": 0, "sport_name": "Master Points Table", "category": "N"}]
         for sport in sports:
             sports_dict = {"id": sport.id, "sport_name": sport.sports_name + " - " + sport.category,
                            "category": sport.category}
@@ -531,7 +531,7 @@ def getLiveMatches():
         player4 = {"name": player4.name,
                    "college": College.query.filter(College.id == player4.college_id).first().clg_name}
         dict0 = {"player1": player1, "player2": player2, "player3": player3, "player4": player4, "sport": sport,
-                 "level": match.level}
+                 "level": match.level, "status":match.status}
         list_prev_individual.append(dict0)
 
     live_match_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(

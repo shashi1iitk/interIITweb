@@ -140,11 +140,11 @@ $(document).ready(function() {
     <!--<p>{{live}}</p>-->
     <!--<p>{{prev}}</p>-->
     <!--<button id = "button">Live</button>-->
-    <strong>
+    <!-- <strong>
         <center><h2 style="margin-top:5%;">Live scoring of matches will be auto updated on this page. Also, previous
             matches data will be shown here.</h2></center>
-    </strong>
-    <hr>
+    </strong> -->
+    <br><br>
 
     <center><h2>Live Matches[Team]</h2></center>
     <div class="row">
@@ -169,20 +169,21 @@ $(document).ready(function() {
                         </div>
                     </div>
                     <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
-                    <p class="card-text" style="margin:2px;">
+                    <h5 class="card-title">{{pmatch.score1}} - {{pmatch.score2}} </h5>
+                   <!--  <p class="card-text" style="margin:2px;">
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong> Score </strong>
+                                <strong>Team-I: </strong>
                                 <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7>
                             </div>
                             <div class="col-sm-6">
-                                <strong> Score </strong>
+                                <strong>Team-II: </strong>
                                 <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7>
                             </div>
-                        </div>
-                        <strong> Venue: </strong> {{pmatch.venue}} <br>
-                        <strong> Comments: </strong>
+                        </div><br> -->
+                        <strong>Comments: </strong>
                         <h7 id="commentry_{{ pmatch.id }}">{{pmatch.commentry}}</h7>
+                    
                     </p>
                     {% if current_user.is_authenticated and current_user.privilege == 3 %}
                     <a href="#" class="btn btn-primary" data-toggle="modal"
@@ -240,6 +241,7 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </div>
+                 <strong>Venue: {{pmatch.venue}} </strong>
                 <div class="card-footer text-muted">
                     <strong>{{ pmatch.level }}</strong>
                 </div>
@@ -273,9 +275,10 @@ $(document).ready(function() {
                                  class="rounded-circle float-left" alt="Cinque Terre" height="70px">
                         </div>
                     </div>
-                    <h5 class="card-title" style="margin:0px;"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
+                    <h5 class="card-title" style="margin:0px;"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5><br>
+                    <h5 class="card-title">{{pmatch.score1}} - {{pmatch.score2}} </h5>
                     <p class="card-text">
-                        <div class="row">
+                       <!--  <div class="row">
                             <div class="col-sm-6">
                                 <strong> Score </strong>
                                 <h7 id="score1_{{ pmatch.id }}">{{pmatch.score1}}</h7>
@@ -284,7 +287,7 @@ $(document).ready(function() {
                                 <strong> Score </strong>
                                 <h7 id="score2_{{ pmatch.id }}">{{pmatch.score2}}</h7>
                             </div>
-                        </div>
+                        </div> -->
                         <strong> Winner: </strong> {{pmatch.winner}}<br>
                         <strong> Status: </strong> {{pmatch.status}}
                     </p>
@@ -302,9 +305,12 @@ $(document).ready(function() {
     <center><h2>Previous Individual Matches </h2></center>
 
     {% if current_user.is_authenticated and current_user.privilege == 3 %}
+    <center>
     <div class="m-10" style="margin:10px;">
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Score</a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Score</a><br>
+        Update scores of completed matches
     </div>
+</center>
     {% endif %}
 
     <div class="modal fade bd-example-modal3-lg" tabindex="-1" role="dialog" aria-hidden="true">
@@ -362,7 +368,9 @@ $(document).ready(function() {
                         <strong> {{pmatch.player3.name}} </strong>- {{pmatch.player3.college}} <br>
                         <strong> {{pmatch.player4.name}} </strong>- {{pmatch.player4.college}} <br>
                     </p>
+                    <strong>Status: </strong> {{pmatch.status}}
                 </div>
+
                 <div class="card-footer text-muted">
                     <strong>{{ pmatch.level }}</strong>
                 </div>
