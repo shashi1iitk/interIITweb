@@ -541,8 +541,7 @@ def getLiveMatches():
     for match in live_match_individual:
         sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
         category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        level = Sports.query.filter(Sports.id == match.sport_id).first().level
-        sport = sport + " - " + category + ' - ' + level
+        sport = sport + " - " + category + ' - ' + match.level
         list_live_individual.append({"sport": sport, "id": match.id})
 
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
