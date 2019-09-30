@@ -10,7 +10,7 @@
     Intro Section
   ============================-->
 
-  <section id="intro" class="clearfix">
+ <!--  <section id="intro" class="clearfix">
     <div class="container">
       
       <div class="intro-img">
@@ -23,7 +23,38 @@
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
           <a href="/schedule" class="btn-services scrollto">Schedule</a>
         </div>
-      </div>
+      </div> -->
+      <br>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+          </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{ url_for('static', filename='img/download.jfif') }}" alt="First slide">
+    </div>
+  <div class="carousel-item">
+    <img class="d-block w-100" src="{{ url_for('static', filename='img/image2.jpg') }}" alt="Second slide">
+  </div>
+ <!--  <div class="carousel-item">
+    <img class="d-block w-100" src="{{ url_for('static', filename='img/images.jfif') }}" alt="Third slide">
+  </div> -->
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+
+
+
 
     </div>
   </section><!-- #intro -->
@@ -51,34 +82,35 @@
              <div class="icon-box wow fadeInUp">
               <div class="icon"><i class="fa fa-shopping-bag"></i></div>
               <h4 class="title"><a href="">The Legacy</a></h4>
-              <p class="description">With 53 years of legacy, Inter IIT sports meet is an intense battle to victory as the best minds of the country prove their mettle in sports. It is the largest and longest running Inter-collegiate meet, being held from 1961.</p>
+              <p class="description">With 53 years of legacy, Inter IIT sports meet is an intense battle to victory as the best minds of the country prove their mettle in sports.</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
               <div class="icon"><i class="fa fa-photo"></i></div>
               <h4 class="title"><a href="">Bright Side</a></h4>
-              <p class="description">In 2019, IIT KGP and IIT BBS will host the 54th edition of this premiere event. The meet is expanding in all it’s domains which include events, participation, sponsorships, social initiatives and audience attraction.</p>
+              <p class="description">In 2019, IIT KGP and IIT BBS will host the 54th edition of this premiere event. This time the meet is expanding in all it’s domains.</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
               <div class="icon"><i class="fa fa-bar-chart"></i></div>
               <h4 class="title"><a href="">Competiton Heat</a></h4>
-              <p class="description">The stakes are high this time, as each and every IIT wishes to take the trophy back home. The 14 sports where students can showcase their skills are athletics, badminton, football, volleyball, basketball, cricket, hockey, lawn tennis, squash, swimming, table tennis, water polo, weightlifting and chess.</p>
+              <p class="description">The stakes are high this time, as each and every IIT wishes to take the trophy back home. There will be 14 sports where students can showcase their skills.</p>
             </div>
 
           </div>
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            
-            <img src="{{ url_for('static', filename='img/games.jpg') }}" class="img-fluid" alt="">
-            <img src="{{ url_for('static', filename='img/winner.jpg') }}" class="img-fluid" alt="">
+            <br>
+            <img src="{{ url_for('static', filename='img/Sports-PNG.png') }}" class="img-fluid" alt="">
+            <!-- <img src="{{ url_for('static', filename='img/game.jfif') }}" class="img-fluid" alt=""> -->
+
           </div>
         </div>
 
         <div class="row about-extra">
           <div class="col-lg-6 wow fadeInUp">
             <br><!-- <br> -->
-            <img src="{{ url_for('static', filename='img/kgp.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ url_for('static', filename='img/kgp1.jpg') }}" class="img-fluid" style="border-radius: 8px;" alt="">
           </div>
           <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
             <h4>Mother of all IITs - IIT Kharagpur</h4>
@@ -592,13 +624,13 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-1.png" class="img-fluid" alt="">
+              <a href="https://www.iocl.com/" target="_blank"><img src="{{ url_for('static', filename='img/clients/client-1.png') }}" class="img-fluid" alt=""></a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-2.png" class="img-fluid" alt="">
+              <a href="https://smartpind.petpooja.com" target="_blank"><img src="{{ url_for('static', filename='img/clients/client-2.png') }}" class="img-fluid" alt=""></a>
             </div>
           </div>
 
@@ -667,7 +699,7 @@
             <div class="row">
               <div class="col-md-5 info">
                 <i class="ion-ios-location-outline"></i>
-                <p>IIT Kharagpur, India 721302</p>
+                <p>TSG, IIT Kharagpur, WB 721302</p>
               </div>
               <div class="col-md-4 info">
                 <i class="ion-ios-email-outline"></i>
