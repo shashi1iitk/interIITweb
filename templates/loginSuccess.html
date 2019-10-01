@@ -9,6 +9,11 @@
     <center><h2>Logged in as : {{current_user.role}}</h2></center><hr>
     <center><h3>Explore option's from the menu provided.</h3></center>
 
+    {% if current_user.is_authenticated and current_user.privilege==3 %}  
+    <center><button type="button" class="btn btn-primary m-3 " onclick="window.location.href='/addMatch'">Add Matches</button></center>
+    <h7 style="color: red;"><strong>Notice:</strong> Schedule upcoming and previous matches from "Add Match" option provided in menu or button above. Add all previous individual & relay matches from there then goto live matches page and update their final winners 'CAREFULLY'. It will affect the scoreboard. From now, Matches will only appear in live section if they are scheduled accordingly.</h7>
+    {% endif %}
+
 </div>
 
 <!-- JavaScript Libraries -->
