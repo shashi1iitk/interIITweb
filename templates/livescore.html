@@ -176,18 +176,18 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo1}}"
-                                 class="rounded-circle float-right" alt="Cinque Terre" height="70px">
+                                 class="rounded-circle float-left" alt="Cinque Terre" height="80px" style="padding-left: 0px;">
                         </div>
                         <div class="col-sm-2">
-                            <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
+                           <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
                         </div>
                         <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo2}}"
-                                 class="rounded-circle float-left" alt="Cinque Terre" height="70px">
+                                 class="rounded-circle float-right" alt="Cinque Terre" height="80px"  style="padding-right: 0px;">
                         </div>
-                    </div>
+                    </div><br>
                     <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
-                    <h5 class="card-title">{{pmatch.score1}} - {{pmatch.score2}} </h5>
+                    <h5 class="card-title"><span id="score1_{{ pmatch.id }}">{{pmatch.score1}}</span> - <span id="score2_{{ pmatch.id }}">{{pmatch.score2}}</span> </h5>
                    <!--  <p class="card-text" style="margin:2px;">
                         <div class="row">
                             <div class="col-sm-6">
@@ -281,20 +281,20 @@ $(document).ready(function() {
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-5">
+                       <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo1}}"
-                                 class="rounded-circle float-right" alt="Cinque Terre" height="70px">
+                                 class="rounded-circle float-left" alt="Cinque Terre" height="80px" style="padding-left: 0px;">
                         </div>
                         <div class="col-sm-2">
-                            <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
+                           <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
                         </div>
                         <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo2}}"
-                                 class="rounded-circle float-left" alt="Cinque Terre" height="70px">
+                                 class="rounded-circle float-right" alt="Cinque Terre" height="80px"  style="padding-right: 0px;">
                         </div>
-                    </div>
+                    </div><br>
                     <h5 class="card-title" style="margin:0px;"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5><br>
-                    <h5 class="card-title">{{pmatch.score1}} - {{pmatch.score2}} </h5>
+                    <h5 class="card-title"><span id="score1_{{ pmatch.id }}">{{pmatch.score1}}</span> - <span id="score2_{{ pmatch.id }}">{{pmatch.score2}}</span></h5>
                     <p class="card-text">
                        <!--  <div class="row">
                             <div class="col-sm-6">
