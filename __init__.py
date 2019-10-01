@@ -46,6 +46,7 @@ db = SQLAlchemy(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
+
 class Players(db.Model):
     __tablename__ = 'players'
     id = db.Column(db.Integer, primary_key=True)
@@ -109,6 +110,21 @@ class Match_Individual(db.Model):
     status = db.Column(db.String(1000))
     comments = db.Column(db.String(1000))
 
+class Match_Relay(db.Model):
+    __tablename__ = 'schedule_result_relay'
+    id = db.Column(db.Integer, primary_key=True)
+    sport_id = db.Column(db.Integer, nullable=False)
+    clgs_playing = db.Column(db.String(400), nullable=False)
+    players = db.Column(db.String(1000), nullable=False)
+    date_time = db.Column(db.String(1000), nullable=False)
+    venue = db.Column(db.String(400), nullable=False)
+    level = db.Column(db.String(400), nullable=False)
+    clg_1st = db.Column(db.Integer)
+    clg_2nd = db.Column(db.Integer)
+    clg_3rd = db.Column(db.Integer)
+    clg_4th = db.Column(db.Integer)
+    status = db.Column(db.Integer)
+    comments = db.Column(db.String(1000))
 
 class Sports(db.Model):
     __tablename__ = 'sports'
@@ -544,6 +560,31 @@ def getLiveMatches():
         sport = sport + " - " + category + ' - ' + match.level
         list_live_individual.append({"sport": sport, "id": match.id})
 
+
+    prev_matches_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(Match_Relay.status == 1).order_by(Match_Relay.date_time.desc()).all()
+    list_prev_relay = []
+    for match in prev_matches_relay:
+        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sport_id).first().category
+        sport = sport + " - " + category
+        clg1 = College.query.filter(College.id == match.clg_1st).first().clg_name 
+        clg2 = College.query.filter(College.id == match.clg_2nd).first().clg_name 
+        clg3 = College.query.filter(College.id == match.clg_3rd).first().clg_name 
+        clg4 = College.query.filter(College.id == match.clg_4th).first().clg_name
+        dict0 = {"clg1": clg1, "clg2": clg2, "clg3": clg3, "clg4": clg4, "sport": sport,
+                 "level": match.level, "status":match.comments}
+        list_prev_relay.append(dict0)
+
+    live_match_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(
+        Match_Relay.status == 0).order_by(
+        Match_Relay.date_time.desc()).all()
+    list_live_relay = []
+    for match in live_match_relay:
+        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+        category = Sports.query.filter(Sports.id == match.sport_id).first().category
+        sport = sport + " - " + category + ' - ' + match.level
+        list_live_relay.append({"sport": sport, "id": match.id})
+
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
     list_live = []
     for match in live_matches:
@@ -561,25 +602,8 @@ def getLiveMatches():
 
     colleges = College.query.all()
     return render_template('livescore.html', live=list_live, prev=list_prev, prev2=list_prev_individual,
-                           colleges=colleges, live_individual=list_live_individual)
-
-
-@app.route('/endMatchDetails', methods=['GET', 'POST'])
-@login_required
-def endMatchDetails():
-    if (request.method == 'POST'):
-        match = Match.query.filter(Match.id == int(request.form.get('id'))).first()
-        match.winner_clg_id = int(request.form.get('winner_clg_id'))
-        cldisd = [match.clg_id2, match.clg_id1]
-        try:
-            cldisd.remove(int(request.form.get('winner_clg_id')))
-        except:
-            flash("Selected wrong College")
-            return redirect(url_for("getLiveMatches"))
-        match.runner_clg_id = int(cldisd[0])
-        match.status = request.form.get('status')
-        db.session.commit()
-    return redirect(url_for("getLiveMatches"))
+                          live_individual=list_live_individual, prev3=list_prev_relay,
+                          live_relay=list_live_relay, colleges=colleges)
 
 
 @app.route('/setMatchDetails', methods=['GET', 'POST'])
@@ -612,12 +636,43 @@ def getPlayers():
     return "error"
 
 
+@app.route('/endMatchDetails', methods=['GET', 'POST'])
+@login_required
+def endMatchDetails():
+    if (request.method == 'POST'):
+        match = Match.query.filter(Match.id == int(request.form.get('id'))).first()
+        match.winner_clg_id = int(request.form.get('winner_clg_id'))
+        cldisd = [match.clg_id2, match.clg_id1]
+        try:
+            cldisd.remove(int(request.form.get('winner_clg_id')))
+        except:
+            flash("Selected wrong College")
+            return redirect(url_for("getLiveMatches"))
+        match.runner_clg_id = int(cldisd[0])
+        match.status = request.form.get('status')
+        # db.session.commit()
+        if(match.level == "Final" or match.level == "3rd Place"):
+            sport =  match.sports_id
+            row = Point_main.query.filter(Point_main.sports_id == sport).first()
+            w = "row.c_" + str(int(request.form.get('winner_clg_id')))
+            r = "row.c_" + str(int(cldisd[0]))
+            if(match.level == "Final"):
+                exec("%s = %d" % (w,10))
+                exec("%s = %d" % (r,6))
+            elif(match.level == "3rd Place"):
+                exec("%s = %d" % (w,4))
+                exec("%s = %d" % (r,2))
+            
+        db.session.commit()
+    return redirect(url_for("getLiveMatches"))
+
+
 @app.route('/endIndividualMatch', methods=['GET', 'POST'])
 @login_required
 def endIndividualMatch():
     if (request.method == 'POST'):
-        sport_id = request.form.get('id')
-        match = Match_Individual.query.filter(Match_Individual.id == int(sport_id)).first()
+        s_id = request.form.get('id')
+        match = Match_Individual.query.filter(Match_Individual.id == int(s_id)).first()
         match.clg_1st_player_id = int(request.form.get('player1'))
         match.clg_2nd_player_id = int(request.form.get('player2'))
         match.clg_3rd_player_id = int(request.form.get('player3'))
@@ -627,23 +682,66 @@ def endIndividualMatch():
         match.clg_3rd = Players.query.filter(Players.id == int(request.form.get('player3'))).first().college_id
         match.clg_4th = Players.query.filter(Players.id == int(request.form.get('player4'))).first().college_id
         match.status = request.form.get('status')
+        match.comments = ""
+        if(match.level == "Final"):
+            sport =  match.sport_id
+            row = Point_main.query.filter(Point_main.sports_id == sport).first()
+            w1 = "row.c_" + str(match.clg_1st)
+            w2 = "row.c_" + str(match.clg_2nd)
+            w3 = "row.c_" + str(match.clg_3rd)
+            w4 = "row.c_" + str(match.clg_4th)
+            if(match.level == "Final"):
+                exec("%s += %d" % (w1,5))
+                exec("%s += %d" % (w2,3))
+                exec("%s += %d" % (w3,2))
+                exec("%s += %d" % (w4,1))
+            
+        db.session.commit()
+        return redirect(url_for("getLiveMatches"))
+    return "error"
+
+@app.route('/endRelayMatch', methods=['GET', 'POST'])
+@login_required
+def endRelayMatch():
+    if (request.method == 'POST'):
+        s_id = request.form.get('id')
+        match = Match_Relay.query.filter(Match_Relay.id == int(s_id)).first()
+        match.clg_1st = int(request.form.get('clg1'))
+        match.clg_2nd = int(request.form.get('clg2'))
+        match.clg_3rd = int(request.form.get('clg3'))
+        match.clg_4th = int(request.form.get('clg4'))
         match.comments = request.form.get('comments')
+        match.status = 1
+        if(match.level == "Final"):
+            sport =  match.sport_id
+            row = Point_main.query.filter(Point_main.sports_id == sport).first()
+            w1 = "row.c_" + str(match.clg_1st)
+            w2 = "row.c_" + str(match.clg_2nd)
+            w3 = "row.c_" + str(match.clg_3rd)
+            w4 = "row.c_" + str(match.clg_4th)
+            if(match.level == "Final"):
+                exec("%s += %d" % (w1,10))
+                exec("%s += %d" % (w2,6))
+                exec("%s += %d" % (w3,4))
+                exec("%s += %d" % (w4,2))
+            
         db.session.commit()
         return redirect(url_for("getLiveMatches"))
     return "error"
 
 
+
 @app.route('/addMatch', methods=['GET', 'POST'])
 @login_required
 def addMatches():
-    if(current_user.privilege!=4):
+    if(current_user.privilege!=3):
         return redirect(url_for('login'))
     if (request.method == 'POST'):
         if (request.form.get('type') == "team"):
-            entry = Match(id=Match.query.count() + 1, sports_id=request.form.get('sport'),
+            entry = Match(sports_id=request.form.get('sport'),
                           clg_id1=request.form.get('college1'), clg_id2=request.form.get('college2'),
                           date_time=request.form.get('datetime'), venue=request.form.get('venue'),
-                          level=request.form.get('level'))
+                          level=request.form.get('level'), score1=0, score2=0, winner_clg_id=0, runner_clg_id=0, status="", commentry="")
             db.session.add(entry)
         elif (request.form.get('type') == "individual"):
             players = request.form.getlist('players')
@@ -652,13 +750,18 @@ def addMatches():
             colleges = list(set(colleges))
             players = ",".join([str(x) for x in players])
             colleges = ",".join([str(x) for x in colleges])
-            entry = Match_Individual(id=Match_Individual.query.count() + 1, sport_id=request.form.get('sport'),
+            entry = Match_Individual(sport_id=request.form.get('sport'),
                                      clgs_playing=colleges, players=players, date_time=request.form.get('datetime'),
                                      venue=request.form.get('venue'), clg_1st=0, clg_2nd=0, clg_3rd=0, clg_4th=0,
                                      clg_1st_player_id=0, clg_2nd_player_id=0, clg_3rd_player_id=0, clg_4th_player_id=0,
                                      level=request.form.get('level'), status="", comments="")
             db.session.add(entry)
-            db.session.commit()
+        elif (request.form.get('type') == "relay"):
+            entry = Match_Relay(sport_id=request.form.get('sport'),
+                                 clgs_playing="", players="", date_time=request.form.get('datetime'),
+                                 venue=request.form.get('venue'), clg_1st=0, clg_2nd=0, clg_3rd=0, clg_4th=0,
+                                 level=request.form.get('level'), status=0, comments="")
+            db.session.add(entry)
         try:
             db.session.commit()
             flash("Match added")
@@ -669,9 +772,10 @@ def addMatches():
     sport = Sports.query.all()
     college = College.query.all()
     players = Players.query.all()
-    players = [{"id": x.id, "name": x.name, "roll_no": x.roll_no} for x in players if x.selected_sports != "staff"]
+    players = [{"id": x.id, "name": x.name, "clg_name":(College.query.filter(College.id == int(x.college_id)).first()).clg_name} for x in players if x.selected_sports != "staff"]
     players.sort(key=lambda x: x["name"])
     return render_template('addMatch.html', sports=sport, colleges=college, players=players)
+
 
 
 # application = app

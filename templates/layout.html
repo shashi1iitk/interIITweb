@@ -96,7 +96,7 @@
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
        
-        <a href="/#intro" class="scrollto"><img src="{{ url_for('static', filename='img/logo1.png') }}" alt="" class="img-fluid" style="width:200px;height:150px;"></a>
+        <a href="/#intro" class="scrollto"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="img-fluid" style="width:200px;height:150px;"></a>
         <!--  <h1 class="text-light"  style=" display: inline; vertical-align: top;"><a href="#header"><span>Inter IIT</span></a></h1> -->
       </div>
 
@@ -116,6 +116,8 @@
               {% elif current_user.privilege == 2 %}
                 <li><a href="/qrstats">Qr Stats</a></li>
                 <li><a href="/qrscanner">Qr Scanner</a></li>
+                {% elif current_user.privilege == 3 %}
+                <li><a href="/addMatch">Add Match</a></li>
               {% endif %}
                 <li><a href="/logout">Logout</a></li>
           {% else %}
@@ -143,7 +145,7 @@
 
           <div class="col-lg-4 col-md-6 footer-info">
             <h3>inter iit</h3>
-            <p>In 2019, IIT KGP will host the 54th edition Inter IIT sports meet. The 13 sports where students can showcase their skills are athletics, badminton, football, volleyball, basketball, cricket, hockey, lawn tennis, squash, swimming, table tennis, water polo, weightlifting.</p>
+            <p>In 2019, IIT KGP will host the 54th edition Inter IIT sports meet. The 14 sports where students can showcase their skills are athletics, badminton, football, volleyball, basketball, cricket, hockey, lawn tennis, squash, swimming, table tennis, water polo, weightlifting, Chess.</p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">

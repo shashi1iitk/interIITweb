@@ -65,11 +65,29 @@ $(document).ready(function() {
           player2 : parseInt($('#player2 option:selected').val()),
           player3 : parseInt($('#player3 option:selected').val()),
           player4 : parseInt($('#player4 option:selected').val()),
-          status : $('#status_individual').val(),
-          comments : $('#comments_individual').val()
+          status : $('#status_individual').val()
         },
         type : 'POST',
         url : '/endIndividualMatch'
+      }).done(function(data) {
+       console.log(data);
+       location.reload();
+      });
+     });
+
+    $('#submit_relay').on('click', function(event) {
+        event.preventDefault();
+        $.ajax({
+        data : {
+          id : parseInt($('#sport_relay option:selected').val()),
+          clg1 : parseInt($('#clg1 option:selected').val()),
+          clg2 : parseInt($('#clg2 option:selected').val()),
+          clg3 : parseInt($('#clg3 option:selected').val()),
+          clg4 : parseInt($('#clg4 option:selected').val()),
+          comments : $('#status_relay').val()
+        },
+        type : 'POST',
+        url : '/endRelayMatch'
       }).done(function(data) {
        console.log(data);
        location.reload();
@@ -146,7 +164,7 @@ $(document).ready(function() {
     </strong> -->
     <br><br>
 
-    <center><h2>Live Matches[Team]</h2></center>
+    <center><h2>Live Matches[Team]</h2></center><hr>
     <div class="row">
         {% for pmatch in live %}
         <div class="col-md-3">
@@ -252,7 +270,7 @@ $(document).ready(function() {
 
     <br><br>
 
-    <center><h2>Previous Team Matches </h2></center>
+    <center><h2>Previous Team Matches </h2></center><hr>
 
     <div class="row">
         {% for pmatch in prev %}
@@ -302,12 +320,12 @@ $(document).ready(function() {
 
     <br><br>
 
-    <center><h2>Previous Individual Matches </h2></center>
+    <center><h2>Previous Individual Matches </h2></center><hr>
 
     {% if current_user.is_authenticated and current_user.privilege == 3 %}
     <center>
     <div class="m-10" style="margin:10px;">
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Score</a><br>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal3-lg">Update Winners</a><br>
         Update scores of completed matches
     </div>
 </center>
@@ -326,27 +344,27 @@ $(document).ready(function() {
                             <option value={{ sport.id }}>{{ sport.sport }}</option>
                             {% endfor %}
                         </select><br>
-                        <a id="update_individual" class="btn btn-primary">Update</a>
+                        <a id="update_individual" class="btn btn-primary">Pick Winners</a>
                         <select class="form-control" id="player1" data-live-search="true" style="display:none;"
                                 validate>
-                            <option selected>Select Player1</option>
+                            <option selected>Gold</option>
                         </select><br>
                         <select class="form-control" id="player2" data-live-search="true" style="display:none;"
                                 validate>
-                            <option selected>Select Player2</option>
+                            <option selected>Silver</option>
                         </select><br>
                         <select class="form-control" id="player3" data-live-search="true" style="display:none;"
                                 validate>
-                            <option selected>Select Player3</option>
+                            <option selected>Bronze</option>
                         </select><br>
                         <select class="form-control" id="player4" data-live-search="true" style="display:none;"
                                 validate>
-                            <option selected>Select Player4</option>
+                            <option selected>4th Place</option>
                         </select><br>
                         <input type="text" class="form-control" id="status_individual" placeholder="Status"
                                style="display:none;"><br>
-                        <input type="text" class="form-control" id="comments_individual" placeholder="Comments"
-                               style="display:none;"><br>
+                        <!-- <input type="text" class="form-control" id="comments_individual" placeholder="Comments"
+                               style="display:none;"><br> -->
                         <a id="submit_individual" class="btn btn-primary" style="display:none;">Submit</a>
                     </div>
                 </form>
@@ -379,6 +397,93 @@ $(document).ready(function() {
         {% endfor %}
     </div>
 
+   <center><h2>Previous Relay Matches </h2></center><hr>
+
+    {% if current_user.is_authenticated and current_user.privilege == 3 %}
+    <center>
+    <div class="m-10" style="margin:10px;">
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal4-lg">Update Winners</a><br>
+        Update scores of completed Relay matches
+    </div>
+</center>
+    {% endif %}
+
+
+ <div class="modal fade bd-example-modal4-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content p-3">
+                <form action="" method="POST">
+                    <div class="form-group floating-label-form-group controls">
+                        <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
+                        <select class="form-control" id="sport_relay" data-live-search="true" name="sport"
+                                validate>
+                            <option selected>Select Sport</option>
+                            {% for sport in live_relay %}
+                            <option value={{ sport.id }}>{{ sport.sport }}</option>
+                            {% endfor %}
+                        </select><br>
+                    
+                        <select class="form-control" id="clg1" data-live-search="true"
+                                validate>
+                            <option selected>Gold</option>
+                            {% for val in colleges %}
+                                <option value="{{val.id}}">{{val.clg_name}}</option>
+                            {% endfor %}
+                        </select><br>
+                        <select class="form-control" id="clg2" data-live-search="true"
+                                validate>
+                            <option selected>Silver</option>
+                            {% for val in colleges %}
+                                <option value="{{val.id}}">{{val.clg_name}}</option>
+                            {% endfor %}
+                        </select><br>
+                        <select class="form-control" id="clg3" data-live-search="true"
+                                validate>
+                            <option selected>Bronze</option>
+                            {% for val in colleges %}
+                                <option value="{{val.id}}">{{val.clg_name}}</option>
+                            {% endfor %}
+                        </select><br>
+                        <select class="form-control" id="clg4" data-live-search="true"
+                                validate>
+                            <option selected>4th Place</option>
+                            {% for val in colleges %}
+                                <option value="{{val.id}}">{{val.clg_name}}</option>
+                            {% endfor %}
+                        </select><br>
+                        <input type="text" class="form-control" id="status_relay" placeholder="Status"
+                               style="display:none;"><br>
+                        <a id="submit_relay" class="btn btn-primary">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for pmatch in prev3 %}
+        <div class="col-md-4">
+            <div class="card m-2 text-center">
+                <div class="card-header">
+                    <strong>{{ pmatch.sport }}</strong>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong> {{pmatch.clg1}} </strong><br>
+                        <strong> {{pmatch.clg2}} </strong><br>
+                        <strong> {{pmatch.clg3}} </strong><br>
+                        <strong> {{pmatch.clg4}} </strong><br>
+                    </p>
+                    <strong>Status: </strong> {{pmatch.status}}
+                </div>
+
+                <div class="card-footer text-muted">
+                    <strong>{{ pmatch.level }}</strong>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </main>
 
 
