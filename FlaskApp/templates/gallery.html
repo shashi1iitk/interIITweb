@@ -1,0 +1,283 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+
+
+
+
+  <div class="site-wrap">
+
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+<!--
+  <header class="header-bar d-flex d-lg-flex align-items-center inner-page-header" data-aos="fade-down">
+    <div class="site-logo">
+      <a href="index.html">Thumber</a>
+    </div>
+
+    <div class="d-inline-block d-xl-block ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span> <span style="position: relative;top: -4px; text-transform: uppercase;">Menu</span></a></div>
+
+    <div class="main-menu d-none">
+      <ul class="js-clone-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="photos.html">Photos</a></li>
+        <li><a href="bio.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="social js-clone-nav">
+        <li><a href="#"><span class="icon-facebook"></span></a></li>
+        <li><a href="#"><span class="icon-twitter"></span></a></li>
+        <li><a href="#"><span class="icon-instagram"></span></a></li>
+      </ul>
+    </div>
+  </header>
+  -->
+<br>
+  <main class="main-content">
+    <div class="container-fluid photos">
+      <div class="row align-items-stretch">
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_1.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_1.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url_for('static', filename='images/img_2.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_2.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{ url_for('static', filename='images/img_3.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_3.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_4.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_4.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url_for('static', filename='images/img_5.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_5.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{ url_for('static', filename='images/img_6.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_6.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_7.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_7.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url_for('static', filename='images/img_8.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_8.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{ url_for('static', filename='images/img_9.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_9.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_10.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_10.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_11.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_11.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url_for('static', filename='images/img_12.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_12.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{ url_for('static', filename='images/img_13.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_13.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_14.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_14.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url_for('static', filename='images/img_15.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_15.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{ url_for('static', filename='images/img_16.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_16.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_17.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_17.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url_for('static', filename='images/img_18.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_18.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{ url_for('static', filename='images/img_19.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_19.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_20.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_20.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{{ url_for('static', filename='images/img_21.jpg') }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ url_for('static', filename='images/img_21.jpg') }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+
+
+
+      </div>
+<!--
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center py-5">
+          <p>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        </p>
+        </div>
+      </div>
+  -->
+    </div>
+  </main>
+
+</div> <!-- .site-wrap -->
+
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+  <!-- <script src="js/jquery.stellar.min.js"></script> -->
+  <script src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/swiper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.scrollbar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main1.js') }}"></script>
+
+
+  <!-- Template Main Javascript File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+{% endblock %}

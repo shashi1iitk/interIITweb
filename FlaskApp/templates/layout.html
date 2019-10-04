@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Inter IIT Sports Meet 2019</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+
+  <!-- JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+
+
+   <!-- Bootstrap 4 JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>-->
+
+
+  <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap 4 CSS File -->
+  <link href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/animate/animate.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}">
+
+ 
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+
+
+
+  <!-- Bootstrap select Stylesheet -->
+  
+<!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />-->
+  <!-- Bootstrap Select Stylesheet -->
+ 
+
+ 
+
+  <!-- Bootstrap Select Main JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+
+
+
+   <!-- Alert cdns -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128422073-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128422073-2');
+</script>
+
+</head>
+
+  <!-- Bootstrap Select Language JavaScript -->
+  
+<body>
+<!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+       
+        <a href="/#intro" class="scrollto"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="img-fluid" style="width:200px;height:150px;"></a>
+        <!--  <h1 class="text-light"  style=" display: inline; vertical-align: top;"><a href="#header"><span>Inter IIT</span></a></h1> -->
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/scorecard">Scorecard</a></li>
+          <li><a href="/getLiveMatches">Live Score</a></li>
+          <li><a href="/schedule">Schedule</a></li>
+          <li><a href="/live">Live Stream</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <!-- <li><a href="/info">Info</a></li> -->
+
+          {% if current_user.is_authenticated %}
+              {% if current_user.privilege == 1 %}
+                <li><a href="/showCandidates">My Contingent</a></li>
+              {% elif current_user.privilege == 2 %}
+                <li><a href="/qrstats">Qr Stats</a></li>
+                <li><a href="/qrscanner">Qr Scanner</a></li>
+                {% elif current_user.privilege == 3 %}
+                <li><a href="/addMatch">Add Match</a></li>
+              {% endif %}
+                <li><a href="/logout">Logout</a></li>
+          {% else %}
+          <li><a href="/login">Login</a></li>
+          {% endif %}
+          
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+  <br><br>
+
+{% block body %} {% endblock %}
+
+
+
+ <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>inter iit</h3>
+            <p>In 2019, IIT KGP will host the 54th edition Inter IIT sports meet. The 14 sports where students can showcase their skills are athletics, badminton, football, volleyball, basketball, cricket, hockey, lawn tennis, squash, swimming, table tennis, water polo, weightlifting, Chess.</p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/scorecard">Scorecard</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/getLiveMatches">Live Score</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Technology Student Gymkhana<br>
+              IIT Kharagpur, Kharagpur <br>
+              West Bengal, 721302<br>
+              India, Asia<br>
+              <strong>Phone:</strong> +91 8979569245<br>
+              <strong>Email:</strong> gsecsportsiitkgp@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://www.facebook.com/interiit19/" class="facebook"  target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://twitter.com/inter_iit" class="twitter"  target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.instagram.com/explore/tags/interiit/" class="instagram"  target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/inter-iit-sports-meet/about/" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>To remain updated with upcoming announcements, you can subscribe to our newsletter.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Inter IIT</strong><a href="https://talkjarvis.com/" target="_blank">.</a> All Rights Reserved
+      </div>
+      <!-- <div class="credits">
+        Designed With <a href="https://talkjarvis.com/">❤</a>
+      </div> -->
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+
+
+
+
+   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         <script type="text/javascript">alert("{{ message }}")</script>
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+</body>
+</html>

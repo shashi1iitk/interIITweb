@@ -58,6 +58,7 @@ $(document).ready(function() {
 
     $('#submit_individual').on('click', function(event) {
         event.preventDefault();
+        $("#submit_individual").attr("disabled", true);
         $.ajax({
         data : {
           id : parseInt($('#sport_individual option:selected').val()),
@@ -65,7 +66,7 @@ $(document).ready(function() {
           player2 : parseInt($('#player2 option:selected').val()),
           player3 : parseInt($('#player3 option:selected').val()),
           player4 : parseInt($('#player4 option:selected').val()),
-          status : $('#status_individual').val()
+          // status : $('#status_individual').val()
         },
         type : 'POST',
         url : '/endIndividualMatch'
@@ -77,6 +78,7 @@ $(document).ready(function() {
 
     $('#submit_relay').on('click', function(event) {
         event.preventDefault();
+        $("#submit_relay").attr("disabled", true);
         $.ajax({
         data : {
           id : parseInt($('#sport_relay option:selected').val()),
@@ -84,7 +86,7 @@ $(document).ready(function() {
           clg2 : parseInt($('#clg2 option:selected').val()),
           clg3 : parseInt($('#clg3 option:selected').val()),
           clg4 : parseInt($('#clg4 option:selected').val()),
-          comments : $('#status_relay').val()
+          // comments : $('#status_relay').val()
         },
         type : 'POST',
         url : '/endRelayMatch'
@@ -164,7 +166,7 @@ $(document).ready(function() {
     </strong> -->
     <br><br>
 
-    <center><h2>Live Matches[Team]</h2></center><hr>
+    <center><h2><strong>Live Matches[Team]</strong></h2></center><hr>
     <div class="row">
         {% for pmatch in live %}
         <div class="col-md-3">
@@ -176,14 +178,14 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo1}}"
-                                 class="rounded-circle float-left" alt="Cinque Terre" height="80px" style="padding-left: 0px;">
+                                 class="rounded-circle float-left" alt="Cinque Terre" height="70px">
                         </div>
                         <div class="col-sm-2">
-                           <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
+                           <img src="/static/logo/vs.jpg" class="rounded-circle" height="35px" style="margin-top: 20px;">
                         </div>
                         <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo2}}"
-                                 class="rounded-circle float-right" alt="Cinque Terre" height="80px"  style="padding-right: 0px;">
+                                 class="rounded-circle float-right" alt="Cinque Terre" height="70px">
                         </div>
                     </div><br>
                     <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
@@ -270,7 +272,7 @@ $(document).ready(function() {
 
     <br><br>
 
-    <center><h2>Previous Team Matches </h2></center><hr>
+    <center><h2><strong>Previous Team Matches</strong></h2></center><hr>
 
     <div class="row">
         {% for pmatch in prev %}
@@ -283,14 +285,14 @@ $(document).ready(function() {
                     <div class="row">
                        <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo1}}"
-                                 class="rounded-circle float-left" alt="Cinque Terre" height="80px" style="padding-left: 0px;">
+                                 class="rounded-circle float-left" alt="Cinque Terre" height="70px">
                         </div>
                         <div class="col-sm-2">
-                           <img src="/static/logo/vs.jpg" class="rounded-circle" height="50px">
+                           <img src="/static/logo/vs.jpg" class="rounded-circle" height="35px" style="margin-top: 20px;">
                         </div>
                         <div class="col-sm-5">
                             <img src="/static/logo/{{pmatch.logo2}}"
-                                 class="rounded-circle float-right" alt="Cinque Terre" height="80px"  style="padding-right: 0px;">
+                                 class="rounded-circle float-right" alt="Cinque Terre" height="70px">
                         </div>
                     </div><br>
                     <h5 class="card-title" style="margin:0px;"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5><br>
@@ -320,7 +322,7 @@ $(document).ready(function() {
 
     <br><br>
 
-    <center><h2>Previous Individual Matches </h2></center><hr>
+    <center><h2><strong>Previous Individual Matches</strong></h2></center><hr>
 
     {% if current_user.is_authenticated and current_user.privilege == 3 %}
     <center>
@@ -334,7 +336,7 @@ $(document).ready(function() {
     <div class="modal fade bd-example-modal3-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
-                <form action="" method="POST">
+                <form action="/endIndividualMatch" method="POST">
                     <div class="form-group floating-label-form-group controls">
                         <!--<select class="form-control selectpicker" id="select-country" data-live-search="true">-->
                         <select class="form-control" id="sport_individual" data-live-search="true" name="sport"
@@ -361,11 +363,11 @@ $(document).ready(function() {
                                 validate>
                             <option selected>4th Place</option>
                         </select><br>
-                        <input type="text" class="form-control" id="status_individual" placeholder="Status"
-                               style="display:none;"><br>
+                        <!-- <input type="text" class="form-control" id="status_individual" placeholder="Status"
+                               style="display:none;"><br> -->
                         <!-- <input type="text" class="form-control" id="comments_individual" placeholder="Comments"
                                style="display:none;"><br> -->
-                        <a id="submit_individual" class="btn btn-primary" style="display:none;">Submit</a>
+                        <button id="submit_individual" class="btn btn-primary" style="display:none;" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -381,12 +383,12 @@ $(document).ready(function() {
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <strong> {{pmatch.player1.name}} </strong>- {{pmatch.player1.college}} <br>
-                        <strong> {{pmatch.player2.name}} </strong>- {{pmatch.player2.college}} <br>
-                        <strong> {{pmatch.player3.name}} </strong>- {{pmatch.player3.college}} <br>
-                        <strong> {{pmatch.player4.name}} </strong>- {{pmatch.player4.college}} <br>
+                       <strong> 1.  {{pmatch.player1.name}} </strong>- {{pmatch.player1.college}} <br>
+                        <strong>2.  {{pmatch.player2.name}} </strong>- {{pmatch.player2.college}} <br>
+                        <strong>3.  {{pmatch.player3.name}} </strong>- {{pmatch.player3.college}} <br>
+                        <strong>4.  {{pmatch.player4.name}} </strong>- {{pmatch.player4.college}} <br>
                     </p>
-                    <strong>Status: </strong> {{pmatch.status}}
+                    <!-- <strong>Status: </strong> {{pmatch.status}} -->
                 </div>
 
                 <div class="card-footer text-muted">
@@ -397,7 +399,7 @@ $(document).ready(function() {
         {% endfor %}
     </div>
 
-   <center><h2>Previous Relay Matches </h2></center><hr>
+   <center><h2><strong>Previous Relay Matches</strong></h2></center><hr>
 
     {% if current_user.is_authenticated and current_user.privilege == 3 %}
     <center>
@@ -424,36 +426,37 @@ $(document).ready(function() {
                         </select><br>
                     
                         <select class="form-control" id="clg1" data-live-search="true"
-                                validate>
+                                validate required>
                             <option selected>Gold</option>
                             {% for val in colleges %}
                                 <option value="{{val.id}}">{{val.clg_name}}</option>
                             {% endfor %}
                         </select><br>
                         <select class="form-control" id="clg2" data-live-search="true"
-                                validate>
+                                validate  required>
                             <option selected>Silver</option>
                             {% for val in colleges %}
                                 <option value="{{val.id}}">{{val.clg_name}}</option>
                             {% endfor %}
                         </select><br>
                         <select class="form-control" id="clg3" data-live-search="true"
-                                validate>
+                                validate  required>
                             <option selected>Bronze</option>
                             {% for val in colleges %}
                                 <option value="{{val.id}}">{{val.clg_name}}</option>
                             {% endfor %}
                         </select><br>
                         <select class="form-control" id="clg4" data-live-search="true"
-                                validate>
+                                validate  required>
                             <option selected>4th Place</option>
                             {% for val in colleges %}
                                 <option value="{{val.id}}">{{val.clg_name}}</option>
                             {% endfor %}
                         </select><br>
-                        <input type="text" class="form-control" id="status_relay" placeholder="Status"
-                               style="display:none;"><br>
-                        <a id="submit_relay" class="btn btn-primary">Submit</a>
+                        <!-- <input type="text" class="form-control" id="status_relay" placeholder="Status"
+                               style="display:none;"><br> -->
+                        <button id="submit_relay" class="btn btn-primary" type="submit">Submit</button>
+                        <!-- <a id="submit_relay" class="btn btn-primary">Submit</a> -->
                     </div>
                 </form>
             </div>
@@ -469,12 +472,12 @@ $(document).ready(function() {
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <strong> {{pmatch.clg1}} </strong><br>
-                        <strong> {{pmatch.clg2}} </strong><br>
-                        <strong> {{pmatch.clg3}} </strong><br>
-                        <strong> {{pmatch.clg4}} </strong><br>
+                        <strong>1. </strong>{{pmatch.clg1}} <br>
+                        <strong>2. </strong>{{pmatch.clg2}} <br>
+                        <strong>3. </strong>{{pmatch.clg3}} <br>
+                        <strong>4. </strong>{{pmatch.clg4}} <br>
                     </p>
-                    <strong>Status: </strong> {{pmatch.status}}
+                    
                 </div>
 
                 <div class="card-footer text-muted">

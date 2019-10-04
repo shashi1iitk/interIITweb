@@ -681,7 +681,7 @@ def endIndividualMatch():
         match.clg_2nd = Players.query.filter(Players.id == int(request.form.get('player2'))).first().college_id
         match.clg_3rd = Players.query.filter(Players.id == int(request.form.get('player3'))).first().college_id
         match.clg_4th = Players.query.filter(Players.id == int(request.form.get('player4'))).first().college_id
-        match.status = request.form.get('status')
+        match.status = ""
         match.comments = ""
         if(match.level == "Final"):
             sport =  match.sport_id
@@ -697,7 +697,7 @@ def endIndividualMatch():
                 exec("%s += %d" % (w4,1))
             
         db.session.commit()
-        return redirect(url_for("getLiveMatches"))
+        return "OK"
     return "error"
 
 @app.route('/endRelayMatch', methods=['GET', 'POST'])
@@ -710,7 +710,8 @@ def endRelayMatch():
         match.clg_2nd = int(request.form.get('clg2'))
         match.clg_3rd = int(request.form.get('clg3'))
         match.clg_4th = int(request.form.get('clg4'))
-        match.comments = request.form.get('comments')
+        # match.comments = request.form.get('comments')
+        match.comments = ""
         match.status = 1
         if(match.level == "Final"):
             sport =  match.sport_id
@@ -726,7 +727,7 @@ def endRelayMatch():
                 exec("%s += %d" % (w4,2))
             
         db.session.commit()
-        return redirect(url_for("getLiveMatches"))
+        return "OK"
     return "error"
 
 

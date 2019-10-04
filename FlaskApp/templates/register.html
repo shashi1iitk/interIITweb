@@ -1,0 +1,317 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style type="text/css">
+    .multiselect-container {
+        width: 100% !important;
+    }
+</style>
+<script type="text/javascript">
+
+function myFunction() {
+  window.location.href = '/showCandidates';
+}
+
+$(document).ready(function() {
+
+
+     $("#sports_select").hide();
+
+     $("input[name$='type']").click(function() {
+        var test = $(this).val();
+
+        if(test == "P"){
+            $("#sports_select").show();
+        }
+        else
+            $("#sports_select").hide();
+    });
+
+	$('#framework').multiselect({
+		  nonSelectedText: 'Select Sports',
+		  enableFiltering: true,
+		  enableCaseInsensitiveFiltering: true,
+		  buttonWidth:'100%'
+		 });
+
+	$('form').on('submit', function(event) {
+
+        $("#sendMessageButton").attr("disabled", true);
+        $("#sendMessageButton").html('Please wait...');
+
+        if($("input[name='type']:checked").val() == "S"){
+            selected_string = "staff"
+        }
+
+            else{
+    		var brands = $('#framework option:selected');
+            var selected = [];
+            $(brands).each(function(index, brand){
+                selected.push([$(this).val()]);
+            });
+
+            console.log(selected);
+            selected_string = selected.toString();
+        }
+            
+
+        // alert(selected_string);
+
+        var formData = new FormData(document.querySelector('#registerForm'));
+		formData.append("selected_sports", selected_string);
+
+		$.ajax({
+			data : formData,
+            type : 'POST',
+            url : '/register',
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: false
+		})
+		.done(function(id){
+            $("#sendMessageButton").attr("disabled", false);
+            $("#sendMessageButton").html('Register');
+		    console.log(id);
+            if(id === 'Success'){
+               swal("Awesome!", "Candidate Registered Successfully!", "success");
+               setTimeout(myFunction, 1500);
+
+                // alert("Candidate Registered Successfully!");
+            }
+
+            else if(id === 'Fail') swal("Try Again!", "Something Went Wrong!", "error");
+                $('#framework option:selected').each(function(){
+                 $(this).prop('selected', false);
+                });
+                $('#framework').multiselect('refresh');
+
+		});
+
+		event.preventDefault();
+	});
+
+});
+
+
+
+</script>
+
+
+<!-- Main Content -->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+
+            <br><br>
+            <form name="sentMessage" id="registerForm" validate>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <!--  <label>Name</label> -->
+                        <input type="text" class="form-control" placeholder="Name" id="name" name='name' required
+                               data-validation-required-message="Please enter your name.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="email" class="form-control" placeholder="Email Address" id="email" name="email"
+                               required data-validation-required-message="Please enter your email address.">
+                               <small id="passwordHelpBlock" class="form-text text-muted">
+                                    unique for each registration
+                               </small>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="text" id="roll_no" placeholder="Roll No. / Enrollment Number" class="form-control"
+                               aria-describedby="passwordHelpBlock" name="roll_no" required
+                               data-validation-required-message="Please fill this field.">
+                         <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="number" class="form-control" placeholder="Mobile" id="mobile" name='mobile'
+                               required data-validation-required-message="Please enter your phone">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="text" class="form-control" placeholder="Jursey Name" id="jursey_name"
+                               name="jursey_name" required
+                               data-validation-required-message="Please enter your Jursey Name.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <!-- <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Arrival date</label>
+                        <input type="date" class="form-control" placeholder="Arrival Date" id="arr_date"
+                               name="arr_date" required
+                               data-validation-required-message="Please enter your favourite athelete.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Departure date</label>
+                        <input type="date" class="form-control" placeholder="Departure Date" id="dep_date"
+                               name="dep_date" required
+                               data-validation-required-message="Please fill this field.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div> -->
+
+                <!--<div class="control-group">-->
+                    <!--<div class="form-group floating-label-form-group controls">-->
+                        <!--<input type="text" class="form-control" placeholder="Any special instruction to OC" id="special_inst"-->
+                               <!--name="special_inst" required-->
+                               <!--data-validation-required-message="Please fill this field.">-->
+                        <!--<p class="help-block text-danger"></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                 <!--<div class="control-group">-->
+                    <!--<div class="form-group floating-label-form-group controls">-->
+                        <!--<div class="custom-file">-->
+                            <!--<input type="file" class="custom-file-input" id="customFile" name="profile_img" required-->
+                               <!--data-validation-required-message="Select an image first.">-->
+                            <!--<label class="custom-file-label" for="customFile">Select profile picture</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Food: </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="food" id="veg" value="Veg" required>
+                            <label class="form-check-label" for="veg">Veg</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="food" id="nonveg" value="Non-Veg" required>
+                            <label class="form-check-label" for="nonveg">Non-Veg</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Gender: </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="M" value="M" required>
+                            <label class="form-check-label" for="M">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="F" value="F" required>
+                            <label class="form-check-label" for="F">Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Blood Group: </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="A+" value="A+" required>
+                            <label class="form-check-label" for="A+">A+</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="A-" value="A-" required>
+                            <label class="form-check-label" for="A-">A-</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="B+" value="B+" required>
+                            <label class="form-check-label" for="B+">B+</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="B-" value="B-" required>
+                            <label class="form-check-label" for="B-">B-</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="O+" value="O+" required>
+                            <label class="form-check-label" for="O+">O+</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="O-" value="O-" required>
+                            <label class="form-check-label" for="O-">O-</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="AB+" value="AB+" required>
+                            <label class="form-check-label" for="AB+">AB+</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="blood_group" id="AB-" value="AB-" required>
+                            <label class="form-check-label" for="AB-">AB-</label>
+                        </div>
+                    </div>
+                </div>
+
+
+<!--                <div class="control-group">-->
+<!--                    <div class="form-group floating-label-form-group controls">-->
+<!--                        &lt;!&ndash; <select class="form-control selectpicker" id="select-country" data-live-search="true"> &ndash;&gt;-->
+<!--                        <select class="form-control" id="college" data-live-search="true" name="college">-->
+<!--                            <option selected>Selet your college</option>-->
+<!--                            {% for sport in college %}-->
+<!--                                <option value={{ sport.id }}> {{ sport.clg_name }}</option>-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+                
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Type: </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="P" value="P" required>
+                            <label class="form-check-label" for="P">Player</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="S" value="S" required>
+                            <label class="form-check-label" for="S">Staff</label>
+                        </div>
+        
+                    </div>
+                </div>
+                
+
+                <div class="form-group" id="sports_select">
+                    <label>Select sport/sports from the dropdown: </label>
+                    <select id="framework" name="framework[]" multiple="multiple" class="form-control">
+                        {% for sport in allSports %}
+                        <option value={{ sport.id }}> {{ sport.sports_name + '(' + sport.category + ')' }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+               
+
+
+                <div id="success"></div>
+                <div class="form-group">
+                    <center><button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button></center>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+
+{% endblock %}

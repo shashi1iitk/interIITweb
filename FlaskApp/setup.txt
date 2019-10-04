@@ -1,0 +1,35 @@
+pip install sqlalchemy
+sqlclient installed via .whl file through https://www.lfd.uci.edu/~gohlke/pythonlibs/
+pip 
+install flask-mail
+pip 
+install passlib
+
+exit 
+vim: esc + : + wq + enter
+
+
+
+git config --global http.proxy http://proxy 172.16.2.30:8080
+git config --global https.proxy http://proxy 172.16.2.30:8080
+
+git config --global --get http.proxy
+git config --global --unset http.proxy
+
+git add .
+git commit -a -m " "
+git push -f --set-upstream https://github.com/shashi1iitk/interIITweb.git master
+
+
+
+https://www.webslesson.info/2017/05/bootstrap-multi-select-dropdown-with-checkboxes-using-jquery-in-php.html
+
+http://davidstutz.de/bootstrap-multiselect/#templates
+
+
+
+user.no_of_logins += 1
+session.commit()
+
+
+

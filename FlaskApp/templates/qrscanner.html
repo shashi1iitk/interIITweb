@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <center>
+        <video id="preview"></video>
+    </center>
+    <center><h3>Qr Scanner</h3></center>
+    <script type="text/javascript">
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+
+
+      $.ajax({
+        data : {
+          content : content
+        },
+        type : 'POST',
+        url : '/qrscanner'
+      })
+      .done(function(data){
+        console.log(data);
+        if(data === "Fail") swal("Failed!", "Permission Denied!", "error");
+        if(data === "Success") swal("Success!", "Permission Granted!", "success");
+      });
+
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[1]);
+        } else {
+          alert('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    </script>
+
+    <br><br>
+
+<!-- JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+   <!-- Bootstrap 4 JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+
+   <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+    $("#button").on('click', function(event) {
+
+    event.preventDefault();
+
+    $.ajax({
+      data : {
+        username : $('#username').val(),
+        password : $('#password').val()
+      },
+      type : 'POST',
+      url : '/login'
+    })
+    .done(function(data){
+      console.log(data);
+      if(data === "Fail") swal("Try Again!", "Wrong username or password!", "error");
+      if(data === "Success") window.location.href = '/loginSuccess';
+    });
+
+    });
+    });
+</script>
+
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <br><br><br><br>
+          <center><h2  style="margin-top:5%;">Login, only for college adminstration</h2></center>
+          <form validate>
+
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <input type="text" class="form-control" placeholder="Username" id="username" name="username" required data-validation-required-message="Please enter your username">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <input type="password" id="password" placeholder="Password" class="form-control" aria-describedby="passwordHelpBlock" name="password" required data-validation-required-message="Please enter your password">
+              </div>
+            </div>
+
+            <div id="success"></div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="button">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+
+<!-- JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+   <!-- Bootstrap 4 JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+
+   <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}

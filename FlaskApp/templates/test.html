@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+    $("#button").on('click', function(event) {
+
+    event.preventDefault();
+
+    $.ajax({
+      data :  new FormData($('#upload-file')[0]),
+      type : 'POST',
+      url : '/test',
+      contentType: false,
+      cache: false,
+      processData: false,
+      async: false
+
+    })
+    .done(function(data){
+      console.log(data);
+      alert(data);
+    });
+
+    });
+    });
+</script>
+
+</head>
+
+<body>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+
+
+          <br><br>
+         <form id="upload-file" method="post" enctype="multipart/form-data">
+
+
+
+            <!--<div class="control-group">-->
+              <!--<div class="form-group floating-label-form-group controls">-->
+                <!--<input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">-->
+                <!--<p class="help-block text-danger"></p>-->
+              <!--</div>-->
+            <!--</div>-->
+
+
+
+                <fieldset>
+                    <label for="file">Select a file</label>
+                    <input name="profile_img" type="file" id="file">
+                </fieldset>
+
+
+
+        <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="button">Submit</button>
+        </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+
+
+{% endblock %}

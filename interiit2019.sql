@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 30, 2019 at 02:38 PM
+-- Generation Time: Oct 04, 2019 at 10:26 PM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -693,54 +693,54 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
-(1, 'DIVYANSHU CHAHAL', 'sac.incharge@iitb.ac.in', '7389582408', 4, '9,15,16,24', '160110037', 'Non-Veg', 'B+', '1.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 1),
-(2, 'DHYANESH BASKARAN', 'b.dhyanesh@iitgn.ac.in', '9500970794', 8, '2,6,9', '17110033', 'Non-Veg', 'B+', '2.jpg', 'DHYANESH', 'Nil', 'M', 0, 000, 000, 000, 1),
-(3, 'PALLAV KULHARI', 'pallavk@iitk.ac.in', '7568590005', 15, '24', '160468', 'Non-Veg', 'B+', '3.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 1),
-(4, 'AMIT KUMAR SINGH', 'amit.si@iitgn.ac.in', '7405612290', 8, '1,6', '14210066', 'Non-Veg', 'B+', '4.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
-(5, 'RANJIT KUMAR DEHURY', 'ranjit.dehury@iitgn.ac.in', '8327772707', 8, '1', '16310025', 'Non-Veg', 'B+', '5.jpg', '10', 'Nil', 'M', 0, 000, 000, 000, 1),
+(1, 'DIVYANSHU CHAHAL', 'sac.incharge@iitb.ac.in', '7389582408', 4, '9,15,16,24', '160110037', 'Non-Veg', 'B+', '1.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 0),
+(2, 'DHYANESH BASKARAN', 'b.dhyanesh@iitgn.ac.in', '9500970794', 8, '2,6,9', '17110033', 'Non-Veg', 'B+', '2.jpg', 'DHYANESH', 'Nil', 'M', 0, 000, 000, 000, 0),
+(3, 'PALLAV KULHARI', 'pallavk@iitk.ac.in', '7568590005', 15, '24', '160468', 'Non-Veg', 'B+', '3.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 0),
+(4, 'AMIT KUMAR SINGH', 'amit.si@iitgn.ac.in', '7405612290', 8, '1,6', '14210066', 'Non-Veg', 'B+', '4.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
+(5, 'RANJIT KUMAR DEHURY', 'ranjit.dehury@iitgn.ac.in', '8327772707', 8, '1', '16310025', 'Non-Veg', 'B+', '5.jpg', '10', 'Nil', 'M', 0, 000, 000, 000, 0),
 (6, 'ANIMESH SHARMA', 'animesh.sharma17003@iitgoa.ac.in', '8178490807', 9, '2,3,9', '170030011', 'Veg', 'B+', '6.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 1),
 (8, 'DINESH PARMAR', 'dparmar@iitgn.ac.in', '9898754279', 8, 'staff', '0142', 'Non-Veg', 'B+', '8.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 0),
 (9, 'ANMOL PALIWAL', 'anmol.paliwal.18001@iitgoa.ac.in', '9650082798', 9, '1,2,6', '180010006', 'Veg', 'B+', '9.jpg', '2', 'Nil', 'M', 0, 000, 000, 000, 1),
-(10, 'AMIT BADONI', 'amitbad@iitk.ac.in', '9811303469', 15, '5,12,13,15,16,24', '170091', 'Non-Veg', 'B+', '10.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 1),
-(11, 'ADWAIT AGESHE', 'adwait.ageshe.19031@iitgoa.ac.in', '9172924602', 9, '1,3,12', '190310.3', 'Non-Veg', 'B+', '11.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 1),
+(10, 'AMIT BADONI', 'amitbad@iitk.ac.in', '9811303469', 15, '5,12,13,15,16,24', '170091', 'Non-Veg', 'B+', '10.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 0),
+(11, 'ADWAIT AGESHE', 'adwait.ageshe.19031@iitgoa.ac.in', '9172924602', 9, '1,3,12', '190310.3', 'Non-Veg', 'B+', '11.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 0),
 (12, 'AKSHIT AGARWAL', 'akshitagarwal44@gmail.com', '7999793202', 6, '24', '18MT0056', 'Veg', 'B+', '12.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
 (13, 'SANTOSH UPADHYAY', 'aso@iitgoa.ac.in', '9839449191', 9, 'staff', 'C -044', 'Veg', 'B+', '13.jpg', '4', 'Nil', 'M', 0, 000, 000, 000, 0),
-(14, 'BHARAT N BHARADWAJ', 'nkbaradwaj@gmail.com', '9481815776', 6, '1,2,15,24', '18JE0218', 'Veg', 'B+', '14.jpg', '18', 'Nil', 'M', 0, 000, 000, 000, 1),
+(14, 'BHARAT N BHARADWAJ', 'nkbaradwaj@gmail.com', '9481815776', 6, '1,2,15,24', '18JE0218', 'Veg', 'B+', '14.jpg', '18', 'Nil', 'M', 0, 000, 000, 000, 0),
 (15, 'S POONKUNDRAN', 'poonkun@iitk.ac.in', '9444360014', 15, '6,7,8,15,16,24', '150602', 'Non-Veg', 'B+', '15.jpg', '4', 'Nil', 'M', 0, 000, 000, 000, 0),
-(16, 'ANSHUMAN SINGH', 'ansshu.sin@gmail.com', '919906708', 6, '1,5,24', '18JE002804', 'Non-Veg', 'B+', '16.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 1),
+(16, 'ANSHUMAN SINGH', 'ansshu.sin@gmail.com', '919906708', 6, '1,5,24', '18JE002804', 'Non-Veg', 'B+', '16.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 0),
 (17, 'RAVISH KUMAR SAHANI', 'ravish2561@gmail.com', '7654965903', 6, '6,24', '16JE002561', 'Non-Veg', 'B+', '17.jpg', '99', 'Nil', 'M', 0, 000, 000, 000, 1),
 (18, 'PARTH BHARADWAJ', 'bharadwajparth126@gmail.com', '9560871369', 5, '1,2,3,4,12,15,16,24', '2016BB50007', 'Veg', 'B+', '18.jpg', '1', 'Nil', 'M', 0, 000, 000, 000, 0),
 (19, 'VOOTKURU SAI BHARGAV REDDY', 'saibhargav.vootkuru@gmail.com', '8186027290', 6, '24', '18JE0942', 'Non-Veg', 'B+', '19.jpg', '22', 'Nil', 'M', 0, 000, 000, 000, 1),
 (20, 'YASH GUPTA', 'yash.iitd21@gmail.com', '8800946972', 5, '3,4,5,15,16,24', '2017EE10504', 'Veg', 'B+', '20.jpg', '2', 'Nil', 'M', 0, 000, 000, 000, 0),
 (21, 'ANIMESH SHUKLA', 'animeshshukla0904@gmail.com', '9753998563', 6, '24', '18JE0114', 'Non-Veg', 'B+', '21.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 1),
-(22, 'NIHAR PATEL', 'nihar5733@gmail.com', '9427007282', 5, '9,10,11,24', '2017MT60782', 'Non-Veg', 'B+', '22.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 1),
-(23, 'HARSH NARANG', 'harshn@iitk.ac.in', '7388728344', 15, '1,2,15,16,24', '15807267', 'Non-Veg', 'B+', '23.jpg', '2', 'Nil', 'M', 0, 000, 000, 000, 1),
+(22, 'NIHAR PATEL', 'nihar5733@gmail.com', '9427007282', 5, '9,10,11,24', '2017MT60782', 'Non-Veg', 'B+', '22.jpg', '3', 'Nil', 'M', 0, 000, 000, 000, 0),
+(23, 'HARSH NARANG', 'harshn@iitk.ac.in', '7388728344', 15, '1,2,15,16,24', '15807267', 'Non-Veg', 'B+', '23.jpg', '2', 'Nil', 'M', 0, 000, 000, 000, 0),
 (24, 'ANKIT KUMAR', 'sankyism@yahoo.com', '7979938243', 6, '15,24', '16JE002382', 'Non-Veg', 'B+', '24.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
 (25, 'KARTIN SAREEN', 'ksareen1107@gmail.com', '9873343999', 6, '15,24', '18JE0400', 'Non-Veg', 'B+', '25.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 1),
-(26, 'KULWANT SINGH', 'kulwants@iitk.ac.in', '8308523629', 15, '24', '18101049', 'Non-Veg', 'B+', '26.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 1),
-(27, 'SAMEER JAIN', 'sameer2000jain12@gmail.com', '9893636504', 6, '24', '18JE0716', 'Veg', 'B+', '27.jpg', '2', 'Nil', 'M', 0, 000, 000, 000, 1),
-(28, 'AKASH SURYAWANSHI', 'suryaakash7799@gmail.com', '8448407829', 5, '2,9,10,13,14,15,16,24', '2019CS50416', 'Veg', 'B+', '28.jpg', '4', 'Nil', 'M', 0, 000, 000, 000, 1),
-(29, 'KRISHNA KUMAR', 'kkmeena@iitk.ac.in', '9785061492', 15, '10,11,24', '160342', 'Non-Veg', 'B+', '29.jpg', '6', 'Nil', 'M', 0, 000, 000, 000, 1),
-(30, 'SATYAM RALHAN', 'satyamr@iitk.ac.in', '8400198022', 15, '24', '170641', 'Non-Veg', 'B+', '30.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
-(31, 'VANGA SREEKAR GOUD', 'vangasreekar17@gmail.com', '9010193888', 6, '24', '18JE0902', 'Veg', 'B+', '31.jpg', '11', 'Nil', 'M', 0, 000, 000, 000, 1),
-(32, 'SANAZ AGARWAL', 'sanazagarwal99@gmail.com', '8502805050', 5, '1,2,3,11,12,15,16', '2018BB10040', 'Veg', 'B+', '32.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 1),
-(33, 'DIVYAM GUPTA', 'divyam227227@gmail.com', '9079235665', 5, '4,5,24', '2017MT10287', 'Non-Veg', 'B+', '33.jpg', '6', 'Nil', 'M', 0, 000, 000, 000, 1),
-(34, 'RAVI MALIK', 'rmalik@iitk.ac.in', '9650453695', 15, '1,2,15,16,24', '18107279', 'Non-Veg', 'B+', '34.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
+(26, 'KULWANT SINGH', 'kulwants@iitk.ac.in', '8308523629', 15, '24', '18101049', 'Non-Veg', 'B+', '26.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 0),
+(27, 'SAMEER JAIN', 'sameer2000jain12@gmail.com', '9893636504', 6, '24', '18JE0716', 'Veg', 'B+', '27.jpg', '2', 'Nil', 'M', 0, 000, 000, 000, 0),
+(28, 'AKASH SURYAWANSHI', 'suryaakash7799@gmail.com', '8448407829', 5, '2,9,10,13,14,15,16,24', '2019CS50416', 'Veg', 'B+', '28.jpg', '4', 'Nil', 'M', 0, 000, 000, 000, 0),
+(29, 'KRISHNA KUMAR', 'kkmeena@iitk.ac.in', '9785061492', 15, '10,11,24', '160342', 'Non-Veg', 'B+', '29.jpg', '6', 'Nil', 'M', 0, 000, 000, 000, 0),
+(30, 'SATYAM RALHAN', 'satyamr@iitk.ac.in', '8400198022', 15, '24', '170641', 'Non-Veg', 'B+', '30.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
+(31, 'VANGA SREEKAR GOUD', 'vangasreekar17@gmail.com', '9010193888', 6, '24', '18JE0902', 'Veg', 'B+', '31.jpg', '11', 'Nil', 'M', 0, 000, 000, 000, 0),
+(32, 'SANAZ AGARWAL', 'sanazagarwal99@gmail.com', '8502805050', 5, '1,2,3,11,12,15,16', '2018BB10040', 'Veg', 'B+', '32.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 0),
+(33, 'DIVYAM GUPTA', 'divyam227227@gmail.com', '9079235665', 5, '4,5,24', '2017MT10287', 'Non-Veg', 'B+', '33.jpg', '6', 'Nil', 'M', 0, 000, 000, 000, 0),
+(34, 'RAVI MALIK', 'rmalik@iitk.ac.in', '9650453695', 15, '1,2,15,16,24', '18107279', 'Non-Veg', 'B+', '34.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
 (35, 'SURAJ KUMAR MAHATO', 'skm481507@gmail.com', '9572295585', 6, '1,15,24', '16JE002052', 'Non-Veg', 'B+', '35.jpg', '6', 'Nil', 'M', 0, 000, 000, 000, 1),
-(36, 'KESHAV GUPTA', 'guptakeshav694@gmail.com', '9592315333', 6, '24', '17JE002998', 'Veg', 'B+', '36.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
+(36, 'KESHAV GUPTA', 'guptakeshav694@gmail.com', '9592315333', 6, '24', '17JE002998', 'Veg', 'B+', '36.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
 (37, 'JATIN AHUJA', 'ja321867@gmail.com', '8448750259', 5, '9,11,24', '2017CE10110', 'Veg', 'B+', '37.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
-(38, 'AMAN POONIA', 'apoonia@iitk.ac.in', '9793616777', 15, '24', '160091', 'Non-Veg', 'B+', '38.jpg', '8', 'Nil', 'M', 0, 000, 000, 000, 1),
-(39, 'RAVIRAJ DHAKAD', 'ravirajdhakad@gmail.com', '8827600485', 5, '14,24', '2017CS10367', 'Veg', 'B+', '39.jpg', '8', 'Nil', 'M', 0, 000, 000, 000, 1),
-(40, 'RAJAK KUMAR JHALENDRA', 'jhalendra.ismud@gmail.com', '7004424209', 6, '1,3,5,15,24', '16DR00189', 'Non-Veg', 'B+', '40.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
-(41, 'SAFA MUSTAFA SHEICK', 'safa@iitk.ac.in', '9677682366', 15, '3,4,5,15,24', '170603', 'Non-Veg', 'B+', '41.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 1),
-(42, 'MANISH SHUKLA', 'manish.shukla@civil.iitd.ac.in', '9473695125', 5, '5,11,24', '2016CEZ8428', 'Veg', 'B+', '42.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 1),
-(43, 'SRIJITA PAL', 'srijitapal1297@gmail.com', '9205549669', 6, '17,18,20', '19MS0115', 'Non-Veg', 'B+', '43.jpg', '18', 'Nil', 'F', 0, 000, 000, 000, 1),
-(44, 'ANINDYA HAZRA', 'anin16dya@gmail.com', '8910068140', 6, 'staff', 'SPEC/DW-259', 'Non-Veg', 'B+', '44.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 1),
-(45, 'ANISH MUKHERJEE', 'mukherjeeanish99@gmail.com', '8337013238', 6, 'staff', 'NO ID', 'Non-Veg', 'B+', '45.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 1),
-(46, 'SHREYANSH CHANANI', 'shreyanshchanani123@gmail.com', '8777688535', 5, '6,7,8,16,24', '2017ME20696', 'Veg', 'B+', '46.jpg', '10', 'Nil', 'M', 0, 000, 000, 000, 1),
+(38, 'AMAN POONIA', 'apoonia@iitk.ac.in', '9793616777', 15, '24', '160091', 'Non-Veg', 'B+', '38.jpg', '8', 'Nil', 'M', 0, 000, 000, 000, 0),
+(39, 'RAVIRAJ DHAKAD', 'ravirajdhakad@gmail.com', '8827600485', 5, '14,24', '2017CS10367', 'Veg', 'B+', '39.jpg', '8', 'Nil', 'M', 0, 000, 000, 000, 0),
+(40, 'RAJAK KUMAR JHALENDRA', 'jhalendra.ismud@gmail.com', '7004424209', 6, '1,3,5,15,24', '16DR00189', 'Non-Veg', 'B+', '40.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
+(41, 'SAFA MUSTAFA SHEICK', 'safa@iitk.ac.in', '9677682366', 15, '3,4,5,15,24', '170603', 'Non-Veg', 'B+', '41.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 0),
+(42, 'MANISH SHUKLA', 'manish.shukla@civil.iitd.ac.in', '9473695125', 5, '5,11,24', '2016CEZ8428', 'Veg', 'B+', '42.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 0),
+(43, 'SRIJITA PAL', 'srijitapal1297@gmail.com', '9205549669', 6, '17,18,20', '19MS0115', 'Non-Veg', 'B+', '43.jpg', '18', 'Nil', 'F', 0, 000, 000, 000, 0),
+(44, 'ANINDYA HAZRA', 'anin16dya@gmail.com', '8910068140', 6, 'staff', 'SPEC/DW-259', 'Non-Veg', 'B+', '44.jpg', '9', 'Nil', 'M', 0, 000, 000, 000, 0),
+(45, 'ANISH MUKHERJEE', 'mukherjeeanish99@gmail.com', '8337013238', 6, 'staff', 'NO ID', 'Non-Veg', 'B+', '45.jpg', '7', 'Nil', 'M', 0, 000, 000, 000, 0),
+(46, 'SHREYANSH CHANANI', 'shreyanshchanani123@gmail.com', '8777688535', 5, '6,7,8,16,24', '2017ME20696', 'Veg', 'B+', '46.jpg', '10', 'Nil', 'M', 0, 000, 000, 000, 0),
 (47, 'MOHAMMAD NIYAS P', 'niyasp@iitk.ac.in', '9198966176', 15, '9,24', '170394', 'Non-Veg', 'B+', '47.jpg', '10', 'Nil', 'M', 0, 000, 000, 000, 1),
-(48, 'PARTH CHOPRA', 'parth007chopra@gmail.com', '9910509003', 5, '24', '2016ME10829', 'Veg', 'B+', '48.jpg', '11', 'Nil', 'M', 0, 000, 000, 000, 1),
-(49, 'CHARAWAN DIA DEEPAK', 'charawandiadeepak@gmail.com', '9549262892', 5, '10,13,24', '2019TT10965', 'Veg', 'B+', '49.jpg', '12', 'Nil', 'M', 0, 000, 000, 000, 1),
+(48, 'PARTH CHOPRA', 'parth007chopra@gmail.com', '9910509003', 5, '24', '2016ME10829', 'Veg', 'B+', '48.jpg', '11', 'Nil', 'M', 0, 000, 000, 000, 0),
+(49, 'CHARAWAN DIA DEEPAK', 'charawandiadeepak@gmail.com', '9549262892', 5, '10,13,24', '2019TT10965', 'Veg', 'B+', '49.jpg', '12', 'Nil', 'M', 0, 000, 000, 000, 0),
 (50, 'ABHINAV KUMAR SINGH ', 'aks55.tomar@gmail.com', '9205710938', 5, '1,6,7,8,15,16,24', '2019BB10003', 'Non-Veg', 'B+', '50.jpg', '13', 'Nil', 'M', 0, 000, 000, 000, 0),
 (51, 'GAJJALA SAI MADHU RISHIKESH REDDY', 'gsmrishi@gmail.com', '9000963400', 5, '6,7,8,12,14,15,24', '2016CS10338', 'Veg', 'B+', '51.jpg', '14', 'Nil', 'M', 0, 000, 000, 000, 0),
 (52, 'YASHASVI GHADALE', 'yashasvughadale@gmail.com', '8770332029', 5, '18,19,20,21,22,23', '2019PH10666', 'Non-Veg', 'B+', '52.jpg', '15', 'Nil', 'F', 0, 000, 000, 000, 0),
@@ -749,61 +749,61 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (55, 'ANANYA CHOUDHARY', 'ananyachoudhary2158@gmail.com', '8319314583', 5, '17,18,19,21,22,23', '2019CE10217', 'Veg', 'B+', '55.jpg', '16', 'Nil', 'F', 0, 000, 000, 000, 0),
 (56, 'SAKSHI BHANDARI', 'bsak2222@gmail.com', '9586597182', 5, '17,18,19,20,22,23', '2018MT60792', 'Non-Veg', 'B+', '56.jpg', '17', 'Nil', 'F', 0, 000, 000, 000, 0),
 (57, 'RHYTHM', 'rhythmjangra20@gmail.com', '8826525802', 5, '17,20,21,22,23', '2018TT10943', 'Veg', 'B+', '57.jpg', '18', 'Nil', 'F', 0, 000, 000, 000, 0),
-(58, 'RACHITA BHATTACHARYA', 'rachitab@iitk.ac.in', '9460053691', 15, '19,20,21,22,23', '16118268', 'Non-Veg', 'O-', '58.jpg', '1', 'Nil', 'F', 0, 000, 000, 000, 0),
-(59, 'IRENE GRACE KAROT POLSON', 'irenegracekp@gmail.com', '9495939273', 15, '19,20,21,22,23', '180308', 'Non-Veg', 'O-', '59.jpg', '13', 'Nil', 'F', 0, 000, 000, 000, 0),
+(58, 'RACHITA BHATTACHARYA', 'rachitab@iitk.ac.in', '9460053691', 15, '19,20,21,22,23', '16118268', 'Non-Veg', 'O-', '58.jpg', '1', 'Nil', 'F', 0, 000, 000, 000, 1),
+(59, 'IRENE GRACE KAROT POLSON', 'irenegracekp@gmail.com', '9495939273', 15, '19,20,21,22,23', '180308', 'Non-Veg', 'O-', '59.jpg', '13', 'Nil', 'F', 0, 000, 000, 000, 1),
 (60, 'SHIVANGI SINGH', 'shivis@iitk.ac.in', '8920138234', 15, '17,18,22,23', '180726', 'Non-Veg', 'O-', '60.jpg', '15', 'Nil', 'F', 0, 000, 000, 000, 1),
 (61, 'KHUSHI SINGH', 'khushi@iitk.ac.in', '7618664011', 15, '17,18,22,23', '190431', 'Non-Veg', 'O-', '61.jpg', '16', 'Nil', 'F', 0, 000, 000, 000, 1),
 (62, 'T SHIVA SHRUTHI', 'shruthis@iitk.ac.in', '8374718897', 15, '17,18,19,20,22,23', '190890', 'Non-Veg', 'O-', '62.jpg', '20', 'Nil', 'F', 0, 000, 000, 000, 1),
 (63, 'VIVEK RAO VADI', 'vrvadi@iitk.ac.in', '9651969591', 15, 'staff', '5058', 'Veg', 'B+', '63.jpg', '5', 'Nil', 'M', 0, 000, 000, 000, 0),
 (64, 'SANTOSH KUMAR JOSHI', 'skjoshi@iitk.ac.in', '7668043117', 15, 'staff', '5829', 'Non-Veg', 'B+', '64.jpg', '18', 'Nil', 'M', 0, 000, 000, 000, 0),
 (65, 'MUNNALAL MAURYA', 'xyz@gmail.com', '7985612367', 15, 'staff', '123456', 'Veg', 'B+', '65.jpg', '555', 'Nil', 'M', 0, 000, 000, 000, 1),
-(66, 'DEVAJITH V S', 'devajith@gmail.com', '9080797867', 11, '1,2,12', 'ch16btech11009', 'Non-Veg', 'B+', '66.jpg', 'Deva', 'Nil', 'M', 0, 000, 000, 000, 1),
-(67, 'ADVAITH P', 'advaith@gmail.com', '8907896789', 11, '1,2,3', 'er19btech11004', 'Non-Veg', 'A+', '67.jpg', 'Advaith', 'Nil', 'M', 0, 000, 000, 000, 1),
-(68, 'SURENDRA PRASAD', 'surendra@gmail.com', '9878975678', 5, 'staff', 'delhi1', 'Non-Veg', 'O+', '68.jpg', 'Prasad', 'Nil', 'M', 0, 000, 000, 000, 1),
+(66, 'DEVAJITH V S', 'devajith@gmail.com', '9080797867', 11, '1,2,12', 'ch16btech11009', 'Non-Veg', 'B+', '66.jpg', 'Deva', 'Nil', 'M', 0, 000, 000, 000, 0),
+(67, 'ADVAITH P', 'advaith@gmail.com', '8907896789', 11, '1,2,3', 'er19btech11004', 'Non-Veg', 'A+', '67.jpg', 'Advaith', 'Nil', 'M', 0, 000, 000, 000, 0),
+(68, 'SURENDRA PRASAD', 'surendra@gmail.com', '9878975678', 5, 'staff', 'delhi1', 'Non-Veg', 'O+', '68.jpg', 'Prasad', 'Nil', 'M', 0, 000, 000, 000, 0),
 (69, 'ANIL KUMAR', 'kumaran@gmail.com', '7657898901', 5, 'staff', 'delhi2', 'Non-Veg', 'AB+', '69.jpg', 'kumar', 'Nil', 'M', 0, 000, 000, 000, 1),
 (70, 'T SATYANARAYANA', 'satya@iith.ac.in', '9440912679', 11, 'staff', 'P016', 'Non-Veg', 'B+', '70.jpg', 'Satya', 'Nil', 'M', 0, 000, 000, 000, 0),
 (71, 'ABY JOSE', 'ajose@me.iitr.ac.in', '8308456212', 21, '24', '16117039', 'Non-Veg', 'O-', '71.jpg', 'Aby', 'Nil', 'M', 0, 000, 000, 000, 1),
-(72, 'DILKUSH MALAV', 'dmalav@me.iitr.ac.in', '8529578337', 21, '24', '17113034', 'Veg', 'O-', '72.jpg', 'Dilkush', 'Nil', 'M', 0, 000, 000, 000, 1),
-(73, 'SURAJ K S', 'kssuraj28@me.iir.ac.in', '9080865598', 21, '24', '18117106', 'Non-Veg', 'O-', '73.jpg', 'Suraj', 'Nil', 'M', 0, 000, 000, 000, 1),
+(72, 'DILKUSH MALAV', 'dmalav@me.iitr.ac.in', '8529578337', 21, '24', '17113034', 'Veg', 'O-', '72.jpg', 'Dilkush', 'Nil', 'M', 0, 000, 000, 000, 0),
+(73, 'SURAJ K S', 'kssuraj28@me.iir.ac.in', '9080865598', 21, '24', '18117106', 'Non-Veg', 'O-', '73.jpg', 'Suraj', 'Nil', 'M', 0, 000, 000, 000, 0),
 (74, 'MANIK MUNJAL', 'mmunjal@me.iitr.ac.in', '8570948547', 21, '24', '18119017', 'Non-Veg', 'O-', '74.jpg', 'Manik', 'Nil', 'M', 0, 000, 000, 000, 1),
 (75, 'RITESH CHHETRI', 'riteshchhetri10@gmail.com', '8332897169', 21, '24', '17118057', 'Non-Veg', 'O-', '75.jpg', 'Chhetri', 'Nil', 'M', 0, 000, 000, 000, 1),
 (76, 'AYUSH DEWANGAN', 'ayushdewangan12@gmail.com', '8223987067', 21, '24', '19115038', 'Non-Veg', 'O-', '76.jpg', 'Ayush', 'Nil', 'M', 0, 000, 000, 000, 1),
 (77, 'ABHAY SANJAY DEORE', 'mail12abhay25@gmail.com', '9405153168', 21, '24', '19610001', 'Non-Veg', 'O-', '77.jpg', 'Abhay', 'Nil', 'M', 0, 000, 000, 000, 1),
 (78, 'ABHINAV SINGH', 'asingh1@ar.iitr.ac.in', '8171615214', 21, '24', '15110001', 'Veg', 'O-', '78.jpg', 'Abhinav', 'Nil', 'M', 0, 000, 000, 000, 1),
-(79, 'JAPJEET SINGH', 'japjeet20@gmail.com', '9557605557', 21, '24', '19522004', 'Non-Veg', 'O-', '79.jpg', 'japjeet', 'Nil', 'M', 0, 000, 000, 000, 1),
+(79, 'JAPJEET SINGH', 'japjeet20@gmail.com', '9557605557', 21, '24', '19522004', 'Non-Veg', 'O-', '79.jpg', 'japjeet', 'Nil', 'M', 0, 000, 000, 000, 0),
 (80, 'ROMAN ABHAYKUMAR DEORE', 'romandeore@gmail.com', '7588462829', 21, '24', '19121010', 'Non-Veg', 'O-', '80.jpg', 'Roman', 'Nil', 'M', 0, 000, 000, 000, 1),
-(81, 'YASHVI AGRAWAL', 'yagrawal@me.iit.ac.in', '8959896226', 21, '21', '17119039', 'Veg', 'O-', '81.jpg', 'Yashvi', 'Nil', 'F', 0, 000, 000, 000, 0),
-(82, 'SEJAL AGRAWAL', 'agrawalsejal123@gnail.com', '9587043367', 21, '21', '19115116', 'Veg', 'O-', '82.jpg', 'Sejal', 'Nil', 'F', 0, 000, 000, 000, 0),
+(81, 'YASHVI AGRAWAL', 'yagrawal@me.iit.ac.in', '8959896226', 21, '21', '17119039', 'Veg', 'O-', '81.jpg', 'Yashvi', 'Nil', 'F', 0, 000, 000, 000, 1),
+(82, 'SEJAL AGRAWAL', 'agrawalsejal123@gnail.com', '9587043367', 21, '21', '19115116', 'Veg', 'O-', '82.jpg', 'Sejal', 'Nil', 'F', 0, 000, 000, 000, 1),
 (83, 'HEMANT SHARMA', 'h.sharma1609.@gmail.com', '9760100968', 21, 'staff', '100014', 'Veg', 'O-', '83.jpg', 'Hemant', 'Nil', 'M', 0, 000, 000, 000, 0),
 (84, 'KARTHIK.J', 'bclap170121008@iitg.ac.in', '9404678414', 10, '24', '160106018', 'Non-Veg', 'A+', '84.jpg', 'Karthik', 'Nil', 'M', 0, 000, 000, 000, 1),
 (85, 'ATHARVA BELAPURKER', 'atharva@iitg.ac.in', '1234567891', 10, '4,5,15,16', '170121008', 'Non-Veg', 'A+', '85.jpg', 'Atharva', 'Nil', 'M', 0, 000, 000, 000, 1),
-(86, 'RAYAPU SAI PRANAV REDDY', 'rayapu@iitg.ac.in', '1234567892', 10, '24', '160102055', 'Veg', 'A+', '86.jpg', 'Rayapu', 'Nil', 'M', 0, 000, 000, 000, 1),
+(86, 'RAYAPU SAI PRANAV REDDY', 'rayapu@iitg.ac.in', '1234567892', 10, '24', '160102055', 'Veg', 'A+', '86.jpg', 'Rayapu', 'Nil', 'M', 0, 000, 000, 000, 0),
 (87, 'DHIREN PRAJAPATI', 'dhiren@iitg.ac.in', '1234567893', 10, '15', '180121029', 'Non-Veg', 'A+', '87.jpg', 'Dhiren', 'Nil', 'M', 0, 000, 000, 000, 0),
 (88, 'KARTIK GUPTA', 'kartik@iitg.ac.in', '1234567894', 10, '5,8,14,15,16', '170103084', 'Non-Veg', 'A+', '88.jpg', 'kartik', 'Nil', 'M', 0, 000, 000, 000, 1),
 (90, 'SACHIN', 'sachin@iitg.ac.in', '1234567896', 10, '24', '180102061', 'Non-Veg', 'A+', '90.jpg', 'sachin', 'Nil', 'M', 0, 000, 000, 000, 1),
 (91, 'ATHARVA DEORE', 'atharvad@iitg.ac.in', '1234567897', 10, '24', '170103015', 'Non-Veg', 'A+', '91.jpg', 'Atharva', 'Nil', 'M', 0, 000, 000, 000, 1),
 (93, 'PARTH BAKARE', 'partg@iitg.ac.in', '1234567899', 10, '24', '180101056', 'Non-Veg', 'A+', '93.jpg', 'parth', 'Nil', 'M', 0, 000, 000, 000, 1),
-(94, 'ANIKET RANADE', 'aniket@iitb.ac.in', '7389582406', 4, '24', '160110035', 'Non-Veg', 'O-', '94.jpg', 'aniket', 'Nil', 'M', 0, 000, 000, 000, 1),
-(96, 'VIHANG WAGH', 'VIHANG@IITB.AC.IN', '7389582407', 4, '24', '160100033', 'Non-Veg', 'O-', '96.jpg', 'VIHANG', 'Nil', 'M', 0, 000, 000, 000, 1),
+(94, 'ANIKET RANADE', 'aniket@iitb.ac.in', '7389582406', 4, '24', '160110035', 'Non-Veg', 'O-', '94.jpg', 'aniket', 'Nil', 'M', 0, 000, 000, 000, 0),
+(96, 'VIHANG WAGH', 'VIHANG@IITB.AC.IN', '7389582407', 4, '24', '160100033', 'Non-Veg', 'O-', '96.jpg', 'VIHANG', 'Nil', 'M', 0, 000, 000, 000, 0),
 (97, 'ARYAN RATHEE', 'aryan@iitg.ac.in', '234567892', 10, '1,2,15,16', '190123013', 'Non-Veg', 'A+', '97.jpg', 'aryan', 'Nil', 'M', 0, 000, 000, 000, 1),
 (98, 'RAJIB MODAK', 'rajib@iitg.ac.in', '234567893', 10, '1,9,10,15,16', '196104016', 'Non-Veg', 'A+', '98.jpg', 'Rajib', 'Nil', 'M', 0, 000, 000, 000, 1),
 (99, 'SHUBHANKAR SETH', 'SHUBHANKAR@IITB.AC.IN', '7389582409', 4, '1,2,5,15,16,24', '160100116', 'Non-Veg', 'O-', '99.jpg', 'SETH', 'Nil', 'M', 0, 000, 000, 000, 0),
 (100, 'KUSHAL DHINOJA', 'KUSHAL@IITB.AC.IN', '7389582401', 4, '2,4,5,15,16,24', '170020007', 'Non-Veg', 'O-', '100.jpg', 'KUSHAL', 'Nil', 'M', 0, 000, 000, 000, 0),
 (101, 'DYUTI MANGAL', 'dyuti@iitg.ac.in', '234567894', 10, '17,18,22,23', '190101035', 'Non-Veg', 'A+', '101.jpg', 'dyuti', 'Nil', 'F', 0, 000, 000, 000, 1),
-(103, 'SASWATI RABHA', 'saswati@iitg.ac.in', '234567896', 10, '22,23', '156302013', 'Non-Veg', 'A+', '103.jpg', 'Saswati', 'Nil', 'F', 0, 000, 000, 000, 1),
-(104, 'YOGENDER SINGH', 'YOGENDWER@IITB.AC.IN', '7389584202', 4, '4,5,15,16,24', '170100028', 'Non-Veg', 'O-', '104.jpg', 'SINGH', 'Nil', 'M', 0, 000, 000, 000, 1),
-(105, 'AISHANI MITRA', 'Aishani@iitg.ac.in', '234567897', 10, '22,23', '190104009', 'Non-Veg', 'A+', '105.jpg', 'aishani', 'Nil', 'F', 0, 000, 000, 000, 1),
-(106, 'HRITVIJ SAXENA', 'SAXENA@IITB.AC.IN', '7389582403', 4, '9,24', '18B080010', 'Non-Veg', 'O-', '106.jpg', 'HRITVIJ', 'Nil', 'M', 0, 000, 000, 000, 1),
+(103, 'SASWATI RABHA', 'saswati@iitg.ac.in', '234567896', 10, '22,23', '156302013', 'Non-Veg', 'A+', '103.jpg', 'Saswati', 'Nil', 'F', 0, 000, 000, 000, 0),
+(104, 'YOGENDER SINGH', 'YOGENDWER@IITB.AC.IN', '7389584202', 4, '4,5,15,16,24', '170100028', 'Non-Veg', 'O-', '104.jpg', 'SINGH', 'Nil', 'M', 0, 000, 000, 000, 0),
+(105, 'AISHANI MITRA', 'Aishani@iitg.ac.in', '234567897', 10, '22,23', '190104009', 'Non-Veg', 'A+', '105.jpg', 'aishani', 'Nil', 'F', 0, 000, 000, 000, 0),
+(106, 'HRITVIJ SAXENA', 'SAXENA@IITB.AC.IN', '7389582403', 4, '9,24', '18B080010', 'Non-Veg', 'O-', '106.jpg', 'HRITVIJ', 'Nil', 'M', 0, 000, 000, 000, 0),
 (108, 'ARINDAM JANA', 'JANA@IITB.AC.IN', '7389582411', 4, '24', '134093003', 'Non-Veg', 'O-', '108.jpg', 'JANA', 'Nil', 'M', 0, 000, 000, 000, 1),
 (111, 'MADHAV JOSHI', 'JOSHI@IITB.AC.IN', '7389582413', 4, '3,4,13,14,15,24', '190110034', 'Non-Veg', 'O-', '111.jpg', 'JOSHI', 'Nil', 'M', 0, 000, 000, 000, 0),
-(112, 'VAISHNAV V RAO', 'RAO@IITB.AC.IN', '7389582414', 4, '12,13,14,15,16,24', '190260045', 'Non-Veg', 'O-', '112.jpg', 'RAO', 'Nil', 'M', 0, 000, 000, 000, 1),
-(113, 'GUNDA YUGA RAJU', 'gungayugaraju.rs.min14@iitbhu.ac.in', '8419026686', 1, '6,7,8,15,16', '17151004', 'Veg', 'A+', '113.jpg', 'gunda', 'Nil', 'M', 0, 000, 000, 000, 1),
+(112, 'VAISHNAV V RAO', 'RAO@IITB.AC.IN', '7389582414', 4, '12,13,14,15,16,24', '190260045', 'Non-Veg', 'O-', '112.jpg', 'RAO', 'Nil', 'M', 0, 000, 000, 000, 0),
+(113, 'GUNDA YUGA RAJU', 'gungayugaraju.rs.min14@iitbhu.ac.in', '8419026686', 1, '6,7,8,15,16', '17151004', 'Veg', 'A+', '113.jpg', 'gunda', 'Nil', 'M', 0, 000, 000, 000, 0),
 (114, 'SYANTAN C.', 'SYANTAN@IITB.AC.IN', '7389582041', 4, '6,7,8,15,16,24', '144040008', 'Non-Veg', 'O-', '114.jpg', 'SYANTAN', 'Nil', 'M', 0, 000, 000, 000, 1),
 (115, 'VAIBHAV DIXIT', 'vaibhavk.dixit.mat16@iitbhu.ac.in', '7666807602', 1, '1,9,15,16', '16123018', 'Non-Veg', 'A+', '115.jpg', 'vaibhav', 'Nil', 'M', 0, 000, 000, 000, 0),
 (116, 'AKHIL', 'AKHIL@IITB.AC.IN', '7389582422', 4, '1,2,15,16,24', '134076014', 'Non-Veg', 'B+', '116.jpg', 'AKHIL', 'Nil', 'M', 0, 000, 000, 000, 1),
-(117, 'ROHAN', 'ROHAN@IITB.AC.IN', '7389458200', 4, '9,10,11,24', '180070046', 'Non-Veg', 'B-', '117.jpg', 'ROHAN', 'Nil', 'M', 0, 000, 000, 000, 1),
+(117, 'ROHAN', 'ROHAN@IITB.AC.IN', '7389458200', 4, '9,10,11,24', '180070046', 'Non-Veg', 'B-', '117.jpg', 'ROHAN', 'Nil', 'M', 0, 000, 000, 000, 0),
 (118, 'MANSI KHEDEKAR', 'MANSI@IITB.AC.IN', '738945288', 4, '17,19,21,22,23', '160110005', 'Non-Veg', 'A-', '118.jpg', 'MANSI', 'Nil', 'F', 0, 000, 000, 000, 0),
-(119, 'G V KARTHIK REDDY', 'gajjala.vkreddyeee17@iitbhu.ac.in', '9517270672', 1, '6,7,12,15,16', '17085034', 'Non-Veg', 'A+', '119.jpg', 'G V', 'Nil', 'M', 0, 000, 000, 000, 1),
+(119, 'G V KARTHIK REDDY', 'gajjala.vkreddyeee17@iitbhu.ac.in', '9517270672', 1, '6,7,12,15,16', '17085034', 'Non-Veg', 'A+', '119.jpg', 'G V', 'Nil', 'M', 0, 000, 000, 000, 0),
 (122, 'NARAYANI KELKAR', 'NARAYANI@IITB.AC.IN', '7389582455', 4, '17,18,19,21,22,23', '173020059', 'Non-Veg', 'B+', '122.jpg', 'NARANYI', 'Nil', 'F', 0, 000, 000, 000, 0),
 (123, 'RUCHA PASALKAR', 'RUCHA@IITB.AC.IN', '7389584259', 4, '20,22,23', '160040031', 'Non-Veg', 'B-', '123.jpg', 'RUCHA', 'Nil', 'F', 0, 000, 000, 000, 0),
 (124, 'VIBHU VARDHAN SINGH', 'vibhu.vsingh.met17@iitbhu.ac.in', '9460122112', 1, '10,12,13', '17145064', 'Non-Veg', 'A+', '124.jpg', 'Vibhu', 'Nil', 'M', 0, 000, 000, 000, 1),
@@ -813,53 +813,53 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (128, 'RITESH GUCHAIT', '10001855@IITB.AC.IN', '73895852455', 4, 'staff', '10001855', 'Non-Veg', 'AB-', '128.jpg', 'RITESH', 'Nil', 'M', 0, 000, 000, 000, 0),
 (129, 'SACHIN KAMBLE', 'SACHIN@IITB.AC.IN', '73789582459', 4, 'staff', 'ATTENDANT', 'Non-Veg', 'A-', '129.jpg', 'SACHIN', 'Nil', 'M', 0, 000, 000, 000, 1),
 (130, 'HARDIK SHAH', 'shahardik01@gmail.com', '7240208867', 4, '1,2,3,4,5,6,24', '18AG30016', 'Non-Veg', 'A-', '130.jpg', 'VIHANG', 'Nil', 'M', 0, 000, 000, 000, 0),
-(131, 'RAMA SHANKAR', 'RAMA@ME.IITR.AC.IN', '7456962794', 21, 'staff', 'ROORKEE01', 'Veg', 'A+', '131.jpg', 'RAMA', 'Nil', 'M', 0, 000, 000, 000, 1),
+(131, 'RAMA SHANKAR', 'RAMA@ME.IITR.AC.IN', '7456962794', 21, 'staff', 'ROORKEE01', 'Veg', 'A+', '131.jpg', 'RAMA', 'Nil', 'M', 0, 000, 000, 000, 0),
 (132, 'KASTURI THAKRE', 'kasturi@iitg.ac.in', '8976564523', 10, '18,20,22,23', '194205034', 'Non-Veg', 'O+', '132.jpg', 'Thakre', 'Nil', 'F', 0, 000, 000, 000, 1),
 (133, 'AJINKYA SHIVSHANKAR', 'ajinkya@iitg.ac.in', '7896784567', 10, '9,16', '170101004', 'Non-Veg', 'A+', '133.jpg', 'Jinkya', 'Nil', 'M', 0, 000, 000, 000, 1),
-(134, 'UTKARSH GUPTA', 'uttkarsh1@iitg.ac.in', '6789987600', 10, '6,9', '180122017', 'Non-Veg', 'A+', '134.jpg', 'Gupta', 'Nil', 'M', 0, 000, 000, 000, 1),
+(134, 'UTKARSH GUPTA', 'uttkarsh1@iitg.ac.in', '6789987600', 10, '6,9', '180122017', 'Non-Veg', 'A+', '134.jpg', 'Gupta', 'Nil', 'M', 0, 000, 000, 000, 0),
 (135, 'PARTH SHAH', 'parth@iitg.ac.in', '9812436512', 10, '24', '180122030', 'Non-Veg', 'A+', '135.jpg', 'Shah', 'Nil', 'M', 0, 000, 000, 000, 1),
-(136, 'SUDIPTA SHARMA', 'sudi@iitg.ac.in', '6785645231', 10, 'staff', '8098', 'Non-Veg', 'A+', '136.jpg', 'Sudipta', 'Nil', 'F', 0, 000, 000, 000, 1),
+(136, 'SUDIPTA SHARMA', 'sudi@iitg.ac.in', '6785645231', 10, 'staff', '8098', 'Non-Veg', 'A+', '136.jpg', 'Sudipta', 'Nil', 'F', 0, 000, 000, 000, 0),
 (137, 'RAJIB DEY', 'dey@iitg.ac.in', '8676567452', 10, 'staff', '7016', 'Non-Veg', 'A+', '137.jpg', 'Dey', 'Nil', 'M', 0, 000, 000, 000, 1),
 (138, 'PAVAN M G', 'pavan.mg.eee17@itbhu.ac.in', '9483875897', 1, '3,9,10,15,16', '17085052', 'Non-Veg', 'A+', '138.jpg', 'Pavan', 'Nil', 'M', 0, 000, 000, 000, 0),
 (140, 'INDRESH', 'indresh.kry@gmail.com', '8436959997', 16, '6,7,8,16,24', '15BT30008', 'Non-Veg', 'B+', '140.jpg', 'INDRESH', 'Nil', 'M', 0, 000, 000, 000, 0),
-(141, 'PUSHPAK ROY', 'nyn05091998@gmail.com', '7430922555', 16, '1,6,7,8,14,15,16,24', '16IM30015', 'Non-Veg', 'B+', '141.jpg', 'PUSHPAK', 'Nil', 'M', 0, 000, 000, 000, 1),
-(142, 'ARPAN DEY', 'arpan.dey1996@gmail.com', '7059916102', 16, '9,10,11,15,16,24', '16AG63R03', 'Non-Veg', 'O+', '142.jpg', 'ARPAN', 'Nil', 'M', 0, 000, 000, 000, 1),
+(141, 'PUSHPAK ROY', 'nyn05091998@gmail.com', '7430922555', 16, '1,6,7,8,14,15,16,24', '16IM30015', 'Non-Veg', 'B+', '141.jpg', 'PUSHPAK', 'Nil', 'M', 0, 000, 000, 000, 0),
+(142, 'ARPAN DEY', 'arpan.dey1996@gmail.com', '7059916102', 16, '9,10,11,15,16,24', '16AG63R03', 'Non-Veg', 'O+', '142.jpg', 'ARPAN', 'Nil', 'M', 0, 000, 000, 000, 0),
 (143, 'SHUBHAM PANDEY', 'pndshubh14@gmail.com', '9998736227', 16, '2,3,4,5,15,16,24', '17IP62011', 'Non-Veg', 'O+', '143.jpg', 'SHUBHAM', 'Nil', 'M', 0, 000, 000, 000, 0),
-(144, 'SOHAM CHANDORKAR', 'chandorkarsoham@gmail.com', '9619112965', 16, '24', '15HS20013', 'Non-Veg', 'B+', '144.jpg', 'SOHAM', 'Nil', 'M', 0, 000, 000, 000, 1),
-(145, 'RAJ PRABHU', 'raj.mprabhu@gmail.com', '9800422444', 16, '15,16,24', '15IE33001', 'Non-Veg', 'AB+', '145.jpg', 'PRABHU', 'Nil', 'M', 0, 000, 000, 000, 1),
-(146, 'ASHISH SHAH', 'shahashish1998@gmail.com', '8888454797', 16, '2,4,24', '17NA10007', 'Veg', 'AB+', '146.jpg', 'ASHISH', 'Nil', 'M', 0, 000, 000, 000, 1),
+(144, 'SOHAM CHANDORKAR', 'chandorkarsoham@gmail.com', '9619112965', 16, '24', '15HS20013', 'Non-Veg', 'B+', '144.jpg', 'SOHAM', 'Nil', 'M', 0, 000, 000, 000, 0),
+(145, 'RAJ PRABHU', 'raj.mprabhu@gmail.com', '9800422444', 16, '15,16,24', '15IE33001', 'Non-Veg', 'AB+', '145.jpg', 'PRABHU', 'Nil', 'M', 0, 000, 000, 000, 0),
+(146, 'ASHISH SHAH', 'shahashish1998@gmail.com', '8888454797', 16, '2,4,24', '17NA10007', 'Veg', 'AB+', '146.jpg', 'ASHISH', 'Nil', 'M', 0, 000, 000, 000, 0),
 (147, 'ADITYA KACHAVE', 'kachaveaditya8998@gmail.com', '7477714999', 16, '24', '7477714999', 'Non-Veg', 'AB+', '147.jpg', 'KACHAVE', 'Nil', 'M', 0, 000, 000, 000, 0),
-(152, 'UTKARSH SAH', 'sahutkarsh@gmail.com', '8116205474', 16, '24', '15MI31029', 'Non-Veg', 'AB+', '152.jpg', 'UTKARSH', 'Nil', 'M', 0, 000, 000, 000, 1),
-(153, 'SUBHAM KUMAR SAHU', 'subhamsahu972@gmail.com', '8637275065', 16, '24', '16AG36018', 'Veg', 'A-', '153.jpg', 'SUBHAM SAHU', 'Nil', 'M', 0, 000, 000, 000, 1),
-(154, 'SRIJAN BANSAL', 'srijanbansal97@gmail.com', '7478050888', 16, '1,3,24', '16EC10068', 'Non-Veg', 'A-', '154.jpg', 'SRIJAN', 'Nil', 'M', 0, 000, 000, 000, 1),
-(155, 'RAGHAV SURYAN', 'suryanraghav@gmail.com', '9667290420', 16, '2,3,5,9,10,15,16,24', '18PH20019', 'Non-Veg', 'O+', '155.jpg', 'RAGHAV', 'Nil', 'M', 0, 000, 000, 000, 1),
-(156, 'KEERTI PRAKASH SONGA', 'keerthiprakashs18@gmail.com', '9381565089', 16, '4,5,15', '18NA10012', 'Non-Veg', 'B-', '156.jpg', 'KEERTI PRAKASH', 'Nil', 'M', 0, 000, 000, 000, 1),
+(152, 'UTKARSH SAH', 'sahutkarsh@gmail.com', '8116205474', 16, '24', '15MI31029', 'Non-Veg', 'AB+', '152.jpg', 'UTKARSH', 'Nil', 'M', 0, 000, 000, 000, 0),
+(153, 'SUBHAM KUMAR SAHU', 'subhamsahu972@gmail.com', '8637275065', 16, '24', '16AG36018', 'Veg', 'A-', '153.jpg', 'SUBHAM SAHU', 'Nil', 'M', 0, 000, 000, 000, 0),
+(154, 'SRIJAN BANSAL', 'srijanbansal97@gmail.com', '7478050888', 16, '1,3,24', '16EC10068', 'Non-Veg', 'A-', '154.jpg', 'SRIJAN', 'Nil', 'M', 0, 000, 000, 000, 0),
+(155, 'RAGHAV SURYAN', 'suryanraghav@gmail.com', '9667290420', 16, '2,3,5,9,10,15,16,24', '18PH20019', 'Non-Veg', 'O+', '155.jpg', 'RAGHAV', 'Nil', 'M', 0, 000, 000, 000, 0),
+(156, 'KEERTI PRAKASH SONGA', 'keerthiprakashs18@gmail.com', '9381565089', 16, '4,5,15', '18NA10012', 'Non-Veg', 'B-', '156.jpg', 'KEERTI PRAKASH', 'Nil', 'M', 0, 000, 000, 000, 0),
 (161, 'RUCHIR KUMAR KAUL', 'kaulruchir@gmail.com', '8169137126', 17, '2,12,13,14,15,16,24', 'CE16B113', 'Non-Veg', 'B+', '161.jpg', 'RUCHIR', 'Nil', 'M', 0, 000, 000, 000, 0),
-(163, 'HARSH LADANI', 'ae17b027@smail.iitm.ac.in', '9726793407', 17, '1,2,3,4,5,15,16,24', 'AE17B027', 'Non-Veg', 'B+', '163.jpg', 'HARSH', 'Nil', 'M', 0, 000, 000, 000, 1),
+(163, 'HARSH LADANI', 'ae17b027@smail.iitm.ac.in', '9726793407', 17, '1,2,3,4,5,15,16,24', 'AE17B027', 'Non-Veg', 'B+', '163.jpg', 'HARSH', 'Nil', 'M', 0, 000, 000, 000, 0),
 (164, ' KALASH VERMA', 'kalashverma1212@gmail.com', '7471117800', 17, '3,4,8,15,16,24', 'ME18B052', 'Non-Veg', 'A+', '164.jpg', 'Kalash', 'Nil', 'M', 0, 000, 000, 000, 0),
-(165, ' ANUJ SINDGI', 'sindgi.anuj@gmail.com', '8806005500', 17, '9,10,11,15,16,24', 'ED16B030', 'Non-Veg', 'O+', '165.jpg', 'Anuj', 'Nil', 'M', 0, 000, 000, 000, 1),
-(166, 'SHREENIWAS MAHESH JAGDALE', 'me17b115@smail.iitm.ac.in', '9422022520', 17, '1,6,7,24', 'ME17B115', 'Non-Veg', 'A+', '166.jpg', 'MAHESH', 'Nil', 'M', 0, 000, 000, 000, 1),
-(167, 'MAHIMA RAUT', 'cs17b112@smail.iitm.ac.in', '9497491800', 17, '20,21,22,23', 'CS17B112', 'Non-Veg', 'B-', '167.jpg', 'MAHIMA', 'Nil', 'F', 0, 000, 000, 000, 1),
-(168, 'BREASHA GUPTA', 'be17b015@smail.iitm.ac.in', '9137932713', 17, '19,20,21,22,23', 'BE17B015', 'Non-Veg', 'A+', '168.jpg', 'BREASHA', 'Nil', 'F', 0, 000, 000, 000, 1),
+(165, ' ANUJ SINDGI', 'sindgi.anuj@gmail.com', '8806005500', 17, '9,10,11,15,16,24', 'ED16B030', 'Non-Veg', 'O+', '165.jpg', 'Anuj', 'Nil', 'M', 0, 000, 000, 000, 0),
+(166, 'SHREENIWAS MAHESH JAGDALE', 'me17b115@smail.iitm.ac.in', '9422022520', 17, '1,6,7,24', 'ME17B115', 'Non-Veg', 'A+', '166.jpg', 'MAHESH', 'Nil', 'M', 0, 000, 000, 000, 0),
+(167, 'MAHIMA RAUT', 'cs17b112@smail.iitm.ac.in', '9497491800', 17, '20,21,22,23', 'CS17B112', 'Non-Veg', 'B-', '167.jpg', 'MAHIMA', 'Nil', 'F', 0, 000, 000, 000, 0),
+(168, 'BREASHA GUPTA', 'be17b015@smail.iitm.ac.in', '9137932713', 17, '19,20,21,22,23', 'BE17B015', 'Non-Veg', 'A+', '168.jpg', 'BREASHA', 'Nil', 'F', 0, 000, 000, 000, 0),
 (169, 'DEV PRIYA KRISHNAKUMAR', 'me17b106@smail.iitm.ac.in', '9840933858', 17, '17,18,19,22,23', 'ME17B106', 'Non-Veg', 'B+', '169.jpg', 'DEV PRIYA', 'Nil', 'F', 0, 000, 000, 000, 0),
-(170, 'OMKAR SATPUTE', 'ed17b049@smail.iitm.ac.in', '8408906388', 17, '24', 'ED17B049', 'Non-Veg', 'A+', '170.jpg', 'Om', 'Nil', 'M', 0, 000, 000, 000, 1),
-(171, 'VIBHU KRISHNA', 'hs18h044@smail.iitm.ac.in', '9446538584', 17, '3,5,11,24', 'HS18H044', 'Non-Veg', 'A+', '171.jpg', 'Vibhu', 'Nil', 'M', 0, 000, 000, 000, 1),
+(170, 'OMKAR SATPUTE', 'ed17b049@smail.iitm.ac.in', '8408906388', 17, '24', 'ED17B049', 'Non-Veg', 'A+', '170.jpg', 'Om', 'Nil', 'M', 0, 000, 000, 000, 0),
+(171, 'VIBHU KRISHNA', 'hs18h044@smail.iitm.ac.in', '9446538584', 17, '3,5,11,24', 'HS18H044', 'Non-Veg', 'A+', '171.jpg', 'Vibhu', 'Nil', 'M', 0, 000, 000, 000, 0),
 (172, 'SPHURTI AGARWAL', 'sphurti13agarwal@gmail.com', '9940320498', 17, '17,18,19,22,23', 'CH16B066', 'Veg', 'B+', '172.jpg', 'SPHURTI', 'Nil', 'F', 0, 000, 000, 000, 0),
-(173, 'JAI KEDIA', 'ce17b037@smail.iitm.ac.in', '8500030953', 17, '1,10,11,15,16,24', 'CE17B037', 'Veg', 'A+', '173.jpg', 'Jai', 'Nil', 'M', 0, 000, 000, 000, 1),
-(174, 'L R KAMALA DEVI', 'Hs15h016@smail.iitm.ac.in', '9176494315', 17, '17,18,20,21,22,23', 'HS15H016', 'Non-Veg', 'B+', '174.jpg', 'KAMALA', 'Nil', 'F', 0, 000, 000, 000, 1),
-(175, 'SHAGNIK PAL', 'ee17b147@smail.iitm.ac.in', '9869249831', 17, '24', 'EE17B147', 'Non-Veg', 'A+', '175.jpg', 'Pal', 'Nil', 'M', 0, 000, 000, 000, 1),
-(176, 'GAURAV MILIND VAIDYA', 'gvaidya.m@gmail.com', '9513331386', 17, '24', 'PH18B008', 'Non-Veg', 'A+', '176.jpg', 'Gaurav', 'Nil', 'M', 0, 000, 000, 000, 1),
-(177, 'B SREERAM', 'mm18b014@smail.iitm.ac.in', '8593833390', 17, '6,24', 'MM18B014', 'Veg', 'B+', '177.jpg', 'SREERAM', 'Nil', 'M', 0, 000, 000, 000, 1),
-(178, 'PALASH PANTAWANE', 'Ae17b105@smail.iitm.ac.in', '9840898150', 17, '24', 'AE17B105', 'Non-Veg', 'B+', '178.jpg', 'PALASH', 'Nil', 'M', 0, 000, 000, 000, 1),
-(179, 'VARAD JOSHI', 'Me17b038@smail.iitm.ac.in', '9511639134', 17, '9,24', 'ME17B038', 'Non-Veg', 'A+', '179.jpg', 'varad', 'Nil', 'M', 0, 000, 000, 000, 1),
-(181, 'ANIRUDDHA KISHOR KAWADE', 'cs18b002@smail.iitm.ac.in', '9869423830', 17, '6,7,8,13,14,15,16,24', 'CS18B002', 'Non-Veg', 'O+', '181.jpg', 'KISHOR', 'Nil', 'M', 0, 000, 000, 000, 1),
-(182, 'PRATAP KUMAR ', 'pratap@iitm.ac.in', '8979564562', 17, 'staff', 'Coach', 'Non-Veg', 'A+', '182.jpg', 'Kumar', 'Nil', 'M', 0, 000, 000, 000, 1),
+(173, 'JAI KEDIA', 'ce17b037@smail.iitm.ac.in', '8500030953', 17, '1,10,11,15,16,24', 'CE17B037', 'Veg', 'A+', '173.jpg', 'Jai', 'Nil', 'M', 0, 000, 000, 000, 0),
+(174, 'L R KAMALA DEVI', 'Hs15h016@smail.iitm.ac.in', '9176494315', 17, '17,18,20,21,22,23', 'HS15H016', 'Non-Veg', 'B+', '174.jpg', 'KAMALA', 'Nil', 'F', 0, 000, 000, 000, 0),
+(175, 'SHAGNIK PAL', 'ee17b147@smail.iitm.ac.in', '9869249831', 17, '24', 'EE17B147', 'Non-Veg', 'A+', '175.jpg', 'Pal', 'Nil', 'M', 0, 000, 000, 000, 0),
+(176, 'GAURAV MILIND VAIDYA', 'gvaidya.m@gmail.com', '9513331386', 17, '24', 'PH18B008', 'Non-Veg', 'A+', '176.jpg', 'Gaurav', 'Nil', 'M', 0, 000, 000, 000, 0),
+(177, 'B SREERAM', 'mm18b014@smail.iitm.ac.in', '8593833390', 17, '6,24', 'MM18B014', 'Veg', 'B+', '177.jpg', 'SREERAM', 'Nil', 'M', 0, 000, 000, 000, 0),
+(178, 'PALASH PANTAWANE', 'Ae17b105@smail.iitm.ac.in', '9840898150', 17, '24', 'AE17B105', 'Non-Veg', 'B+', '178.jpg', 'PALASH', 'Nil', 'M', 0, 000, 000, 000, 0),
+(179, 'VARAD JOSHI', 'Me17b038@smail.iitm.ac.in', '9511639134', 17, '9,24', 'ME17B038', 'Non-Veg', 'A+', '179.jpg', 'varad', 'Nil', 'M', 0, 000, 000, 000, 0),
+(181, 'ANIRUDDHA KISHOR KAWADE', 'cs18b002@smail.iitm.ac.in', '9869423830', 17, '6,7,8,13,14,15,16,24', 'CS18B002', 'Non-Veg', 'O+', '181.jpg', 'KISHOR', 'Nil', 'M', 0, 000, 000, 000, 0),
+(182, 'PRATAP KUMAR ', 'pratap@iitm.ac.in', '8979564562', 17, 'staff', 'Coach', 'Non-Veg', 'A+', '182.jpg', 'Kumar', 'Nil', 'M', 0, 000, 000, 000, 0),
 (183, 'P. RAJU', 'raju_p@iitm.ac.in', '8979568765', 17, 'staff', '0675', 'Non-Veg', 'A+', '183.jpg', 'Raju', 'Nil', 'M', 0, 000, 000, 000, 0),
-(184, 'DILLIBABU', 'babu@iitm.ac.in', '8979765456', 17, 'staff', 'madras1', 'Non-Veg', 'O+', '184.jpg', 'babu', 'Nil', 'M', 0, 000, 000, 000, 1),
-(185, 'ADITI SEN', 'senaditti@gmail.com', '8017600751', 16, '17,20,22,23', '16AT92R01', 'Non-Veg', 'O+', '185.jpg', 'ADITI SEN', 'Nil', 'F', 0, 000, 000, 000, 1),
-(186, 'KALYANI INGLE', 'kalyaniingle@gmail.com', '9609783443', 16, '17,18,19,22,23', '17AR91R03', 'Veg', 'B+', '186.jpg', 'KALYANI', 'Nil', 'F', 0, 000, 000, 000, 1),
+(184, 'DILLIBABU', 'babu@iitm.ac.in', '8979765456', 17, 'staff', 'madras1', 'Non-Veg', 'O+', '184.jpg', 'babu', 'Nil', 'M', 0, 000, 000, 000, 0),
+(185, 'ADITI SEN', 'senaditti@gmail.com', '8017600751', 16, '17,20,22,23', '16AT92R01', 'Non-Veg', 'O+', '185.jpg', 'ADITI SEN', 'Nil', 'F', 0, 000, 000, 000, 0),
+(186, 'KALYANI INGLE', 'kalyaniingle@gmail.com', '9609783443', 16, '17,18,19,22,23', '17AR91R03', 'Veg', 'B+', '186.jpg', 'KALYANI', 'Nil', 'F', 0, 000, 000, 000, 0),
 (187, 'SUPRITI SEN', 'supritisen.c@gmail.com', '9674538057', 16, '18,19,21,22,23', '16MS92R02', 'Non-Veg', 'B+', '187.jpg', 'SUPRITI SEN', 'Nil', 'F', 0, 000, 000, 000, 0),
-(188, 'AMRUTA NAGPURE', 'anaghaarchi14@gmail.com', '8378089944', 16, '17,18,20,21,22,23', '19ID60R09', 'Non-Veg', 'B+', '188.jpg', 'AMRUTA', 'Nil', 'F', 0, 000, 000, 000, 1),
+(188, 'AMRUTA NAGPURE', 'anaghaarchi14@gmail.com', '8378089944', 16, '17,18,20,21,22,23', '19ID60R09', 'Non-Veg', 'B+', '188.jpg', 'AMRUTA', 'Nil', 'F', 0, 000, 000, 000, 0),
 (189, 'ISHAAN AHAMAD', 'Ishaanahmed90@gmail.com', '9647083364', 16, 'staff', '17172', 'Non-Veg', 'O+', '189.jpg', 'Ishaan', 'Nil', 'M', 0, 000, 000, 000, 0),
 (190, 'DR. SUSANTA KUMAR PANDA', 'susanta_panda@iitkgp.ac.in', '8232943493', 16, 'staff', '17176', 'Non-Veg', 'B+', '190.jpg', 'Panda', 'Nil', 'M', 0, 000, 000, 000, 0),
 (191, 'SOUMEN MONDAL', 'soumen@iitkgp.ac.in', '9231233433', 16, 'staff', '96010', 'Non-Veg', 'A+', '191.jpg', 'Soumen', 'Nil', 'M', 0, 000, 000, 000, 0),
@@ -904,22 +904,22 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (265, 'NAND LAL', 'nandlal@iitkgp.ac.in', '9756188965', 16, 'staff', '1256', 'Non-Veg', 'B+', '265.jpg', 'Nandlal', 'Nil', 'M', 0, 000, 000, 000, 0),
 (266, 'SANJOY BISWAS', 'sanjoybiswas@iitkgp.ac.in', '9745863215', 16, 'staff', '7895', 'Non-Veg', 'B+', '266.jpg', 'Sanjoy', 'Nil', 'M', 0, 000, 000, 000, 0),
 (267, 'CH. SHRINU', 'shrinu@iitkgp.ac.in', '1597536985', 16, 'staff', '7895', 'Non-Veg', 'B+', '267.jpg', 'Shrinu', 'Nil', 'M', 0, 000, 000, 000, 0),
-(268, 'BINOY BERA', 'binoybera@iitkgp.ac.in', '9542863785', 16, 'staff', '7569', 'Non-Veg', 'B-', '268.jpg', 'binoy', 'Nil', 'M', 0, 000, 000, 000, 0),
+(268, 'BINOY BERA', 'binoybera@iitkgp.ac.in', '9542863785', 16, 'staff', '7569', 'Non-Veg', 'B-', '268.jpg', 'binoy', 'Nil', 'M', 0, 000, 000, 000, 1),
 (269, 'ATISH MONDAL', 'atish@iitkgp.ac.in', '94528631789', 16, 'staff', '8569', 'Non-Veg', 'B-', '269.jpg', 'Atish', 'Nil', 'M', 0, 000, 000, 000, 0),
 (270, 'GANESH ROUTH', 'ganesh@iitkgp.ac.in', '7583954826', 16, 'staff', '8564', 'Non-Veg', 'B+', '270.jpg', 'Ganesh', 'Nil', 'M', 0, 000, 000, 000, 0),
 (271, 'JUDHISTHIR PRADHAN', 'Judhisthir@iitkgp.ac.in', '5869475846', 16, 'staff', '5967', 'Non-Veg', 'B+', '271.jpg', 'Judhisthir', 'Nil', 'M', 0, 000, 000, 000, 0),
-(272, 'KARTIK SAREN', 'kartik@iitkgp.ac.in', '5987526348', 16, 'staff', '5963', 'Non-Veg', 'B+', '272.jpg', 'Kartik', 'Nil', 'M', 0, 000, 000, 000, 0),
+(272, 'KARTIK SAREN', 'kartik@iitkgp.ac.in', '5987526348', 16, 'staff', '5963', 'Non-Veg', 'B+', '272.jpg', 'Kartik', 'Nil', 'M', 0, 000, 000, 000, 1),
 (273, 'R RAVI KUMAR', 'ravi@iitkgp.ac.in', '9452698745', 16, 'staff', '8563', 'Non-Veg', 'B+', '273.jpg', 'Ravi', 'Nil', 'M', 0, 000, 000, 000, 0),
 (274, 'KOUSHIK NAYEK', 'kaushik@iitkgp.ac.in', '7563489563', 16, 'staff', '8563', 'Non-Veg', 'B+', '274.jpg', 'Koushik', 'Nil', 'M', 0, 000, 000, 000, 0),
-(275, 'MIHIR SEN', 'mihir@iitkgp.ac.in', '8563459867', 16, 'staff', '7589', 'Non-Veg', 'B+', '275.jpg', 'mihir', 'Nil', 'M', 0, 000, 000, 000, 0),
+(275, 'MIHIR SEN', 'mihir@iitkgp.ac.in', '8563459867', 16, 'staff', '7589', 'Non-Veg', 'B+', '275.jpg', 'mihir', 'Nil', 'M', 0, 000, 000, 000, 1),
 (276, 'C H MOHAN RAO', 'mohan@iitkgp.ac.in', '75986489675', 16, 'staff', '8697', 'Non-Veg', 'B-', '276.jpg', 'Mohan', 'Nil', 'M', 0, 000, 000, 000, 0),
-(277, 'NEHA RAJ TIRKEY ', 'neha@iitbhu.ac.in', '9876543221', 1, '17', '17114014', 'Non-Veg', 'A+', '277.jpg', 'neha', 'Nil', 'F', 0, 000, 000, 000, 1),
+(277, 'NEHA RAJ TIRKEY ', 'neha@iitbhu.ac.in', '9876543221', 1, '17', '17114014', 'Non-Veg', 'A+', '277.jpg', 'neha', 'Nil', 'F', 0, 000, 000, 000, 0),
 (278, 'GAURAV KUMAR ', 'gaurav@iitr.ac.in', '5678986754', 21, '24', '180265', 'Non-Veg', 'A+', '278.jpg', 'Gaurav', 'Nil', 'M', 0, 000, 000, 000, 0),
 (279, 'WRISHIK NASKAR', 'wrishik@iitr.ac.in', '08979695949', 21, '24', '160817', 'Non-Veg', 'B+', '279.jpg', 'Gaurav', 'Nil', 'M', 0, 000, 000, 000, 0),
 (280, 'SIDHARTH BANKUPALLE', 'sid@iitg.ac.in', '6575859505', 10, '15', '180123047', 'Veg', 'A+', '280.jpg', 'Sid', 'Nil', 'M', 0, 000, 000, 000, 1),
-(281, 'MANISH DHAKA', 'manish@iitr.ac.in', '9876987655', 21, '24', '18524008', 'Veg', 'B+', '281.jpg', 'Manish', 'Nil', 'M', 0, 000, 000, 000, 1),
-(282, 'RITWIK SINGHAI', 'ritwik@iitkgp.ac.in', '8797079897', 16, '24', '18AE10023', 'Veg', 'A+', '282.jpg', 'RITS', 'Nil', 'M', 0, 000, 000, 000, 1),
-(283, 'GAURAV KUMAR ', 'gaurav@iitk.ac.in', '9876543231', 15, '24', '180265', 'Veg', 'A+', '283.jpg', 'Gaurav', 'Nil', 'M', 0, 000, 000, 000, 1),
+(281, 'MANISH DHAKA', 'manish@iitr.ac.in', '9876987655', 21, '24', '18524008', 'Veg', 'B+', '281.jpg', 'Manish', 'Nil', 'M', 0, 000, 000, 000, 0),
+(282, 'RITWIK SINGHAI', 'ritwik@iitkgp.ac.in', '8797079897', 16, '24', '18AE10023', 'Veg', 'A+', '282.jpg', 'RITS', 'Nil', 'M', 0, 000, 000, 000, 0),
+(283, 'GAURAV KUMAR ', 'gaurav@iitk.ac.in', '9876543231', 15, '24', '180265', 'Veg', 'A+', '283.jpg', 'Gaurav', 'Nil', 'M', 0, 000, 000, 000, 0),
 (284, 'WRISHIK NASKAR ', 'naskar@iitk.ac.in', '8979794567', 15, '24', '160817', 'Veg', 'A+', '284.jpg', 'naskar', 'Nil', 'M', 0, 000, 000, 000, 0),
 (285, 'SRINIVAS RAO', 'srinivasrao@iitkgp.ac.in', '8906909242', 16, 'staff', 'f', 'Non-Veg', 'B-', '285.jpg', 'f', 'Nil', 'M', 0, 000, 000, 000, 0),
 (286, 'BASKAR RAO', 'Baskar@iitkgp.ac.in', '8436025452', 16, 'staff', 'f', 'Veg', 'A+', '286.jpg', 'f', 'Nil', 'M', 0, 000, 000, 000, 0),
@@ -1003,7 +1003,9 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (366, 'VIKASH MISHRA', 'ahana@iitjammu.ac.in', '3690030000', 16, 'staff', '12345', 'Non-Veg', 'A-', '366.jpg', 'Ahana', 'Nil', 'M', 0, 000, 000, 000, 0),
 (367, 'SHASHI RANJAN', 'shashi@iitr.ac.in', '5656560000', 16, 'staff', '1234', 'Non-Veg', 'O+', '367.jpg', 'Shahi', 'Nil', 'M', 0, 000, 000, 000, 0),
 (368, 'VISHAL KUMAR SINGH', 'vishal@iitkanpur.ac.in', '8095000012', 16, 'staff', '65758', 'Veg', 'O+', '368.jpg', 'VKS', 'Nil', 'M', 0, 000, 000, 000, 0),
-(369, 'ABHISHEK SINGH', 'abhishek@iitj.ac.in', '6939258012', 16, 'staff', 'Asdftg', 'Non-Veg', 'O+', '369.jpg', 'Abhishek', 'Nil', 'M', 0, 000, 000, 000, 0);
+(369, 'ABHISHEK SINGH', 'abhishek@iitj.ac.in', '6939258012', 16, 'staff', 'Asdftg', 'Non-Veg', 'O+', '369.jpg', 'Abhishek', 'Nil', 'M', 0, 000, 000, 000, 0),
+(370, 'SHASHI RANJAN', 'a@gmail.com', '7477797333', 16, '', '16MI33014', 'non-veg', 'A-', '312.jpg', 'SHASHI', '', 'M', 0, 000, 000, 000, 0),
+(371, 'Sayantan C.', 'Sayantanc@gmail.com', '1234567890', 4, '', '1234567890', 'non-veg', 'A+', '', '1', '', 'M', 0, 000, 000, 000, 0);
 
 -- --------------------------------------------------------
 
@@ -1044,30 +1046,30 @@ CREATE TABLE `point_main` (
 --
 
 INSERT INTO `point_main` (`id`, `sports_id`, `c_1`, `c_2`, `c_3`, `c_4`, `c_5`, `c_6`, `c_7`, `c_8`, `c_9`, `c_10`, `c_11`, `c_12`, `c_13`, `c_14`, `c_15`, `c_16`, `c_17`, `c_18`, `c_19`, `c_20`, `c_21`, `c_22`, `c_23`) VALUES
-(1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 5, 0, 0),
+(2, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0),
+(3, 3, 0, 0, 0, 3, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0),
+(4, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0),
+(5, 5, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 2, 0, 0),
+(6, 6, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 2, 0, 0),
 (7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(11, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(12, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(13, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(10, 10, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 7, 0, 0, 0, 1, 0, 0),
+(11, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 6, 0, 0, 0, 2, 0, 0),
+(12, 12, 0, 0, 0, 2, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0),
+(13, 13, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 5, 0, 0),
+(14, 14, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 0, 0, 0, 0, 0, 0),
 (15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(18, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(19, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(21, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(22, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(23, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(24, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(16, 16, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10, 0, 0, 0, 4, 0, 0),
+(17, 17, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 1, 0, 0),
+(18, 18, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 0, 0, 0, 0, 0, 0),
+(19, 19, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 2, 0, 0),
+(20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 3, 0, 0),
+(21, 21, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 0, 0, 0, 0, 0),
+(22, 22, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 10, 0, 0, 0, 0, 0, 0),
+(23, 23, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 10, 0, 0, 0, 0, 0, 0),
+(24, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 10, 4, 0, 0, 0, 2, 0, 0),
 (25, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (26, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (27, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -1127,13 +1129,13 @@ INSERT INTO `point_master` (`id`, `clg_id`, `points`) VALUES
 (12, 12, 0),
 (13, 13, 0),
 (14, 14, 0),
-(15, 15, 0),
-(16, 16, 0),
-(17, 17, 0),
+(15, 15, 10),
+(16, 16, 20),
+(17, 17, 24),
 (18, 18, 0),
 (19, 19, 0),
 (20, 20, 0),
-(21, 21, 0),
+(21, 21, 8),
 (22, 22, 0),
 (23, 23, 0);
 
@@ -1163,6 +1165,60 @@ CREATE TABLE `schedule_result_individual` (
   `comments` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `schedule_result_individual`
+--
+
+INSERT INTO `schedule_result_individual` (`id`, `sport_id`, `clgs_playing`, `players`, `date_time`, `venue`, `level`, `clg_1st`, `clg_2nd`, `clg_3rd`, `clg_4th`, `clg_1st_player_id`, `clg_2nd_player_id`, `clg_3rd_player_id`, `clg_4th_player_id`, `status`, `comments`) VALUES
+(2, 13, '21,4,5,15', '28,10,73,112', '2019-10-01 08:00', 'Swimming Pool', 'Final', 21, 4, 15, 5, 73, 112, 10, 28, 'Awesome Race', ''),
+(3, 17, '17,21,5', '174,56,172,81', '2019-10-01 07:30', 'Swimming Pool', 'Final', 17, 17, 5, 21, 174, 172, 56, 81, '', ''),
+(4, 1, '9,21,5,17', '11,173,32,73', '2019-10-01 07:45', 'Swimming Pool', 'Final', 21, 17, 9, 5, 73, 173, 11, 32, '', ''),
+(7, 18, '16,17,4', '188,174,118,172', '2019-10-02 07:30', 'Swimming Pool', 'Final', 17, 17, 4, 16, 174, 172, 118, 188, '', ''),
+(8, 12, '9,21,4,5', '11,32,73,112', '2019-10-02 07:45', 'Swimming Pool', 'Final', 21, 9, 4, 5, 73, 11, 112, 32, '', ''),
+(12, 4, '17,4', '164,163,100,111', '2019-09-29 07:00', 'Swimming Pool', 'Final', 17, 4, 17, 4, 164, 100, 163, 111, '', ''),
+(13, 19, '16,17,4,21', '186,118,172,81', '2019-09-29 07:25', 'Swimming Pool', 'Final', 17, 4, 21, 16, 172, 118, 81, 186, '', ''),
+(14, 10, '16,4,5', '50,142,141,371', '2019-09-29 07:40', 'Swimming Pool', 'Final', 16, 16, 5, 4, 142, 141, 50, 371, '', ''),
+(15, 11, '17,21,15', '165,173,74,53', '2019-09-29 07:40', 'Swimming Pool', 'Final', 17, 15, 21, 17, 165, 53, 74, 173, '', ''),
+(16, 3, '17,4,5,9', '164,11,100,18', '2019-09-30 07:00', 'Swimming Pool', 'Final', 17, 4, 9, 5, 164, 100, 11, 18, '', ''),
+(17, 21, '16,4,15', '188,59,118,58', '2019-09-30 07:05', 'Swimming Pool', 'Final', 15, 16, 4, 15, 58, 188, 118, 59, '', ''),
+(18, 14, '16,17,4', '181,141,161,112', '2019-09-30 07:30', 'Swimming Pool', 'Final', 17, 4, 16, 17, 161, 112, 141, 181, '', ''),
+(19, 6, '16,21,4,5', '50,142,76,371', '2019-09-30 07:45', 'Swimming Pool', 'Final', 16, 5, 21, 4, 142, 50, 76, 371, '', ''),
+(21, 5, '17,4,21', '164,76,163,100', '2019-10-03 14:20', 'Swimming Pool', 'Final', 17, 4, 21, 17, 164, 100, 76, 163, '', ''),
+(22, 20, '17,21,15', '59,174,58,81', '2019-10-03 14:40', 'Swimming Pool', 'Final', 17, 21, 15, 15, 174, 81, 58, 59, '', ''),
+(23, 10, '16,17,21', '165,140,173,74', '2019-10-03 14:50', 'Swimming Pool', 'Final', 17, 16, 17, 21, 165, 140, 173, 74, '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedule_result_relay`
+--
+
+CREATE TABLE `schedule_result_relay` (
+  `id` int(11) NOT NULL,
+  `sport_id` int(11) NOT NULL,
+  `clgs_playing` varchar(1000) NOT NULL,
+  `players` varchar(4000) NOT NULL,
+  `date_time` datetime NOT NULL,
+  `venue` varchar(400) NOT NULL,
+  `level` varchar(400) NOT NULL,
+  `clg_1st` int(5) NOT NULL,
+  `clg_2nd` int(5) NOT NULL,
+  `clg_3rd` int(5) NOT NULL,
+  `clg_4th` int(5) NOT NULL,
+  `status` int(1) NOT NULL,
+  `comments` varchar(10000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `schedule_result_relay`
+--
+
+INSERT INTO `schedule_result_relay` (`id`, `sport_id`, `clgs_playing`, `players`, `date_time`, `venue`, `level`, `clg_1st`, `clg_2nd`, `clg_3rd`, `clg_4th`, `status`, `comments`) VALUES
+(1, 22, '', '', '2019-10-01 09:01:00', 'Swimming Pool', 'Final', 17, 16, 15, 4, 1, ''),
+(3, 14, '', '', '2019-10-02 08:15:00', 'Swimming Pool', 'Final', 17, 5, 21, 4, 1, ''),
+(4, 16, '', '', '2019-09-29 07:15:00', 'Swimming Pool', 'Final', 17, 4, 21, 16, 1, ''),
+(5, 23, '', '', '2019-10-03 15:00:00', 'Swimming Pool', 'Final', 17, 16, 4, 15, 1, '');
+
 -- --------------------------------------------------------
 
 --
@@ -1191,12 +1247,22 @@ CREATE TABLE `schedule_result_team` (
 --
 
 INSERT INTO `schedule_result_team` (`id`, `sports_id`, `clg_id1`, `clg_id2`, `date_time`, `venue`, `level`, `score1`, `score2`, `winner_clg_id`, `runner_clg_id`, `status`, `commentry`, `lineup1`) VALUES
-(1, 24, 15, 21, '2019-09-29 03:00:00', 'Swimming Pool', 'League[P-B]', '15', '2', 15, 21, 'IIT Kanpur won by 15-2 against IIT Roorkee ', 'Looks like a one sided match!!!', NULL),
-(2, 24, 6, 4, '2019-09-29 05:00:00', 'Swimming Pool', 'League[P-A]', '3', '10', 04, 06, 'IIT Bombay beat IIT(ISM) Dhanbad by 10-3', 'Late goal for Dhanbad and what a shoot from bombay but no goal given', NULL),
-(3, 24, 16, 17, '2019-09-29 16:30:00', 'Swimming Pool', 'League[P-A]', '12', '3', 16, 17, 'IIT Kharagpur beats IIT Madras by 12-3', 'Over the top from Madras and whistle blows . TOTAL 12-3 Kharagpur beats Madras', NULL),
-(4, 24, 5, 10, '2019-09-29 17:30:00', 'Swimming Pool', 'League[P-B]', '7', '10', 10, 05, 'IIT Guwahati beats IIT Delhi by 10-7', 'Whistle blows and Game won by Guwahati', NULL),
-(5, 24, 16, 6, '2019-09-30 10:25:00', 'Swimming Pool', 'League[P-A]', '18 ', '0', 16, 06, 'IIT kharagpur won by 18-0', 'End of match ', NULL),
-(6, 24, 15, 10, '2019-09-30 11:30:00', 'Swimming Pool', 'League[P-B]', '17', '10', 15, 10, 'IIT KANPUR WON BY 17-10', '', NULL);
+(1, 24, 15, 21, '2019-09-29 03:00:00', 'Swimming Pool', 'League [P-B]', '15', '2', 15, 21, 'IIT Kanpur won by 15-2 against IIT Roorkee ', 'Looks like a one sided match!!!', NULL),
+(2, 24, 6, 4, '2019-09-29 05:00:00', 'Swimming Pool', 'League [P-A]', '3', '10', 04, 06, 'IIT Bombay beat IIT(ISM) Dhanbad by 10-3', 'Late goal for Dhanbad and what a shoot from bombay but no goal given', NULL),
+(3, 24, 16, 17, '2019-09-29 16:30:00', 'Swimming Pool', 'League [P-A]', '12', '3', 16, 17, 'IIT Kharagpur beats IIT Madras by 12-3', 'Over the top from Madras and whistle blows . TOTAL 12-3 Kharagpur beats Madras', NULL),
+(4, 24, 5, 10, '2019-09-29 17:30:00', 'Swimming Pool', 'League [P-B]', '7', '10', 10, 05, 'IIT Guwahati beats IIT Delhi by 10-7', 'Whistle blows and Game won by Guwahati', NULL),
+(5, 24, 16, 6, '2019-09-30 10:25:00', 'Swimming Pool', 'League [P-A]', '18 ', '0', 16, 06, 'IIT kharagpur won by 18-0', 'End of match ', NULL),
+(6, 24, 15, 10, '2019-09-30 11:30:00', 'Swimming Pool', 'League [P-B]', '17', '10', 15, 10, 'IIT KANPUR WON BY 17-10', '', NULL),
+(7, 24, 4, 17, '2019-09-30 16:30:00', 'Swimming Pool', 'League [P-A]', '2', '17', 17, 04, 'IIT Madras wins over IIT Bombay by 17-2', '', NULL),
+(8, 24, 5, 21, '2019-09-30 17:30:00', 'Swimming Pool', 'League [P-B]', '6', '8', 21, 05, '', '', NULL),
+(9, 24, 21, 10, '2019-10-01 10:00:00', 'Swimming Pool', 'League [P-B]', '7', '5', 21, 10, 'A breath taking game won by IIT roorkee', 'Quater 4 complete ', NULL),
+(10, 24, 6, 17, '2019-10-01 11:40:00', 'Swimming Pool', 'League [P-A]', '2', '13', 17, 06, '', '', NULL),
+(11, 24, 16, 4, '2019-10-01 16:40:00', 'Swimming Pool', 'League [P-A]', '15', '6', 16, 04, 'IIT Kharagpur beats IIT Bombay by 15-6', 'KGP Ka Tempo High Hain!', NULL),
+(12, 24, 15, 5, '2019-10-01 17:40:00', 'Swimming Pool', 'League [P-B]', '11', '3', 15, 05, 'IIT Kanpur beats IIT Delhi by 11-3', 'Match ends', NULL),
+(16, 24, 16, 21, '2019-10-02 09:01:00', 'Swimming Pool', 'Semi-Final 1', '13', '3', 16, 21, 'KGP goes to final with a glorious win', 'Whistle blows and match ends...kgp wins', NULL),
+(17, 24, 15, 17, '2019-10-02 17:05:00', 'Swimming Pool', 'Semi-Final 2', '10', '9', 15, 17, 'IIT Kanpur won by 10-9 against IIT Madras', '', NULL),
+(18, 24, 17, 21, '2019-10-03 10:40:00', 'Swimming Pool', '3rd Place', '7', '1', 17, 21, 'Madras secured the Bronze!', 'Madras won by 7-1', NULL),
+(19, 24, 16, 15, '2019-10-03 16:00:00', 'Swimming Pool', 'Final', '11', '4', 16, 15, 'Kharagpur won the crown!', 'IIT Kharagpur won by 11-4 against IIT Kanpur', NULL);
 
 -- --------------------------------------------------------
 
@@ -1230,10 +1296,10 @@ INSERT INTO `sports` (`id`, `sports_name`, `category`, `max_player`, `type`) VAL
 (11, 'Swimming 200m Breaststroke', 'M', 2, 'i'),
 (12, 'Swimming 50m Butterfly', 'M', 2, 'i'),
 (13, 'Swimming 100m Butterfly', 'M', 2, 'i'),
-(14, 'Swimming 200m Individual Mixed', 'M', 2, 'i'),
+(14, 'Swimming 200m Individual Medley', 'M', 2, 'i'),
 (15, 'Swimming 4x100m Freestyle relay', 'M', 4, 't'),
 (16, 'Swimming 4x100m Medley Relay', 'M', 4, 't'),
-(17, 'Swimming 50m Freestyle', 'W', 2, 't'),
+(17, 'Swimming 50m Freestyle', 'W', 2, 'i'),
 (18, 'Swimming 100m Freestyle', 'W', 2, 'i'),
 (19, 'Swimming 50m Backstroke', 'W', 2, 'i'),
 (20, 'Swimming 50m Breaststroke', 'W', 2, 'i'),
@@ -1463,6 +1529,12 @@ ALTER TABLE `schedule_result_individual`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `schedule_result_relay`
+--
+ALTER TABLE `schedule_result_relay`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `schedule_result_team`
 --
 ALTER TABLE `schedule_result_team`
@@ -1498,12 +1570,12 @@ ALTER TABLE `college`
 -- AUTO_INCREMENT for table `participation`
 --
 ALTER TABLE `participation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=691;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=680;
 --
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=370;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=372;
 --
 -- AUTO_INCREMENT for table `point_main`
 --
@@ -1518,12 +1590,17 @@ ALTER TABLE `point_master`
 -- AUTO_INCREMENT for table `schedule_result_individual`
 --
 ALTER TABLE `schedule_result_individual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+--
+-- AUTO_INCREMENT for table `schedule_result_relay`
+--
+ALTER TABLE `schedule_result_relay`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `schedule_result_team`
 --
 ALTER TABLE `schedule_result_team`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `sports`
 --
