@@ -122,7 +122,7 @@ $(document).ready(function() {
                     <div class="form-group floating-label-form-group controls">
                         <input type="email" class="form-control" placeholder="Email Address" id="email" name="email"
                                required data-validation-required-message="Please enter your email address.">
-                               <small id="passwordHelpBlock" class="form-text text-muted">
+                               <small class="form-text text-muted">
                                     unique for each registration
                                </small>
                         <p class="help-block text-danger"></p>
@@ -134,6 +134,9 @@ $(document).ready(function() {
                         <input type="text" id="roll_no" placeholder="Roll No. / Enrollment Number" class="form-control"
                                aria-describedby="passwordHelpBlock" name="roll_no" required
                                data-validation-required-message="Please fill this field.">
+                        <small class="form-text text-muted">
+                                    unique for each registration
+                        </small>
                          <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -175,24 +178,29 @@ $(document).ready(function() {
                     </div>
                 </div> -->
 
-                <!--<div class="control-group">-->
-                    <!--<div class="form-group floating-label-form-group controls">-->
-                        <!--<input type="text" class="form-control" placeholder="Any special instruction to OC" id="special_inst"-->
-                               <!--name="special_inst" required-->
-                               <!--data-validation-required-message="Please fill this field.">-->
-                        <!--<p class="help-block text-danger"></p>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <input type="text" class="form-control" placeholder="Any special instruction to OC" id="special_inst"
+                               name="special_inst">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
 
-                 <!--<div class="control-group">-->
-                    <!--<div class="form-group floating-label-form-group controls">-->
-                        <!--<div class="custom-file">-->
-                            <!--<input type="file" class="custom-file-input" id="customFile" name="profile_img" required-->
-                               <!--data-validation-required-message="Select an image first.">-->
-                            <!--<label class="custom-file-label" for="customFile">Select profile picture</label>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+                 <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" name="profile_img" required
+                               data-validation-required-message="Select an image first.">
+                            <label class="custom-file-label" for="customFile" id="customFileLabel">Select profile picture</label>
+                            <script>
+                                $('#customFile').on('change',function(){
+                                    var fileName = $(this).val();
+                                    $(this).next('#customFileLabel').html(fileName);
+                                })
+                            </script>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
