@@ -197,10 +197,16 @@ def register():
         print ( request.form )
         name = request.form['name'].upper ( )
         email = request.form['email']
+        if Players.query.filter_by ( email = email ).count ( ) != 0:
+            return "This seems to be a duplicated Record, Check the email"
         roll_no = request.form['roll_no']
         mobile = request.form['mobile']
+        if len ( str ( mobile ) ) != 10:
+            return "Correct the mobile number please"
+        if Players.query.filter_by ( mobile = mobile ).count ( ) != 0:
+            return "This seems to be a duplicated Record, Check the mobile number"
         jursey_name = request.form['jursey_name']
-        special_inst = "Nil"
+        special_inst = request.form['special_inst']
         food = request.form['food']
         gender = request.form['gender']
         blood_group = request.form['blood_group']
@@ -215,12 +221,10 @@ def register():
         print ( cnt )
         filename = str ( cnt ) + '.jpg'
         if "profile_img" not in request.files:
-            flash ( 'Give proper profile image' )
-            return "Fail"
+            return "There is some error with the profile image"
         profile_img = request.files['profile_img']
         if profile_img.filename == '':
-            flash ( 'Give proper profile image' )
-            return "Fail"
+            return "There is some error with the profile image"
         x = os.path.join ( os.getcwd ( ) , "static" , "profile_images" , str ( current_user.college_id ) )
         if not os.path.exists ( x ):
             os.makedirs ( x )
@@ -243,7 +247,7 @@ def register():
                     os.makedirs ( x )
                 url.svg ( os.path.join ( x , qrname ) , scale = 8 )
             except:
-                return "Fail"
+                return "Sorry, I think you should try again"
             print ( "staff" )
         else:
             try:
@@ -256,7 +260,8 @@ def register():
                     os.makedirs ( x )
                 url.svg ( os.path.join ( x , qrname ) , scale = 8 )
             except:
-                return "Fail"
+                return "Sorry, I think you should try again"
+            print ( "candidate" )
         return "Success"
     sports = Sports.query.all ( )
     college = College.query.all ( )
@@ -277,11 +282,11 @@ def showCandidates():
     staff = []
     for stud in students:
         gmlst = []
-        if ((stud.selected_sports).strip ( ' \n' ) == "staff"):
+        if stud.selected_sports.strip ( ' \n' ) == "staff":
             staff.append ( stud )
             continue
         else:
-            for no in (stud.selected_sports).split ( ',' ):
+            for no in stud.selected_sports.split ( ',' ):
                 sp = Sports.query.filter_by ( id = int ( no ) ).first ( )
                 gmlst.append ( sp.sports_name + '(' + sp.category + ') ' )
             param.append ( (stud , ' | '.join ( gmlst )) )
@@ -298,14 +303,10 @@ def login():
         # hash = oracle10.hash(password, user="player")
         user = Admins.query.filter_by ( username = email ).first ( )
         if user is None:
-            return "Fail"
+            return "You seem not to be present"
         elif (user.password != password):
-            return "Fail"
+            return "Password may be wrong"
         else:
-            # clg = College.query.filter_by(id=user.college_id).first()
-            # print(clg)
-            # print(clg.clg_name)
-            # # user.clg_name = clg.clg_name
             login_user ( user , remember = True )
             return "Success"
     else:

@@ -23,8 +23,8 @@
     })
     .done(function(data){
       console.log(data);
-      if(data === "Fail") swal("Try Again!", "Wrong username or password!", "error");
       if(data === "Success") window.location.href = '/loginSuccess';
+      else swal("Try Again!", data, "error");
     });
 
     });
