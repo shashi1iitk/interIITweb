@@ -3,18 +3,128 @@
 {% block body %}
 
 <script type="text/javascript">
-     $(function () {
+    $(document).ready(function () {
         $('#datetime').datetimepicker({
             format: "YYYY-MM-DD HH:mm"
         });
         $('#datetimei').datetimepicker({
             format: "YYYY-MM-DD HH:mm"
         });
-        $('#datetimei1').datetimepicker({
+        $('#datetimer').datetimepicker({
             format: "YYYY-MM-DD HH:mm"
         });
-      });
-     $('select').selectpicker();
+        $('select').selectpicker();
+        $('#teamForm').on('submit', function (event) {
+            event.preventDefault();
+            $("#teamFormButton").attr("disabled", true);
+            $("#teamFormButton").html('Please wait...');
+            var formData = new FormData(document.querySelector('#teamForm'));
+            $.ajax({
+                data: formData,
+                type: 'POST',
+                url: '/addMatch',
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: false
+            }).done(function (id) {
+                if(id==="Success"){
+                    swal("Awesome!", "Match details accepted!", "success");
+                    $("#teamForm").trigger('reset');
+                }else swal("Sorry!", id, "error");
+                $("#teamFormButton").attr("disabled", false);
+                $("#teamFormButton").html('Submit');
+            });
+        });
+        $('#individualForm').on('submit', function (event) {
+            event.preventDefault();
+            $("#individualFormButton").attr("disabled", true);
+            $("#individualFormButton").html('Please wait...');
+            var formData = new FormData(document.querySelector('#individualForm'));
+            $.ajax({
+                data: formData,
+                type: 'POST',
+                url: '/addMatch',
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: false
+            }).done(function (id) {
+                console.log(id);
+                if(id==="Success"){
+                    swal("Awesome!", "Match details accepted!", "success");
+                    $("#individualForm").trigger('reset');
+                }else swal("Sorry!", id, "error");
+                $("#individualFormButton").attr("disabled", false);
+                $("#individualFormButton").html('Submit');
+            });
+        });
+        $('#relayForm').on('submit', function (event) {
+            event.preventDefault();
+            $("#relayFormButton").attr("disabled", true);
+            $("#relayFormButton").html('Please wait...');
+            var formData = new FormData(document.querySelector('#relayForm'));
+            $.ajax({
+                data: formData,
+                type: 'POST',
+                url: '/addMatch',
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: false
+            }).done(function (id) {
+                if(id==="Success"){
+                    swal("Awesome!", "Match details accepted!", "success");
+                    $("#relayForm").trigger('reset');
+                }else swal("Sorry!", id, "error");
+                $("#relayFormButton").attr("disabled", false);
+                $("#relayFormButton").html('Submit');
+            });
+        });
+        $('#update_individual').on('click', function (event) {
+            event.preventDefault();
+            $("#update_individual").attr("disabled", true);
+            $("#update_individual").html('Please wait...');
+            $.ajax({
+                data: {
+                    sport_id: parseInt($('#sporti option:selected').val()),
+                },
+                type: 'POST',
+                url: '/getPlayersIndividual'
+            }).done(function (data) {
+                $("#update_individual").addClass("hide");
+                $('#datetimeic').removeClass("hide");
+                $('#venuic').removeClass("hide");
+                $('#levelic').removeClass("hide");
+                data = JSON.parse(data);
+                $.each(data.name, function (i, item) {
+                    $('#player1').append($('<option>', {
+                        value: item.id,
+                        text: item.option
+                    }));
+                    $("#player1c").removeClass("hide");
+                    $('#player2').append($('<option>', {
+                        value: item.id,
+                        text: item.option
+                    }));
+                    $("#player2c").removeClass("hide");
+                    $('#player3').append($('<option>', {
+                        value: item.id,
+                        text: item.option
+                    }));
+                    $("#player3c").removeClass("hide");
+                    $('#player4').append($('<option>', {
+                        value: item.id,
+                        text: item.option
+                    }));
+                    $("#player4c").removeClass("hide");
+                    $("#individualFormButton").removeClass("hide");
+                    $('.selectpicker').selectpicker('refresh');
+                });
+            });
+        });
+
+    });
 </script>
 
 <style></style>
@@ -29,14 +139,14 @@
         <center><h2 style="margin-top:5%;">Add the Matches here</h2></center>
     </strong>
 
-    <center><button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-            data-target=".bd-example-modal-lg">Add Team Match
-    </button></center>
-
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <center>
+        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+                data-target=".bd-example-modal-lg">Add Team Match</button><br>
+    </center>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
-                <form action="/addMatch" method="POST">
+                <form id="teamForm">
                     <input type="hidden" name="type" value="team" class="form-control">
                     <div class="row">
                         <div class="col-md-12 form-group">
@@ -77,61 +187,52 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="venue">Venue</label><br>
-                            <input type='text' class="form-control" id="venue" name="venue" value="Swimming Pool"/>
+                            <input type='text' class="form-control" id="venue" name="venue"/>
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="level">Level</label><br>
                             <select class="selectpicker form-control" id="level"
                                     style="display:block;" name="level">
-                                
+
                                 <option value="League [P-A]">League [P-A]</option>
                                 <option value="League [P-B]">League [P-B]</option>
                                 <option value="Semi-Final 1">Semi-Final 1</option>
                                 <option value="Semi-Final 2">Semi-Final 2</option>
                                 <option value="3rd Place">3rd Place</option>
                                 <option value="Final">Final</option>
-                                
+
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary m-3 ">Submit</button>
+                        <button type="submit" class="btn btn-primary m-3 " id="teamFormButton">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    
-
-    <center><button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-            data-target=".bd-example-modal2-lg">Add Individual Match (Only Final)
-    </button>
-
-    <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <center>
+        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+                data-target=".bd-example-modal2-lg">Add Individual Match (Only Final)
+        </button><br>
+    </center>
+        <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
-                <form action="/addMatch" method="POST">
+                <form id="individualForm">
                     <input type="hidden" name="type" value="individual">
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <label for="sporti">Sport</label><br>
                             <select class="selectpicker form-control" data-live-search="true" id="sporti"
-                                    style="display:block;" name="sport">
+                                    style="display:block;" name="sportid">
                                 {% for sport in sports %}
                                 <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
                                 {% endfor %}
-                            </select><br>
+                            </select>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <label for="sporti">Players</label><br>
-                            <select class="selectpicker form-control" multiple data-live-search="true" id="players"
-                                    style="display:block;" name="players">
-                                {% for player in players %}
-                                <option value="{{player.id}}">{{player.name}} - {{player.clg_name}}</option>
-                                {% endfor %}
-                            </select><br>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="datetime">Datetime</label><br>
+                        <button class="btn btn-primary m-3" id="update_individual">Submit</button>
+                        <div class="col-md-12 form-group hide" id="datetimeic">
+                            <label for="datetimetexti">Datetime</label><br>
                             <div class='input-group date' id='datetimei'>
                                 <input type='text' class="form-control" id="datetimetexti" name="datetime"/>
                                 <span class="input-group-addon">
@@ -139,41 +240,62 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <label for="venue">Venue</label><br>
-                            <input type='text' class="form-control" id="venuei" name="venue" value="Swimming Pool"/>
+                        <div class="col-md-12 form-group hide" id="venuic">
+                            <label for="venuei">Venue</label><br>
+                            <input type='text' class="form-control" id="venuei" name="venue"/>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <label for="level">Level</label><br>
-                            <select class="selectpicker form-control" id="level"
+                        <div class="col-md-12 form-group hide" id="levelic">
+                            <label for="leveli">Level</label><br>
+                            <select class="selectpicker form-control" id="leveli"
                                     style="display:block;" name="level">
-                                
-                                <!-- <option value="League">Heats</option>
-                                <option value="Semi-Final">Time-Trails</option> -->
                                 <option value="Final">Final</option>
-                                
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary m-3 ">Submit</button>
+                        <div class="col-md-12 form-group hide" id="player1c">
+                            <label for="player1">Gold</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="player1"
+                                    style="display:none;" name="player1">
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group hide" id="player2c">
+                            <label for="player2">Silver</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="player2"
+                                    style="display:none;" name="player2">
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group hide" id="player3c">
+                            <label for="player3">Bronze</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="player3"
+                                    style="display:none;" name="player3">
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group hide" id="player4c">
+                            <label for="player4">4th Place</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="player4"
+                                    name="player4">
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary hide m-3" id="individualFormButton">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-     <center><button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-            data-target=".bd-example-modal1-lg">Add Relay Match  (Only Time-Trial/Final)
-    </button><br>
-    <h7>For Indivdual & Relay Matches- Add matches here and goto Live score page to finalise there winners.</h7></center>
-    <div class="modal fade bd-example-modal1-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <center>
+        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+                data-target=".bd-example-modal1-lg">Add Relay Match (Only Time-Trial/Final)
+        </button><br>
+    </center>
+        <div class="modal fade bd-example-modal1-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
-                <form action="/addMatch" method="POST">
+                <form id="relayForm">
                     <input type="hidden" name="type" value="relay">
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="sporti">Sport</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="sporti"
+                            <label for="sportr">Sport</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="sportr"
                                     style="display:block;" name="sport">
                                 {% for sport in sports %}
                                 <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
@@ -181,8 +303,8 @@
                             </select><br>
                         </div>
                         <div class="col-md-12 form-group">
-                            <label for="datetime">Datetime</label><br>
-                            <div class='input-group date' id='datetimei1'>
+                            <label for="datetimer">Datetime</label><br>
+                            <div class='input-group date' id='datetimer'>
                                 <input type='text' class="form-control" id="datetimetexti1" name="datetime"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
@@ -190,21 +312,57 @@
                             </div>
                         </div>
                         <div class="col-md-12 form-group">
-                            <label for="venue">Venue</label><br>
-                            <input type='text' class="form-control" id="venuei" name="venue" value="Swimming Pool"/>
+                            <label for="venuer">Venue</label><br>
+                            <input type='text' class="form-control" id="venuer" name="venue"/>
                         </div>
                         <div class="col-md-12 form-group">
-                            <label for="level">Level</label><br>
-                            <select class="selectpicker form-control" id="level"
+                            <label for="levelr">Level</label><br>
+                            <select class="selectpicker form-control" id="levelr"
                                     style="display:block;" name="level">
-                                
+
                                 <!-- <option value="League">Heats</option>
                                 <option value="Semi-Final">Time-Trails</option> -->
                                 <option value="Final">Final</option>
-                                
+
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary m-3 ">Submit</button>
+                        <div class="col-md-12 form-group">
+                            <label for="colleger1">College Rank 1</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="colleger1"
+                                    style="display:block;" name="colleger1">
+                                {% for college in colleges %}
+                                <option value="{{college.id}}">{{college.clg_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label for="colleger2">College Rank 2</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="colleger2"
+                                    style="display:block;" name="colleger2">
+                                {% for college in colleges %}
+                                <option value="{{college.id}}">{{college.clg_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label for="colleger3">College Rank 3</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="colleger3"
+                                    style="display:block;" name="colleger3">
+                                {% for college in colleges %}
+                                <option value="{{college.id}}">{{college.clg_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label for="colleger4">College Rank 4</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="colleger4"
+                                    style="display:block;" name="colleger4">
+                                {% for college in colleges %}
+                                <option value="{{college.id}}">{{college.clg_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary m-3 " id="relayFormButton">Submit</button>
                     </div>
                 </form>
             </div>
@@ -213,7 +371,7 @@
 </main>
 
 
-  <!-- Bootstrap 4 JavaScript -->
+<!-- Bootstrap 4 JavaScript -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
@@ -224,7 +382,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-
 
 
 {% endblock %}

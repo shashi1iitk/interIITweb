@@ -313,7 +313,7 @@
 
                 <div class="form-group" id="sports_select">
                     <label>Select sport/sports from the dropdown: </label>
-                    <select id="framework" name="framework[]" multiple="multiple" class="form-control">
+                    <select id="framework" name="framework" multiple="multiple" class="form-control">
                         {% for sport in allSports %}
                         <option value={{ sport.id }}> {{ sport.sports_name + '(' + sport.category + ')' }}</option>
                         {% endfor %}
