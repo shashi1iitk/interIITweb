@@ -714,6 +714,10 @@ def addMatches():
     players.sort(key=lambda x: x["name"])
     return render_template('addMatch.html', sports=sport, colleges=college, players=players)
 
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    return render_template('test.html')
+
 
 # application = app
 
