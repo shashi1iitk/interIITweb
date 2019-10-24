@@ -3,6 +3,23 @@
 {% block body %}
 
 <script type="text/javascript">
+    function hideAgain() {
+        $("#update_individual").removeClass("hide");
+        $("#update_individual").attr("disabled", false);
+        $("#update_individual").html('Submit');
+        $('#datetimeic').addClass("hide");
+        $('#venuic').addClass("hide");
+        $('#levelic').addClass("hide");
+        $("#player1c").addClass("hide");
+        $("#player2c").addClass("hide");
+        $("#player3c").addClass("hide");
+        $("#player4c").addClass("hide");
+        $('#sportic').removeClass('hide');
+        $("#individualFormButton").addClass("hide");
+    }
+    function hasDuplicates(array) {
+        return (new Set(array)).size !== array.length;
+    }
     $(document).ready(function () {
         $('#datetime').datetimepicker({
             format: "YYYY-MM-DD HH:mm"
@@ -19,29 +36,44 @@
             $("#teamFormButton").attr("disabled", true);
             $("#teamFormButton").html('Please wait...');
             var formData = new FormData(document.querySelector('#teamForm'));
-            $.ajax({
-                data: formData,
-                type: 'POST',
-                url: '/addMatch',
-                contentType: false,
-                cache: false,
-                processData: false,
-                async: false
-            }).done(function (id) {
-                if(id==="Success"){
-                    swal("Awesome!", "Match details accepted!", "success");
-                    $("#teamForm").trigger('reset');
-                }else swal("Sorry!", id, "error");
+            var playersSelected = [];
+            playersSelected.push(formData.get('college1'));
+            playersSelected.push(formData.get('college2'));
+            if(!hasDuplicates(playersSelected)) {
+                $.ajax({
+                    data: formData,
+                    type: 'POST',
+                    url: '/addMatch',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    async: false
+                }).done(function (id) {
+                    if (id === "Success") {
+                        swal("Awesome!", "Match details accepted!", "success");
+                        $("#teamForm").trigger('reset');
+                    } else swal("Sorry!", id, "error");
+                    $("#teamFormButton").attr("disabled", false);
+                    $("#teamFormButton").html('Submit');
+                });
+            } else {
+                swal("Duplication!", "Selection contains duplicate elements", "error");
                 $("#teamFormButton").attr("disabled", false);
                 $("#teamFormButton").html('Submit');
-            });
+            }
         });
         $('#individualForm').on('submit', function (event) {
             event.preventDefault();
             $("#individualFormButton").attr("disabled", true);
             $("#individualFormButton").html('Please wait...');
             var formData = new FormData(document.querySelector('#individualForm'));
-            $.ajax({
+            var playersSelected = [];
+            playersSelected.push(formData.get('player1'));
+            playersSelected.push(formData.get('player2'));
+            playersSelected.push(formData.get('player3'));
+            playersSelected.push(formData.get('player4'));
+            if(!hasDuplicates(playersSelected)){
+                $.ajax({
                 data: formData,
                 type: 'POST',
                 url: '/addMatch',
@@ -49,40 +81,58 @@
                 cache: false,
                 processData: false,
                 async: false
-            }).done(function (id) {
-                console.log(id);
-                if(id==="Success"){
-                    swal("Awesome!", "Match details accepted!", "success");
-                    $("#individualForm").trigger('reset');
-                }else swal("Sorry!", id, "error");
+                }).done(function (id) {
+                    console.log(id);
+                    if (id === "Success") {
+                        swal("Awesome!", "Match details accepted!", "success");
+                        $("#individualForm").trigger('reset');
+                        hideAgain();
+                    } else swal("Sorry!", id, "error");
+                    $("#individualFormButton").attr("disabled", false);
+                    $("#individualFormButton").html('Submit');
+                });
+            } else{
+                swal("Duplication!", "Selection contains duplicate elements", "error");
                 $("#individualFormButton").attr("disabled", false);
                 $("#individualFormButton").html('Submit');
-            });
+            }
         });
         $('#relayForm').on('submit', function (event) {
             event.preventDefault();
             $("#relayFormButton").attr("disabled", true);
             $("#relayFormButton").html('Please wait...');
             var formData = new FormData(document.querySelector('#relayForm'));
-            $.ajax({
-                data: formData,
-                type: 'POST',
-                url: '/addMatch',
-                contentType: false,
-                cache: false,
-                processData: false,
-                async: false
-            }).done(function (id) {
-                if(id==="Success"){
-                    swal("Awesome!", "Match details accepted!", "success");
-                    $("#relayForm").trigger('reset');
-                }else swal("Sorry!", id, "error");
+            var playersSelected = [];
+            playersSelected.push(formData.get('colleger1'));
+            playersSelected.push(formData.get('colleger2'));
+            playersSelected.push(formData.get('colleger3'));
+            playersSelected.push(formData.get('colleger4'));
+            if(!hasDuplicates(playersSelected)) {
+                $.ajax({
+                    data: formData,
+                    type: 'POST',
+                    url: '/addMatch',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    async: false
+                }).done(function (id) {
+                    if (id === "Success") {
+                        swal("Awesome!", "Match details accepted!", "success");
+                        $("#relayForm").trigger('reset');
+                    } else swal("Sorry!", id, "error");
+                    $("#relayFormButton").attr("disabled", false);
+                    $("#relayFormButton").html('Submit');
+                });
+            } else {
+                swal("Duplication!", "Selection contains duplicate elements", "error");
                 $("#relayFormButton").attr("disabled", false);
                 $("#relayFormButton").html('Submit');
-            });
+            }
         });
         $('#update_individual').on('click', function (event) {
             event.preventDefault();
+            $('#sportic').addClass('hide');
             $("#update_individual").attr("disabled", true);
             $("#update_individual").html('Please wait...');
             $.ajax({
@@ -141,9 +191,11 @@
 
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-                data-target=".bd-example-modal-lg">Add Team Match</button><br>
+                data-target=".bd-example-modal-lg">Add Team Match
+        </button>
+        <br>
     </center>
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
                 <form id="teamForm">
@@ -213,15 +265,16 @@
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
                 data-target=".bd-example-modal2-lg">Add Individual Match (Only Final)
-        </button><br>
+        </button>
+        <br>
     </center>
-        <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
                 <form id="individualForm">
                     <input type="hidden" name="type" value="individual">
                     <div class="row">
-                        <div class="col-md-12 form-group">
+                        <div class="col-md-12 form-group" id="sportic">
                             <label for="sporti">Sport</label><br>
                             <select class="selectpicker form-control" data-live-search="true" id="sporti"
                                     style="display:block;" name="sportid">
@@ -285,9 +338,10 @@
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
                 data-target=".bd-example-modal1-lg">Add Relay Match (Only Time-Trial/Final)
-        </button><br>
+        </button>
+        <br>
     </center>
-        <div class="modal fade bd-example-modal1-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade bd-example-modal1-lg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
                 <form id="relayForm">
@@ -382,6 +436,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
 
 
 {% endblock %}

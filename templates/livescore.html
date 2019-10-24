@@ -95,9 +95,9 @@ $(document).ready(function() {
                     </div><br>
                     <h5 class="card-title"><strong>{{ pmatch.clg1}} vs {{ pmatch.clg2 }} </strong></h5>
                     <h5 class="card-title"><span id="score1_{{ pmatch.id }}">{{pmatch.score1}}</span> - <span id="score2_{{ pmatch.id }}">{{pmatch.score2}}</span> </h5>
-                </div><br>
                         <strong>Comments: </strong>
                         <h7 id="commentry_{{ pmatch.id }}">{{pmatch.commentry}}</h7>
+                    <br>
                     {% if current_user.is_authenticated and current_user.privilege == 3 %}
                     <a href="#" class="btn btn-primary" data-toggle="modal"
                        data-target=".bd-example-modal-lg">Update</a>

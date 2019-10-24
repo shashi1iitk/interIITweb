@@ -632,7 +632,7 @@ def addMatches():
             lastrec = Match.query.filter_by(id=db.session.query(func.max(Match.id))).all()
             cnt = 1 if len(lastrec) == 0 else lastrec[-1].id + 1
             print(cnt)
-            entry = Match(sports_id=request.form.get('sport'),
+            entry = Match(id=cnt, sports_id=request.form.get('sport'),
                           clg_id1=request.form.get('college1'), clg_id2=request.form.get('college2'),
                           date_time=request.form.get('datetime'), venue=request.form.get('venue'),
                           level=request.form.get('level'), score1=0, score2=0, winner_clg_id=0,
