@@ -84,7 +84,7 @@
                 }).done(function (id) {
                     console.log(id);
                     if (id === "Success") {
-                        swal("Awesome!", "Match details accepted!", "success");
+                        swal("Awesome!", "Match details accepted and updated!", "success");
                         $("#individualForm").trigger('reset');
                         hideAgain();
                     } else swal("Sorry!", id, "error");
@@ -118,7 +118,7 @@
                     async: false
                 }).done(function (id) {
                     if (id === "Success") {
-                        swal("Awesome!", "Match details accepted!", "success");
+                        swal("Awesome!", "Match details accepted and updated!", "success");
                         $("#relayForm").trigger('reset');
                     } else swal("Sorry!", id, "error");
                     $("#relayFormButton").attr("disabled", false);
@@ -186,7 +186,7 @@
 <main role="main">
 
     <strong>
-        <center><h2 style="margin-top:5%;">Add the Matches here</h2></center>
+        <center><h2 style="margin-top:5%;">Add Team Match</h2></center>
     </strong>
 
     <center>
@@ -262,9 +262,14 @@
         </div>
     </div>
 
+     <hr>
+    <strong>
+        <center><h2>Select Individual/Realy Match Winners</h2></center>
+    </strong>
+
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-                data-target=".bd-example-modal2-lg">Add Individual Match (Only Final)
+                data-target=".bd-example-modal2-lg">Select Individual Match Winners (Only Final)
         </button>
         <br>
     </center>
@@ -335,9 +340,11 @@
         </div>
     </div>
 
+
+
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-                data-target=".bd-example-modal1-lg">Add Relay Match (Only Time-Trial/Final)
+                data-target=".bd-example-modal1-lg">Select Relay Match Winners (Only Time-Trial/Final)
         </button>
         <br>
     </center>

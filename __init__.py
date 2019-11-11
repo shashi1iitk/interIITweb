@@ -28,6 +28,7 @@ login_manager.login_view = "log_in"
 login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
+
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -197,13 +198,13 @@ def register():
         name = request.form['name'].upper()
         email = request.form['email']
         if Players.query.filter_by(email=email).count() != 0:
-            return "This seems to be a duplicated Record, Check the email"
+            return "Email address already registered!"
         roll_no = request.form['roll_no']
         mobile = request.form['mobile']
         if len(str(mobile)) != 10:
             return "Correct the mobile number please"
         if Players.query.filter_by(mobile=mobile).count() != 0:
-            return "This seems to be a duplicated Record, Check the mobile number"
+            return "Mobile number already registered!"
         jursey_name = request.form['jursey_name']
         special_inst = request.form['special_inst']
         food = request.form['food']
@@ -212,55 +213,56 @@ def register():
         college = current_user.college_id
         selected_sports = request.form['selected_sports']
         selected_sports = selected_sports.strip(' \n')
-        lastrec = Players.query.filter_by(id=db.session.query(func.max(Players.id))).all()
-        if len(lastrec) == 0:
-            cnt = 1
-        else:
-            cnt = lastrec[-1].id + 1
-        print(cnt)
-        filename = str(cnt) + '.jpg'
+        # lastrec = Players.query.filter_by(id=db.session.query(func.max(Players.id))).all()
+        # if len(lastrec) == 0:
+        #     cnt = 1
+        # else:
+        #     cnt = lastrec[-1].id + 1
+        # print(cnt)
+        # filename = name + "_" + str(cnt) + '.jpg'
+        filename = name + " - " + email + '.jpg'
         if "profile_img" not in request.files:
             return "There is some error with the profile image"
         profile_img = request.files['profile_img']
         if profile_img.filename == '':
             return "There is some error with the profile image"
-        x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.college_id))
+        x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
         if not os.path.exists(x):
             os.makedirs(x)
         profile_img.save(os.path.join(x, filename))
-        entry = Players(id=cnt, name=name, email=email, mobile=mobile, jursey_name=jursey_name,
+        entry = Players(name=name, email=email, mobile=mobile, jursey_name=jursey_name,
                         selected_sports=selected_sports, special_inst=special_inst, food=food,
                         gender=gender,
                         blood_group=blood_group, college_id=college, roll_no=roll_no, reg_status=0,
                         game_gold=0,
                         game_silver=0, game_bronze=0, profile_image_url=filename, feeded=0)
         db.session.add(entry)
-        if (selected_sports == "staff"):
-            try:
-                db.session.commit()
-                qrname = name + " - " + email + '.svg'
-                s = email + "^" + roll_no
-                url = pyqrcode.create(s)
-                x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.college_id))
-                if not os.path.exists(x):
-                    os.makedirs(x)
-                url.svg(os.path.join(x, qrname), scale=8)
-            except:
-                return "Sorry, I think you should try again"
-            print("staff")
-        else:
-            try:
-                db.session.commit()
-                qrname = name + " - " + email + '.svg'
-                s = email + "^" + roll_no
-                url = pyqrcode.create(s)
-                x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.college_id))
-                if not os.path.exists(x):
-                    os.makedirs(x)
-                url.svg(os.path.join(x, qrname), scale=8)
-            except:
-                return "Sorry, I think you should try again"
-            print("candidate")
+        # if (selected_sports == "staff"):
+        try:
+            db.session.commit()
+            qrname = name + " - " + email + '.svg'
+            s = email + "^" + roll_no
+            url = pyqrcode.create(s)
+            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
+            if not os.path.exists(x):
+                os.makedirs(x)
+            url.svg(os.path.join(x, qrname), scale=8)
+        except:
+            return "Some error occurred. Please try again!"
+        # print("staff")
+        # else:
+        #     try:
+        #         db.session.commit()
+        #         qrname = name + " - " + email + '.svg'
+        #         s = email + "^" + roll_no
+        #         url = pyqrcode.create(s)
+        #         x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.college_id))
+        #         if not os.path.exists(x):
+        #             os.makedirs(x)
+        #         url.svg(os.path.join(x, qrname), scale=8)
+        #     except:
+        #         return "Sorry, I think you should try again"
+        #     print("candidate")
         return "Success"
     sports = Sports.query.all()
     college = College.query.all()
@@ -302,9 +304,9 @@ def login():
         # hash = oracle10.hash(password, user="player")
         user = Admins.query.filter_by(username=email).first()
         if user is None:
-            return "You seem not to be present"
+            return "Invalid Credentials!"
         elif (user.password != password):
-            return "Password may be wrong"
+            return "Wrong Password!"
         else:
             login_user(user, remember=True)
             return "Success"
@@ -408,10 +410,10 @@ def deletePlayer():
             plyr = Players.query.filter_by(id=id).first()
             db.session.delete(Players.query.filter_by(id=id).first())
             db.session.commit()
-            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.college_id))
+            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
             qrname = plyr.name + " - " + plyr.email + '.svg'
             os.remove(os.path.join(x, qrname))
-            x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.college_id))
+            x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
             os.remove(os.path.join(x, plyr.profile_image_url))
         except Exception:
             return "Fail"

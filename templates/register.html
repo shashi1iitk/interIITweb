@@ -9,9 +9,14 @@
 </style>
 <script type="text/javascript">
 
-    function myFunction() {
+    function reload() {
         window.location.href = '/showCandidates';
     }
+
+    function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
 
     $(document).ready(function () {
 
@@ -36,11 +41,9 @@
 
         $('form').on('submit', function (event) {
 
-            $("#sendMessageButton").attr("disabled", true);
-            $("#sendMessageButton").html('Please wait...');
 
             if ($("input[name='type']:checked").val() === "S") {
-                selected_string = "staff"
+                selected_string = "staff";
             } else {
                 var brands = $('#framework option:selected');
                 var selected = [];
@@ -48,17 +51,24 @@
                     selected.push([$(this).val()]);
                 });
 
-                console.log(selected);
-                if(selected.length === 0 ) {
-                    swal("Try Again!", "Select the games", "error");
-                    return;
-                }
-                selected_string = selected.toString();
+                // console.log(selected);
+                // if(selected.length === 0 ) {
+                //     swal("Try Again!", "Select the games", "error");
+                //     alert("Try again");
+                //     fail;
+                //     // alert("Try again");
+                //     // return;
+                // }
+                var selected_string = selected.toString();
             }
 
 
             // alert(selected_string);
-
+            if(selected_string != "" ){
+            $("#RegisterButton").attr("disabled", true);
+            // document.getElementById("RegisterButton").disabled = true;
+            $("#RegisterButton").html('Please wait...');
+            // sleep(5000);
             var formData = new FormData(document.querySelector('#registerForm'));
             formData.append("selected_sports", selected_string);
 
@@ -72,21 +82,27 @@
                 async: false
             })
                 .done(function (id) {
-                    $("#sendMessageButton").attr("disabled", false);
-                    $("#sendMessageButton").html('Register');
+                    $("#RegisterButton").attr("disabled", false);
+                    $("#RegisterButton").html('Register');
                     console.log(id);
                     if (id === 'Success') {
                         swal("Awesome!", "Candidate Registered Successfully!", "success");
-                        setTimeout(myFunction, 1500);
+                        
+                        $("#registerForm").trigger("reset");
+                        $('#customFileLabel').html("Select profile picture");
+
+                        $('#framework option:selected').each(function () {
+                        $(this).prop('selected', false);
+                        });
+                        $('#framework').multiselect('refresh');
 
                         // alert("Candidate Registered Successfully!");
                     } else swal("Try Again!", id, "error");
-                    $('#framework option:selected').each(function () {
-                        $(this).prop('selected', false);
-                    });
-                    $('#framework').multiselect('refresh');
+                   
 
                 });
+
+            }else alert("Select Sports!");
 
             event.preventDefault();
         });
@@ -138,7 +154,7 @@
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="number" class="form-control" placeholder="Mobile" id="mobile" name='mobile'
+                        <input type="number" maxlength="10" class="form-control" placeholder="Mobile" id="mobile" name='mobile'
                                required data-validation-required-message="Please enter your phone">
                         <small class="form-text text-muted">
                             unique for each registration
@@ -324,7 +340,7 @@
                 <div id="success"></div>
                 <div class="form-group">
                     <center>
-                        <button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button>
+                        <button type="submit" class="btn btn-primary" id="RegisterButton">Register</button>
                     </center>
                 </div>
 
