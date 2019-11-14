@@ -19,7 +19,8 @@
         password : $('#password').val()
       },
       type : 'POST',
-      url : '/login'
+      url : '/login',
+      async : true
     })
     .done(function(data){
       console.log(data);
