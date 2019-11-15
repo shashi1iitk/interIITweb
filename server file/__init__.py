@@ -226,7 +226,8 @@ def register():
         profile_img = request.files['profile_img']
         if profile_img.filename == '':
             return "There is some error with the profile image"
-        x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
+        p = "/var/www/FlaskApp/FlaskApp"
+        x = os.path.join(p, "static", "profile_images", str(current_user.username.replace("@", " ")))
         if not os.path.exists(x):
             os.makedirs(x)
         profile_img.save(os.path.join(x, filename))
@@ -243,7 +244,8 @@ def register():
             qrname = name + " - " + email + '.svg'
             s = email + "^" + roll_no
             url = pyqrcode.create(s)
-            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
+
+            x = os.path.join(p, "static", "profile_qr", str(current_user.username.replace("@", " ")))
             if not os.path.exists(x):
                 os.makedirs(x)
             url.svg(os.path.join(x, qrname), scale=8)
@@ -410,10 +412,11 @@ def deletePlayer():
             plyr = Players.query.filter_by(id=id).first()
             db.session.delete(Players.query.filter_by(id=id).first())
             db.session.commit()
-            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
+            p = "/var/www/FlaskApp/FlaskApp"
+            x = os.path.join(p, "static", "profile_qr", str(current_user.username.replace("@"," ")))
             qrname = plyr.name + " - " + plyr.email + '.svg'
             os.remove(os.path.join(x, qrname))
-            x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
+            x = os.path.join(p, "static", "profile_images", str(current_user.username.replace("@"," ")))
             os.remove(os.path.join(x, plyr.profile_image_url))
         except Exception:
             return "Fail"

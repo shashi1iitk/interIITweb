@@ -2,1067 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/InterIIT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InterIIT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/setup.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/Schedule.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/contactform/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/contactform/contactform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/_DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/all.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/aos.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/bootstrap-datepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/bootstrap/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/bootstrap/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/fancybox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/jquery.scrollbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/mediaelementplayer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/style1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/css/swiper.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/_DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/backup.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/Flaticon.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/Flaticon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/Flaticon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/Flaticon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/Flaticon.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/_flaticon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/_flaticon.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/flaticon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/font/flaticon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/flaticon/license/license.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/Read Me.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/demo-files/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/demo-files/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/fonts/icomoon.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/fonts/icomoon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/fonts/icomoon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/fonts/icomoon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/selection.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/fonts/icomoon/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/_DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/img_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/person_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/person_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/person_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/person_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/images/person_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/0 - Copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/FINAL JPG2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/IMG_1955.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/Sports-PNG-Image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/Sports-PNG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/Sports.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/about-extra-1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/about-extra-2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/about-img.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/all_games.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/clients/client-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/download.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/game.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/games.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/games1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/gymkhana.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/gymkhana1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/header-bg.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/iitkgp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/image2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/imagec.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/images.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/intro-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/intro-img.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/intro.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/kgp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/kgp1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/logo.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/logo0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/event1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/event2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/event3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/event4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/event5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/event6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/init1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/init2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/init3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/init4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/init5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/portfolio/speaker8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/start.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/team-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/team-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/team-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/team-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/testimonial-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/testimonial-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/testimonial-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/testimonial-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/testimonial-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/winner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/img/youtube5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/aos.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/bootstrap-datepicker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/getMatch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/getMatch1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery-migrate-3.0.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery.countdown.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery.fancybox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery.magnific-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery.scrollbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/jquery.stellar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/main1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/mediaelement-and-player.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/slick.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/swiper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/js/typed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/animate/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/animate/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/counterup/counterup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/easing/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/easing/easing.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/ionicons/css/ionicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/ionicons/css/ionicons.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/ionicons/fonts/ionicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/ionicons/fonts/ionicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/ionicons/fonts/ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/ionicons/fonts/ionicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/isotope/isotope.pkgd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/isotope/isotope.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/jquery/jquery-migrate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/jquery/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/css/lightbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/css/lightbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/js/lightbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/lightbox/js/lightbox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/mobile-nav/mobile-nav.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/waypoints/waypoints.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/wow/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/lib/wow/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_BHU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Bhilai.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Bhubhaneshwar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Bombay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Delhi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Dhanbad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Dharwad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Gawhati.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Ghandhinagar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Goa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Hyderabad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Indore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Jammu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Jodhpur.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Kanpur.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Kharagpur.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Madras.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Mandi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Pakkad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Patna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Roorkee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Ropar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/IIT_Tirupati.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/logo/vs.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/DIVYANSHI PARASHER - divyanshi.parasher.met17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/G V KARTHIK REDDY - gajjala.vkreddyeee17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/GUNDA YUGA RAJU - gungayugaraju.rs.min14@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/NEHA RAJ TIRKEY  - neha@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/PAVAN M G  - PAVAN.MG.EEE17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/VAIBHAV DIXIT - vaibhavk.dixit.mat16@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/1/VIBHU VARDHAN SINGH - vibhu.vsingh.met17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/AISHANI MITRA - Aishani@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/AJINKYA SHIVSHANKAR - ajinkya@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/ARYAN RATHEE - aryan@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/ATHARVA BELAPURKER - atharva@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/ATHARVA DEORE - atharvad@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/DHIREN PRAJAPATI - dhiren@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/DYUTI MANGAL - dyuti@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/KARTHIK.J - bclap170121008@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/KARTIK GUPTA - kartik@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/KASTURI THAKRE - kasturi@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/PARTH BAKARE - partg@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/PARTH SHAH - parth@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/RAJIB DEY - dey@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/RAJIB MODAK - rajib@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/RAYAPU SAI PRANAV REDDY - rayapu@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/SACHIN - sachin@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/SASWATI RABHA - saswati@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/SIDHARTH BANKUPALLE - sid@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/SUDIPTA SHARMA - sudi@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/10/UTKARSH GUPTA - uttkarsh1@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/11/ADVAITH P - advaith@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/11/DEVAJITH V S - devajith@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/11/T SATYANARAYANA - satya@iith.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/AMAN POONIA - apoonia@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/AMIT BADONI - amitbad@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/GAURAV KUMAR  - gaurav@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/HARSH NARANG - harshn@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/IRENE GRACE KAROT POLSON - irenegracekp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/KHUSHI SINGH - khushi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/KRISHNA KUMAR - kkmeena@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/KULWANT SINGH - kulwants@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/MOHAMMAD NIYAS P - niyasp@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/MUNNALAL MAURYA - xyz@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/PALLAV KULHARI - pallavk@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/PRIYADARSHI SINGH - darshi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/RACHITA BHATTACHARYA - rachitab@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/RAVI MALIK - rmalik@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/S POONKUNDRAN - poonkun@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/SAFA MUSTAFA SHEICK - safa@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/SANTOSH KUMAR JOSHI - skjoshi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/SATYAM RALHAN - satyamr@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/SHIVANGI SINGH - shivis@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/T SHIVA SHRUTHI - shruthis@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/VISVESH SUBRAMANI - viveshsubramani@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/VIVEK RAO VADI - vrvadi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/WRISHIK NASKAR  - naskar@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/15/WRISHIK NASKAR  - wrishik@iitrkjip.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  ADITYA SINGHANIA - Singhaniaditya777@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  APURV GUPTA - Apurvg81@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  MAHIMA K - dscns@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  MAYANK MANJEARA - mayankmanjeera@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  PRADEEP RANWA - pradeepranwa96@icloud.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  PRANAB SARKAR  - Sarkarpronob2011@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  RAHUL SINGHAL - a@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  SHIVAM SINGH - Shivamsingh1198@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  SWARN SHANKHAAYAN - Rupu.shankhayan@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/  YOGESH KUMAR - Imyogiraj.kumar99@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/A. MANDEL - adribmitra@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ABHINAV RAJ - abhinav@iitj.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ABHISHEK SINGH - abhishek@iitj.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ADITI SEN - senaditti@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ADITYA KACHAVE - kachaveaditya8998@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ADRIB MITRA - adrib@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ADRIJIT GOSWAMI - goswami@maths.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/AKASH BHARADWAJ - Akash.bhd97@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ALOK KANTI DEB - alokkanti@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/AMARESH MONDAL - amaresh@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/AMREESH CHANDRA - achandra@phy.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/AMRUTA NAGPURE - anaghaarchi14@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ANANDROOP BHATTACHARYA - anandaroop@mech.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ARDHENDHU GHOSH - ardhenkughosh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ARDHENDU GHOSH - ardhendukghosh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ARDHENDU KR GHOSE - ardhendu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ARPAN DEY - arpan.dey1996@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ASHISH SHAH - shahashish1998@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ASHOK DAS - ashok@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ASIS BANERJEE - asis@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ASIT BOXI - boxiiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ATISH MONDAL - atish@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ATISH MONDEL - mondeliitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/AVI SINGH RAGHUWANSHI - Avisinghr2312@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BABUN NATH - nathiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BAGA ADINARAYAN - baga@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BARUN GHOSH - ghoshpiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BASKAR RAO - Baskar@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BASUDEV DEY - bdeyiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BENUMOY BHANJA - benumoy@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BHARAT BHUSAN RAI - bbrai@adm.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BHIM NAYEK  - bhim@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BIDHAN CH. NAYEK  - bidhan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BIJOY DAS - das@gmail.co.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BINOY BERA - beraiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BINOY BERA - binoybera@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BISWAJIT ADGIRI - adgiri@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BISWANATH ADHIKARI - adhikari@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/BULBUL SAHA - saha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/C H MOHAN RAO - mohan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/C H MOHAN RAO - raoiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/C H SRINU - srinuiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/CH. SHRINU - shrinu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/CHAND KANTA ARI - chand@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/DEBASIS KUNDU - kundu@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/DR. SUSANTA KUMAR PANDA - susanta_panda@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/DR.GYAN SWAROOP - gyan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GANARANJAN PRAMANICK - gp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GANESH BANERJEE - g@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GANESH CHANDRA ROY - ganeshc@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GANESH ROUTH - ganesh@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GANESH ROUTH - routhiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GOUTAMDAS - gdasiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/GYAN SWAROOP - gyanhockey@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/HATI ENKAT SWAMY - hatienkat@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ILLA CHOUDHARY - Illa@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/INDRESH - indresh.kry@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/ISHAN AHMED - ishanahmed90@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JENET NARZARY - anjc@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JITENDRA KUMAR - jkumar@maths.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JITENDRA KUMAR JHA - jkjha@iem.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JITENDRA MAHAKUD - jmahakud@hss.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JOY SEN - joysen@iem.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JUDHISTHIR PRADHAN - Judhisthir@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/JUDHISTHIR PRADHAN - pradhaniitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KALYANI INGLE - kalyaniingle@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KAMAL SIKDAR - sikdariitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KANKAN PANIGRAHI - kankan@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KARTIK NAYEK - kartikn@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KARTIK SAREN - kartik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KARTIK SAREN - sareniitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KAUSHIK NAYEK - nayekiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KEERTI PRAKASH SONGA - keerthiprakashs18@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KHMENKAR DEY - dey@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KINGSHOOK BATTACHARYA - kingshook@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KOUSHIK NAYEK - kaushik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KRISHNA DEBNATH - kri@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KUSHAGRA RAMNANI - kush@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/KUSHAL DAS - das@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MAKHAN BERA - makhan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MANAS BISWAS - manas@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MANGAL MANDI - mangal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MANU SINGH - manu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MIHIR SEN - mihir@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MIHIR SEN - seniitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MODAN MOHAN MARIK - marik@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MRS. PRIYANKS - priyanka@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/MUKUL BHATTACHARYYA - mukulb@iitkgp.acin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/N K GOYAL - goyaliitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/NAND LAL - laliitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/NAND LAL - nandlal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/NEERAJ KUMAR GOEL - ngoyal@hijli.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/NIRMAL BERA - nirmal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/P DHARMA - dharmaiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PARTHA DAS - partha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PARTHA GOSWAMI - partha@cc.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PINTU AUTTA - pintu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PIYUSH AGRAWAL - P169piyush@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/POORNACHANDRA SEKHAR BURDA - psburda66@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PRABINA RAJIB - prabina@vgsom.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PRANAB SARKAR - pranab@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PRITHWI RAJ MAHATO - prithwi@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PRIYANKA KUMARI - sing.priyanka610@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROBABLY DAS - dasiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PRODIP ROY - royiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF J KUMAR - jkumar@maths.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF J. K. JHA - jkjha@iem.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF. SHANTANU - shantanu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF. SOMESH KUMAR - somesgiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF. UDAY SHANKER - udayiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF.PS BURADA - psburada@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROF.SK BHAKTA - skbhakta@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PROSENJIT CHAKRABORTY - cha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/PUSHPAK ROY - nyn05091998@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/R RAVI KUMAR - ravi@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/R RAVI KUMAR - raviiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RAGHAV SURYAN - suryanraghav@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RAHUL SINGHAL - rahul@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RAJ PRABHU - raj.mprabhu@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RAJENDRA SINGH - rsing@agfe.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RAJIB DAS - rajib@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RAJU RASUA - raju@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/RITWIK SINGHAI - ritwik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/S K VARSHNEY - varshneyiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SAMBA KAR - samba@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SAMBA KAR - sambokolkata1985@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SAMIR DASGUPTA - samiriitkgp@gamil.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANJAY SANKAR JHA - so@hijli.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANJIT DEY - deyiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANJOY BISWAS - sanjoybiswas@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANJOY BISWAS - sbiswasiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANJOY YADAV - sanjoyyadav@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANTANU CHATTOPADHYAY - santnu@rtc.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SANTANU GHOSH - ghosh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SAURAV CHAKRABORTY - Sauravchakraborty098@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SEKHAR SARKAR - sarkar@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHAILENDRA KUMAR VARSHNEY - s.rasaniya@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHASHANK VERMA - Shashankverma47@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHASHI RANJAN - shashi@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHATOBAN NAYEK - shatoban@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHELENDRA RASANIA - srasania@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHRIYADITA ROY - shriyaditaroy1999@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHUBHAM PANDEY - pndshubh14@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHYAM SUNDAR RAO - shyamsundar@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SHYAMAL ADHIKARI - shyamal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SISIR KUMAR PAL - Sisirpa1968@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SITALA PATHAK - pathak@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SOHAM CHANDORKAR - chandorkarsoham@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SONJOY KOLEY - koley@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SOUMEN KUMAR MANDEL - suman@adm.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SOUMEN MONDAL - soumen@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SOUMITRA GHOSH DOSTIDAR - qsskharagpur@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SOVON GHOSH - sghoshiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SRIJAN BANSAL - srijanbansal97@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SRINIVAS RAO - srinivasrao@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SS JHA - ssjha@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SUBHAM KUMAR SAHU - subhamsahu972@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SUDHIR KUMAR - sidhu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SUDHIR KUMAR - sudhir@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SUKRACHARYA SAHA - ssaha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SUKUMAR KAR - sukumar@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SUPRITI SEN - supritisen.c@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/SWAPAN ADAK - swapan@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/TAPAN GHOSH - ghoshiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/TAPAS BERA - tapas@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/TARAK HARDER - tarak@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/TARAK NATH SHOW - nath@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/TARAKESWAR YADAV - yadaiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/TRILOK SINGH - trilok@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/UDAY SHANKAR - uday@rgsoipl.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/UTKARSH SAH - sahutkarsh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/VIKASH MISHRA - mishra@iitj.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/VISHAL KUMAR SINGH - vishal@iitkanpur.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/VISHAL KUMAR SINGH - vishalsingh08.iitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/16/WRISHIK NASKAR - Wrishik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/ ANUJ SINDGI - sindgi.anuj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/ KALASH VERMA - kalashverma1212@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/ANIRUDDHA KISHOR KAWADE - cs18b002@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/ANUJ SINDGI - sindgi.anuj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/B SREERAM - mm18b014@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/BREASHA GUPTA - be17b015@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/DEV PRIYA KRISHNAKUMAR - me17b106@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/DILLIBABU - babu@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/GAURAV MILIND VAIDYA - gvaidya.m@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/HARSH LADANI - ae17b027@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/JAI KEDIA - ce17b037@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/L R KAMALA DEVI - Hs15h016@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/MAHIMA RAUT - cs17b112@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/MR. DILLIBABU - dil@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/MR. PRATAP KUMAR  - pratap@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/OMKAR SATPUTE - ed17b049@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/P. RAJU - raju_p@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/PALASH PANTAWANE - Ae17b105@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/PRATAP KUMAR  - pratap@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/RUCHIR KUMAR KAUL - kaulruchir@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/SHAGNIK PAL - ee17b147@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/SHREENIWAS MAHESH JAGDALE - me17b115@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/SPHURTI AGARWAL - sphurti13agarwal@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/VARAD JOSHI - Me17b038@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/17/VIBHU KRISHNA - hs18h044@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/2/ANUJ SHAGFHGFRMA - a@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/2/FDGFH - jhjghj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/2/GFHYJGHJ - gjhgj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/2/SHASHI RANJAN - shashhgjji1iitk@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/2/TEST - test@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/ABHAY SANJAY DEORE - mail12abhay25@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/ABHINAV SINGH - asingh1@ar.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/ABY JOSE - ajose@me.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/AYUSH DEWANGAN - ayushdewangan12@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/DILKUSH MALAV - dmalav@me.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/GAURAV KUMAR  - gaurav@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/HEMANT SHARMA - h.sharma1609.@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/JAPJEET SINGH - japjeet20@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/MANIK MUNJAL - mmunjal@me.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/MANISH DHAKA - manish@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/RAMA SHANKAR - RAMA@ME.IITR.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/RITESH CHHETRI - riteshchhetri10@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/ROMAN ABHAYKUMAR DEORE - romandeore@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/SEJAL AGRAWAL - agrawalsejal123@gnail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/SURAJ K S - kssuraj28@me.iir.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/WRISHIK NASKAR - wrishik@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/21/YASHVI AGRAWAL - yagrawal@me.iit.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/AARUSHI CHAUDHARY - AARUSHI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/AKHIL - AKHIL@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/ANIKET RANADE - aniket@iitb.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/ARINDAM JANA - JANA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/DIVYANSHU CHAHAL - sac.incharge@iitb.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/HARDIK SHAH - shahardik01@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/HRITVIJ SAXENA - SAXENA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/KUSHAL DHINOJA - KUSHAL@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/MADHAV JOSHI - JOSHI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/MANSI KHEDEKAR - MANSI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/NARAYANI KELKAR - NARAYANI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/RITESH GUCHAIT - 10001855@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/ROHAN - ROHAN@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/RUCHA PASALKAR - RUCHA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/SACHIN KAMBLE - SACHIN@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/SHUBHANKAR SETH - SHUBHANKAR@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/SHUBHANKAR SETH - SUBHANKAR@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/SYANTAN C. - SYANTAN@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/VAISHNAV V RAO - RAO@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/VIHANG WAGH - VIHANG@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/VRINDA JINDAL - VRINDA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/4/YOGENDER SINGH - YOGENDWER@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/ABHINAV KUMAR SINGH  - aks55.tomar@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/AKASH SURYAWANSHI - suryaakash7799@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/ANANYA CHOUDHARY - ananyachoudhary2158@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/ANIL KUMAR - kumaran@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/CHARAWAN DIA DEEPAK - charawandiadeepak@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/DIVYAM GUPTA - divyam227227@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/GAJJALA SAI MADHU RISHIKESH REDDY - gsmrishi@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/JATIN AHUJA - ja321867@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/MANISH SHUKLA - manish.shukla@civil.iitd.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/NIHAR PATEL - nihar5733@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/PARTH BHARADWAJ - bharadwajparth126@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/PARTH CHOPRA - parth007chopra@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/RAVIRAJ DHAKAD - ravirajdhakad@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/RHYTHM - rhythmjangra20@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/SAKSHI BHANDARI - bsak2222@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/SANAZ AGARWAL - sanazagarwal99@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/SHREYANSH CHANANI - shreyanshchanani123@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/SURENDRA PRASAD - surendra@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/YASH GUPTA - yash.iitd21@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/5/YASHASVI GHADALE - yashasvughadale@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/AKSHIT AGARWAL - akshitagarwal44@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/ANIMESH SHUKLA - animeshshukla0904@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/ANINDYA HAZRA - anin16dya@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/ANISH MUKHERJEE - mukherjeeanish99@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/ANKIT KUMAR - sankyism@yahoo.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/ANSHUMAN SINGH - ansshu.sin@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/BHARAT N BHARADWAJ - nkbaradwaj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/KARTIN SAREEN - ksareen1107@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/KESHAV GUPTA - guptakeshav694@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/RAJAK KUMAR JHALENDRA - jhalendra.ismud@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/RAVISH KUMAR SAHANI - ravish2561@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/SAMEER JAIN - sameer2000jain12@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/SRIJITA PAL - srijitapal1297@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/SURAJ KUMAR MAHATO - skm481507@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/VANGA SREEKAR GOUD - vangasreekar17@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/6/VOOTKURU SAI BHARGAV REDDY - saibhargav.vootkuru@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/8/AMIT KUMAR SINGH - amit.si@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/8/DHYANESH BASKARAN - b.dhyanesh@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/8/DINESH PARMAR - dparmar@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/8/RANJIT KUMAR DEHURY - ranjit.dehury@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/9/ADWAIT AGESHE - adwait.ageshe.19031@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/9/ANIMESH SHARMA - animesh.sharma17003@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/9/ANMOL PALIWAL - anmol.paliwal.18001@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/profile_images/9/SANTOSH UPADHYAY - aso@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/_DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/_site-base.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/_site-blocks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/_site-navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_badge.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_breadcrumb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_button-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_card.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_carousel.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_close.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_code.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_custom-forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_images.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_jumbotron.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_media.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_modal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_nav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_popover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_print.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_progress.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_reboot.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_root.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_tooltip.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_transitions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_type.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_utilities.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/bootstrap-grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/bootstrap-reboot.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/bootstrap.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_background-variant.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_badge.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_border-radius.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_box-shadow.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_breakpoints.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_caret.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_float.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_gradients.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_grid-framework.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_hover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_image.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_lists.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_nav-divider.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_reset-text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_resize.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_screen-reader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_size.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_table-row.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_text-emphasis.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_text-hide.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_text-truncate.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_transition.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/mixins/_visibility.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_align.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_background.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_borders.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_display.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_embed.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_flex.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_float.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_position.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_screenreaders.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_shadows.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_sizing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_spacing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/bootstrap/utilities/_visibility.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/static/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/addMatch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/live.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/livescore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/loginSuccess.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/qrscanner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/qrstats.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/schedule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/scorecard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/showCandidates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskApp/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server file/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server file/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/_DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/img_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/img_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/img_12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/img_12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/IMG_1955.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/intro.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/event2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/event2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/event3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/event3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/event5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/event5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/init3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/init3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/init5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/init5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/start.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/DIVYANSHI PARASHER - divyanshi.parasher.met17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/G V KARTHIK REDDY - gajjala.vkreddyeee17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/GUNDA YUGA RAJU - gungayugaraju.rs.min14@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/NEHA RAJ TIRKEY  - neha@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/PAVAN M G  - PAVAN.MG.EEE17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/VAIBHAV DIXIT - vaibhavk.dixit.mat16@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/VIBHU VARDHAN SINGH - vibhu.vsingh.met17@iitbhu.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/AISHANI MITRA - Aishani@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/AJINKYA SHIVSHANKAR - ajinkya@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/ARYAN RATHEE - aryan@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/ATHARVA BELAPURKER - atharva@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/ATHARVA DEORE - atharvad@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/DHIREN PRAJAPATI - dhiren@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/DYUTI MANGAL - dyuti@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/KARTHIK.J - bclap170121008@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/KARTIK GUPTA - kartik@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/KASTURI THAKRE - kasturi@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/PARTH BAKARE - partg@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/PARTH SHAH - parth@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/RAJIB DEY - dey@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/RAJIB MODAK - rajib@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/RAYAPU SAI PRANAV REDDY - rayapu@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/SACHIN - sachin@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/SASWATI RABHA - saswati@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/SIDHARTH BANKUPALLE - sid@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/SUDIPTA SHARMA - sudi@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/10/UTKARSH GUPTA - uttkarsh1@iitg.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/11/ADVAITH P - advaith@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/11/DEVAJITH V S - devajith@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/11/T SATYANARAYANA - satya@iith.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/AMAN POONIA - apoonia@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/AMIT BADONI - amitbad@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/GAURAV KUMAR  - gaurav@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/HARSH NARANG - harshn@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/IRENE GRACE KAROT POLSON - irenegracekp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/KHUSHI SINGH - khushi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/KRISHNA KUMAR - kkmeena@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/KULWANT SINGH - kulwants@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/MOHAMMAD NIYAS P - niyasp@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/MUNNALAL MAURYA - xyz@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/PALLAV KULHARI - pallavk@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/PRIYADARSHI SINGH - darshi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/RACHITA BHATTACHARYA - rachitab@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/RAVI MALIK - rmalik@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/S POONKUNDRAN - poonkun@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/SAFA MUSTAFA SHEICK - safa@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/SANTOSH KUMAR JOSHI - skjoshi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/SATYAM RALHAN - satyamr@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/SHIVANGI SINGH - shivis@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/T SHIVA SHRUTHI - shruthis@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/VISVESH SUBRAMANI - viveshsubramani@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/15/VIVEK RAO VADI - vrvadi@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  ADITYA SINGHANIA - Singhaniaditya777@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  APURV GUPTA - Apurvg81@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  MAHIMA K - dscns@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  MAYANK MANJEARA - mayankmanjeera@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  PRADEEP RANWA - pradeepranwa96@icloud.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  PRANAB SARKAR  - Sarkarpronob2011@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  RAHUL SINGHAL - a@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  SHIVAM SINGH - Shivamsingh1198@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  SWARN SHANKHAAYAN - Rupu.shankhayan@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  YOGESH KUMAR - Imyogiraj.kumar99@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/A. MANDEL - adribmitra@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ADITI SEN - senaditti@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ADITYA KACHAVE - kachaveaditya8998@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ADRIB MITRA - adrib@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ADRIJIT GOSWAMI - goswami@maths.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AKASH BHARADWAJ - Akash.bhd97@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ALOK KANTI DEB - alokkanti@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AMARESH MONDAL - amaresh@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AMREESH CHANDRA - achandra@phy.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AMRUTA NAGPURE - anaghaarchi14@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ANANDROOP BHATTACHARYA - anandaroop@mech.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARDHENDHU GHOSH - ardhenkughosh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARDHENDU GHOSH - ardhendukghosh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARDHENDU KR GHOSE - ardhendu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARPAN DEY - arpan.dey1996@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ASHISH SHAH - shahashish1998@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ASHOK DAS - ashok@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ASIS BANERJEE - asis@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ASIT BOXI - boxiiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ATISH MONDAL - atish@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ATISH MONDEL - mondeliitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AVI SINGH RAGHUWANSHI - Avisinghr2312@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BABUN NATH - nathiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BAGA ADINARAYAN - baga@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BARUN GHOSH - ghoshpiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BASKAR RAO - Baskar@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BASUDEV DEY - bdeyiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BENUMOY BHANJA - benumoy@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BHARAT BHUSAN RAI - bbrai@adm.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BHIM NAYEK  - bhim@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BIDHAN CH. NAYEK  - bidhan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BIJOY DAS - das@gmail.co.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BINOY BERA - beraiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BINOY BERA - binoybera@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BISWAJIT ADGIRI - adgiri@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BISWANATH ADHIKARI - adhikari@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BULBUL SAHA - saha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/C H MOHAN RAO - mohan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/C H MOHAN RAO - raoiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/C H SRINU - srinuiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/CH. SHRINU - shrinu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/CHAND KANTA ARI - chand@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/DEBASIS KUNDU - kundu@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/DR. SUSANTA KUMAR PANDA - susanta_panda@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/DR.GYAN SWAROOP - gyan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANARANJAN PRAMANICK - gp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH BANERJEE - g@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH CHANDRA ROY - ganeshc@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH ROUTH - ganesh@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH ROUTH - routhiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GOUTAMDAS - gdasiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GYAN SWAROOP - gyanhockey@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/HATI ENKAT SWAMY - hatienkat@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ILLA CHOUDHARY - Illa@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/INDRESH - indresh.kry@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ISHAN AHMED - ishanahmed90@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JENET NARZARY - anjc@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JITENDRA KUMAR - jkumar@maths.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JITENDRA KUMAR JHA - jkjha@iem.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JITENDRA MAHAKUD - jmahakud@hss.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JOY SEN - joysen@iem.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JUDHISTHIR PRADHAN - Judhisthir@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JUDHISTHIR PRADHAN - pradhaniitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KALYANI INGLE - kalyaniingle@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KAMAL SIKDAR - sikdariitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KANKAN PANIGRAHI - kankan@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KARTIK NAYEK - kartikn@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KARTIK SAREN - kartik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KARTIK SAREN - sareniitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KAUSHIK NAYEK - nayekiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KEERTI PRAKASH SONGA - keerthiprakashs18@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KHMENKAR DEY - dey@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KINGSHOOK BATTACHARYA - kingshook@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KOUSHIK NAYEK - kaushik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KRISHNA DEBNATH - kri@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KUSHAL DAS - das@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MAKHAN BERA - makhan@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MANAS BISWAS - manas@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MANGAL MANDI - mangal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MANU SINGH - manu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MIHIR SEN - mihir@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MIHIR SEN - seniitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MODAN MOHAN MARIK - marik@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MRS. PRIYANKS - priyanka@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MUKUL BHATTACHARYYA - mukulb@iitkgp.acin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/N K GOYAL - goyaliitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/NAND LAL - laliitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/NAND LAL - nandlal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/NEERAJ KUMAR GOEL - ngoyal@hijli.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/NIRMAL BERA - nirmal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/P DHARMA - dharma@iitk.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/P DHARMA - dharmaiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PARTHA DAS - partha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PARTHA GOSWAMI - partha@cc.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PINTU AUTTA - pintu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PIYUSH AGRAWAL - P169piyush@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/POORNACHANDRA SEKHAR BURDA - psburda66@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRABINA RAJIB - prabina@vgsom.iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRANAB SARKAR - pranab@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRITHWI RAJ MAHATO - prithwi@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRIYANKA KUMARI - sing.priyanka610@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROBABLY DAS - dasiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRODIP ROY - royiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF J KUMAR - jkumar@maths.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF J. K. JHA - jkjha@iem.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF. SHANTANU - shantanu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF. SOMESH KUMAR - somesgiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF. UDAY SHANKER - udayiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF.PS BURADA - psburada@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF.SK BHAKTA - skbhakta@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROSENJIT CHAKRABORTY - cha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PUSHPAK ROY - nyn05091998@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/R RAVI KUMAR - ravi@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/R RAVI KUMAR - raviiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAGHAV SURYAN - suryanraghav@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAHUL SINGHAL - rahul@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAJ PRABHU - raj.mprabhu@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAJENDRA SINGH - rsing@agfe.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAJIB DAS - rajib@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAJU RASUA - raju@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RITWIK SINGHAI - ritwik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/S K VARSHNEY - varshneyiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SAMBA KAR - samba@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SAMBA KAR - sambokolkata1985@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SAMIR DASGUPTA - samiriitkgp@gamil.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJAY SANKAR JHA - so@hijli.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJIT DEY - deyiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJOY BISWAS - sanjoybiswas@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJOY BISWAS - sbiswasiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJOY YADAV - sanjoyyadav@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANTANU CHATTOPADHYAY - santnu@rtc.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANTANU GHOSH - ghosh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SAURAV CHAKRABORTY - Sauravchakraborty098@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SEKHAR SARKAR - sarkar@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHAILENDRA KUMAR VARSHNEY - s.rasaniya@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHASHANK VERMA - Shashankverma47@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHATOBAN NAYEK - shatoban@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHELENDRA RASANIA - srasania@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHRIYADITA ROY - shriyaditaroy1999@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHUBHAM PANDEY - pndshubh14@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHYAM SUNDAR RAO - shyamsundar@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHYAMAL ADHIKARI - shyamal@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SISIR KUMAR PAL - Sisirpa1968@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SITALA PATHAK - pathak@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOHAM CHANDORKAR - chandorkarsoham@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SONJOY KOLEY - koley@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOUMEN KUMAR MANDEL - suman@adm.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOUMEN MONDAL - soumen@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOUMITRA GHOSH DOSTIDAR - qsskharagpur@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOVON GHOSH - sghoshiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SRIJAN BANSAL - srijanbansal97@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SRINIVAS RAO - srinivasrao@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SS JHA - ssjha@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUBHAM KUMAR SAHU - subhamsahu972@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUDHIR KUMAR - sidhu@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUDHIR KUMAR - sudhir@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUKRACHARYA SAHA - ssaha@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUKUMAR KAR - sukumar@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUPRITI SEN - supritisen.c@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SWAPAN ADAK - swapan@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TAPAN GHOSH - ghoshiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TAPAS BERA - tapas@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TARAK HARDER - tarak@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TARAK NATH SHOW - nath@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TARAKESWAR YADAV - yadaiitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TRILOK SINGH - trilok@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/UDAY SHANKAR - uday@rgsoipl.iitkgp.ernet.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/UTKARSH SAH - sahutkarsh@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/VISHAL KUMAR SINGH - vishalsingh08.iitkgp@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/WRISHIK NASKAR - Wrishik@iitkgp.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/ ANUJ SINDGI - sindgi.anuj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/ KALASH VERMA - kalashverma1212@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/ANIRUDDHA KISHOR KAWADE - cs18b002@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/ANUJ SINDGI - sindgi.anuj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/B SREERAM - mm18b014@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/BREASHA GUPTA - be17b015@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/DEV PRIYA KRISHNAKUMAR - me17b106@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/DILLIBABU - babu@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/GAURAV MILIND VAIDYA - gvaidya.m@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/HARSH LADANI - ae17b027@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/JAI KEDIA - ce17b037@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/L R KAMALA DEVI - Hs15h016@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/MAHIMA RAUT - cs17b112@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/MR. DILLIBABU - dil@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/MR. PRATAP KUMAR  - pratap@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/OMKAR SATPUTE - ed17b049@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/P. RAJU - raju_p@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/PALASH PANTAWANE - Ae17b105@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/PRATAP KUMAR  - pratap@iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/RUCHIR KUMAR KAUL - kaulruchir@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/SHAGNIK PAL - ee17b147@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/SHREENIWAS MAHESH JAGDALE - me17b115@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/SPHURTI AGARWAL - sphurti13agarwal@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/VARAD JOSHI - Me17b038@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/17/VIBHU KRISHNA - hs18h044@smail.iitm.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/2/GTJYFJGHJN - shashi1iivcbbvctk@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/ABHAY SANJAY DEORE - mail12abhay25@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/ABHINAV SINGH - asingh1@ar.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/ABY JOSE - ajose@me.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/AYUSH DEWANGAN - ayushdewangan12@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/DILKUSH MALAV - dmalav@me.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/GAURAV KUMAR  - gaurav@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/HEMANT SHARMA - h.sharma1609.@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/JAPJEET SINGH - japjeet20@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/MANIK MUNJAL - mmunjal@me.iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/MANISH DHAKA - manish@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/RAMA SHANKAR - RAMA@ME.IITR.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/RITESH CHHETRI - riteshchhetri10@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/ROMAN ABHAYKUMAR DEORE - romandeore@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/SEJAL AGRAWAL - agrawalsejal123@gnail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/SURAJ K S - kssuraj28@me.iir.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/WRISHIK NASKAR - wrishik@iitr.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/21/YASHVI AGRAWAL - yagrawal@me.iit.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/AARUSHI CHAUDHARY - AARUSHI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/AKHIL - AKHIL@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/ANIKET RANADE - aniket@iitb.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/ARINDAM JANA - JANA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/DIVYANSHU CHAHAL - sac.incharge@iitb.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/HARDIK SHAH - shahardik01@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/HRITVIJ SAXENA - SAXENA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/KUSHAL DHINOJA - KUSHAL@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/MADHAV JOSHI - JOSHI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/MANSI KHEDEKAR - MANSI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/NARAYANI KELKAR - NARAYANI@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/RITESH GUCHAIT - 10001855@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/ROHAN - ROHAN@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/RUCHA PASALKAR - RUCHA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/SACHIN KAMBLE - SACHIN@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/SHUBHANKAR SETH - SHUBHANKAR@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/SHUBHANKAR SETH - SUBHANKAR@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/SYANTAN C. - SYANTAN@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/VAISHNAV V RAO - RAO@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/VIHANG WAGH - VIHANG@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/VRINDA JINDAL - VRINDA@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/4/YOGENDER SINGH - YOGENDWER@IITB.AC.IN.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/ABHINAV KUMAR SINGH  - aks55.tomar@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/AKASH SURYAWANSHI - suryaakash7799@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/ANANYA CHOUDHARY - ananyachoudhary2158@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/ANIL KUMAR - kumaran@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/CHARAWAN DIA DEEPAK - charawandiadeepak@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/DIVYAM GUPTA - divyam227227@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/GAJJALA SAI MADHU RISHIKESH REDDY - gsmrishi@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/JATIN AHUJA - ja321867@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/MANISH SHUKLA - manish.shukla@civil.iitd.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/NIHAR PATEL - nihar5733@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/PARTH BHARADWAJ - bharadwajparth126@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/PARTH CHOPRA - parth007chopra@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/RAVIRAJ DHAKAD - ravirajdhakad@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/RHYTHM - rhythmjangra20@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/SAKSHI BHANDARI - bsak2222@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/SANAZ AGARWAL - sanazagarwal99@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/SHREYANSH CHANANI - shreyanshchanani123@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/SURENDRA PRASAD - surendra@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/YASH GUPTA - yash.iitd21@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/5/YASHASVI GHADALE - yashasvughadale@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/AKSHIT AGARWAL - akshitagarwal44@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/ANIMESH SHUKLA - animeshshukla0904@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/ANINDYA HAZRA - anin16dya@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/ANISH MUKHERJEE - mukherjeeanish99@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/ANKIT KUMAR - sankyism@yahoo.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/ANSHUMAN SINGH - ansshu.sin@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/BHARAT N BHARADWAJ - nkbaradwaj@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/KARTIN SAREEN - ksareen1107@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/KESHAV GUPTA - guptakeshav694@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/RAJAK KUMAR JHALENDRA - jhalendra.ismud@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/RAVISH KUMAR SAHANI - ravish2561@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/SAMEER JAIN - sameer2000jain12@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/SRIJITA PAL - srijitapal1297@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/SURAJ KUMAR MAHATO - skm481507@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/VANGA SREEKAR GOUD - vangasreekar17@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/6/VOOTKURU SAI BHARGAV REDDY - saibhargav.vootkuru@gmail.com.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/8/AMIT KUMAR SINGH - amit.si@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/8/DHYANESH BASKARAN - b.dhyanesh@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/8/DINESH PARMAR - dparmar@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/8/RANJIT KUMAR DEHURY - ranjit.dehury@iitgn.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/9/ADWAIT AGESHE - adwait.ageshe.19031@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/9/ANIMESH SHARMA - animesh.sharma17003@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/9/ANMOL PALIWAL - anmol.paliwal.18001@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr/9/SANTOSH UPADHYAY - aso@iitgoa.ac.in.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/schedule_result_relay.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addMatch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addMatch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/live.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/live.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server file/live.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server file/livescore.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/event6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/event6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/speaker3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/speaker3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/speaker4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/speaker4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Bhilai/GTJYFJGHJN - shashi1iitk@gmail.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Bhilai/GTJYFJGHJN - shashi1iitk@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schedule.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/showCandidates.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/showCandidates.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1090,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2210">
-              <caret line="501" column="88" lean-forward="true" selection-start-line="501" selection-start-column="88" selection-end-line="501" selection-end-column="88" />
+            <state relative-caret-position="3757">
+              <caret line="230" column="26" selection-start-line="230" selection-start-column="26" selection-end-line="230" selection-end-column="26" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -1102,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state relative-caret-position="-204">
+              <caret line="138" column="60" selection-start-line="138" selection-start-column="60" selection-end-line="138" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -1114,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server file/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="4590">
+              <caret line="279" column="29" selection-start-line="279" selection-start-column="29" selection-end-line="279" selection-end-column="29" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -1134,7 +84,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/showCandidates.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -1159,16 +113,14 @@
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2023">
-              <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
+              <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/scorecard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1452" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -1202,9 +154,10 @@
         <option value="$PROJECT_DIR$/templates/addMatch.html" />
         <option value="$PROJECT_DIR$/templates/schedule.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/server file/__init__.py" />
+        <option value="$PROJECT_DIR$/templates/showCandidates.html" />
+        <option value="$PROJECT_DIR$/templates/register.html" />
       </list>
     </option>
   </component>
@@ -1434,14 +387,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.032502707" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.248104" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1542,6 +494,26 @@
     <entry file="file://$PROJECT_DIR$/templates/live1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3757">
+          <caret line="230" column="26" selection-start-line="230" selection-start-column="26" selection-end-line="230" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server file/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4590">
+          <caret line="279" column="29" selection-start-line="279" selection-start-column="29" selection-end-line="279" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/live.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1550,7 +522,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/showCandidates.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/addMatch.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1569,42 +545,20 @@
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2023">
-          <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
+          <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/scorecard.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/scorecard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1452" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server file/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="501" column="88" lean-forward="true" selection-start-line="501" selection-start-column="88" selection-end-line="501" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-204">
+          <caret line="138" column="60" selection-start-line="138" selection-start-column="60" selection-end-line="138" selection-end-column="60" />
         </state>
       </provider>
     </entry>

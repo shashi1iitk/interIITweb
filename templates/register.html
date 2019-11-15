@@ -79,7 +79,7 @@
                 contentType: false,
                 cache: false,
                 processData: false,
-                async: false
+                async: true
             })
                 .done(function (id) {
                     $("#RegisterButton").attr("disabled", false);
@@ -89,7 +89,7 @@
                         swal("Awesome!", "Candidate Registered Successfully!", "success");
                         
                         $("#registerForm").trigger("reset");
-                        $('#customFileLabel').html("Select profile picture");
+                        $('#customFileLabel').html("Select profile picture*");
 
                         $('#framework option:selected').each(function () {
                         $(this).prop('selected', false);
@@ -126,7 +126,7 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <!--  <label>Name</label> -->
-                        <input type="text" class="form-control" placeholder="Name" id="name" name='name' required
+                        <input type="text" class="form-control" placeholder="Name*" id="name" name='name' required
                                data-validation-required-message="Please enter your name.">
                         <p class="help-block text-danger"></p>
                     </div>
@@ -134,7 +134,7 @@
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="email" class="form-control" placeholder="Email Address" id="email" name="email"
+                        <input type="email" class="form-control" placeholder="Email Address*" id="email" name="email"
                                required data-validation-required-message="Please enter your email address.">
                         <small class="form-text text-muted">
                             unique for each registration
@@ -145,7 +145,7 @@
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" id="roll_no" placeholder="Roll No. / Enrollment Number" class="form-control"
+                        <input type="text" id="roll_no" placeholder="Roll No. / Enrollment Number*" class="form-control"
                                aria-describedby="passwordHelpBlock" name="roll_no" required
                                data-validation-required-message="Please fill this field.">
                         <p class="help-block text-danger"></p>
@@ -154,7 +154,7 @@
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="number" maxlength="10" class="form-control" placeholder="Mobile" id="mobile" name='mobile'
+                        <input type="number" maxlength="10" class="form-control" placeholder="Mobile*" id="mobile" name='mobile'
                                required data-validation-required-message="Please enter your phone">
                         <small class="form-text text-muted">
                             unique for each registration
@@ -165,7 +165,7 @@
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" class="form-control" placeholder="Jursey Name" id="jursey_name"
+                        <input type="text" class="form-control" placeholder="Jursey Name*" id="jursey_name"
                                name="jursey_name" required
                                data-validation-required-message="Please enter your Jursey Name.">
                         <p class="help-block text-danger"></p>
@@ -194,7 +194,7 @@
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <input type="text" class="form-control" placeholder="Any special instruction to OC"
+                        <input type="text" class="form-control" placeholder="Any special instruction to organising committee"
                                id="special_inst"
                                name="special_inst">
                         <p class="help-block text-danger"></p>
@@ -207,7 +207,7 @@
                             <input type="file" class="custom-file-input" id="customFile" name="profile_img" required
                                    data-validation-required-message="Select an image first.">
                             <label class="custom-file-label" for="customFile" id="customFileLabel">Select profile
-                                picture</label>
+                                picture*</label>
                             <script>
                                 $('#customFile').on('change', function () {
                                     var fileName = $(this).val();
