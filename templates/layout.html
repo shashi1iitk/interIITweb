@@ -123,7 +123,9 @@
           <!-- <li><a href="/info">Info</a></li> -->
 
           {% if current_user.is_authenticated %}
-              {% if current_user.privilege == 1 %}
+              {% if current_user.privilege == 0 %}
+                <li><a href="/allPlayers">All Players</a></li>
+              {% elif current_user.privilege == 1 %}
                 <li><a href="/showCandidates">My Contingent</a></li>
               {% elif current_user.privilege == 2 %}
                 <li><a href="/qrstats">Qr Stats</a></li>

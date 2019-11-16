@@ -297,6 +297,31 @@ def showCandidates():
     # print(staff)
     return render_template('showCandidates.html', params=param, staffs=staff)
 
+@app.route("/allPlayers")
+@login_required
+def allPlayers():
+    if(current_user.privilege == 0):
+        students = Players.query.order_by(Players.college_id.asc()).all()
+        player = []
+        li = "Hello"
+        for stud in students:
+            clg = College.query.filter_by(id=stud.college_id).first()
+
+            if stud.selected_sports.strip(' \n') == "staff":
+                sel_sp = "STAFF"
+            else:
+                gmlst = []
+                for no in stud.selected_sports.split(','):
+                    sp = Sports.query.filter_by(id=int(no)).first()
+                    gmlst.append(sp.sports_name + '(' + sp.category + ') ')
+                sel_sp = ' , '.join(gmlst)
+            player.append((stud, clg.clg_name, sel_sp, stud.profile_image_url))
+        player.append(li)
+        # print(param)
+        print(player)
+        return render_template('allPlayers.html', players=player)
+    else:
+        return "Not allowed!"
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
