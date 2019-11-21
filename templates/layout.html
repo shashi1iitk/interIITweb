@@ -116,7 +116,7 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/scorecard">Scorecard</a></li>
-          <li><a href="/getLiveMatches">Live Score</a></li>
+          <!--<li><a href="/getLiveMatches">Live Score</a></li>-->
           <li><a href="/schedule">Schedule</a></li>
           <li><a href="/live">Live Stream</a></li>
           <li><a href="/gallery">Gallery</a></li>
@@ -127,6 +127,7 @@
                 <li><a href="/allPlayers">All Players</a></li>
               {% elif current_user.privilege == 1 %}
                 <li><a href="/showCandidates">My Contingent</a></li>
+          <li><a href="/showCandidatesBySports">Players(Sports-wise)</a></li>
               {% elif current_user.privilege == 2 %}
                 <li><a href="/qrstats">Qr Stats</a></li>
                 <li><a href="/qrscanner">Qr Scanner</a></li>

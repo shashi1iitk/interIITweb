@@ -297,6 +297,27 @@ def showCandidates():
     # print(staff)
     return render_template('showCandidates.html', params=param, staffs=staff)
 
+@app.route("/showCandidatesBySports")
+@login_required
+def showCandidatesBySports():
+    students = Players.query.filter_by(college_id=current_user.college_id).all()
+    sports = Sports.query.order_by(Sports.id.asc()).all()
+
+    param = []
+    for game in sports:
+        gmplayer = []
+        for stud in students:
+            if stud.selected_sports.strip(' \n') == "staff":
+                continue
+            else:
+                for no in stud.selected_sports.split(','):
+                    if(int(no) == game.id):
+                        gmplayer.append(stud)
+        param.append((game.sports_name + '(' + game.category + ')'+ '[' + 'Max. Players Allowed: ' + str(game.max_player) + ']', gmplayer ))
+    print(param)
+
+    return render_template('showCandidatesBySports.html', params=param)
+
 @app.route("/allPlayers")
 @login_required
 def allPlayers():
