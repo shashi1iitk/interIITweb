@@ -27,7 +27,7 @@ login_manager.init_app(app)
 login_manager.login_view = "log_in"
 login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019_1"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
 
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -871,6 +871,18 @@ def addMatches():
 def test():
     return render_template('test.html')
 
+@app.before_request
+def before_request():
+    if 'profile_images' in request.url:
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 0:
+            return redirect(url_for('login'))
+    if 'profile_qr' in request.url :
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 2:
+            return redirect(url_for('login'))
 
 # application = app
 
