@@ -19,43 +19,71 @@ tr:nth-child(even) {
 }
 </style>
 <div class="container" style="margin-top: 3%">
-
-    <br><br>
-    <center><h2>Logged in as : {{current_user.role}}</h2></center>
-    <center>
-     <table>
-            <tr>
-                <th>S No.</th>
-                <th>Name</th>
-                <th>Mobile</th>
-                <th>College</th>
-                <th>Selected Sports</th>
-                <th>Gender</th>
-                <th>Food</th>
-                <!--<th>Image</th>-->
-
-            </tr>
-
-    {% for param in players: %}
-
-            <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{param[0].name}}</td>
-                <td>{{param[0].mobile}}</td>
-                <td>{{param[1]}}</td>
-                <td>{{param[2]}}</td>
-                <td>{{param[0].gender}}</td>
-                <td>{{param[0].food}}</td>
-                {% set val = param[3] %}
-                {% set path = "profile_images/" + param[1] + "/" + val %}
-                <!--<td><img src="{{ url_for('static', filename= path ) }}" alt="Image" class="img-fluid"></td>-->
-            </tr>
-
+    <center><u><h3>Registered Colleges</h3></u></center>
+    <ol>
+    {% for param in bigl: %}
+        {% if param[1] is defined and param[1]|length > 0 %}
+        <li><span><a href="#{{loop.index}}">{{param[0]}}</a></span></li>
+        {% endif %}
     {% endfor %}
+    </ol>
 
-          </table>
-        </center>
-    <hr>
+
+    <center>
+        {% for entry in bigl: %}
+            {% if entry[1] is defined and entry[1]|length > 0 %}
+            <br>
+            <span id="{{ loop.index }}"><h3><strong>{{ entry[0] }}</strong></h3></span>
+            <hr>
+            <h4><u>Players</u></h4>
+                <table>
+                    <tr>
+                        <th>S No.</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Selected Sports</th>
+                        <th>Gender</th>
+                        <th>Food</th>
+                        <th>Special Request</th>
+                        <!--<th>Image</th>-->
+                    </tr>
+                {% for player in entry[1]: %}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{player[0].name}}</td>
+                        <td>{{player[0].mobile}}</td>
+                        <td>{{player[1]}}</td>
+                        <td>{{player[0].gender}}</td>
+                        <td>{{player[0].food}}</td>
+                        <td>{{player[0].special_inst}}</td>
+                    </tr>
+                {% endfor %}
+                 </table>
+        <br>
+              <h4><u>Staff</u></h4>
+                <table>
+                    <tr>
+                        <th>S No.</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Gender</th>
+                        <th>Food</th>
+                        <th>Special Request</th>
+                        <!--<th>Image</th>-->
+                    </tr>
+                    {% for staff in entry[2]: %}
+                        <tr>
+                            <td>{{loop.index}}</td>
+                            <td>{{staff.name}}</td>
+                            <td>{{staff.mobile}}</td>
+                            <td>{{staff.gender}}</td>
+                            <td>{{staff.food}}</td>
+                            <td>{{staff.special_inst}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        {% endfor %}
 
 </div>
 

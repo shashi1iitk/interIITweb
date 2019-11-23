@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<div class="container" style="margin-top: 3%">
+
+    <br><br>
+    <center><h2>Logged in as : {{current_user.role}}</h2></center>
+    <center>
+     <table>
+            <tr>
+                <th>S No.</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>College</th>
+                <th>Selected Sports</th>
+                <th>Gender</th>
+                <th>Food</th>
+                <th>Special Request</th>
+                <!--<th>Image</th>-->
+
+            </tr>
+
+    {% for param in players: %}
+
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{param[0].name}}</td>
+                <td>{{param[0].mobile}}</td>
+                <td>{{param[1]}}</td>
+                <td>{{param[2]}}</td>
+                <td>{{param[0].gender}}</td>
+                <td>{{param[0].food}}</td>
+                <td>{{param[0].special_inst}}</td>
+                {% set val = param[3] %}
+                {% set path = "profile_images/" + param[1] + "/" + val %}
+                <!--<td><img src="{{ url_for('static', filename= path ) }}" alt="Image" class="img-fluid"></td>-->
+            </tr>
+
+    {% endfor %}
+
+          </table>
+        </center>
+    <hr>
+
+</div>
+
+<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+
+{% endblock %}

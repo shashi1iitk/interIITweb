@@ -58,33 +58,32 @@ function delet(id){
 
     
   } else {
-
   }
 });
-
-
-
-    
 }
-
-
-
 </script>
 
 <div class="container" style="margin-top: 3%">
 
     <br><br>
-   <center><h3>Players By Sports Name</h3></center>
+    <center><u><h3>Players By Sports Name</h3></u></center>
+    <ol>
+    {% for param in params: %}
+        {% if param[1] is defined and param[1]|length > 0 %}
+        <li><span><a href="#{{loop.index}}">{{param[0]}}</a></span></li>
+        {% endif %}
+    {% endfor %}
+    </ol>
     <hr>
 
     <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center>
-    <br><br>
 
+    <hr>
 
     {% for param in params: %}
 
     {% if param[1] is defined and param[1]|length > 0 %}
-    <center><h4><strong>{{param[0]}}</strong></h4></center>
+    <center><span id ="{{loop.index}}"><h4><strong>{{param[0]}}</strong></h4></span></center>
         <table>
             <tr>
                 <th>S No.</th>
@@ -112,6 +111,8 @@ function delet(id){
 
 </div>
 
+
 <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+
 
 {% endblock %}

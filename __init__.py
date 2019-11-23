@@ -189,6 +189,19 @@ def load_user(user_id):
     return Admins.query.get(user_id)
 
 
+@app.before_request
+def before_request():
+    if 'profile_images' in request.url:
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 0:
+            return redirect(url_for('login'))
+    if 'profile_qr' in request.url :
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 0:
+            return redirect(url_for('login'))
+
 @app.route("/register", methods=['GET', 'POST'])
 @login_required
 def register():
@@ -311,18 +324,17 @@ def showCandidatesBySports():
                 for no in stud.selected_sports.split(','):
                     if(int(no) == game.id):
                         gmplayer.append(stud)
-        param.append((game.sports_name + '(' + game.category + ')'+ '[' + 'Max. Players Allowed: ' + str(game.max_player) + ']', gmplayer ))
+        param.append((game.sports_name + '(' + game.category + ')'+ ' [' + 'Max. Players Allowed: ' + str(game.max_player) + ']', gmplayer ))
     print(param)
 
     return render_template('showCandidatesBySports.html', params=param)
 
-@app.route("/allPlayers")
+@app.route("/allPlayers0")
 @login_required
-def allPlayers():
+def allPlayers0():
     if(current_user.privilege == 0):
         students = Players.query.order_by(Players.college_id.asc()).all()
         player = []
-        li = "Hello"
         for stud in students:
             clg = College.query.filter_by(id=stud.college_id).first()
 
@@ -335,13 +347,105 @@ def allPlayers():
                     gmlst.append(sp.sports_name + '(' + sp.category + ') ')
                 sel_sp = ' , '.join(gmlst)
             player.append((stud, clg.clg_name, sel_sp, stud.profile_image_url))
-        player.append(li)
         # print(param)
         print(player)
-        return render_template('allPlayers.html', players=player)
+        return render_template('allPlayers0.html', players=player)
     else:
         return "Not allowed!"
 
+@app.route("/allPlayers")
+@login_required
+def allPlayers():
+    if(current_user.privilege == 0):
+        # sports = Sports.query.order_by(Sports.id.asc()).all()
+        clg = College.query.all()
+
+        bigl = []
+        for cl in clg:
+            college = []
+            # college.append(cl.clg_name)
+            candi = Players.query.filter_by(college_id=int(cl.id)).all()
+            student = []
+            staff = []
+
+            for stud in candi:
+                if stud.selected_sports.strip(' \n') == "staff":
+                    staff.append(stud)
+                else:
+                    gmlst = []
+                    for no in stud.selected_sports.split(','):
+                        sp = Sports.query.filter_by(id=int(no)).first()
+                        gmlst.append(sp.sports_name + '(' + sp.category + ') ')
+                    sel_sp = ' , '.join(gmlst)
+                    student.append((stud, sel_sp))
+            # college.append((cl.clg_name,student,staff))
+            print(student)
+            print(staff)
+            bigl.append((cl.clg_name,student,staff))
+        return render_template('allPlayers.html', bigl=bigl)
+        # return "OK"
+
+@app.route("/Insights")
+@login_required
+def Insights():
+    if(current_user.privilege == 0):
+        # sports = Sports.query.order_by(Sports.id.asc()).all()
+        all = Players.query.order_by(Players.college_id.asc()).all()
+        total = 0
+
+        tot_players = 0
+        tot_players_male = 0
+        tot_players_male_veg = 0
+        tot_players_female = 0
+        tot_players_female_veg = 0
+
+        tot_staff = 0
+        tot_staff_male = 0
+        tot_staff_male_veg = 0
+        tot_staff_female = 0
+        tot_staff_female_veg = 0
+
+        special = []
+        for each in all:
+            total += 1
+            if each.selected_sports.strip(' \n') == "staff":
+                tot_staff += 1
+                if each.gender == "M":
+                    tot_staff_male += 1
+                    if each.food == "Veg":
+                        tot_staff_male_veg += 1
+                else:
+                    tot_staff_female += 1
+                    if each.food == "Veg":
+                        tot_staff_female_veg += 1
+            else:
+                tot_players += 1
+                if each.gender == "M":
+                    tot_players_male += 1
+                    if each.food == "Veg":
+                        tot_players_male_veg += 1
+                else:
+                    tot_players_female += 1
+                    if each.food == "Veg":
+                        tot_players_female_veg += 1
+
+
+            if each.special_inst != "" and each.special_inst != "no" and each.special_inst != "NO" and each.special_inst != "No":
+                clg = College.query.filter_by(id=each.college_id).first()
+                if each.selected_sports.strip(' \n') == "staff":
+                    sel_sp = "STAFF"
+                else:
+                    gmlst = []
+                    for no in each.selected_sports.split(','):
+                        sp = Sports.query.filter_by(id=int(no)).first()
+                        gmlst.append(sp.sports_name + '(' + sp.category + ') ')
+                    sel_sp = ' , '.join(gmlst)
+                special.append((each, clg.clg_name, sel_sp))
+
+        print(special)
+
+        return render_template('Insights.html', total=total, tot_players = tot_players, tot_players_male = tot_players_male, tot_players_male_veg = tot_players_male_veg, tot_players_female =  tot_players_female, tot_players_female_veg = tot_players_female_veg,
+                               tot_staff = tot_staff,tot_staff_male = tot_staff_male,tot_staff_male_veg = tot_staff_male_veg,tot_staff_female = tot_staff_female, tot_staff_female_veg = tot_staff_female_veg, special =special)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():

@@ -58,11 +58,14 @@ function delet(id){
     <br><br>
     <center><h2>Logged in as : {{current_user.role}}</h2></center>
     <hr>
-    <h4>Instruction</h4>
-    <p>For changing or modifying any entry, please delete the previous one and add a new one.</p>
-    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center>
-    <br><br>
-    <center><h2>Players</h2></center>
+    <p><u>Instruction</u>: For changing or modifying any entry, please delete it and add a new one.</p><hr>
+    <ol>
+        <li><a href="#players">Players</a></li>
+        <li><a href="#staff">Staff</a></li>
+    </ol><hr>
+    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center><hr>
+    <br>
+    <center><span id="players"><h2>Players</h2></span></center>
     {% for param in params: %}
     <div class="alert alert-info" style="padding: 20px;">
         <strong>{{param[0].name}} | {{param[0].email}} | {{param[0].roll_no}}</strong>  <br> {{param[1]}}
@@ -70,14 +73,13 @@ function delet(id){
     </div>
     {% endfor %}
     <hr>
-    <center><h2>Staffs</h2></center>
+    <center><span id="staff"><h2>Staffs</h2></span></center>
     {% for staff in staffs: %}
     <div class="alert alert-info" style="padding: 20px;">
         <strong>{{staff.name}} | {{staff.email}} | {{staff.roll_no}}</strong>
         <button type="button" class="btn btn-danger float-right" onclick="delet({{staff.id}});">Delete</button>
     </div>
     {% endfor %}
-    <hr>
 
 </div>
 
