@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<script type="text/javascript">
+
+function myFunction() {
+  window.location.href = '/showCandidatesBySports';
+}
+
+function delet(id){
+    console.log(id);
+    swal({
+  title: "Are you sure?",
+  text: "Once deleted, candidate will be deregistered and all his/her provided details will be lost!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+
+    $.ajax({
+            data : id,
+            type : 'POST',
+            url : '/deletePlayer',
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: false
+        })
+        .done(function(id){
+            // console.log(id);
+            swal("Poof! Candidate Removed!", {
+              icon: "success",
+            });
+            setTimeout(myFunction, 1500);
+            
+        });
+
+    
+  } else {
+
+  }
+});
+
+
+
+    
+}
+
+
+
+</script>
+
+<div class="container" style="margin-top: 3%">
+
+    <br><br>
+   <center><h3>Players By Sports Name</h3></center>
+    <hr>
+
+    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center>
+    <br><br>
+
+
+    {% for param in params: %}
+
+    {% if param[1] is defined and param[1]|length > 0 %}
+    <center><h4><strong>{{param[0]}}</strong></h4></center>
+        <table>
+            <tr>
+                <th>S No.</th>
+                <th>Name</th>
+                <th>Roll No.</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Action</th>
+                <!--<th>Image</th>-->
+            </tr>
+        {% for player in param[1]: %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{player.name}}</td>
+                <td>{{player.roll_no}}</td>
+                <td>{{player.mobile}}</td>
+                <td>{{player.email}}</td>
+                <td><center><button type="button" class="btn btn-danger float-right" onclick="delet({{player.id}});">Delete</button></center></td>
+            </tr>
+        {% endfor %}
+        </table>
+    <br><br>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+
+{% endblock %}
