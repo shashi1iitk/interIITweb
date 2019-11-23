@@ -770,7 +770,10 @@ def test():
 @app.before_request
 def before_request():
     if 'profile_images' in request.url:
-        return redirect(url_for('login'))
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 0:
+            return redirect(url_for('login'))
     if 'profile_qr' in request.url :
         if not current_user.is_authenticated:
             return redirect(url_for('login'))
