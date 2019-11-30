@@ -589,6 +589,10 @@ def live():
     # return render_template('live.html', params=params)
     return render_template('live.html')
 
+@app.route("/queries")
+def queries():
+    # return render_template('live.html', params=params)
+    return render_template('queries.html')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
