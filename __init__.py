@@ -772,7 +772,16 @@ def endMatchDetails():
 
         db.session.commit()
     return redirect(url_for("getLiveMatches"))
+@app.route("/sports")
+def s1():
+    # return render_template('schedule.html', params=params)
+    return render_template('s1.html')
 
+
+@app.route("/InterIIT")
+def s2():
+    # return render_template('schedule.html', params=params)
+    return render_template('s2.html')
 
 @app.route('/addMatch', methods=['GET', 'POST'])
 @login_required
