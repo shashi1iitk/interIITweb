@@ -642,12 +642,14 @@ h6 {
 
 #why-us {
   padding: 60px 0;
-  background: #004a99;
+  background: #ecf5ff;
+  box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  /* background: #004a99; */
 }
 
 #why-us .section-header h3,
 #why-us .section-header p {
-  color: #fff;
+  /* color: #fff; */
 }
 
 #why-us .card {
@@ -680,11 +682,11 @@ h6 {
 
 #why-us .card p {
   font-size: 15px;
-  color: #d8eafe;
+  /* color: #d8eafe; */
 }
 
 #why-us .card .readmore {
-  color: #fff;
+  /* color: #fff; */
   font-weight: 600;
   display: inline-block;
   transition: 0.3s ease-in-out;
@@ -704,7 +706,7 @@ h6 {
   font-weight: bold;
   font-size: 48px;
   display: block;
-  color: #fff;
+  /* color: #fff; */
 }
 
 #why-us .counters p {
@@ -712,13 +714,14 @@ h6 {
   margin: 0 0 20px 0;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  color: #cce5ff;
+  /* color: #cce5ff; */
 }
 
 /* Portfolio Section
 --------------------------------*/
 
 #portfolio {
+  background: #505050;
   padding: 60px 0;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
 }
