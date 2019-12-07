@@ -885,6 +885,7 @@ def endMatchDetails():
 
         db.session.commit()
     return redirect(url_for("getLiveMatches"))
+    
 @app.route("/sports")
 def s1():
     # return render_template('schedule.html', params=params)
