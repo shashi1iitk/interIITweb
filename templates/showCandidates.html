@@ -8,6 +8,10 @@ function myFunction() {
   window.location.href = '/showCandidates';
 }
 
+function finish() {
+  window.location.href = '/logout';
+}
+
 function delet(id){
     console.log(id);
     swal({
@@ -30,23 +34,63 @@ function delet(id){
             async: false
         })
         .done(function(id){
-            // console.log(id);
-            swal("Poof! Candidate Removed!", {
-              icon: "success",
-            });
-            setTimeout(myFunction, 1500);
-            
+            console.log(id);
+            if (id == "Success") {
+                swal("Poof! Candidate Removed!", {
+                  icon: "success",
+                });
+                setTimeout(myFunction, 1500);
+            }else{
+                alert('Some error occurred');
+            }
         });
 
     
   } else {
 
   }
-});
+}); 
+}
 
 
+function final(id){
+    console.log(id);
+    swal({
+  title: "Are you sure?",
+  text: "Once finalized, your ID will be deactivated which means you cannot change anything afterwards!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
 
+    $.ajax({
+            data : id,
+            type : 'POST',
+            url : '/finaliseReg',
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: false
+        })
+        .done(function(id){
+            console.log(id);
+            if (id == "Success") {
+                swal("Bingo! Registrations finalized!", {
+                  icon: "success",
+                });
+                setTimeout(finish, 1500);
+            }else{
+                alert('Some error occurred');
+            }
+            
+        });
     
+  } else {
+
+  }
+}); 
 }
 
 
@@ -63,7 +107,8 @@ function delet(id){
         <li><a href="#players">Players</a></li>
         <li><a href="#staff">Staff</a></li>
     </ol><hr>
-    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center><hr>
+    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button> &nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-danger" onclick="final({{current_user.id}}); ">Finalize Registrations</button></center>
+    <hr>
     <br>
     <center><span id="players"><h2>Players</h2></span></center>
     {% for param in params: %}

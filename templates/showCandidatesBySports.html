@@ -26,6 +26,10 @@ function myFunction() {
   window.location.href = '/showCandidatesBySports';
 }
 
+function finish() {
+  window.location.href = '/logout';
+}
+
 function delet(id){
     console.log(id);
     swal({
@@ -61,6 +65,48 @@ function delet(id){
   }
 });
 }
+
+function final(id){
+    console.log(id);
+    swal({
+  title: "Are you sure?",
+  text: "Once finalized, your ID will be deactivated which means you cannot change anything afterwards!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+
+    $.ajax({
+            data : id,
+            type : 'POST',
+            url : '/finaliseReg',
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: false
+        })
+        .done(function(id){
+            console.log(id);
+            if (id == "Success") {
+                swal("Bingo! Registrations finalized!", {
+                  icon: "success",
+                });
+                setTimeout(finish, 1500);
+            }else{
+                alert('Some error occurred');
+            }
+            
+        });
+    
+  } else {
+
+  }
+}); 
+}
+
+
 </script>
 
 <div class="container" style="margin-top: 3%">
@@ -75,9 +121,7 @@ function delet(id){
     {% endfor %}
     </ol>
     <hr>
-
-    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button></center>
-
+    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button> &nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-danger" onclick="final({{current_user.id}}); ">Finalize Registrations</button></center>
     <hr>
 
     {% for param in params: %}

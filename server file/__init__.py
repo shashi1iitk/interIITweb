@@ -1,6 +1,8 @@
 import json
 import os
 from datetime import datetime
+from datetime import timedelta
+
 
 import pyqrcode
 from flask import Flask, render_template, request, redirect, url_for, flash
@@ -387,6 +389,7 @@ def allPlayers():
         return render_template('allPlayers.html', bigl=bigl)
         # return "OK"
 
+
 @app.route("/Insights")
 @login_required
 def Insights():
@@ -460,6 +463,8 @@ def login():
             return "Invalid Credentials!"
         elif (user.password != password):
             return "Wrong Password!"
+        elif (user.privilege == -1):
+            return "Id deactivated!"
         else:
             login_user(user, remember=True)
             return "Success"
@@ -471,6 +476,22 @@ def login():
 @login_required
 def loginSuccess():
     return render_template('loginSuccess.html')
+    
+
+@app.route("/finaliseReg", methods=['GET', 'POST'])
+@login_required
+def finaliseReg():
+    if(current_user.privilege == 1 and request.method == 'POST'):
+        id = int(request.data)
+        # print(id)
+        try:
+            admin = Admins.query.filter_by(id=id).first()
+            admin.privilege = -1
+            db.session.commit()
+
+        except Exception:
+            return "Fail"
+        return "Success"
 
 
 @app.route("/qrscanner", methods=['GET', 'POST'])
@@ -615,6 +636,77 @@ def getLiveMatches_Ajax():
         list_live.append(dict1)
     live = {"live": list_live}
     return json.dumps(live)
+
+
+@app.route('/getLiveMatches_Details_Android/<game_name>', methods=['GET', 'POST'])
+def getLiveMatches_Details_Android(game_name):
+    game_name = game_name
+    
+    time_now = datetime.now()
+
+    games = Sports.query.filter(Sports.sports_name == game_name).all()
+    list_live = []
+    for game in games:
+        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
+        if(matchl != []):
+            for match in matchl:
+                sp = getSport(match.sports_id)
+                sport_name = sp.sports_name + "(" +  sp.category + ")"
+                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": match.level, "venue_time": "At " + match.venue + " from "+ str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": match.score1, "score2": match.score2, "commentry": match.commentry}
+                list_live.append(dict1)
+
+ 
+    return json.dumps(list_live)
+
+
+@app.route('/getSchedule_Team_Matches_Deatils_Android/<game_name>/<day>', methods=['GET', 'POST'])
+def getSchedule_Team_Matches_Ajax_Android(game_name, day):
+    game_name = game_name
+    day = int(day)
+    day0 = "2019-12-07 00:00:00.000000"
+    day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
+    start_day = day0 + timedelta(days=day)
+    end_day = day0 + timedelta(days=day+1)
+    print(start_day)
+    print(end_day)
+
+    games = Sports.query.filter(Sports.sports_name == game_name).all()
+    list_all = []
+    for game in games:
+        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
+        if(matchl != []):
+            for match in matchl:
+                sp = getSport(match.sports_id)
+                sport_name = sp.sports_name + "(" +  sp.category + ")"
+                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": match.score1, "score2": match.score2,"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": match.status, "commentry": match.commentry}
+                list_all.append(dict1)
+
+ 
+    return json.dumps(list_all)
+
+@app.route('/temp', methods=['GET', 'POST'])
+def temp():
+    day = 5
+    day0 = "2019-12-14 00:00:00.000000"
+    day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
+    start_day = day0 + timedelta(days=day)
+    end_day = day0 + timedelta(days=day+1)
+    print(start_day)
+    print(end_day)
+    return "Ok"
+
+
+def getClgName(clg_id):
+    if(clg_id == 0):
+        return 0
+    clg  = College.query.filter(College.id == clg_id).first()
+    return clg.clg_name
+
+def getSport(sp_id):
+    sp  = Sports.query.filter(Sports.id == sp_id).first()
+    return sp
+
+
 
 
 @app.route('/getLiveMatches', methods=['GET', 'POST'])
