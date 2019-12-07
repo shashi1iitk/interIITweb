@@ -167,8 +167,8 @@
      <section id="why-us" class="wow fadeIn">
       <div class="container">
         <header class="section-header">
-          <h3>Inter IIT 2019</h3>
-          <p>Born in 1961, with only 5 IITs mustering a participation of 500 students in its first edition hosted by IIT Bombay, the event has grown steadily since.</p>
+          <h3>54th Inter IIT Sports Meet</h3>
+          <p>In the words of Julie Foudy, “Sports not only build better athletes but also better people.”</p>
         </header>
 
         <div class="row row-eq-height justify-content-center">
@@ -178,19 +178,19 @@
                 <i class="fa fa-diamond"></i>
               <div class="card-body">
                 <h5 class="card-title">Sports</h5>
-                <p class="card-text">Golden Chance to prove yourself in the field of sports.</p>
-                <a href="/sports" class="readmore">Read more </a>
+                <p class="card-text">Golden chance to prove yourself in the battle field of sports. Push hard and cross all the hurdles!</p>
+                <a href="/sports" class="readmore">All Sports</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 mb-4">
             <div class="card wow bounceInUp">
-                <i class="fa fa-language"></i>
+                <i class="fa fa-object-group"></i>
               <div class="card-body">
-                <h5 class="card-title">54th Inter IIT Sports Meet</h5>
-                <p class="card-text">Motivate yourself in the light of great sportsmen's and celebrity lectures.</p>
-                <a href="/InterIIT" class="readmore">Read more </a>
+                <h5 class="card-title">The Legacy</h5>
+                <p class="card-text">In 2019, IIT KGP and IIT BBS will host the 54th edition of this premiere event. Expectations are highest!.</p>
+                <a href="/InterIIT" class="readmore">Know More </a>
               </div>
             </div>
           </div>
@@ -243,7 +243,7 @@
 
         <header class="section-header">
           <h3 class="section-title" style="
-          color: #fff;" >Some Snapshots</h3>
+          color: #fff;">Snapshots</h3>
         </header>
 
         <div class="row">
@@ -492,7 +492,7 @@
 
         <div class="section-header">
           <h3>Our Sponsors</h3>
-          <p>Contact us to put your shining logo on our website!!</p>
+          <p>Contact us to have your shining presence on our website!!</p>
         </div>
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
@@ -621,7 +621,7 @@
                   <textarea class="form-control" name="message" id="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                   <div class="validation"></div>
                 </div>
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                <div class="text-center"><button type="submit"  id="sendButton"  title="Send Message">Send Message</button></div>
               </form>
               <iframe src="#" id="no-target" name="no-target" style="display: none;"></iframe>
             </div>
@@ -638,6 +638,11 @@
 
 <script type="text/javascript">
         $('#input-form').on('submit',function(e){
+              if($('#name').val()=="" || $('#email').val()=="" || $('#subject').val()=="" || $('#message').val() == "") swal("All fields are necessary.");
+              else{
+                $("#sendButton").attr("disabled", true);
+            // document.getElementById("RegisterButton").disabled = true;
+                $("#sendButton").html('Please wait...');
 
               var inputq1 = encodeURIComponent($('#name').val());
               var inputq2 = encodeURIComponent($('#email').val());
@@ -657,6 +662,10 @@
               swal("Message sent!", "Thank you for contacting. We'll reply soon.", "success");
 
               document.getElementById("input-form").reset();
+              $("#sendButton").attr("disabled", false);
+              $("#sendButton").html('Send Message');
+              
+              }
           });
       </script>
 

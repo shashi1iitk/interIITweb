@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 07, 2019 at 07:27 AM
+-- Generation Time: Dec 07, 2019 at 09:49 AM
 -- Server version: 5.7.28-0ubuntu0.18.04.4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
@@ -2250,7 +2250,39 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2241, 'BHARAT SINGH', 'b19154@students.iitmandi.ac.in', '7082610280', 18, '36', 'D19154', 'Veg', 'O+', 'BHARAT SINGH - b19154@students.iitmandi.ac.in.jpg', 'B Singh', '', 'M', 0, 000, 000, 000, 0),
 (2242, 'SHARWAN ', 'b18142@students.iitmandi.ac.in', '7426906234', 18, '36', 'B18142', 'Veg', 'O+', 'SHARWAN  - b18142@students.iitmandi.ac.in.jpg', 'S.S', '', 'M', 0, 000, 000, 000, 0),
 (2243, 'RUPALI GHARAT', 'rupali.gharat.cer17@itbhu.ac.in', '9131214717', 1, '41', '17035034', 'Non-Veg', 'O+', 'RUPALI GHARAT - rupali.gharat.cer17@itbhu.ac.in.jpg', 'None', '', 'F', 0, 000, 000, 000, 0),
-(2244, 'PURUSHOTTAM GOEL', 'b17135@students.iitmandi.ac.in', '8628908055', 18, '36', 'B17135', 'Non-Veg', 'B+', 'PURUSHOTTAM GOEL - b17135@students.iitmandi.ac.in.jpg', 'GOEL', '', 'M', 0, 000, 000, 000, 0);
+(2244, 'PURUSHOTTAM GOEL', 'b17135@students.iitmandi.ac.in', '8628908055', 18, '36', 'B17135', 'Non-Veg', 'B+', 'PURUSHOTTAM GOEL - b17135@students.iitmandi.ac.in.jpg', 'GOEL', '', 'M', 0, 000, 000, 000, 0),
+(2245, 'MANDADI PAVAN KUMAR', 'b17016@students.iitmandi.ac.in', '8919788057', 18, '4,5', 'b17016', 'Non-Veg', 'A+', 'MANDADI PAVAN KUMAR - b17016@students.iitmandi.ac.in.jpg', 'Pa_one', '', 'M', 0, 000, 000, 000, 0),
+(2246, 'KARAN KOTHADIYA', '15D110010@iitb.ac.in', '9405809994', 4, '32', '15D110010', 'Non-Veg', 'B+', 'KARAN KOTHADIYA - 15D110010@iitb.ac.in.jpg', 'Karan', '', 'M', 0, 000, 000, 000, 0),
+(2247, 'SHOURYA PANDEY', '160050013@iitb.ac.in', '7021576302', 4, '52', '160050013', 'Non-Veg', 'B+', 'SHOURYA PANDEY - 160050013@iitb.ac.in.jpg', 'Shourya', '', 'M', 0, 000, 000, 000, 0),
+(2248, 'DHRUV JAIN', '170010007@iitb.ac.in', '9321299294', 4, '52', '170010007', 'Veg', 'A+', 'DHRUV JAIN - 170010007@iitb.ac.in.jpg', 'Dhruv', '', 'M', 0, 000, 000, 000, 0),
+(2249, 'AUM JAIN', '19B080008@iitb.ac.in', '8888206444', 4, '52', '19B080008', 'Veg', 'O+', 'AUM JAIN - 19B080008@iitb.ac.in.jpg', 'Aum', '', 'M', 0, 000, 000, 000, 0),
+(2250, 'ATHARVA TAYADE', '190070013@iitb.ac.in', '9967947552', 4, '52', '190070013', 'Non-Veg', 'O+', 'ATHARVA TAYADE - 190070013@iitb.ac.in.jpg', 'Atharva', '', 'M', 0, 000, 000, 000, 0),
+(2251, 'SHREYAM MISHRA', '19D110020@iitb.ac.in', '9869504539', 4, '52', '19D110020', 'Non-Veg', 'O+', 'SHREYAM MISHRA - 19D110020@iitb.ac.in.jpg', 'Shreyam', '', 'M', 0, 000, 000, 000, 0),
+(2252, 'MANISH MEENA', 'm.meena200@gmail.com', '8828291069', 4, '36', '140040030', 'Non-Veg', 'B+', 'MANISH MEENA - m.meena200@gmail.com.jpg', 'manish', '', 'M', 0, 000, 000, 000, 0),
+(2253, 'TAVISH MINA', 'tavishmeena@gmail.com', '7891942057', 4, '36', '17d070028', 'Non-Veg', 'AB+', 'TAVISH MINA - tavishmeena@gmail.com.jpg', 'tavish', '', 'M', 0, 000, 000, 000, 0),
+(2254, 'VIRAJ SINGH', 'virajsingh.vsp@gmail.com', '8454952125', 4, '36', '160110041', 'Veg', 'B+', 'VIRAJ SINGH - virajsingh.vsp@gmail.com.jpg', 'viraj', '', 'M', 0, 000, 000, 000, 0),
+(2255, 'PANKAJ YADAV', 'pankajyadavky@gmail.com', '9987108466', 4, '36', '160020051', 'Non-Veg', 'B-', 'PANKAJ YADAV - pankajyadavky@gmail.com.jpg', 'pankaj', '', 'M', 0, 000, 000, 000, 0),
+(2256, 'KUMAR SAUNACK', '160050056@iitb.ac.in', '8291473804', 4, '42', '160050056', 'Non-Veg', 'O+', 'KUMAR SAUNACK - 160050056@iitb.ac.in.jpg', 'Saunack', '', 'M', 0, 000, 000, 000, 0),
+(2257, 'GAURAV VERMA', 'vermagaurav267@gmail.com', '9799960347', 4, '36', '160070026', 'Non-Veg', 'O+', 'GAURAV VERMA - vermagaurav267@gmail.com.jpg', 'gaurav', '', 'M', 0, 000, 000, 000, 0),
+(2258, 'KUMAR SAURAV', '160050057@iitb.ac.in', '8291473805', 4, '42', '160050057', 'Non-Veg', 'O+', 'KUMAR SAURAV - 160050057@iitb.ac.in.jpg', 'Saurav', '', 'M', 0, 000, 000, 000, 0),
+(2259, 'SIDDHARTHA PRABHU', 'sprabhu512@gmail.com', '8919108873', 4, '36', '15D110025', 'Non-Veg', 'O+', 'SIDDHARTHA PRABHU - sprabhu512@gmail.com.jpg', 'prabhu', '', 'M', 0, 000, 000, 000, 0),
+(2260, 'ROHAN ARIHAAN', '170100076@iitb.ac.in', '7004269926', 4, '42', '170100076', 'Non-Veg', 'B+', 'ROHAN ARIHAAN - 170100076@iitb.ac.in.jpg', 'Rohan', '', 'M', 0, 000, 000, 000, 0),
+(2261, 'VIVEK PENDHARKAR', '18D110026@iitba.cin', '8828196596', 4, '42', '18D110026', 'Non-Veg', 'O+', 'VIVEK PENDHARKAR - 18D110026@iitba.cin.jpg', 'Vivek', '', 'M', 0, 000, 000, 000, 0),
+(2262, 'SRIJAN BANSAL', 'srijanbansal15@gmail.com', '8728873198', 4, '36', '170100111	', 'Non-Veg', 'O+', 'SRIJAN BANSAL - srijanbansal15@gmail.com.jpg', 'srijan', '', 'M', 0, 000, 000, 000, 0),
+(2263, 'MANISH SAICH', 'manishsaich03@gmail.com', '9079885791', 4, '36', '170020120		', 'Veg', 'O+', 'MANISH SAICH - manishsaich03@gmail.com.jpg', 'manish', '', 'M', 0, 000, 000, 000, 0),
+(2264, 'SAVITA PAREEK', '174090004@iitb.ac.in', '9782067574', 4, '43', '174090004', 'Veg', 'A+', 'SAVITA PAREEK - 174090004@iitb.ac.in.jpg', 'Savita', '', 'F', 0, 000, 000, 000, 0),
+(2265, 'AKANKSHA CHOUDHARY', '154270003@iitb.ac.in', '8879075802', 4, '43', '154270003', 'Veg', 'B+', 'AKANKSHA CHOUDHARY - 154270003@iitb.ac.in.jpg', 'Akanksha', '', 'F', 0, 000, 000, 000, 0),
+(2266, 'SWADHA SANGHVI', '15d070037@iitb.ac.in', '9819074323', 4, '43', '15d070037', 'Veg', 'O+', 'SWADHA SANGHVI - 15d070037@iitb.ac.in.jpg', 'Swadha', '', 'F', 0, 000, 000, 000, 0),
+(2267, 'MAYANK BHAGAT', 'mayu021199@gmail.com', '7045602861', 4, '36', '170100014', 'Non-Veg', 'B-', 'MAYANK BHAGAT - mayu021199@gmail.com.jpg', 'mayank', '', 'M', 0, 000, 000, 000, 0),
+(2268, 'NANDAN RUHELA', 'nanduruhela@gmail.com', '8517912192', 4, '36', '150020078', 'Non-Veg', 'AB+', 'NANDAN RUHELA - nanduruhela@gmail.com.jpg', 'nandan', '', 'M', 0, 000, 000, 000, 0),
+(2269, 'TINESH PATHANIA', 'tinesh1path@gmail.com', '8828290580', 4, '36', '154040008', 'Non-Veg', 'O+', 'TINESH PATHANIA - tinesh1path@gmail.com.jpg', 'tinesh', '', 'M', 0, 000, 000, 000, 0),
+(2270, 'ABHIMANYU CHARAN', 'abhimanyucharan@gmail.com', '6388849043', 4, '36', '180020004', 'Non-Veg', 'O+', 'ABHIMANYU CHARAN - abhimanyucharan@gmail.com.jpg', 'abhimanyu', '', 'M', 0, 000, 000, 000, 0),
+(2271, 'ROHIT KAULGUD', '180020083@iitb.ac.in', '9359446517', 4, '36', '180020083', 'Veg', 'O+', 'ROHIT KAULGUD - 180020083@iitb.ac.in.jpg', 'rohit', '', 'M', 0, 000, 000, 000, 0),
+(2272, 'KETAN AGARWAL', '190040052@iitb.ac.in', '9644267882', 4, '36', '190040052', 'Non-Veg', 'B+', 'KETAN AGARWAL - 190040052@iitb.ac.in.jpg', 'ketan', '', 'M', 0, 000, 000, 000, 0),
+(2273, 'DEEPAK', '19B030006@iitb.ac.in', '6203135616', 4, '36', '19B030006 ', 'Non-Veg', 'O+', 'DEEPAK - 19B030006@iitb.ac.in.jpg', 'deepak', '', 'M', 0, 000, 000, 000, 0),
+(2274, 'SATYAM VERMA', 'Satyamvermacs482@gmail.com', '6376654192', 4, '36', '180020096', 'Non-Veg', 'O+', 'SATYAM VERMA - Satyamvermacs482@gmail.com.jpg', 'satyam', '', 'M', 0, 000, 000, 000, 0),
+(2275, 'TUSHAR UIKE', 'tusharuike2911@gmail.com', '8349605620', 4, '1,2,9,10', '160020101', 'Non-Veg', 'O+', 'TUSHAR UIKE - tusharuike2911@gmail.com.jpg', 'Tushar', '', 'M', 0, 000, 000, 000, 0),
+(2276, 'RITURAJ GHOSH', 'riturajghosh1996@gmail.com', '7063052977', 4, '1,3,9,10', '18i170009', 'Non-Veg', 'B+', 'RITURAJ GHOSH - riturajghosh1996@gmail.com.jpg', 'Rituraj', '', 'M', 0, 000, 000, 000, 0);
 
 -- --------------------------------------------------------
 
@@ -2642,7 +2674,7 @@ ALTER TABLE `participation`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2245;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2277;
 --
 -- AUTO_INCREMENT for table `point_main`
 --

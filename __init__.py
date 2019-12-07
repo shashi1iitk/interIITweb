@@ -180,6 +180,13 @@ class Admins(UserMixin, db.Model):
     sports_id = db.Column(db.String(10), nullable=False)
 
 
+
+class NewsSubs(UserMixin, db.Model):
+    __tablename__ = 'news_subscribers'
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(200), nullable=False)
+    timestamp  = db.Column(db.DateTime(100), nullable=False)
+
 @app.route("/")
 def home():
     # return render_template('index.html', params=params)
@@ -283,6 +290,18 @@ def register():
     college = College.query.all()
     return render_template('register.html', allSports=sports, college=college)
 
+
+@app.route("/newsSubscribe", methods=['POST'])
+def newsSubscribe():
+    if (request.method == 'POST'):
+        try:
+            email = request.form['email'].lower()
+            entry = NewsSubs(email=email)
+            db.session.add(entry)
+            db.session.commit()
+            return "Success"
+        except:
+            return "Fail"
 
 @login_manager.unauthorized_handler
 def unauthorized():
