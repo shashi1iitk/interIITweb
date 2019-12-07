@@ -460,6 +460,8 @@ def login():
             return "Invalid Credentials!"
         elif (user.password != password):
             return "Wrong Password!"
+        elif (user.privilege == -1):
+            return "Id deactivated!"
         else:
             login_user(user, remember=True)
             return "Success"
