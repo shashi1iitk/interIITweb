@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="566c4d5c-5917-45c0-b84b-b70aea0b145d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Backups/interiit2019.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Backups/interiit2019.sql" afterDir="false" />
-    </list>
+    <list default="true" id="566c4d5c-5917-45c0-b84b-b70aea0b145d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
