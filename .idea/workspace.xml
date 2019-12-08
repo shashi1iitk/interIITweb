@@ -3,7 +3,156 @@
   <component name="ChangeListManager">
     <list default="true" id="566c4d5c-5917-45c0-b84b-b70aea0b145d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backups/interiit2019.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Backups/interiit2019.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server file/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server file/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo/IIT_Bhubhaneshwar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo/IIT_Pakkad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/1/SHASHI RANJAN - shashbvnvbni1iitk@gmail.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Bombay/AADI SWADIPTO MONDAL - adsf@dfd.inj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Bombay/AADI SWADIPTO MONDAL - silverswordaadi05@gmail.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Delhi/AADI SWADIPTO MONDAL - silverswordaadi05@gmail.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Dhanbad/SHASHI2 - silverswordaadi05@gmail.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Kharagpur/AADI SWADIPTO MONDAL - aapp@ssd.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Kharagpur/AADI SWADIPTO MONDAL - adsf@dfd.inj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_images/IIT Kharagpur/AADI SWADIPTO MONDAL - silverasdafswordaadi05@gmail.com.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr.zip" beforeDir="false" afterPath="$PROJECT_DIR$/static/profile_qr.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/1/SHASHI RANJAN - shashbvnvbni1iitk@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  ADITYA SINGHANIA - Singhaniaditya777@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  APURV GUPTA - Apurvg81@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  MAYANK MANJEARA - mayankmanjeera@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  PRADEEP RANWA - pradeepranwa96@icloud.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  PRANAB SARKAR  - Sarkarpronob2011@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  SHIVAM SINGH - Shivamsingh1198@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  SWARN SHANKHAAYAN - Rupu.shankhayan@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/  YOGESH KUMAR - Imyogiraj.kumar99@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/A. MANDEL - adribmitra@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ABHISHEK SINGH - abhishek@iitj.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ADITI SEN - senaditti@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ADRIJIT GOSWAMI - goswami@maths.iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ALOK KANTI DEB - alokkanti@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AMARESH MONDAL - amaresh@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AMRUTA NAGPURE - anaghaarchi14@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ANANDROOP BHATTACHARYA - anandaroop@mech.iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARDHENDHU GHOSH - ardhenkughosh@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARDHENDU GHOSH - ardhendukghosh@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARDHENDU KR GHOSE - ardhendu@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ARPAN DEY - arpan.dey1996@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ASHOK DAS - ashok@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ATISH MONDAL - atish@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ATISH MONDEL - mondeliitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/AVI SINGH RAGHUWANSHI - Avisinghr2312@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BABUN NATH - nathiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BAGA ADINARAYAN - baga@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BASKAR RAO - Baskar@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BASUDEV DEY - bdeyiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BENUMOY BHANJA - benumoy@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BHIM NAYEK  - bhim@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BINOY BERA - beraiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BINOY BERA - binoybera@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BISWAJIT ADGIRI - adgiri@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BISWANATH ADHIKARI - adhikari@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/BULBUL SAHA - saha@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/C H MOHAN RAO - mohan@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/C H SRINU - srinuiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/CH. SHRINU - shrinu@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/DEBASIS KUNDU - kundu@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/DR. SUSANTA KUMAR PANDA - susanta_panda@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/DR.GYAN SWAROOP - gyan@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH CHANDRA ROY - ganeshc@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH ROUTH - ganesh@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GANESH ROUTH - routhiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GOUTAMDAS - gdasiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/GYAN SWAROOP - gyanhockey@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/HATI ENKAT SWAMY - hatienkat@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ILLA CHOUDHARY - Illa@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/ISHAN AHMED - ishanahmed90@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JENET NARZARY - anjc@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JITENDRA KUMAR - jkumar@maths.iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JITENDRA MAHAKUD - jmahakud@hss.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JOY SEN - joysen@iem.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/JUDHISTHIR PRADHAN - pradhaniitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KALYANI INGLE - kalyaniingle@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KAMAL SIKDAR - sikdariitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KARTIK NAYEK - kartikn@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KARTIK SAREN - kartik@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KARTIK SAREN - sareniitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KAUSHIK NAYEK - nayekiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KEERTI PRAKASH SONGA - keerthiprakashs18@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KOUSHIK NAYEK - kaushik@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KUSHAGRA RAMNANI - kush@iitr.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/KUSHAL DAS - das@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MANAS BISWAS - manas@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MANU SINGH - manu@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/MODAN MOHAN MARIK - marik@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/N K GOYAL - goyaliitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/NAND LAL - nandlal@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/NEERAJ KUMAR GOEL - ngoyal@hijli.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/P DHARMA - dharmaiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PARTHA DAS - partha@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PARTHA GOSWAMI - partha@cc.iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PINTU AUTTA - pintu@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PIYUSH AGRAWAL - P169piyush@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRABINA RAJIB - prabina@vgsom.iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRANAB SARKAR - pranab@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PRITHWI RAJ MAHATO - prithwi@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF J KUMAR - jkumar@maths.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF J. K. JHA - jkjha@iem.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF. SHANTANU - shantanu@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF. UDAY SHANKER - udayiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROF.PS BURADA - psburada@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PROSENJIT CHAKRABORTY - cha@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/PUSHPAK ROY - nyn05091998@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/R RAVI KUMAR - ravi@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/R RAVI KUMAR - raviiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAGHAV SURYAN - suryanraghav@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAHUL SINGHAL - rahul@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAJ PRABHU - raj.mprabhu@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/RAJU RASUA - raju@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/S K VARSHNEY - varshneyiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SAMBA KAR - sambokolkata1985@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJAY SANKAR JHA - so@hijli.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJIT DEY - deyiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJOY BISWAS - sanjoybiswas@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJOY BISWAS - sbiswasiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANJOY YADAV - sanjoyyadav@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANTANU CHATTOPADHYAY - santnu@rtc.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SANTANU GHOSH - ghosh@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SEKHAR SARKAR - sarkar@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHAILENDRA KUMAR VARSHNEY - s.rasaniya@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHASHANK VERMA - Shashankverma47@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHASHI RANJAN - shashi@iitr.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHATOBAN NAYEK - shatoban@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHELENDRA RASANIA - srasania@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHRIYADITA ROY - shriyaditaroy1999@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SHYAM SUNDAR RAO - shyamsundar@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SISIR KUMAR PAL - Sisirpa1968@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SITALA PATHAK - pathak@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SONJOY KOLEY - koley@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOUMEN KUMAR MANDEL - suman@adm.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SOUMITRA GHOSH DOSTIDAR - qsskharagpur@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SRIJAN BANSAL - srijanbansal97@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SRINIVAS RAO - srinivasrao@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUBHAM KUMAR SAHU - subhamsahu972@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUDHIR KUMAR - sidhu@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUDHIR KUMAR - sudhir@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUKRACHARYA SAHA - ssaha@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/SUKUMAR KAR - sukumar@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TAPAN GHOSH - ghoshiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TARAK HARDER - tarak@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TARAKESWAR YADAV - yadaiitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/TRILOK SINGH - trilok@iitkgp.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/UDAY SHANKAR - uday@rgsoipl.iitkgp.ernet.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/VIKASH MISHRA - mishra@iitj.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/VISHAL KUMAR SINGH - vishal@iitkanpur.ac.in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/16/VISHAL KUMAR SINGH - vishalsingh08.iitkgp@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Bombay/AADI SWADIPTO MONDAL - adsf@dfd.inj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Bombay/AADI SWADIPTO MONDAL - silverswordaadi05@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Delhi/AADI SWADIPTO MONDAL - silverswordaadi05@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Dhanbad/SHASHI2 - silverswordaadi05@gmail.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Kharagpur/AADI SWADIPTO MONDAL - aapp@ssd.com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Kharagpur/AADI SWADIPTO MONDAL - adsf@dfd.inj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_qr/IIT Kharagpur/AADI SWADIPTO MONDAL - silverasdafswordaadi05@gmail.com.svg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +163,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="425">
+              <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -26,11 +175,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="283" column="17" selection-start-line="283" selection-start-column="17" selection-end-line="283" selection-end-column="17" />
+            <state relative-caret-position="4454">
+              <caret line="262" column="32" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -99,9 +248,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/templates/queries.html" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
+        <option value="$PROJECT_DIR$/__init__.py" />
       </list>
     </option>
   </component>
@@ -138,6 +287,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/__init__.py" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -213,7 +363,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -231,15 +381,41 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="425">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4454">
+          <caret line="262" column="32" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -277,13 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="283" column="17" selection-start-line="283" selection-start-column="17" selection-end-line="283" selection-end-column="17" />
         </state>
       </provider>
     </entry>
