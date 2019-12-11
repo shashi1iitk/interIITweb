@@ -12,7 +12,7 @@ import shutil
 
 
 import pyqrcode
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
@@ -207,18 +207,35 @@ class Inquiry(UserMixin, db.Model):
 @app.route("/qrMaker")
 def qrMaker():
     people  = Players.query.all()
+    c = 0
     for person in people:
+        c = c+1
+        print(person.id)
         name = re.sub('\s+',' ', person.name.upper()).strip()
         email = re.sub('\s+',' ', person.email).strip()
         roll_no = re.sub('\s+',' ', person.roll_no).strip()
 
-        qrname = name + " - " + email + '.svg'
+        temp_svg  = 'temp_svg.svg'
+        
         s = email + "^" + roll_no
         url = pyqrcode.create(s)
-        x = os.path.join(os.getcwd(), "static", "profile_qr", str(getClgName(person.college_id)))
+        y = os.path.join(os.getcwd())
+        url.svg(os.path.join(y, temp_svg), scale=8)
+
+        rf = open(y + "/" + temp_svg, "r")
+        drawing = svg2rlg(rf)
+        renderPDF.drawToFile(drawing, "temp_pdf.pdf")
+
+        qrname = name + " - " + email + '.svg'
+        x = os.path.join(os.getcwd(), "static", "profile_qr_all", str(getClgName(person.college_id)))
         if not os.path.exists(x):
             os.makedirs(x)
-        url.svg(os.path.join(x, qrname), scale=8)
+
+        pages = convert_from_path("temp_pdf.pdf", 300)
+        for page in pages:
+            page.save(x + "/" + qrname + '.jpg', 'JPEG')
+    print(c)
+    Seperate_by_college()
     return "Ok"
 
 
@@ -255,26 +272,39 @@ def Seperate_by_college():
     iitbbs_list = [44,45,40,41,37,38,30,31]
     colleges = College.query.order_by(College.id.asc()).all()
     p = 0
+    kgp = 0
+    bbs = 0
+    staff = 0
     for college in colleges:
         students = Players.query.filter_by(college_id=college.id).all()
 
         if(students != []):
             print(college.clg_name)
 
-            dst_iitkgp = os.path.join(os.getcwd(), "static", "profile_qr_iitkgp" , college.clg_name)
+            dst_iitkgp = os.path.join(os.getcwd(), "static", "profile_qr_iitkgp_players" , college.clg_name)
             if not os.path.exists(dst_iitkgp):
                 os.makedirs(dst_iitkgp)
             
-            dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs" , college.clg_name)
+            dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players" , college.clg_name)
             if not os.path.exists(dst_iitbbs):
                 os.makedirs(dst_iitbbs)
 
+            dst_staffs = os.path.join(os.getcwd(), "static", "profile_qr_staffs" , college.clg_name)
+            if not os.path.exists(dst_staffs):
+                os.makedirs(dst_staffs)
+
             src = os.path.join(os.getcwd(), "static", "profile_qr_all" , college.clg_name)
 
-
+            error = []
             for student in students:
+                src_file = src + "/" + student.name.strip() + " - " + student.email + '.svg' + '.jpg'
                 if(student.selected_sports == "staff"):
-                    continue
+                    try:
+                        shutil.copy(src_file, dst_staffs)
+                        staff = staff +1
+                    except:
+                        p = p+1
+                        error.append(src_file)
                 else:
                     flag_iitbbs = 0
                     for sport_id in student.selected_sports.split(','):
@@ -282,26 +312,35 @@ def Seperate_by_college():
                         if s_id in iitbbs_list:
                             flag_iitbbs = 1
                     
-                    src_file = src + "/" + student.name.lstrip() + " - " + student.email + '.svg' + '.jpg'
                     if(flag_iitbbs):
                         try:
-                            shutil.copy(src_file,dst_iitbbs)
+                            shutil.copy(src_file, dst_iitbbs)
+                            bbs = bbs+1
                         except:
                             p = p+1
+                            error.append(src_file)
 
                         stud_list =  student.selected_sports
                         if(set(stud_list).issubset(set(iitbbs_list))):
                             try:
-                                shutil.copy(src_file,dst_iitkgp)
+                                shutil.copy(src_file, dst_iitkgp)
+                                kgp = kgp+1
                             except:
+                                error.append(src_file)
                                 p = p+1
                     else:
                             try:
-                                shutil.copy(src_file,dst_iitkgp)
+                                shutil.copy(src_file, dst_iitkgp)
+                                kgp = kgp+1
                             except:
+                                error.append(src_file)
                                 p = p+1
                     print(src_file)
-    print(p)
+    print("error: " + str(p))
+    # print("kgp: " + str(kgp))
+    # print("bbs: " + str(bbs))
+    # print("staff: " + str(staff))
+    print(error)
     return("Ok")
                             
 
@@ -438,19 +477,22 @@ def showCandidates():
     students = Players.query.filter_by(college_id=current_user.college_id).all()
     param = []
     staff = []
+    c_p = 0
+    c_s = 0
     for stud in students:
         gmlst = []
         if stud.selected_sports.strip(' \n') == "staff":
             staff.append(stud)
+            c_s = c_s + 1
             continue
         else:
             for no in stud.selected_sports.split(','):
                 sp = Sports.query.filter_by(id=int(no)).first()
                 gmlst.append(sp.sports_name + '(' + sp.category + ') ')
             param.append((stud, ' | '.join(gmlst)))
-    print(param)
-    print(staff)
-    return render_template('showCandidates.html', params=param, staffs=staff)
+            c_p = c_p + 1
+    counts = [c_p, c_s]
+    return render_template('showCandidates.html', params=param, staffs=staff, counts = counts)
 
 @app.route("/showCandidatesBySports")
 @login_required
@@ -510,11 +552,14 @@ def allPlayers():
             # college.append(cl.clg_name)
             candi = Players.query.filter_by(college_id=int(cl.id)).all()
             student = []
+            num_stud = 0
             staff = []
+            num_staff = 0
 
             for stud in candi:
                 if stud.selected_sports.strip(' \n') == "staff":
                     staff.append(stud)
+                    num_staff = num_staff+1
                 else:
                     gmlst = []
                     for no in stud.selected_sports.split(','):
@@ -522,10 +567,12 @@ def allPlayers():
                         gmlst.append(sp.sports_name + '(' + sp.category + ') ')
                     sel_sp = ' , '.join(gmlst)
                     student.append((stud, sel_sp))
+                    num_stud =num_stud+1
             # college.append((cl.clg_name,student,staff))
             print(student)
             print(staff)
-            bigl.append((cl.clg_name,student,staff))
+            cl_details = cl.clg_name + " (" + str(num_stud) + ", " + str(num_staff) + ")"
+            bigl.append((cl_details,student,staff))
         return render_template('allPlayers.html', bigl=bigl)
         # return "OK"
 
@@ -743,6 +790,18 @@ def logout():
 def gallery():
     # return render_template('gallery.html', params=params)
     return render_template('gallery.html')
+
+@app.route("/download_android_app")
+def download_android_app():
+    result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    #We can also delete this file here now
+    return result
+
+
+@app.route("/privacy_policy")
+def privacy_policy():
+    # return render_template('gallery.html', params=params)
+    return render_template('privacy_policy.html')
 
 
 @app.route("/live")

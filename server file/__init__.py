@@ -6,7 +6,7 @@ from datetime import timedelta
 
 
 import pyqrcode
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
@@ -328,19 +328,23 @@ def showCandidates():
     students = Players.query.filter_by(college_id=current_user.college_id).all()
     param = []
     staff = []
+    c_p = 0
+    c_s = 0
     for stud in students:
         gmlst = []
         if stud.selected_sports.strip(' \n') == "staff":
             staff.append(stud)
+            c_s = c_s + 1
             continue
         else:
             for no in stud.selected_sports.split(','):
                 sp = Sports.query.filter_by(id=int(no)).first()
                 gmlst.append(sp.sports_name + '(' + sp.category + ') ')
             param.append((stud, ' | '.join(gmlst)))
-    print(param)
-    print(staff)
-    return render_template('showCandidates.html', params=param, staffs=staff)
+            c_p = c_p + 1
+    counts = [c_p, c_s]
+    return render_template('showCandidates.html', params=param, staffs=staff, counts = counts)
+
 
 @app.route("/showCandidatesBySports")
 @login_required
@@ -400,11 +404,14 @@ def allPlayers():
             # college.append(cl.clg_name)
             candi = Players.query.filter_by(college_id=int(cl.id)).all()
             student = []
+            num_stud = 0
             staff = []
+            num_staff = 0
 
             for stud in candi:
                 if stud.selected_sports.strip(' \n') == "staff":
                     staff.append(stud)
+                    num_staff = num_staff+1
                 else:
                     gmlst = []
                     for no in stud.selected_sports.split(','):
@@ -412,10 +419,12 @@ def allPlayers():
                         gmlst.append(sp.sports_name + '(' + sp.category + ') ')
                     sel_sp = ' , '.join(gmlst)
                     student.append((stud, sel_sp))
+                    num_stud =num_stud+1
             # college.append((cl.clg_name,student,staff))
-            # print(student)
-            # print(staff)
-            bigl.append((cl.clg_name,student,staff))
+            print(student)
+            print(staff)
+            cl_details = cl.clg_name + " (" + str(num_stud) + ", " + str(num_staff) + ")"
+            bigl.append((cl_details,student,staff))
         return render_template('allPlayers.html', bigl=bigl)
         # return "OK"
 
@@ -632,8 +641,19 @@ def logout():
 
 @app.route("/gallery")
 def gallery():
-    # return render_template('gallery.html', params=params)
     return render_template('gallery.html')
+
+@app.route("/download_android_app")
+def download_android_app():
+    result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    #We can also delete this file here now
+    return result
+
+
+@app.route("/privacy_policy")
+def privacy_policy():
+    # return render_template('gallery.html', params=params)
+    return render_template('privacy_policy.html')
 
 
 @app.route("/live")
@@ -697,10 +717,10 @@ def profile_req_with_qr(qr_val):
                     sp = getSport(int(no))
                     gmlst.append(sp.sports_name + '(' + sp.category + ')')
                 sel_sp = ', '.join(gmlst)
-            return_val = {"name": player.name, "email": player.email, "iit": getClgName(player.college_id), "selected_sports": sel_sp}
+            return_val = {"name": player.name, "email": player.email, "phone": player.mobile, "iit": getClgName(player.college_id), "selected_sports": sel_sp}
             return json.dumps([return_val])
     except:
-        return json.dumps("Fail")     
+        return json.dumps("Fail")
 
 
 @app.route('/getLiveMatches_Details_Android/<game_name>', methods=['GET', 'POST'])

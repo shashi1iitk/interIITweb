@@ -4,94 +4,94 @@
 
 <script type="text/javascript">
 
-function myFunction() {
-  window.location.href = '/showCandidates';
-}
+  function myFunction() {
+    window.location.href = '/showCandidates';
+  }
 
-function finish() {
-  window.location.href = '/logout';
-}
+  function finish() {
+    window.location.href = '/logout';
+  }
 
-function delet(id){
+  function delet(id) {
     console.log(id);
     swal({
-  title: "Are you sure?",
-  text: "Once deleted, candidate will be deregistered and all his/her provided details will be lost!",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  if (willDelete) {
+      title: "Are you sure?",
+      text: "Once deleted, candidate will be deregistered and all his/her provided details will be lost!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
 
-    $.ajax({
-            data : id,
-            type : 'POST',
-            url : '/deletePlayer',
+          $.ajax({
+            data: id,
+            type: 'POST',
+            url: '/deletePlayer',
             contentType: false,
             cache: false,
             processData: false,
             async: false
-        })
-        .done(function(id){
-            console.log(id);
-            if (id == "Success") {
+          })
+            .done(function (id) {
+              console.log(id);
+              if (id == "Success") {
                 swal("Poof! Candidate Removed!", {
                   icon: "success",
                 });
                 setTimeout(myFunction, 1500);
-            }else{
+              } else {
                 alert('Some error occurred');
-            }
-        });
+              }
+            });
 
-    
-  } else {
 
+        } else {
+
+        }
+      });
   }
-}); 
-}
 
 
-function final(id){
+  function final(id) {
     console.log(id);
     swal({
-  title: "Are you sure?",
-  text: "Once finalized, your ID will be deactivated which means you cannot change anything afterwards!",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  if (willDelete) {
+      title: "Are you sure?",
+      text: "Once finalized, your ID will be deactivated which means you cannot change anything afterwards!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
 
-    $.ajax({
-            data : id,
-            type : 'POST',
-            url : '/finaliseReg',
+          $.ajax({
+            data: id,
+            type: 'POST',
+            url: '/finaliseReg',
             contentType: false,
             cache: false,
             processData: false,
             async: false
-        })
-        .done(function(id){
-            console.log(id);
-            if (id == "Success") {
+          })
+            .done(function (id) {
+              console.log(id);
+              if (id == "Success") {
                 swal("Bingo! Registrations finalized!", {
                   icon: "success",
                 });
                 setTimeout(finish, 1500);
-            }else{
+              } else {
                 alert('Some error occurred');
-            }
-            
-        });
-    
-  } else {
+              }
 
+            });
+
+        } else {
+
+        }
+      });
   }
-}); 
-}
 
 
 
@@ -99,32 +99,43 @@ function final(id){
 
 <div class="container" style="margin-top: 3%">
 
-    <br><br>
-    <center><h2>Logged in as : {{current_user.role}}</h2></center>
-    <hr>
-    <p><u>Instruction</u>: For changing or modifying any entry, please delete it and add a new one.</p><hr>
-    <ol>
-        <li><a href="#players">Players</a></li>
-        <li><a href="#staff">Staff</a></li>
-    </ol><hr>
-    <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add Player/Staff</button> &nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-danger" onclick="final({{current_user.id}}); ">Finalize Registrations</button></center>
-    <hr>
-    <br>
-    <center><span id="players"><h2>Players</h2></span></center>
-    {% for param in params: %}
-    <div class="alert alert-info" style="padding: 20px;">
-        <strong>{{param[0].name}} | {{param[0].email}} | {{param[0].roll_no}}</strong>  <br> {{param[1]}}
-        <button type="button" class="btn btn-danger float-right" onclick="delet({{param[0].id}});">Delete</button>
-    </div>
-    {% endfor %}
-    <hr>
-    <center><span id="staff"><h2>Staffs</h2></span></center>
-    {% for staff in staffs: %}
-    <div class="alert alert-info" style="padding: 20px;">
-        <strong>{{staff.name}} | {{staff.email}} | {{staff.roll_no}}</strong>
-        <button type="button" class="btn btn-danger float-right" onclick="delet({{staff.id}});">Delete</button>
-    </div>
-    {% endfor %}
+  <br><br>
+  <center>
+    <h2>Logged in as : {{current_user.role}}</h2>
+  </center>
+  <hr>
+  <p><u>Instruction</u>: For changing or modifying any entry, please delete it and add a new one.</p>
+  <hr>
+  <strong>Contingent Size: {{ counts[0] + counts[1] }}</strong><br>
+  <ol>
+    <li><a href="#players">Players ({{ counts[0] }})</a></li>
+    <li><a href="#staff">Staff ({{ counts[1] }})</a></li>
+  </ol>
+  <hr>
+  <center><button type="button" class="btn btn-success" onclick="window.location.href = '/register'; ">Add
+      Player/Staff</button> &nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-danger"
+      onclick="final({{current_user.id}}); ">Finalize Registrations</button></center>
+  <hr>
+  <br>
+  <center><span id="players">
+      <h2>Players</h2>
+    </span></center>
+  {% for param in params: %}
+  <div class="alert alert-info" style="padding: 20px;">
+    <strong>{{param[0].name}} | {{param[0].email}} | {{param[0].roll_no}}</strong> <br> {{param[1]}}
+    <button type="button" class="btn btn-danger float-right" onclick="delet({{param[0].id}});">Delete</button>
+  </div>
+  {% endfor %}
+  <hr>
+  <center><span id="staff">
+      <h2>Staffs</h2>
+    </span></center>
+  {% for staff in staffs: %}
+  <div class="alert alert-info" style="padding: 20px;">
+    <strong>{{staff.name}} | {{staff.email}} | {{staff.roll_no}}</strong>
+    <button type="button" class="btn btn-danger float-right" onclick="delet({{staff.id}});">Delete</button>
+  </div>
+  {% endfor %}
 
 </div>
 
