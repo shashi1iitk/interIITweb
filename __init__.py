@@ -1147,6 +1147,11 @@ def theLegacy():
     return render_template('theLegacy.html')
 
 
+@app.route("/android_app")
+def android_app():
+    return render_template('android_app.html')
+
+
 @app.route('/addMatch', methods=['GET', 'POST'])
 @login_required
 def addMatches():

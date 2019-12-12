@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>/* Important stuff for this demo. */
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.pics_in_a_row {
+  display: flex;
+}
+
+.img1 { flex: 1.3344; }
+.img2 { flex: 1.3345; }
+.img3 { flex: 0.7505; }
+.img4 { flex: 1.5023; }
+.img5 { flex: 0.75; }
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+<!-- body { -->
+  <!-- background: rebeccapurple; -->
+<!-- } -->
+
+.container {
+  background: white;
+  margin: 0 auto;
+  padding: 5%;
+  width: 75%;
+}
+
+.muted {
+  font-style: italic;
+  color: #666;
+}
+
+p + p {
+  margin-top: -7px;
+}
+
+
+.pics_in_a_row {
+  margin: 25px 0;
+}
+
+.pics_in_a_row > div:not(:last-child) {
+  margin-right: 2%;
+}
+
+</style>
+</head>
+<body>
+
+<div class='container'>
+
+  <div class='pics_in_a_row'>
+    <div class='img1'>
+      <img src='http://blimpage.com/pants/codepen/mm1.jpg'>
+    </div>
+    <div class='img2'>
+      <img src='http://blimpage.com/pants/codepen/mm2.jpg'>
+    </div>
+  </div>
+ 
+</body>
+</html>
+
