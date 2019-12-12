@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 10, 2019 at 11:07 AM
+-- Generation Time: Dec 11, 2019 at 11:57 AM
 -- Server version: 5.7.28-0ubuntu0.18.04.4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
@@ -62,7 +62,7 @@ INSERT INTO `admins` (`id`, `username`, `password`, `role`, `privilege`, `colleg
 (19, 'IIT@Palakkad ', 's-XAv!$y9cDA5euV', 'IIT Palakkad  Admin', 1, '19', ''),
 (20, 'IIT@Patna ', '7#NJ2nV62_Lr_TuY', 'IIT Patna Admin', 1, '20', ''),
 (21, 'IIT@Roorkee', 'D&Xg_5B+GLQ9k2!s', 'IIT Roorkee Admin', 1, '21', ''),
-(22, 'IIT@Ropar', 'SzBJh3y-ZC68?rAt', 'IIT Ropar Admin', 1, '22', ''),
+(22, 'IIT@Ropar', 'SzBJh3y-ZC68?rAt', 'IIT Ropar Admin', -1, '22', ''),
 (23, 'IIT@Tirupati', '5mUfm$c8Ye2?pwf7', 'IIT Tirupati Admin', -1, '23', ''),
 (24, 'IIT@KGP', 'qr@scanner', 'QR Scanner', 2, '', ''),
 (25, 'IIT@KGP1', 'score@update', 'Score Updater', 3, '', ''),
@@ -147,7 +147,11 @@ INSERT INTO `news_subscribers` (`id`, `timestamp`, `email`) VALUES
 (27, '2019-12-09 14:42:19', 'jcacharya@yahoo.co.in'),
 (28, '2019-12-10 02:05:59', 'andrewlee6797@gmail.com'),
 (29, '2019-12-10 08:18:09', 'charlielefebvre1974@gmail.com'),
-(30, '2019-12-10 09:58:41', 'suriyaaap13@gmail.com');
+(30, '2019-12-10 09:58:41', 'suriyaaap13@gmail.com'),
+(31, '2019-12-10 11:48:27', 'rishirajvishal63@gmail.com'),
+(32, '2019-12-10 18:47:30', 'amitkr.sharma.bme09@itbhu.ac.in'),
+(33, '2019-12-10 23:31:50', 'aniruddha6@hotmail.com'),
+(34, '2019-12-11 05:51:11', 'pusdas@yahoo.co.in');
 
 -- --------------------------------------------------------
 
@@ -440,7 +444,6 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (283, 'LAKSHAY MIDDHA', 'lakshaym@iitk.ac.in', '8290829025', 15, '36', '180377', 'Veg', 'O+', 'LAKSHAY MIDDHA - lakshaym@iitk.ac.in.jpg', 'Lakshay', '', 'M', 0, 000, 000, 000, 0),
 (284, 'RD VED PRAKASH', 'rdved@iitk.ac.in', '9559083977', 15, '36', '180603', 'Non-Veg', 'B+', 'RD VED PRAKASH - rdved@iitk.ac.in.jpg', 'Ved', '', 'M', 0, 000, 000, 000, 0),
 (285, 'SANJEET ARYA', 'asanjeet@iitk.ac.in', '7372988574', 15, '36', '180670', 'Non-Veg', 'B-', 'SANJEET ARYA - asanjeet@iitk.ac.in.jpg', 'Arya', '', 'M', 0, 000, 000, 000, 0),
-(286, 'SAM JOE', 'jcsam@iitk.ac.in', '9573580044', 15, '36', '19105102', 'Non-Veg', 'O+', 'SAM JOE - jcsam@iitk.ac.in.jpg', 'Sam', '', 'M', 0, 000, 000, 000, 0),
 (287, 'KAILASH MEENA', 'skailash@iitk.ac.in', '9001162469', 15, '36', '160312', 'Non-Veg', 'B+', 'KAILASH MEENA - skailash@iitk.ac.in.jpg', 'Kailash', '', 'M', 0, 000, 000, 000, 0),
 (288, 'DIVYANSHU BHATT', 'divss@iitk.ac.in', '7302453523', 15, '36', '180254', 'Veg', 'O+', 'DIVYANSHU BHATT - divss@iitk.ac.in.jpg', 'Divyanshu', '', 'M', 0, 000, 000, 000, 0),
 (289, 'HARSHVARDHAN MUNDA', 'harshk@iitk.ac.in', '7318019048', 15, '36', '160295', 'Non-Veg', 'B+', 'HARSHVARDHAN MUNDA - harshk@iitk.ac.in.jpg', 'Munda', '', 'M', 0, 000, 000, 000, 0),
@@ -564,17 +567,13 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (414, 'SHYAM SUNDHAR R', 'rsshyam@iitk.ac.in', '9444807571', 15, '18', '150709', 'Non-Veg', 'B+', 'SHYAM SUNDHAR R - rsshyam@iitk.ac.in.jpg', 'Shyam', '', 'M', 0, 000, 000, 000, 0),
 (415, 'RAJ SINGH', 'rajsings@iitk.ac.in', '9112549823', 15, '15', '170535', 'Non-Veg', 'O+', 'RAJ SINGH - rajsings@iitk.ac.in.jpg', 'RAJ', '', 'M', 0, 000, 000, 000, 0),
 (416, 'NARENDRA MATHURIYA', 'nrndra@iitk.ac.in', '8400198340', 15, '16', '170417', 'Non-Veg', 'O+', 'NARENDRA MATHURIYA - nrndra@iitk.ac.in.jpg', 'MATHURIYA', '', 'M', 0, 000, 000, 000, 0),
-(417, 'ASHUTOSH DHARMENDRA SHARMA', 'ashudash@iitk.ac.in', '7020147078', 15, '17,18', '180154', 'Non-Veg', 'O+', 'ASHUTOSH DHARMENDRA SHARMA - ashudash@iitk.ac.in.jpg', 'ASHUTOSH', '', 'M', 0, 000, 000, 000, 0),
 (418, 'ABHISHEK BHESANIA', 'abhisidd@iitk.ac.in', '8879188418', 15, '16', '15201261', 'Non-Veg', 'B+', 'ABHISHEK BHESANIA - abhisidd@iitk.ac.in.jpg', 'ABHI', '', 'M', 0, 000, 000, 000, 0),
 (419, 'KAPIL DEV', 'kdev@iitk.ac.in', '9984170726', 15, '17', '19112261', 'Non-Veg', 'B+', 'KAPIL DEV - kdev@iitk.ac.in.jpg', 'Kapil Dev', '', 'M', 0, 000, 000, 000, 0),
 (422, 'AASTHA RAMTEKE', 'aasthar@iitk.ac.in', '7489146248', 15, '19,20,21,28,29', '180009', 'Non-Veg', 'A+', 'AASTHA RAMTEKE - aasthar@iitk.ac.in.jpg', 'AASTHA', '', 'F', 0, 000, 000, 000, 0),
 (423, 'ANSHIKA CHAUDHARY', 'canshika@iitk.ac.in', '8700552179', 15, '26,27,29', '180115', 'Non-Veg', 'O+', 'ANSHIKA CHAUDHARY - canshika@iitk.ac.in.jpg', 'ANSHIKA', '', 'F', 0, 000, 000, 000, 0),
 (425, 'BACHASPATIMAYUM SEVADAS SHARMA', 'sevadassharma@gmail.com', '6900400877', 10, '35', '184205008', 'Non-Veg', 'A+', 'BACHASPATIMAYUM SEVADAS SHARMA - sevadassharma@gmail.com.jpg', 'Sevadas', '', 'M', 0, 000, 000, 000, 0),
-(426, 'AKANKSHA MANDOLIYA', 'akanksha@iitk.ac.in', '7398088867', 15, '25,28', '190078', 'Veg', 'A+', 'AKANKSHA MANDOLIYA - akanksha@iitk.ac.in.jpg', 'AKANKSHA', '', 'F', 0, 000, 000, 000, 0),
 (427, 'MEGHNA JAKHAR', 'mjakhar@iitk.ac.in', '9468547101', 15, '21,22,23,28,29', '180417', 'Non-Veg', 'A-', 'MEGHNA JAKHAR - mjakhar@iitk.ac.in.jpg', 'MEGHNA', '', 'F', 0, 000, 000, 000, 0),
 (428, 'DISHA SANJAY VIRMALWAR', 'dishavir@iitk.ac.in', '9198956899', 15, '26,27', '180250', 'Non-Veg', 'O+', 'DISHA SANJAY VIRMALWAR - dishavir@iitk.ac.in.jpg', 'DISHA', '', 'F', 0, 000, 000, 000, 0),
-(429, 'RUBY MEHTA', 'rubysk@iitk.ac.in', '8429232184', 15, '24,25,28,29', '180632', 'Non-Veg', 'O+', 'RUBY MEHTA - rubysk@iitk.ac.in.jpg', 'RUBY', '', 'F', 0, 000, 000, 000, 0),
-(430, 'SHREYA CHAUHAN', 'shreyac@iitk.ac.in', '8949784034', 15, '19,24,25,28,29', '180734', 'Non-Veg', 'B+', 'SHREYA CHAUHAN - shreyac@iitk.ac.in.jpg', 'SHREYA', '', 'F', 0, 000, 000, 000, 0),
 (431, 'RS BANI', 'b.rs@iitg.ac.in', '6294463785', 10, '35', '194106034', 'Non-Veg', 'A+', 'RS BANI - b.rs@iitg.ac.in.jpg', 'Bani Rong', '', 'M', 0, 000, 000, 000, 0),
 (432, 'DEEPSHIKHA MEENA', 'deepshik@iitk.ac.in', '9079917369', 15, '33', '170237', 'Non-Veg', 'A+', 'DEEPSHIKHA MEENA - deepshik@iitk.ac.in.jpg', 'Deepshikha', '', 'F', 0, 000, 000, 000, 0),
 (433, 'NIDHI KANSAL', 'nidhik@iitk.ac.in', '9588144840', 15, '33', '190546', 'Veg', 'A+', 'NIDHI KANSAL - nidhik@iitk.ac.in.jpg', 'Nidhi', '', 'F', 0, 000, 000, 000, 0),
@@ -713,12 +712,12 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (578, 'SUMANT KUMAR', '2018uce0049@iitjammu.ac.in', '6005049362', 13, '34', '2018uce0049', 'Non-Veg', 'O+', 'SUMANT KUMAR - 2018uce0049@iitjammu.ac.in.jpg', 'Sumant', '', 'M', 0, 000, 000, 000, 0),
 (579, 'SHARAN KUMAR', '2019uee0136@iitjammu.ac.in', '9818713571', 13, '34', '2019uee0136', 'Non-Veg', 'B+', 'SHARAN KUMAR - 2019uee0136@iitjammu.ac.in.jpg', 'Sharan', '', 'M', 0, 000, 000, 000, 0),
 (580, 'NITESH KUMAR DOSHODIYA', '2018uee0121@iitjammu.ac.in', '6005002285', 13, '34', '2018uee0121', 'Non-Veg', 'B+', 'NITESH KUMAR DOSHODIYA - 2018uee0121@iitjammu.ac.in.jpg', 'NITESH', '', 'M', 0, 000, 000, 000, 0),
-(581, 'VANSH RAI SAINI', '2019ume0200@iitjammu.ac.in', '9654458060', 13, '34', '2019ume0200', 'Non-Veg', 'B+', 'VANSH RAI SAINI - 2019ume0200@iitjammu.ac.in.jpg', 'Vansh', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(581, 'VANSH RAI SAINI', '2019ume0200@iitjammu.ac.in', '9654458060', 13, '34', '2019ume0200', 'Non-Veg', 'B+', 'VANSH RAI SAINI - 2019ume0200@iitjammu.ac.in.jpg', 'Vansh', '', 'M', 0, 000, 000, 000, 0),
 (582, 'AIJAZ A BHAT', '2019pee0029@iitjammu.ac.in', '7006428585', 13, '34', '2019pee0029', 'Non-Veg', 'B+', 'AIJAZ A BHAT - 2019pee0029@iitjammu.ac.in.jpg', 'AIJAZ', '', 'M', 0, 000, 000, 000, 0),
 (583, 'DEVENDRA KUMAR GAUTAM', '2018uch0026@iitjammu.ac.in', '8899232286', 13, '34', '2018uch0026@iitjammu.ac.in', 'Non-Veg', 'AB+', 'DEVENDRA KUMAR GAUTAM - 2018uch0026@iitjammu.ac.in.jpg', 'Devendra', '', 'M', 0, 000, 000, 000, 0),
 (584, 'ADARSH SINGH', '2017uce0002@iitjammu.ac.in', '9453265485', 13, '34', '2017uce0002', 'Non-Veg', 'O+', 'ADARSH SINGH - 2017uce0002@iitjammu.ac.in.jpg', 'Adarsh', '', 'M', 0, 000, 000, 000, 0),
-(585, 'SUMIT SINGH', '2017ume0115@iitjammu.ac.in', '9149416180', 13, '34', '2017ume0115', 'Non-Veg', 'B+', 'SUMIT SINGH - 2017ume0115@iitjammu.ac.in.jpg', 'Sumit ', '', 'M', 0, 000, 000, 000, 0),
+(585, 'SUMIT SINGH', '2017ume0115@iitjammu.ac.in', '9149416180', 13, '34', '2017ume0115', 'Non-Veg', 'B+', 'SUMIT SINGH - 2017ume0115@iitjammu.ac.in.jpg', 'Sumit ', '', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (586, 'NITIN RAJ', '2017ume0108@iitjammu.ac.in', '7023755372', 13, '34', '2017ume0108', 'Non-Veg', 'O+', 'NITIN RAJ - 2017ume0108@iitjammu.ac.in.jpg', 'Nitin', '', 'M', 0, 000, 000, 000, 0),
 (587, 'AVINASH DUBEY', '2017uce0006@iitjammu.ac.in', '7889375565', 13, '34', '2017uce0006', 'Veg', 'B+', 'AVINASH DUBEY - 2017uce0006@iitjammu.ac.in.jpg', 'Avinash', '', 'M', 0, 000, 000, 000, 0),
 (588, 'AMARDEEP', '2019UME0192@iitjammu.ac.in', '9888685741', 13, '34', '2019UME0192', 'Veg', 'O+', 'AMARDEEP - 2019UME0192@iitjammu.ac.in.jpg', 'Amardeep', '', 'M', 0, 000, 000, 000, 0),
@@ -928,7 +927,6 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (804, 'SAKET KOHINKAR', 'kohinkar.kailas.19063@iitgoa.ac.in', '7499136037', 9, '34', '1906316', 'Non-Veg', 'A+', 'SAKET KOHINKAR - kohinkar.kailas.19063@iitgoa.ac.in.jpg', 'Saket', '', 'M', 0, 000, 000, 000, 0),
 (805, 'VEMULAPALLI PRAKHYATH SREE HARSHA', 'vemulapalli.prakhyath.17001@iitgoa.ac.in', '7337053124', 9, '34', '170010023', 'Non-Veg', 'AB+', 'VEMULAPALLI PRAKHYATH SREE HARSHA - vemulapalli.prakhyath.17001@iitgoa.ac.in.jpg', 'prakhyath', '', 'M', 0, 000, 000, 000, 0),
 (806, 'MAHIPAL SINGH RATHORE', 'Mahipal.rathore.17003@iitgoa.ac.in', '9079797429', 9, '32', '170030015', 'Non-Veg', 'O+', 'MAHIPAL SINGH RATHORE - Mahipal.rathore.17003@iitgoa.ac.in.jpg', 'MAHIPAL', '', 'M', 0, 000, 000, 000, 0),
-(807, 'MOHIT GARG', 'gmohit@iitk.ac.in', '7772971504', 15, '1,9', '160409', 'Non-Veg', 'O+', 'MOHIT GARG - gmohit@iitk.ac.in.jpg', 'Mohit', '', 'M', 0, 000, 000, 000, 0),
 (809, 'ABHIJEET', 'abhinir@iitk.ac.in', '9931025496', 15, '4,5,6,10', '170015', 'Non-Veg', 'B+', 'ABHIJEET - abhinir@iitk.ac.in.jpg', 'Abhijeet', '', 'M', 0, 000, 000, 000, 0),
 (810, 'ABHISHEK POTNUTU', 'pa28@iitbbs.ac.in', '8074842680', 3, '34', '17EE01038', 'Non-Veg', 'AB+', 'ABHISHEK POTNUTU - pa28@iitbbs.ac.in.jpg', 'IIT Bhubaneswar', 'No', 'M', 0, 000, 000, 000, 0),
 (811, 'M. SADHANA', 'ms34@iitbbs.ac.in', '9840034535', 3, '33', '18ME01054', 'Non-Veg', 'AB+', 'M. SADHANA - ms34@iitbbs.ac.in.jpg', 'IIT Bhubaneswar', 'No', 'F', 0, 000, 000, 000, 0),
@@ -968,13 +966,13 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (846, 'MAHATISANTOSHI TELU', 'mahatitelu7479@gmail.com', '9494666705', 6, '45', '18JE0456', 'Non-Veg', 'B+', 'MAHATISANTOSHI TELU - mahatitelu7479@gmail.com.jpg', 'MAHATI', '', 'F', 0, 000, 000, 000, 0),
 (847, 'SHALINI RAJNEGI', 'Shalinirajnegi987@gmail.com', '9644575951', 6, '41', '18JE0758', 'Veg', 'A+', 'SHALINI RAJNEGI - Shalinirajnegi987@gmail.com.jpg', 'NEGI', '', 'F', 0, 000, 000, 000, 0),
 (848, 'SURYANSH JAISWAL', 'suryansh.jaiswal789@gmail.com', '9651400361', 6, '30', '18JE0858', 'Non-Veg', 'O+', 'SURYANSH JAISWAL - suryansh.jaiswal789@gmail.com.jpg', 'Suryansh', '', 'M', 0, 000, 000, 000, 0),
-(849, 'UTTKARSHNI SHARMA', 'uttkarshni29@gmail.com', '9113759880', 6, '31', '17DR000613', 'Veg', 'O+', 'UTTKARSHNI SHARMA - uttkarshni29@gmail.com.jpg', 'Kashyap', '', 'F', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(849, 'UTTKARSHNI SHARMA', 'uttkarshni29@gmail.com', '9113759880', 6, '31', '17DR000613', 'Veg', 'O+', 'UTTKARSHNI SHARMA - uttkarshni29@gmail.com.jpg', 'Kashyap', '', 'F', 0, 000, 000, 000, 0),
 (850, 'ASHISH KUMAR MISHRA ', 'itzakm33@gmail.com', '7655022005', 6, '30', '18JE0176 ', 'Non-Veg', 'A+', 'ASHISH KUMAR MISHRA  - itzakm33@gmail.com.jpg', 'ASHISH ', '', 'M', 0, 000, 000, 000, 0),
 (851, 'SAYANTAN DAS', 'sayantandas822@gmail.com', '8927839976', 6, '52', '19JE0759', 'Non-Veg', 'B+', 'SAYANTAN DAS - sayantandas822@gmail.com.jpg', 'Sayantan', '', 'M', 0, 000, 000, 000, 0),
 (852, 'SHOURYA AGRAWAL', 'shouryaagrawal7888@gmail.com', '7587342758', 6, '52', '19JE0785', 'Non-Veg', 'AB+', 'SHOURYA AGRAWAL - shouryaagrawal7888@gmail.com.jpg', 'SHOURYA', '', 'M', 0, 000, 000, 000, 0),
 (853, 'ANKIT KUMAR BHARATI', 'ankitkumarbhartiifs@gmail.com', '8969313197', 6, '52', '17JE003546', 'Non-Veg', 'B+', 'ANKIT KUMAR BHARATI - ankitkumarbhartiifs@gmail.com.jpg', 'AKB', '', 'M', 0, 000, 000, 000, 0),
-(854, 'ABHISHEK KUMAR', 'abhishekchesschamp@gmail.com', '7979898551', 6, '52', '16JE002681', 'Veg', 'B+', 'ABHISHEK KUMAR - abhishekchesschamp@gmail.com.jpg', 'ABHISHEK', '', 'M', 0, 000, 000, 000, 0),
+(854, 'ABHISHEK KUMAR', 'abhishekchesschamp@gmail.com', '7979898551', 6, '52', '16JE002681', 'Veg', 'B+', 'ABHISHEK KUMAR - abhishekchesschamp@gmail.com.jpg', 'ABHISHEK', '', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (855, 'ASHISH XALXO', 'ashishx.dakshana16@gmail.com', '9934157622', 6, '52', '16je002665', 'Non-Veg', 'B+', 'ASHISH XALXO - ashishx.dakshana16@gmail.com.jpg', 'ashish', '', 'M', 0, 000, 000, 000, 0),
 (856, 'K. ANVITHA ', 'Kaderianvitha6@gmail.com', '9652625439', 6, '41', '18JE0384 ', 'Non-Veg', 'B+', 'K. ANVITHA  - Kaderianvitha6@gmail.com.jpg', 'Kaderi', '', 'F', 0, 000, 000, 000, 0),
 (858, 'SREE PRIYA', 'CH19BTECH11017@IITH.AC.IN', '9390235158', 11, '45', 'CH19BTECH11017', 'Non-Veg', 'O+', 'SREE PRIYA - CH19BTECH11017@IITH.AC.IN.jpg', 'SREE PRIYA', '', 'F', 0, 000, 000, 000, 0),
@@ -1164,7 +1162,6 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1064, 'A ARUNNISHANTH', 'arun262000@gmail.com', '8778089412', 5, '36', '2017BB10001', 'Non-Veg', 'A+', 'A ARUNNISHANTH - arun262000@gmail.com.jpg', 'ArunN ', '', 'M', 0, 000, 000, 000, 0),
 (1065, 'PRAMIT DADARAO KALE', 'pramitkale@gmail.com', '9309975648', 5, '36', '2017TT10936', 'Non-Veg', 'A+', 'PRAMIT DADARAO KALE - pramitkale@gmail.com.jpg', 'PRAMIT', '', 'M', 0, 000, 000, 000, 0),
 (1066, 'SUJAY D', 'sujay7111@gmail.com', '9483209089', 5, '36', '2017MT60787', 'Non-Veg', 'O+', 'SUJAY D - sujay7111@gmail.com.jpg', 'SUJAY', '', 'M', 0, 000, 000, 000, 0),
-(1067, 'PUSHPENDRA SINGH RANA', 'pushpendrarana128@gmail.com', '7477292958', 5, '36', '2018CS10371', 'Veg', 'O+', 'PUSHPENDRA SINGH RANA - pushpendrarana128@gmail.com.jpg', 'RANA', '', 'M', 0, 000, 000, 000, 0),
 (1068, 'MAHENDRA KUMAR', 'mahendrag09090@gmail.com', '6377798737', 5, '36', '2018CE10112', 'Non-Veg', 'A+', 'MAHENDRA KUMAR - mahendrag09090@gmail.com.jpg', 'Mahendra', '', 'M', 0, 000, 000, 000, 0),
 (1069, 'NEHUL PATEL', 'nehul1313patel@gmail.com', '8200134468', 5, '36', '2017MT60782', 'Veg', 'A+', 'NEHUL PATEL - nehul1313patel@gmail.com.jpg', 'NEHUL', '', 'M', 0, 000, 000, 000, 0),
 (1070, 'ARPIT KUMAR', 'kumar.67@iitj.ac.in', '8788082907', 14, '52', 'B17ME019', 'Non-Veg', 'B+', 'ARPIT KUMAR - kumar.67@iitj.ac.in.jpg', 'Arpit', '', 'M', 0, 000, 000, 000, 0),
@@ -1223,14 +1220,14 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1128, 'SRIRANJANI MANIVASAGAM', 'm_sriranjani@iitgn.ac.in', '9962097460', 8, '21,22,23,29', '19510033', 'Veg', 'O+', 'SRIRANJANI MANIVASAGAM - m_sriranjani@iitgn.ac.in.jpg', 'Sri', '', 'F', 0, 000, 000, 000, 0),
 (1129, 'RAHUL ROHILLA', 'rahul.rohilla@iitgn.ac.in', '9646462829', 8, '30', '18510065', 'Non-Veg', 'A+', 'RAHUL ROHILLA - rahul.rohilla@iitgn.ac.in.jpg', 'ROHILLA', '', 'M', 0, 000, 000, 000, 0),
 (1130, 'PRIYANKA SHARMA', 'sharma_priyanka@iitgn.ac.in', '7046322180', 8, '31', '19250017', 'Veg', 'B+', 'PRIYANKA SHARMA - sharma_priyanka@iitgn.ac.in.jpg', 'PRIYANKA', '', 'F', 0, 000, 000, 000, 0),
-(1131, 'AKSHAY NAMBIAR', 'akshay.nambiar@iitgn.ac.in', '9521279646', 8, '30', '17110013', 'Non-Veg', 'O+', 'AKSHAY NAMBIAR - akshay.nambiar@iitgn.ac.in.jpg', 'Akshay', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(1131, 'AKSHAY NAMBIAR', 'akshay.nambiar@iitgn.ac.in', '9521279646', 8, '30', '17110013', 'Non-Veg', 'O+', 'AKSHAY NAMBIAR - akshay.nambiar@iitgn.ac.in.jpg', 'Akshay', '', 'M', 0, 000, 000, 000, 0),
 (1132, 'RWIK RANA', 'rwik.rana@iitgn.ac.in', '9920732647', 8, '35', '18110146', 'Non-Veg', 'B+', 'RWIK RANA - rwik.rana@iitgn.ac.in.jpg', 'Rwik', '', 'M', 0, 000, 000, 000, 0),
 (1133, 'VAGISHA', 'vagisha.18110179@iitgn.ac.in', '9560269315', 8, '33', '18110179', 'Veg', 'A+', 'VAGISHA - vagisha.18110179@iitgn.ac.in.jpg', 'Vagisha', '', 'F', 0, 000, 000, 000, 0),
 (1134, 'DEVIKA MENON', 'devika.menon@iitgn.ac.in', '7829996628', 8, '24,28,29,31', '18520007', 'Non-Veg', 'O+', 'DEVIKA MENON - devika.menon@iitgn.ac.in.jpg', 'Devika', '', 'F', 0, 000, 000, 000, 0),
 (1135, 'ESHIKA PATHAK', 'eshika.p@iitgn.ac.in', '9606643444', 8, '33', '19110148', 'Veg', 'B+', 'ESHIKA PATHAK - eshika.p@iitgn.ac.in.jpg', 'Eshika', '', 'F', 0, 000, 000, 000, 0),
 (1136, 'R MITHUN', 'mithun.ravichandran@iitgn.ac.in', '8110067582', 8, '42', '18110101', 'Non-Veg', 'O+', 'R MITHUN - mithun.ravichandran@iitgn.ac.in.jpg', 'Mithun', '', 'M', 0, 000, 000, 000, 0),
-(1137, 'PATEL URVISHKUMAR JAYRAMBHAI', 'patel.urvishkumar@iitgn.ac.in', '8758362086', 8, '6,9,10,12,13', '17110104', 'Veg', 'B+', 'PATEL URVISHKUMAR JAYRAMBHAI - patel.urvishkumar@iitgn.ac.in.jpg', 'Urvish', '', 'M', 0, 000, 000, 000, 0),
+(1137, 'PATEL URVISHKUMAR JAYRAMBHAI', 'patel.urvishkumar@iitgn.ac.in', '8758362086', 8, '6,9,10,12,13', '17110104', 'Veg', 'B+', 'PATEL URVISHKUMAR JAYRAMBHAI - patel.urvishkumar@iitgn.ac.in.jpg', 'Urvish', '', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (1138, 'AKASH UNNIKRISHNAN', 'akash.unnikrishnan@iitgn.ac.in', '8301825301', 8, '32', '17210005', 'Veg', 'O+', 'AKASH UNNIKRISHNAN - akash.unnikrishnan@iitgn.ac.in.jpg', 'Akash', '', 'M', 0, 000, 000, 000, 0),
 (1140, 'KARTIK HILLAL', 'kartik.hillal@iitgn.ac.in', '6263504669', 8, '34', '18110082', 'Non-Veg', 'AB+', 'KARTIK HILLAL - kartik.hillal@iitgn.ac.in.jpg', 'Kartik Hillal', '', 'M', 0, 000, 000, 000, 0),
 (1141, 'KRISHNA CHOUDHARY', 'krishnac.iitd@gmail.com', '8826089600', 5, '33', '2016CE10274', 'Veg', 'B+', 'KRISHNA CHOUDHARY - krishnac.iitd@gmail.com.jpg', 'Krishna', '', 'F', 0, 000, 000, 000, 0),
@@ -1480,14 +1477,14 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1403, ' AMI INDURKHYA', 'amiindurkhya.met18@itbhu.ac.in', '9131529880', 1, '45', '18145010', 'Veg', 'AB+', ' AMI INDURKHYA - amiindurkhya.met18@itbhu.ac.in.jpg', 'Ami', '', 'F', 0, 000, 000, 000, 0),
 (1404, ' POOJA GUPTA', 'poojagupta.eee18@itbhu.ac.in', '7619918058', 1, '45', ' 18085046', 'Veg', 'O+', ' POOJA GUPTA - poojagupta.eee18@itbhu.ac.in.jpg', 'pooja', '', 'F', 0, 000, 000, 000, 0),
 (1405, ' PRAGATI PANDEY', 'pragatipandey.min18@itbhu.ac.in', '8317006768', 1, '45', '18155050', 'Veg', 'O+', ' PRAGATI PANDEY - pragatipandey.min18@itbhu.ac.in.jpg', 'pragati', '', 'F', 0, 000, 000, 000, 0),
-(1406, 'AAYUSHI GAUTAM', 'aayushigautam.che18@itbhu.ac.in', '9680684684', 1, '45', '18045001', 'Veg', 'O+', 'AAYUSHI GAUTAM - aayushigautam.che18@itbhu.ac.in.jpg', 'Aayushi', '', 'F', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(1406, 'AAYUSHI GAUTAM', 'aayushigautam.che18@itbhu.ac.in', '9680684684', 1, '45', '18045001', 'Veg', 'O+', 'AAYUSHI GAUTAM - aayushigautam.che18@itbhu.ac.in.jpg', 'Aayushi', '', 'F', 0, 000, 000, 000, 0),
 (1407, ' YASHIKA LAMBA', 'yashika.lamba.phe19@itbhu.ac.in', '8076365550', 1, '45', '19165062', 'Veg', 'B+', ' YASHIKA LAMBA - yashika.lamba.phe19@itbhu.ac.in.jpg', 'Yashika', '', 'F', 0, 000, 000, 000, 0),
 (1408, 'BANDI GAYATRI', 'bandigayatri.min18@itbhu.ac.in', '9573159217', 1, '43', '18155025', 'Veg', 'O+', 'BANDI GAYATRI - bandigayatri.min18@itbhu.ac.in.jpg', 'Gayatri', 'None', 'F', 0, 000, 000, 000, 0),
 (1409, 'DHRUVAL SHAH', 'dhruval.shah@iitgn.ac.in', '9727678524', 8, '35', '17110051', 'Veg', 'O+', 'DHRUVAL SHAH - dhruval.shah@iitgn.ac.in.jpg', 'Shah Jr', '', 'M', 0, 000, 000, 000, 0),
 (1410, 'ANUSHKA GUPTA', 'anushkag.cd.eee17@itbhu.ac.in', '8795973884', 1, '43', '17085089', 'Veg', 'B+', 'ANUSHKA GUPTA - anushkag.cd.eee17@itbhu.ac.in.jpg', 'Anushka Gupta', 'None', 'F', 0, 000, 000, 000, 0),
 (1411, 'JAY SINGARIYA', 'Jay.singariya.civ17@itbhu.ac.in', '9461221973', 1, '44', '17065032', 'Non-Veg', 'B-', 'JAY SINGARIYA - Jay.singariya.civ17@itbhu.ac.in.jpg', '5', 'invitation kit should be good', 'M', 0, 000, 000, 000, 0),
-(1412, 'LIKHITA BASWANI ', 'likhita.b@iitgn.ac.in', '9493428888', 8, '45', '19110091', 'Veg', 'B+', 'LIKHITA BASWANI  - likhita.b@iitgn.ac.in.jpg', '-', '', 'F', 0, 000, 000, 000, 0),
+(1412, 'LIKHITA BASWANI ', 'likhita.b@iitgn.ac.in', '9493428888', 8, '45', '19110091', 'Veg', 'B+', 'LIKHITA BASWANI  - likhita.b@iitgn.ac.in.jpg', '-', '', 'F', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (1414, 'PAHUNI JAIN', 'pahuni.j@iitgn.ac.in', '9829575101', 8, '33', '19110021', 'Veg', 'B+', 'PAHUNI JAIN - pahuni.j@iitgn.ac.in.jpg', 'Pahuni ', '', 'F', 0, 000, 000, 000, 0),
 (1415, 'MONIKA SAINI', 'monika.s@iitgn.ac.in', '8824873076', 8, '45', '19110018', 'Veg', 'B+', 'MONIKA SAINI - monika.s@iitgn.ac.in.jpg', 'Monika', '', 'F', 0, 000, 000, 000, 0),
 (1416, 'PRAVEEN VENKATESH', 'praveen.venkatesh@iitgn.ac.in', '9840803106', 8, '40', '18110127', 'Veg', 'B+', 'PRAVEEN VENKATESH - praveen.venkatesh@iitgn.ac.in.jpg', 'PV', '', 'M', 0, 000, 000, 000, 0),
@@ -1581,7 +1578,6 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1511, 'DANIEL PEGU', 'daniel.pegu.bce16@itbhu.ac.in', '8876305154', 1, '35', '16014003', 'Non-Veg', 'O+', 'DANIEL PEGU - daniel.pegu.bce16@itbhu.ac.in.jpg', '-', '', 'M', 0, 000, 000, 000, 0),
 (1512, 'ARVIND THOMAS', 'arvind.thomas.bme16@itbhu.ac.in', '7795406349', 1, '35', '16024004', 'Non-Veg', 'A+', 'ARVIND THOMAS - arvind.thomas.bme16@itbhu.ac.in.jpg', '-', '', 'M', 0, 000, 000, 000, 0),
 (1513, 'ABHINASH DAULAGUPHU', 'Abhinash.Daulaguphu.phy17@itbhu.ac.in', '8474846325', 1, '35', '17173001', 'Non-Veg', 'O+', 'ABHINASH DAULAGUPHU - Abhinash.Daulaguphu.phy17@itbhu.ac.in.jpg', '-', '', 'M', 0, 000, 000, 000, 0),
-(1515, 'SHAILESH KUMAR', 'shailesh.kumar.civ17@itbhu.ac.in', '8949487469', 1, '35', '17065060', 'Veg', 'O+', 'SHAILESH KUMAR - shailesh.kumar.civ17@itbhu.ac.in.jpg', '-', '', 'M', 0, 000, 000, 000, 0),
 (1516, 'NILESH KHAPRE', 'nileshv.khapre.phe16@iitbhu.ac.in', '9455223409', 1, '37', '16164009', 'Non-Veg', 'A+', 'NILESH KHAPRE - nileshv.khapre.phe16@iitbhu.ac.in.jpg', 'Nilesh ', ' Sport accessory store should be setup nearby.', 'M', 0, 000, 000, 000, 0),
 (1518, 'HARSH PARMAR', 'harshbparmar.cse18@itbhu.ac.in', '9381444955', 1, '37', '18075022', 'Non-Veg', 'O+', 'HARSH PARMAR - harshbparmar.cse18@itbhu.ac.in.jpg', '5', '', 'M', 0, 000, 000, 000, 0),
 (1519, 'AKSHIT KUMAR', 'akshit.student.che17@itbhu.ac.in', '9041437517', 1, '36', '17045013', 'Non-Veg', 'A+', 'AKSHIT KUMAR - akshit.student.che17@itbhu.ac.in.jpg', '7', '', 'M', 0, 000, 000, 000, 0),
@@ -1736,15 +1732,15 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1686, 'M BHARATHI MOZHIAN', 'mbmozhian1802@gmail.com', '9444159358', 17, '32', 'CH18B044', 'Non-Veg', 'B+', 'M BHARATHI MOZHIAN - mbmozhian1802@gmail.com.jpg', 'BHARATHI', '', 'M', 0, 000, 000, 000, 0),
 (1687, 'DHRUV GOYAL', 'itsmedhruvgoyal@gmail.com', '9478902905', 17, '32', 'EE19B077', 'Non-Veg', 'B+', 'DHRUV GOYAL - itsmedhruvgoyal@gmail.com.jpg', 'DHRUV', '', 'M', 0, 000, 000, 000, 0),
 (1688, 'KISHORE GV', 'kishorevenkatesan2@gmail.com', '7598263320', 17, '32', 'EE16B070', 'Veg', 'B+', 'KISHORE GV - kishorevenkatesan2@gmail.com.jpg', 'KISHORE', '', 'M', 0, 000, 000, 000, 0),
-(1689, 'SHASHANK RAVI', 'shashankravi2001@gmail.com', '9993838383', 17, '32', 'EP19B029', 'Non-Veg', 'O+', 'SHASHANK RAVI - shashankravi2001@gmail.com.jpg', 'SHASHANK', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(1689, 'SHASHANK RAVI', 'shashankravi2001@gmail.com', '9993838383', 17, '32', 'EP19B029', 'Non-Veg', 'O+', 'SHASHANK RAVI - shashankravi2001@gmail.com.jpg', 'SHASHANK', '', 'M', 0, 000, 000, 000, 0),
 (1690, 'DHRUV GOPALAKRISHNAN', 'dhruvgop@gmail.com', '8310606598', 17, '32', 'AE17B004', 'Veg', 'B+', 'DHRUV GOPALAKRISHNAN - dhruvgop@gmail.com.jpg', 'DHRUV', '', 'M', 0, 000, 000, 000, 0),
 (1693, 'VAISAKH M', '121701028@smail.iitpkd.ac.in', '8078153875', 19, '32', '121701028', 'Non-Veg', 'O+', 'VAISAKH M - 121701028@smail.iitpkd.ac.in.jpg', 'VAISAKH', '', 'M', 0, 000, 000, 000, 0),
 (1694, 'VISHAL', '2018eeb1195@iitrpr.ac.in', '9306414504', 22, '44', '2018eeb1195', 'Veg', 'O+', 'VISHAL - 2018eeb1195@iitrpr.ac.in.jpg', 'VISHAL', '', 'M', 0, 000, 000, 000, 0),
 (1695, 'ABHISHEK KAJLA', '101701002@smail.iitpkd.ac.in', '8502944385', 19, '32,34', '101701002', 'Veg', 'A+', 'ABHISHEK KAJLA - 101701002@smail.iitpkd.ac.in.jpg', 'Kajla', '', 'M', 0, 000, 000, 000, 0),
 (1696, 'ARYANSH KURMI ', '2018eeb1141@iitrpr.ac.in', '6377080740', 22, '44', '2018eeb1141', 'Non-Veg', 'A+', 'ARYANSH KURMI  - 2018eeb1141@iitrpr.ac.in.jpg', 'ARYANSH ', '', 'M', 0, 000, 000, 000, 0),
 (1697, 'VIPIN MEENA', '2018ceb1035@iitrpr.ac.in', '6377664772', 22, '32', '2018ceb1035', 'Veg', 'O+', 'VIPIN MEENA - 2018ceb1035@iitrpr.ac.in.jpg', '7', '', 'M', 0, 000, 000, 000, 0),
-(1699, 'BHASKAR KUMAR JYOTISHI', '2018med1003@iitrpr.ac.in', '6377840597', 22, '3', '2018med1003', 'Non-Veg', 'A+', 'BHASKAR KUMAR JYOTISHI - 2018med1003@iitrpr.ac.in.jpg', 'BHASKAR', 'Give good refreshment', 'M', 0, 000, 000, 000, 0),
+(1699, 'BHASKAR KUMAR JYOTISHI', '2018med1003@iitrpr.ac.in', '6377840597', 22, '3', '2018med1003', 'Non-Veg', 'A+', 'BHASKAR KUMAR JYOTISHI - 2018med1003@iitrpr.ac.in.jpg', 'BHASKAR', 'Give good refreshment', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (1701, 'CHANCHAL RAI', '2017med1005@iitrpr.ac.in', '8146672862', 22, '44', '2017med1005', 'Non-Veg', 'B+', 'CHANCHAL RAI - 2017med1005@iitrpr.ac.in.jpg', 'Chanchal', '', 'M', 0, 000, 000, 000, 0),
 (1702, 'GAGAN CHATURVEDI', '2019MEB1256@iitrpr.ac.in', '8283053088', 22, '44', '2019meb1256', 'Veg', 'B+', 'GAGAN CHATURVEDI - 2019MEB1256@iitrpr.ac.in.jpg', 'Gagan', '', 'M', 0, 000, 000, 000, 0),
 (1703, 'ANUSHREE DAS', 'ma18c004@smail.iitm.ac.in', '8820682144', 17, '41', 'MA18C004', 'Non-Veg', 'B+', 'ANUSHREE DAS - ma18c004@smail.iitm.ac.in.jpg', 'ANUSHREE', '', 'F', 0, 000, 000, 000, 0),
@@ -1993,8 +1989,7 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1975, 'IMRAN MD', 'ME18M010@iittp.ac.in', '9654578845', 23, '34', 'ME18M010', 'Non-Veg', 'A+', 'IMRAN MD - ME18M010@iittp.ac.in.jpg', 'IMRAN', '', 'M', 0, 000, 000, 000, 0),
 (1976, 'PRAHALAD', 'be18b036@smail.iitm.ac.in', '7708606889', 17, '12', 'BE18B036', 'Veg', 'O+', 'PRAHALAD - be18b036@smail.iitm.ac.in.jpg', 'Prahalad ', '', 'M', 0, 000, 000, 000, 0),
 (1977, 'JOHN SABU MATHEW ', 'johnsabu10@gmail.com', '9840899284', 17, '35', 'HS17H009', 'Non-Veg', 'A-', 'JOHN SABU MATHEW  - johnsabu10@gmail.com.jpg', 'John', '', 'M', 0, 000, 000, 000, 0),
-(1978, 'SASWAT', 'na15b047@smail.iitm.ac.in', '9916881340', 17, '35', 'NA15B047', 'Non-Veg', 'O+', 'SASWAT - na15b047@smail.iitm.ac.in.jpg', 'Saswat', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(1978, 'SASWAT', 'na15b047@smail.iitm.ac.in', '9916881340', 17, '35', 'NA15B047', 'Non-Veg', 'O+', 'SASWAT - na15b047@smail.iitm.ac.in.jpg', 'Saswat', '', 'M', 0, 000, 000, 000, 0),
 (1979, 'AVANISH NIHALE', 'be15b006@smail.iitm.ac.in', '9490396393', 17, '35', 'BE15B006', 'Non-Veg', 'O+', 'AVANISH NIHALE - be15b006@smail.iitm.ac.in.jpg', 'Nihale', '', 'M', 0, 000, 000, 000, 0),
 (1980, 'MANU', 'na19b045@smail.iitm.ac.in', '9947046561', 17, '35', 'NA19B045', 'Non-Veg', 'O+', 'MANU - na19b045@smail.iitm.ac.in.jpg', 'Manu', '', 'M', 0, 000, 000, 000, 0),
 (1981, 'ADARSH UNNI', 'me16b102@smail.iitm.ac.in', '9940306554', 17, '35', 'ME16B102', 'Non-Veg', 'O+', 'ADARSH UNNI - me16b102@smail.iitm.ac.in.jpg', 'Unni', '', 'M', 0, 000, 000, 000, 0),
@@ -2002,7 +1997,8 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (1983, 'SOORAJ JAISANKAR', 'soorajjaipoe@gmail.com', '9082061970', 17, '35', 'CH17B021', 'Non-Veg', 'A+', 'SOORAJ JAISANKAR - soorajjaipoe@gmail.com.jpg', 'Sooraj', '', 'M', 0, 000, 000, 000, 0),
 (1984, 'YESHWANTH', 'yeshwanthtalwar@gmail.com', '9449455437', 17, '35', 'EP18B031', 'Non-Veg', 'B+', 'YESHWANTH - yeshwanthtalwar@gmail.com.jpg', 'Talwar', '', 'M', 0, 000, 000, 000, 0),
 (1985, 'ASHUTOSH SARDA', 'be17b012@smail.iitm.ac.in', '9080972848', 17, '35', 'BE17B012', 'Non-Veg', 'A+', 'ASHUTOSH SARDA - be17b012@smail.iitm.ac.in.jpg', 'Sarda', '', 'M', 0, 000, 000, 000, 0),
-(1986, 'AJMAL SHA', 'na17b009@smail.iitm.ac.in', '7338857737', 17, '35', 'NA17B009', 'Non-Veg', 'O+', 'AJMAL SHA - na17b009@smail.iitm.ac.in.jpg', 'Sha', '', 'M', 0, 000, 000, 000, 0),
+(1986, 'AJMAL SHA', 'na17b009@smail.iitm.ac.in', '7338857737', 17, '35', 'NA17B009', 'Non-Veg', 'O+', 'AJMAL SHA - na17b009@smail.iitm.ac.in.jpg', 'Sha', '', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (1988, 'SHUBHAM', 'shubhambarua96@gmail.com', '7092537969', 17, '35', 'BS16B007', 'Non-Veg', 'A+', 'SHUBHAM - shubhambarua96@gmail.com.jpg', 'Shubbu', '', 'M', 0, 000, 000, 000, 0),
 (1989, 'NEHA', '2019eeb1177@iitrpr.ac.in', '8383085226', 22, '33', '2019eeb1177', 'Non-Veg', 'B+', 'NEHA - 2019eeb1177@iitrpr.ac.in.jpg', 'Neha', '', 'F', 0, 000, 000, 000, 0),
 (1990, 'AMRIT RANA', 'ranaamrit733@gmail.com', '8439673574', 17, '44', 'Ce18m060', 'Veg', 'A+', 'AMRIT RANA - ranaamrit733@gmail.com.jpg', 'RANA', '', 'M', 0, 000, 000, 000, 0),
@@ -2187,7 +2183,6 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2183, 'SAROJ', 'sarojgymkhana@gmail.com', '9799889652', 1, 'staff', '16456789', 'Non-Veg', 'B+', 'SAROJ - sarojgymkhana@gmail.com.jpg', 'SAROJ', '', 'M', 0, 000, 000, 000, 0),
 (2184, 'SATISH KUMAR', 'satishkumar@gmail.com', '9852324150', 1, 'staff', '16732889', 'Veg', 'B+', 'SATISH KUMAR - satishkumar@gmail.com.jpg', 'SATISH', '', 'M', 0, 000, 000, 000, 0),
 (2185, 'AJEET YADAV', 'ajeetyadav@gmail.com', '9876543210', 1, 'staff', '16345876', 'Veg', 'B+', 'AJEET YADAV - ajeetyadav@gmail.com.jpg', 'AJEET', '', 'M', 0, 000, 000, 000, 0),
-(2186, 'SANTOSH SHARMA', 'santoshsharma.iit@gmail.com', '9519103751', 22, '50', '2017mcb1242@iitrpr.ac.in', 'Non-Veg', 'B+', 'SANTOSH SHARMA - santoshsharma.iit@gmail.com.jpg', 'Santosh', '', 'M', 0, 000, 000, 000, 0),
 (2187, 'SHUBHAM PRADHAN', '2017eeb1168@iitrpr.ac.in', '8109219004', 22, '32', '2017eeb1168', 'Non-Veg', 'A+', 'SHUBHAM PRADHAN - 2017eeb1168@iitrpr.ac.in.jpg', '11', '', 'M', 0, 000, 000, 000, 0),
 (2188, 'KUSHAGRA DUTT', '2017med1007@iitrpr.ac.in', '9717332600', 22, '32', '2017med1007', 'Non-Veg', 'O+', 'KUSHAGRA DUTT - 2017med1007@iitrpr.ac.in.jpg', '71', '', 'M', 0, 000, 000, 000, 0),
 (2189, 'SARABJIT SINGH SODHI', 'mohitmahala9166777379@gmail.com', '7814238030', 22, 'staff', '2018ceb1015', 'Non-Veg', 'A+', 'SARABJIT SINGH SODHI - mohitmahala9166777379@gmail.com.jpg', 'SODHI', '', 'M', 0, 000, 000, 000, 0),
@@ -2205,7 +2200,6 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2202, 'ASHOK', 'ashokahms@gmail.com', '9931462081', 20, 'staff', 'VOLLEYBALL COACH', 'Non-Veg', 'AB+', 'ASHOK - ashokahms@gmail.com.jpg', 'ASHOK', '', 'M', 0, 000, 000, 000, 0),
 (2203, 'TANUJ', 'tanujmu93@gmail.com', '8902471933', 20, 'staff', 'table tennis coach', 'Non-Veg', 'B+', 'TANUJ - tanujmu93@gmail.com.jpg', 'tanuj', '', 'M', 0, 000, 000, 000, 0),
 (2204, 'VADAPALLI KALYAN', 'vk31@iitbbs.ac.in', '6303498312', 3, '34', '18CE01010', 'Non-Veg', 'A+', 'VADAPALLI KALYAN - vk31@iitbbs.ac.in.jpg', 'V Kalyan', 'Jersey No. 7', 'M', 0, 000, 000, 000, 0),
-(2205, 'BHAVESH GARG', 'bhavesh@iitrpr.ac.in', '7382548494', 22, 'staff', 'Coach', 'Non-Veg', 'O+', 'BHAVESH GARG - bhavesh@iitrpr.ac.in.jpg', 'Coach', '', 'M', 0, 000, 000, 000, 0),
 (2206, 'RAM LAKHAN', 'b16138@students.iitmandi.ac.in', '9917248334', 18, '34', 'b16138', 'Veg', 'O+', 'RAM LAKHAN - b16138@students.iitmandi.ac.in.jpg', 'RAM', '', 'M', 0, 000, 000, 000, 0),
 (2207, 'ASHUTOSH KUMAR', 'b16126@students.iitmandi.ac.in', '8447257646', 18, '34', 'B16126', 'Non-Veg', 'B+', 'ASHUTOSH KUMAR - b16126@students.iitmandi.ac.in.jpg', 'ASHUTOSH', '', 'M', 0, 000, 000, 000, 0),
 (2208, 'SHUBHAM MEENA', 'b17143@students.iitmandi.ac.in', '7976886699', 18, '34', 'B17143', 'Veg', 'B+', 'SHUBHAM MEENA - b17143@students.iitmandi.ac.in.jpg', 'SHUBHAM', '', 'M', 0, 000, 000, 000, 0),
@@ -2252,8 +2246,7 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2249, 'AUM JAIN', '19B080008@iitb.ac.in', '8888206444', 4, '52', '19B080008', 'Veg', 'O+', 'AUM JAIN - 19B080008@iitb.ac.in.jpg', 'Aum', '', 'M', 0, 000, 000, 000, 0),
 (2250, 'ATHARVA TAYADE', '190070013@iitb.ac.in', '9967947552', 4, '52', '190070013', 'Non-Veg', 'O+', 'ATHARVA TAYADE - 190070013@iitb.ac.in.jpg', 'Atharva', '', 'M', 0, 000, 000, 000, 0),
 (2251, 'SHREYAM MISHRA', '19D110020@iitb.ac.in', '9869504539', 4, '52', '19D110020', 'Non-Veg', 'O+', 'SHREYAM MISHRA - 19D110020@iitb.ac.in.jpg', 'Shreyam', '', 'M', 0, 000, 000, 000, 0),
-(2252, 'MANISH MEENA', 'm.meena200@gmail.com', '8828291069', 4, '36', '140040030', 'Non-Veg', 'B+', 'MANISH MEENA - m.meena200@gmail.com.jpg', 'manish', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(2252, 'MANISH MEENA', 'm.meena200@gmail.com', '8828291069', 4, '36', '140040030', 'Non-Veg', 'B+', 'MANISH MEENA - m.meena200@gmail.com.jpg', 'manish', '', 'M', 0, 000, 000, 000, 0),
 (2253, 'TAVISH MINA', 'tavishmeena@gmail.com', '7891942057', 4, '36', '17d070028', 'Non-Veg', 'AB+', 'TAVISH MINA - tavishmeena@gmail.com.jpg', 'tavish', '', 'M', 0, 000, 000, 000, 0),
 (2254, 'VIRAJ SINGH', 'virajsingh.vsp@gmail.com', '8454952125', 4, '36', '160110041', 'Veg', 'B+', 'VIRAJ SINGH - virajsingh.vsp@gmail.com.jpg', 'viraj', '', 'M', 0, 000, 000, 000, 0),
 (2255, 'PANKAJ YADAV', 'pankajyadavky@gmail.com', '9987108466', 4, '36', '160020051', 'Non-Veg', 'B-', 'PANKAJ YADAV - pankajyadavky@gmail.com.jpg', 'pankaj', '', 'M', 0, 000, 000, 000, 0),
@@ -2264,7 +2257,8 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2260, 'ROHAN ARIHAAN', '170100076@iitb.ac.in', '7004269926', 4, '42', '170100076', 'Non-Veg', 'B+', 'ROHAN ARIHAAN - 170100076@iitb.ac.in.jpg', 'Rohan', '', 'M', 0, 000, 000, 000, 0),
 (2261, 'VIVEK PENDHARKAR', '18D110026@iitba.cin', '8828196596', 4, '42', '18D110026', 'Non-Veg', 'O+', 'VIVEK PENDHARKAR - 18D110026@iitba.cin.jpg', 'Vivek', '', 'M', 0, 000, 000, 000, 0),
 (2262, 'SRIJAN BANSAL', 'srijanbansal15@gmail.com', '8728873198', 4, '36', '170100111	', 'Non-Veg', 'O+', 'SRIJAN BANSAL - srijanbansal15@gmail.com.jpg', 'srijan', '', 'M', 0, 000, 000, 000, 0),
-(2263, 'MANISH SAICH', 'manishsaich03@gmail.com', '9079885791', 4, '36', '170020120		', 'Veg', 'O+', 'MANISH SAICH - manishsaich03@gmail.com.jpg', 'manish', '', 'M', 0, 000, 000, 000, 0),
+(2263, 'MANISH SAICH', 'manishsaich03@gmail.com', '9079885791', 4, '36', '170020120		', 'Veg', 'O+', 'MANISH SAICH - manishsaich03@gmail.com.jpg', 'manish', '', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (2264, 'SAVITA PAREEK', '174090004@iitb.ac.in', '9782067574', 4, '43', '174090004', 'Veg', 'A+', 'SAVITA PAREEK - 174090004@iitb.ac.in.jpg', 'Savita', '', 'F', 0, 000, 000, 000, 0),
 (2265, 'AKANKSHA CHOUDHARY', '154270003@iitb.ac.in', '8879075802', 4, '43', '154270003', 'Veg', 'B+', 'AKANKSHA CHOUDHARY - 154270003@iitb.ac.in.jpg', 'Akanksha', '', 'F', 0, 000, 000, 000, 0),
 (2266, 'SWADHA SANGHVI', '15d070037@iitb.ac.in', '9819074323', 4, '43', '15d070037', 'Veg', 'O+', 'SWADHA SANGHVI - 15d070037@iitb.ac.in.jpg', 'Swadha', '', 'F', 0, 000, 000, 000, 0),
@@ -2503,8 +2497,7 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2528, 'M FASIL', '170040107@iitb.ac.in', '9082405773', 4, '35', '170040107', 'Non-Veg', 'A+', 'M FASIL - 170040107@iitb.ac.in.jpg', 'Fasil', '', 'M', 0, 000, 000, 000, 0),
 (2529, 'RAVI SINGH POKHARIA', '134076012@iitb.ac.in', '7506112261', 4, '35', '134076012', 'Veg', 'AB-', 'RAVI SINGH POKHARIA - 134076012@iitb.ac.in.jpg', 'Ravi', '', 'M', 0, 000, 000, 000, 0),
 (2530, 'SHARANG BHAGDIKAR', '194074003@iitb.ac.in', '7738731323', 4, '40', '194074003', 'Non-Veg', 'O+', 'SHARANG BHAGDIKAR - 194074003@iitb.ac.in.jpg', 'Sharang', '', 'M', 0, 000, 000, 000, 0),
-(2531, 'ANANTHA HEGDE', '160110033@iitb.ac.in', '8698903480', 4, '40', '160110033', 'Non-Veg', 'O+', 'ANANTHA HEGDE - 160110033@iitb.ac.in.jpg', 'Anantha', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(2531, 'ANANTHA HEGDE', '160110033@iitb.ac.in', '8698903480', 4, '40', '160110033', 'Non-Veg', 'O+', 'ANANTHA HEGDE - 160110033@iitb.ac.in.jpg', 'Anantha', '', 'M', 0, 000, 000, 000, 0),
 (2532, 'NIHAR MAHAJAN', '18D180019@iitb.ac.in', '8605133000', 4, '40', '18D180019', 'Non-Veg', 'A-', 'NIHAR MAHAJAN - 18D180019@iitb.ac.in.jpg', 'Nihar', '', 'M', 0, 000, 000, 000, 0),
 (2533, 'KSHITIJ SOVANEE', '19D110023@iitb.ac.in', '9920360735', 4, '40', '19D110023', 'Veg', 'O+', 'KSHITIJ SOVANEE - 19D110023@iitb.ac.in.jpg', 'Kshitij', '', 'M', 0, 000, 000, 000, 0),
 (2534, 'HARSHITA MASAND', '170110064@iitb.ac.in', '8602551949', 4, '41', '170110064', 'Veg', 'B+', 'HARSHITA MASAND - 170110064@iitb.ac.in.jpg', 'Harshita', '', 'F', 0, 000, 000, 000, 0),
@@ -2515,7 +2508,8 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2539, 'PRATEEK JHABAK', 'jhabakprateek09@gmail.com', '7023186648', 21, '30', '17411020', 'Veg', 'O+', 'PRATEEK JHABAK - jhabakprateek09@gmail.com.jpg', 'Prateek', '', 'M', 0, 000, 000, 000, 0),
 (2540, 'RAVINDER PAL SINGH', 'Ravinder0001234@gmail.com', '8505051077', 21, '30', '16113076', 'Non-Veg', 'O+', 'RAVINDER PAL SINGH - Ravinder0001234@gmail.com.jpg', 'Ravinder', '', 'M', 0, 000, 000, 000, 0),
 (2541, 'ADITYA KUMAR SINGH', 'adityakumar5371@gmail.com', '9582854772', 21, '30', '18116003', 'Non-Veg', 'B+', 'ADITYA KUMAR SINGH - adityakumar5371@gmail.com.jpg', 'Aditya', '', 'M', 0, 000, 000, 000, 0),
-(2542, 'SUHANI JAIN', 'jainsuhani317@gmail.com', '7024196060', 21, '31', '19115123', 'Veg', 'B+', 'SUHANI JAIN - jainsuhani317@gmail.com.jpg', 'Suhani', '', 'F', 0, 000, 000, 000, 0),
+(2542, 'SUHANI JAIN', 'jainsuhani317@gmail.com', '7024196060', 21, '31', '19115123', 'Veg', 'B+', 'SUHANI JAIN - jainsuhani317@gmail.com.jpg', 'Suhani', '', 'F', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (2543, 'IDIKA VERMA', 'idikaverma@gmail.com', '9004494322', 21, '31', '18118034', 'Non-Veg', 'A+', 'IDIKA VERMA - idikaverma@gmail.com.jpg', 'Idika', '', 'F', 0, 000, 000, 000, 0),
 (2544, 'ANU RANJAN', 'aranjan@ch.iitr.ac.in', '7073129268', 21, '31', '17112015', 'Veg', 'B+', 'ANU RANJAN - aranjan@ch.iitr.ac.in.jpg', 'Anu', '', 'F', 0, 000, 000, 000, 0),
 (2545, 'JAY GARCHAR', '170010001@iitdh.ac.in', '9428060270', 7, '36', '170010001', 'Veg', 'B+', 'JAY GARCHAR - 170010001@iitdh.ac.in.jpg', 'Garchar', '', 'M', 0, 000, 000, 000, 0),
@@ -2744,8 +2738,7 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2778, 'PRANAV MADHU', 'pmadhu689@gmail.com', '8942058860', 16, '36', '17PH20025', 'Veg', 'A-', 'PRANAV MADHU - pmadhu689@gmail.com.jpg', 'PRANAV', '', 'M', 0, 000, 000, 000, 0),
 (2779, 'AKASH KUMAR', 'akashkumar.kvpy@gmail.com', '9068511334', 21, '34', '18118007', 'Non-Veg', 'B+', 'AKASH KUMAR - akashkumar.kvpy@gmail.com.jpg', 'AKASH', '- Accommodation near the cricket ground and that all rooms allotted to the IIT Roorkee cricket team be on the same floor and close to each other', 'M', 0, 000, 000, 000, 0),
 (2780, 'SUJATA NARENDRA', 'sujatanarendra91@gmail.com', '8123011050', 7, 'staff', 'part-time volleyball coach', 'Non-Veg', 'AB+', 'SUJATA NARENDRA - sujatanarendra91@gmail.com.jpg', 'part-time Volleyball Coach ', '', 'F', 0, 000, 000, 000, 0),
-(2781, 'UDIT KUMAR NIRAPURE', 'uditnirapure2000@gmail.com', '9691628826', 12, '35', '190004041', 'Veg', 'AB+', 'UDIT KUMAR NIRAPURE - uditnirapure2000@gmail.com.jpg', 'Udit', '', 'M', 0, 000, 000, 000, 0);
-INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(2781, 'UDIT KUMAR NIRAPURE', 'uditnirapure2000@gmail.com', '9691628826', 12, '35', '190004041', 'Veg', 'AB+', 'UDIT KUMAR NIRAPURE - uditnirapure2000@gmail.com.jpg', 'Udit', '', 'M', 0, 000, 000, 000, 0),
 (2782, 'SHINOY SHARMA', 'shinoysharma98@gmail.com', '9079839457', 21, '34', '17116079', 'Veg', 'B+', 'SHINOY SHARMA - shinoysharma98@gmail.com.jpg', 'SHINOY', '- Accommodation near the cricket ground and that all rooms allotted to the IIT Roorkee cricket team be on the same floor and close to each other', 'M', 0, 000, 000, 000, 0),
 (2783, 'NIRAJSINH RAJPUT', '23nirajsinh@gmail.com', '7675086001', 21, '34', '16112065', 'Non-Veg', 'O+', 'NIRAJSINH RAJPUT - 23nirajsinh@gmail.com.jpg', 'RAJPUT', '- Accommodation near the cricket ground and that all rooms allotted to the IIT Roorkee cricket team be on the same floor and close to each other', 'M', 0, 000, 000, 000, 0),
 (2784, 'KARTIKEYA SEN', 'ee190002031@iiti.ac.in', '8278650820', 12, '35', '190002031', 'Veg', 'A+', 'KARTIKEYA SEN - ee190002031@iiti.ac.in.jpg', 'Kartik', '', 'M', 0, 000, 000, 000, 0),
@@ -2754,7 +2747,8 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (2787, 'YASHVENDRA SINGH', 'ysingh@ec.iitr.ac.in', '8273066527', 21, '34', '17116079', 'Veg', 'AB+', 'YASHVENDRA SINGH - ysingh@ec.iitr.ac.in.jpg', 'YASH', '- Accommodation near the cricket ground and that all rooms allotted to the IIT Roorkee cricket team be on the same floor and close to each other', 'M', 0, 000, 000, 000, 0),
 (2788, 'NAVEEN KUMAR SHARMA', 'ce190004020@iiti.ac', '9079017487', 12, '35', '190004020', 'Veg', 'O+', 'NAVEEN KUMAR SHARMA - ce190004020@iiti.ac.jpg', 'Naveen', '', 'M', 0, 000, 000, 000, 0),
 (2789, 'RISHABH RATHI', 'dearrishabh@gmail.com', '9820323247', 16, '36', '18HS20027', 'Veg', 'B+', 'RISHABH RATHI - dearrishabh@gmail.com.jpg', 'RISHABH', '', 'M', 0, 000, 000, 000, 0),
-(2790, 'UJJAWAL MITTAL', 'ujjawalmittal55@gmail.com', '7999498623', 12, '35', '190003065', 'Veg', 'O+', 'UJJAWAL MITTAL - ujjawalmittal55@gmail.com.jpg', 'Ujju', '', 'M', 0, 000, 000, 000, 0),
+(2790, 'UJJAWAL MITTAL', 'ujjawalmittal55@gmail.com', '7999498623', 12, '35', '190003065', 'Veg', 'O+', 'UJJAWAL MITTAL - ujjawalmittal55@gmail.com.jpg', 'Ujju', '', 'M', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
 (2791, 'NIKHIL RAJALWAL', 'nikhilrajalwal@gmail.com', '8005942125', 21, '34', '16113060', 'Veg', 'A+', 'NIKHIL RAJALWAL - nikhilrajalwal@gmail.com.jpg', 'NIKHIL', '- Accommodation near the cricket ground and that all rooms allotted to the IIT Roorkee cricket team be on the same floor and close to each other', 'M', 0, 000, 000, 000, 0),
 (2794, 'SAGUN TUDU', 'sagun@iitkgp.ac', '7098991156', 16, '36', '18CS60R46', 'Non-Veg', 'O+', 'SAGUN TUDU - sagun@iitkgp.ac.jpg', 'SAGUN', '', 'M', 0, 000, 000, 000, 0),
 (2795, 'RAKESH KUSHWAHA', 'phy.rakesh@iitp.ac.in', '9452259094', 20, 'staff', '310', 'Veg', 'A+', 'RAKESH KUSHWAHA - phy.rakesh@iitp.ac.in.jpg', 'RK', '', 'M', 0, 000, 000, 000, 0),
@@ -2969,7 +2963,51 @@ INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_
 (3011, 'ABHIMANYU', 'd15014@students.iitmandi.ac.in', '9419216340', 18, '42', 'D15014', 'Non-Veg', 'B-', 'ABHIMANYU - d15014@students.iitmandi.ac.in.jpg', 'Dogra', '', 'M', 0, 000, 000, 000, 0),
 (3012, 'AKUL GUPTA', 'b16006@students.iitmandi.ac.in', '9467858761', 18, '42', 'B16006', 'Veg', 'A+', 'AKUL GUPTA - b16006@students.iitmandi.ac.in.jpg', 'Akul', '', 'M', 0, 000, 000, 000, 0),
 (3013, 'PAWAN SINGH BISHT', 't18123@students.iitmandi.ac.in', '7500082268', 18, '42', 'T18123', 'Non-Veg', 'O+', 'PAWAN SINGH BISHT - t18123@students.iitmandi.ac.in.jpg', 'Pawan', '', 'M', 0, 000, 000, 000, 0),
-(3014, 'MARGI GAJJAR', 's18011@students.iitmandi.ac.in', '8980676546', 18, '43', 'S18011', 'Veg', 'O+', 'MARGI GAJJAR - s18011@students.iitmandi.ac.in.jpg', 'Margi', '', 'F', 0, 000, 000, 000, 0);
+(3014, 'MARGI GAJJAR', 's18011@students.iitmandi.ac.in', '8980676546', 18, '43', 'S18011', 'Veg', 'O+', 'MARGI GAJJAR - s18011@students.iitmandi.ac.in.jpg', 'Margi', '', 'F', 0, 000, 000, 000, 0),
+(3015, 'PRINCI GUPTA', 'a19008@students.iitmandi.ac.in', '9621851771', 18, '43', 'A19008', 'Non-Veg', 'O+', 'PRINCI GUPTA - a19008@students.iitmandi.ac.in.jpg', 'Princi', '', 'F', 0, 000, 000, 000, 0),
+(3016, 'TORAL GOGIYA', 'b18029@students.iitmandi.ac.in', '9983467123', 18, '43', 'B18029', 'Veg', 'B+', 'TORAL GOGIYA - b18029@students.iitmandi.ac.in.jpg', 'Toral', '', 'F', 0, 000, 000, 000, 0),
+(3017, 'AMIRTH VARSHAN', 'b16089@students.iitmandi.ac.in', '9871127062', 18, '35', 'B16089', 'Non-Veg', 'B+', 'AMIRTH VARSHAN - b16089@students.iitmandi.ac.in.jpg', 'Varshan', '', 'M', 0, 000, 000, 000, 0),
+(3018, 'NAMAN CHAUDHARY', 'b16104@students.iitmandi.ac.in', '9045290313', 18, '35', 'B16104', 'Non-Veg', 'B+', 'NAMAN CHAUDHARY - b16104@students.iitmandi.ac.in.jpg', 'Naman', '', 'M', 0, 000, 000, 000, 0),
+(3019, 'RAJAN BAJAJ', 'b16072@students.iitmandi.ac.in', '8875414190', 18, '35', 'B16072', 'Non-Veg', 'O+', 'RAJAN BAJAJ - b16072@students.iitmandi.ac.in.jpg', 'Rajan', '', 'M', 0, 000, 000, 000, 0),
+(3020, 'MOHIT LAKHLAN', 'b17129@students.iitmandi.ac.in', '9643955815', 18, '35', 'B17129', 'Non-Veg', 'O+', 'MOHIT LAKHLAN - b17129@students.iitmandi.ac.in.jpg', 'Lakhlan', '', 'M', 0, 000, 000, 000, 0),
+(3021, 'ABHINANDAN SINGH', 'b16002@students.iitmandi.ac.in', '9736541855', 18, '35', 'B16002', 'Non-Veg', 'O+', 'ABHINANDAN SINGH - b16002@students.iitmandi.ac.in.jpg', 'Abhi', '', 'M', 0, 000, 000, 000, 0),
+(3022, 'ARYAN', 'b19074@students.iitmandi.ac.in', '9352246200', 18, '35', 'B19074', 'Non-Veg', 'B+', 'ARYAN - b19074@students.iitmandi.ac.in.jpg', 'Aryan', '', 'M', 0, 000, 000, 000, 0),
+(3024, 'YASH MAHESHWARI', 'yashmahe@iitk.ac.in', '7389165171', 15, '36', '180887', 'Veg', 'B+', 'YASH MAHESHWARI - yashmahe@iitk.ac.in.jpg', '16', '', 'M', 0, 000, 000, 000, 0),
+(3025, 'VYOM PRAKASH', 'v19010@students.iitmandi.ac.in', '9555295939', 18, '35', 'V19010', 'Non-Veg', 'A+', 'VYOM PRAKASH - v19010@students.iitmandi.ac.in.jpg', 'V.Tyagi', '', 'M', 0, 000, 000, 000, 0),
+(3026, 'RAVINDER KUMAR', 'rklagwal@gmail.com', '9417323065', 22, 'staff', 'xys', 'Non-Veg', 'B+', 'RAVINDER KUMAR - rklagwal@gmail.com.jpg', 'Ravinder', '', 'M', 0, 000, 000, 000, 0),
+(3027, 'JAI PRAKASH YADAV', 'b19247@students.iitmandi.ac.in', '9871489534', 18, '35', 'B19247', 'Non-Veg', 'AB+', 'JAI PRAKASH YADAV - b19247@students.iitmandi.ac.in.jpg', 'JP', '', 'M', 0, 000, 000, 000, 0),
+(3028, 'RITWIK GOSH', 'd17015@students.iitmandi.ac.in', '9830231374', 18, '35', 'D17015', 'Non-Veg', 'A+', 'RITWIK GOSH - d17015@students.iitmandi.ac.in.jpg', 'Ritwik', '', 'M', 0, 000, 000, 000, 0),
+(3029, 'AJEET PAL SINGH', 'so@iitrpr.ac.in', '9999641133', 22, 'staff', 'vxhsb', 'Non-Veg', 'B+', 'AJEET PAL SINGH - so@iitrpr.ac.in.jpg', 'Ajeet', '', 'M', 0, 000, 000, 000, 0),
+(3030, 'JASKIRAT SINGH BRAR', 'd17013@students.iitmandi.ac.in', '9501485850', 18, '35', 'D17013', 'Non-Veg', 'A+', 'JASKIRAT SINGH BRAR - d17013@students.iitmandi.ac.in.jpg', 'Brar', '', 'M', 0, 000, 000, 000, 0),
+(3031, 'ANIRUDH', 's16011@students.iitmandi.ac.in', '9478937677', 18, '35', 'S16011', 'Veg', 'A+', 'ANIRUDH - s16011@students.iitmandi.ac.in.jpg', 'Chandel', '', 'M', 0, 000, 000, 000, 0),
+(3032, 'BALKAR SINGH', 'b18165@students.iitmandi.ac.in', '9814744303', 18, '35', 'b18165', 'Veg', 'B-', 'BALKAR SINGH - b18165@students.iitmandi.ac.in.jpg', 'Balli', '', 'M', 0, 000, 000, 000, 0),
+(3033, 'SANTOSH SHARMA', 'santoshsharma.iit@gmail.com', '9519103751', 22, 'staff', 'ahbckj', 'Non-Veg', 'O+', 'SANTOSH SHARMA - santoshsharma.iit@gmail.com.jpg', 'snatosh', '', 'M', 0, 000, 000, 000, 0),
+(3034, 'KETAN ARORA', 't19074@students.iitmandi.ac.in', '9803239330', 18, '35', 'T19074', 'Non-Veg', 'O+', 'KETAN ARORA - t19074@students.iitmandi.ac.in.jpg', 'ketan', '', 'M', 0, 000, 000, 000, 0),
+(3035, 'RAKESH MEENA', 'b18189@students.iitmandi.ac.in', '9968352561', 18, '35', 'B18189', 'Non-Veg', 'O+', 'RAKESH MEENA - b18189@students.iitmandi.ac.in.jpg', 'Raka', '', 'M', 0, 000, 000, 000, 0),
+(3036, 'AKHILESH GUNDU', 'akhileshakki019@gmail.com', '8520072345', 16, '30', '15CE31013', 'Non-Veg', 'O+', 'AKHILESH GUNDU - akhileshakki019@gmail.com.jpg', 'Akhilesh', '', 'M', 0, 000, 000, 000, 0),
+(3037, 'ADIL CT', 'b19013@students.iitmandi.ac.in', '8075050860', 18, '35', 'b19013', 'Non-Veg', 'O+', 'ADIL CT - b19013@students.iitmandi.ac.in.jpg', 'Adil CT', '', 'M', 0, 000, 000, 000, 0),
+(3038, 'ANIMESH CHAUDHARY', 'b18006@students.iitmandi.ac.in', '7566137804', 18, '35', 'B18006', 'Non-Veg', 'B+', 'ANIMESH CHAUDHARY - b18006@students.iitmandi.ac.in.jpg', 'Anime', '', 'M', 0, 000, 000, 000, 0),
+(3039, 'GHANSHAM DAS', 'ghannu.g8872@gmail.com', '6284069942', 22, 'staff', '6284069942', 'Veg', 'O+', 'GHANSHAM DAS - ghannu.g8872@gmail.com.jpg', 'Ghansham', 'None', 'M', 0, 000, 000, 000, 0),
+(3040, 'ROHIT KAUSHAL', 'b16028@students.iitmandi.ac.in', '7807112823', 18, '32', 'B16028', 'Non-Veg', 'A+', 'ROHIT KAUSHAL - b16028@students.iitmandi.ac.in.jpg', 'Kaushal', '', 'M', 0, 000, 000, 000, 0),
+(3041, 'ROCKY GERMAN', 'b16141@students.iitmandiac.in', '7355983877', 18, '32', 'B16141', 'Non-Veg', 'O+', 'ROCKY GERMAN - b16141@students.iitmandiac.in.jpg', 'Rocky', '', 'M', 0, 000, 000, 000, 0),
+(3042, 'DEEPAK JARWAL', 'b16054@students.iitmandi.ac.in', '7807104317', 18, '32', 'B16054', 'Veg', 'AB+', 'DEEPAK JARWAL - b16054@students.iitmandi.ac.in.jpg', 'Jarwal', '', 'M', 0, 000, 000, 000, 0),
+(3043, 'AMAN RAJ', 'b17113@students.iitmandi.ac.in', '8210388521', 18, '32', 'B17113', 'Non-Veg', 'O+', 'AMAN RAJ - b17113@students.iitmandi.ac.in.jpg', 'Aman', '', 'M', 0, 000, 000, 000, 0),
+(3044, 'ANIRUDH SINGH', 'b19207@students.iitmandi.ac.in', '8824866170', 18, '32', 'B19207', 'Non-Veg', 'O+', 'ANIRUDH SINGH - b19207@students.iitmandi.ac.in.jpg', 'Anirudh', '', 'M', 0, 000, 000, 000, 0),
+(3045, 'ABBINAV CHAUDHARY', 'd15049@students.iitmandi.ac.in', '7807573825', 18, '32', 'D15049', 'Non-Veg', 'B+', 'ABBINAV CHAUDHARY - d15049@students.iitmandi.ac.in.jpg', 'Abhinav', '', 'M', 0, 000, 000, 000, 0),
+(3046, 'C GIRI VARSHITH', 'b19242@students.iitmandi.ac.in', '9886693985', 18, '32', 'B19242', 'Non-Veg', 'O+', 'C GIRI VARSHITH - b19242@students.iitmandi.ac.in.jpg', 'Varshith', '', 'M', 0, 000, 000, 000, 0),
+(3047, 'DEV AGARWAL', 'b19159@students.iitmandi.ac.in', '6375210988', 18, '32', 'B19159', 'Veg', 'A+', 'DEV AGARWAL - b19159@students.iitmandi.ac.in.jpg', 'Dev', '', 'M', 0, 000, 000, 000, 0),
+(3048, 'NARESH', 'NA@gmail.com', '8988365228', 18, 'staff', 'NA', 'Non-Veg', 'O+', 'NARESH - NA@gmail.com.jpg', 'NA', '', 'M', 0, 000, 000, 000, 0),
+(3049, 'SAKSHAM SINGLA', 'singlasaksham27@gmail.com', '9888060118', 5, '36', '2018TT10945', 'Veg', 'A+', 'SAKSHAM SINGLA - singlasaksham27@gmail.com.jpg', 'SAKSHAM', '', 'M', 0, 000, 000, 000, 0),
+(3050, 'CHIRAG JINDAL', 'chiragji@iitk.ac.in', '9559004260', 15, '12', '170225', 'Veg', 'A+', 'CHIRAG JINDAL - chiragji@iitk.ac.in.jpg', 'CHIRAG', '', 'M', 0, 000, 000, 000, 0),
+(3051, 'MANOJ BURDAK', 'manojb@iitk.ac.in', '8853156078', 15, '14', '170379', 'Veg', 'B-', 'MANOJ BURDAK - manojb@iitk.ac.in.jpg', 'MANOJ', '', 'M', 0, 000, 000, 000, 0),
+(3052, 'ASHUTHOSH DHARMENDRA SHARMA', 'ashudash@iitk.ac.in', '9028383692', 15, '15,17,18', '180154', 'Non-Veg', 'O+', 'ASHUTHOSH DHARMENDRA SHARMA - ashudash@iitk.ac.in.jpg', 'ASHUTHOSH', '', 'M', 0, 000, 000, 000, 0),
+(3053, 'SHREYA CHOUHAN', 'shreyac@iitk.ac.in', '8949784034', 15, '19,20,24,25,28,29', '180734', 'Non-Veg', 'B+', 'SHREYA CHOUHAN - shreyac@iitk.ac.in.jpg', 'SHREYA', '', 'F', 0, 000, 000, 000, 0);
+INSERT INTO `players` (`id`, `name`, `email`, `mobile`, `college_id`, `selected_sports`, `roll_no`, `food`, `blood_group`, `profile_image_url`, `jursey_name`, `special_inst`, `gender`, `reg_status`, `game_gold`, `game_silver`, `game_bronze`, `feeded`) VALUES
+(3054, 'AKANKSHA MANDOLIYA', 'akanksha@iitk.ac.in', '7398088867', 15, '20,24,25,28', '190078', 'Veg', 'A+', 'AKANKSHA MANDOLIYA - akanksha@iitk.ac.in.jpg', 'AKANKSHA', '', 'F', 0, 000, 000, 000, 0),
+(3055, 'MOHIT GARG', 'gmohit@iitk.ac.in', '7772971504', 15, '1,9,10', '160409', 'Veg', 'O+', 'MOHIT GARG - gmohit@iitk.ac.in.jpg', 'GMOHIT', '', 'M', 0, 000, 000, 000, 0),
+(3056, 'RUBY MEHTA', 'rubysk@iitk.ac.in', '8429232184', 15, '24,25,29', '180632', 'Non-Veg', 'O+', 'RUBY MEHTA - rubysk@iitk.ac.in.jpg', 'RUBY', '', 'F', 0, 000, 000, 000, 0),
+(3057, 'BALDEV', 'Nomail@gmail.com', '8580762108', 18, 'staff', 'NA', 'Non-Veg', 'A+', 'BALDEV - Nomail@gmail.com.jpg', 'NA', '', 'M', 0, 000, 000, 000, 0),
+(3058, 'SANYAM JAIN', 'sanyamj.che18@itbhu.ac.in', '6376525495', 1, '35', '18045083', 'Veg', 'AB+', 'SANYAM JAIN - sanyamj.che18@itbhu.ac.in.jpg', '-', 'Food: Saatvik', 'M', 0, 000, 000, 000, 0);
 
 -- --------------------------------------------------------
 
@@ -3393,7 +3431,7 @@ ALTER TABLE `inquiry`
 -- AUTO_INCREMENT for table `news_subscribers`
 --
 ALTER TABLE `news_subscribers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `participation`
 --
@@ -3403,7 +3441,7 @@ ALTER TABLE `participation`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3015;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3059;
 --
 -- AUTO_INCREMENT for table `point_main`
 --
