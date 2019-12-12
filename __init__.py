@@ -796,7 +796,8 @@ def download_android_app():
     result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     #We can also delete this file here now
     # return result
-    return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
+    # return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
+    return render_template('download_android_app.html')
 
 
 @app.route("/privacy_policy")
@@ -896,7 +897,7 @@ def getLiveMatches_Details_Android(game_name):
 def getSchedule_Team_Matches_Ajax_Android(game_name, day):
     game_name = game_name
     day = int(day)
-    day0 = "2019-12-07 00:00:00.000000"
+    day0 = "2019-12-14 00:00:00.000000"
     day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
     start_day = day0 + timedelta(days=day)
     end_day = day0 + timedelta(days=day+1)

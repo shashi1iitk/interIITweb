@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="566c4d5c-5917-45c0-b84b-b70aea0b145d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backups/interiit2019.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Backups/interiit2019.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server file/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server file/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT BHU/ASHWANI RANJAN - ashwanir.rs.mec15@itbhu.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT BHU/SHAILESH KUMAR - shailesh.kumar.civ17@itbhu.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Delhi/PUSHPENDRA SINGH RANA - pushpendrarana128@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Kanpur/ASHUTOSH DHARMENDRA SHARMA - ashudash@iitk.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Kanpur/SAM JOE - jcsam@iitk.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Kanpur/SHREYA CHAUHAN - shreyac@iitk.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Kharagpur/JAYA AGARWAL - agarwal.jaya7@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Madras/G SHREETHIGHA - hs19h038@smail.iitm.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Madras/RAJAS CHARI - rajaschari@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Patna/KOUSHIK MONDAL - koushik.ce17@iitp.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Ropar/BHAVESH GARG - bhavesh@iitrpr.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_all/IIT Ropar/SANTOSH SHARMA - santoshsharma.iit@gmail.com.svg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/profile_qr_all/IIT Ropar/SANTOSH SHARMA - santoshsharma.iit@gmail.com.svg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitbbs_players/IIT Kharagpur/JAYA AGARWAL - agarwal.jaya7@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitbbs_players/IIT Madras/G SHREETHIGHA - hs19h038@smail.iitm.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitbbs_players/IIT Madras/RAJAS CHARI - rajaschari@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT BHU/ASHWANI RANJAN - ashwanir.rs.mec15@itbhu.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT BHU/SHAILESH KUMAR - shailesh.kumar.civ17@itbhu.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT Delhi/PUSHPENDRA SINGH RANA - pushpendrarana128@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT Kanpur/ASHUTOSH DHARMENDRA SHARMA - ashudash@iitk.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT Kanpur/SAM JOE - jcsam@iitk.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT Kanpur/SHREYA CHAUHAN - shreyac@iitk.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT Patna/KOUSHIK MONDAL - koushik.ce17@iitp.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_iitkgp_players/IIT Ropar/SANTOSH SHARMA - santoshsharma.iit@gmail.com.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/profile_qr_staffs/IIT Ropar/BHAVESH GARG - bhavesh@iitrpr.ac.in.svg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_pdf.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/temp_pdf.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp_svg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/temp_svg.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/s1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/s2.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -187,7 +155,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
