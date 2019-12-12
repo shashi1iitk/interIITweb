@@ -645,11 +645,10 @@ def gallery():
 
 @app.route("/download_android_app")
 def download_android_app():
-    result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    # result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     #We can also delete this file here now
     # return result
-    # return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
-    return render_template('download_android_app.html')
+    return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
 
 
 @app.route("/privacy_policy")
