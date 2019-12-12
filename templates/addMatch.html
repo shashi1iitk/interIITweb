@@ -33,7 +33,7 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    async: false
+                    async: true
                 }).done(function (id) {
                     if (id === "Success") {
                         swal("Awesome!", "Match details accepted!", "success");
@@ -89,7 +89,7 @@
                 contentType: false,
                 cache: false,
                 processData: false,
-                async: false
+                async: true
                 }).done(function (id) {
                     console.log(id);
                     if (id === "Success") {
@@ -149,7 +149,11 @@
                     match_id: parseInt($('#matchesi option:selected').val()),
                 },
                 type: 'POST',
-                url: '/getPlayersIndividual'
+                url: '/getPlayersIndividual',
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: true
             }).done(function (data) {
                 $("#update_individual").addClass("hide");
                 data = JSON.parse(data);
