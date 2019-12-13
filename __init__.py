@@ -1135,6 +1135,7 @@ def setMatchDetails():
 @login_required
 def getPlayersIndividual():
     if (request.method == 'POST'):
+        print(request.form)
         id_match = request.form.get('match_id')
         print(id_match)
         id_sport = Match_Individual.query.filter(Match_Individual.id == int(id_match)).first().sport_id
