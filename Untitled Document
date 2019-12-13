@@ -1,0 +1,494 @@
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/1.jpg') }}"/></div>
+        <div class="at-user__name">Vishal Kumar Singh</div>
+        <div class="at-user__title">Co-Convener</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/2.jpg') }}"/></div>
+        <div class="at-user__name">Akash Bhardwaj</div>
+        <div class="at-user__title">Overall Coordinator</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/3.jpg') }}"/></div>
+        <div class="at-user__name">Piyush Agarwal</div>
+        <div class="at-user__title">Overall Coordinator</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/4.jpg') }}"/></div>
+        <div class="at-user__name">Ninaad Lohakare</div>
+        <div class="at-user__title">Co-Convener</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/5.jpg') }}"/></div>
+        <div class="at-user__name">Mayank Manjeara</div>
+        <div class="at-user__title">Overall Coordinator</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/6.jpg') }}"/></div>
+        <div class="at-user__name">Aditya Singhania</div>
+        <div class="at-user__title">Overall Coordinator</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/7.jpg') }}"/></div>
+        <div class="at-user__name">Abhinav Raj Singh </div>
+        <div class="at-user__title">Coordinator (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/8.jpg') }}"/></div>
+        <div class="at-user__name">Vikash Mishra </div>
+        <div class="at-user__title">Coordinator (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/9.jpg') }}"/></div>
+        <div class="at-user__name">Ahana Khandelwal</div>
+        <div class="at-user__title">Coordinator (Design & Ambience)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/10.jpg') }}"/></div>
+        <div class="at-user__name">Kushagra Ramnani</div>
+        <div class="at-user__title">Coordinator (Design & Ambience)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/11.jpg') }}"/></div>
+        <div class="at-user__name">Abhishek Singh</div>
+        <div class="at-user__title">Coordinator (Design & Ambience)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/12.jpg') }}"/></div>
+        <div class="at-user__name">Shashi Ranjan</div>
+        <div class="at-user__title">Coordinator (Web Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/13.jpg') }}"/></div>
+        <div class="at-user__name">Abhinav Dudhagawali</div>
+        <div class="at-user__title">Core Team Head (Design & Ambience)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/14.jpg') }}"/></div>
+        <div class="at-user__name">Shreyash Panat</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/15.jpg') }}"/></div>
+        <div class="at-user__name">Saurav Chakraborty</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/16.jpg') }}"/></div>
+        <div class="at-user__name">Rahul Singhal</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/17.jpg') }}"/></div>
+        <div class="at-user__name">Yogesh Kumar</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/18.jpg') }}"/></div>
+        <div class="at-user__name">Nihal Singh Verma</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/19.jpg') }}"/></div>
+        <div class="at-user__name">Ritesh Kumar</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/20.jpg') }}"/></div>
+        <div class="at-user__name">Sagun Jhunjhunwala</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/21.jpg') }}"/></div>
+        <div class="at-user__name">Sakshi Bhose</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/22.jpg') }}"/></div>
+        <div class="at-user__name">Dinesh Chandra</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/23.jpg') }}"/></div>
+        <div class="at-user__name">Lakshya Sharma</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/24.jpg') }}"/></div>
+        <div class="at-user__name">Amitanshu Kumar</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/25.jpg') }}"/></div>
+        <div class="at-user__name">Abhijeet Kumar Sharma</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/26.jpg') }}"/></div>
+        <div class="at-user__name">Apurv Gupta</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/27.jpg') }}"/></div>
+        <div class="at-user__name">Shashank Verma</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/28.jpg') }}"/></div>
+        <div class="at-user__name">Anubhav Deep</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/29.jpg') }}"/></div>
+        <div class="at-user__name">Akshat Jain</div>
+        <div class="at-user__title">Core Team Head (Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/30.jpg') }}"/></div>
+        <div class="at-user__name">Aman Chourasia</div>
+        <div class="at-user__title">Core Team Head (Sponsorship)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/31.jpg') }}"/></div>
+        <div class="at-user__name">Abhinav Kumar </div>
+        <div class="at-user__title">Core Team Head (Sponsorship)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/32.jpg') }}"/></div>
+        <div class="at-user__name">Anuj Verma</div>
+        <div class="at-user__title">Core Team Head (Sponsorship)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/33.jpg') }}"/></div>
+        <div class="at-user__name">Neel Shah</div>
+        <div class="at-user__title">Core Team Head (Sponsorship)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/34.jpg') }}"/></div>
+        <div class="at-user__name">Soumya Acharya</div>
+        <div class="at-user__title">Core Team Head (Video & Photography)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/35.jpg') }}"/></div>
+        <div class="at-user__name">Hemanth Addada</div>
+        <div class="at-user__title">Core Team Head (Video & Photography)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/36.jpg') }}"/></div>
+        <div class="at-user__name">Manohar Manu</div>
+        <div class="at-user__title">Core Team Head (Video & Photography)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/37.jpg') }}"/></div>
+        <div class="at-user__name">Aadi Swadipto Mondal </div>
+        <div class="at-user__title">Core Team Head (Web Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="at-column">
+      <div class="at-user">
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/38.jpg') }}"/></div>
+        <div class="at-user__name">Ved Prakash</div>
+        <div class="at-user__title">Core Team Head (Web Operations)</div>
+        <ul class="at-social" style="position:relative;right:5%">
+          <li class="at-social__item"><a href="#" class="fa1 fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa1 fa-phone" style="text-decoration:none;color:white"></a></li>
+        </ul>
+      </div>
+    </div>
+
