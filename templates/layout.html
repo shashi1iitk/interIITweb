@@ -125,6 +125,7 @@
           <li><a href="/schedule">Schedule</a></li>
           <li><a href="/live">Live Stream</a></li>
           <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/OurTeam">Our Team</a></li>
           <!-- <li><a href="/info">Info</a></li> -->
 
           {% if current_user.is_authenticated %} {% if current_user.privilege
@@ -224,13 +225,13 @@
               });
             });
           </script>
-			
-			
+
+
 			<div class="col-lg-4">
-			
+
         <a href="/android_app" ><img style="width:100%; top:30%" src="{{ url_for('static', filename='img/app.png') }}" alt="App"></a>
 			</div>
-          
+
 		  <div class="col-lg-4 col-md-4 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>

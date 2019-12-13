@@ -216,7 +216,7 @@ def qrMaker():
         roll_no = re.sub('\s+',' ', person.roll_no).strip()
 
         temp_svg  = 'temp_svg.svg'
-        
+
         s = email + "^" + roll_no
         url = pyqrcode.create(s)
         y = os.path.join(os.getcwd())
@@ -246,7 +246,7 @@ def svgConvertor():
     folders = os.listdir(qr)
 
     for folder in folders:
-        
+
         fo = os.path.join(os.getcwd(), "static", "profile_qr", folder)
         files = os.listdir(fo)
         print(folder)
@@ -259,7 +259,7 @@ def svgConvertor():
             rf = open(fo + "/" + file, "r")
             drawing = svg2rlg(rf)
             renderPDF.drawToFile(drawing, "file.pdf")
-            
+
 
             pages = convert_from_path("file.pdf", 300)
             for page in pages:
@@ -284,7 +284,7 @@ def Seperate_by_college():
             dst_iitkgp = os.path.join(os.getcwd(), "static", "profile_qr_iitkgp_players" , college.clg_name)
             if not os.path.exists(dst_iitkgp):
                 os.makedirs(dst_iitkgp)
-            
+
             dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players" , college.clg_name)
             if not os.path.exists(dst_iitbbs):
                 os.makedirs(dst_iitbbs)
@@ -311,7 +311,7 @@ def Seperate_by_college():
                         s_id = int(sport_id)
                         if s_id in iitbbs_list:
                             flag_iitbbs = 1
-                    
+
                     if(flag_iitbbs):
                         try:
                             shutil.copy(src_file, dst_iitbbs)
@@ -342,7 +342,7 @@ def Seperate_by_college():
     # print("staff: " + str(staff))
     print(error)
     return("Ok")
-                            
+
 
 
 
@@ -758,6 +758,11 @@ def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
+@app.route("/OurTeam")
+def team():
+    # return render_template('schedule.html', params=params)
+    return render_template('ourteam.html')
+
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
 @login_required
@@ -875,7 +880,7 @@ def profile_req_with_qr(qr_val):
 @app.route('/getLiveMatches_Details_Android/<game_name>', methods=['GET', 'POST'])
 def getLiveMatches_Details_Android(game_name):
     game_name = game_name
-    
+
     time_now = datetime.now()
 
     games = Sports.query.filter(Sports.sports_name == game_name).all()
@@ -888,7 +893,7 @@ def getLiveMatches_Details_Android(game_name):
                 dict1 = {"sport_name": sp.sports_name, "unique_id" : match.id, "level": match.level + "(" +  sp.category + ")" , "venue_time": "At " + match.venue + " from "+ str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
                 list_live.append(dict1)
 
- 
+
     return json.dumps(list_live)
 
 
@@ -914,7 +919,7 @@ def getSchedule_Team_Matches_Ajax_Android(game_name, day):
                 dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
                 list_all.append(dict1)
 
- 
+
     return json.dumps(list_all)
 
 @app.route('/getSchedule_Individual_Matches_Deatils_Android/<game>', methods=['GET', 'POST'])
@@ -926,7 +931,7 @@ def getSchedule_Individual_Matches_Deatils_Android(game):
         sp = sport.sports_name.lower()
         if sp.find(game) == 0:
             game_ids.append(sport.id)
-            
+
     list_all = []
     for game_id in game_ids:
         matchl = Match_Individual.query.filter(Match_Individual.sport_id == game_id).all()
@@ -941,14 +946,14 @@ def getSchedule_Individual_Matches_Deatils_Android(game):
         matchl = Match_Relay.query.filter(Match_Relay.sport_id == game_id).all()
         print(matchl)
         if(matchl != []):
-            
+
             for match in matchl:
                 sp = getSport(match.sport_id)
                 sport_name = sp.sports_name + "(" +  sp.category + ")"
                 dict1 = {"sport_name": sport_name, "venue": match.venue, "win1": getClgName(match.clg_1st),"win2": getClgName(match.clg_2nd),"win3": getClgName(match.clg_3rd),"win4": getClgName(match.clg_4th)}
                 list_all.append(dict1)
 
-    
+
     return json.dumps(list_all)
 
 @app.route('/temp', methods=['GET', 'POST'])
