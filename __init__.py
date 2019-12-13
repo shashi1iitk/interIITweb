@@ -764,11 +764,11 @@ def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
-@app.route("/OurTeam")
+@app.route("/team")
 def team():
     return render_template('ourteam.html')
 
-@app.route("/Sponsors")
+@app.route("/sponsors")
 def sponsors():
     return render_template('sponsors.html')
 
@@ -804,6 +804,13 @@ def logout():
 def gallery():
     # return render_template('gallery.html', params=params)
     return render_template('gallery.html')
+
+
+
+@app.route("/download_from")
+def down():
+    result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    return result
 
 
 @app.route("/download_android_app")
