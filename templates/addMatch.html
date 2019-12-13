@@ -38,6 +38,7 @@
                     if (id === "Success") {
                         swal("Awesome!", "Match details accepted!", "success");
                         $("#teamForm").trigger('reset');
+                        location.reload();
                     } else swal("Sorry!", id, "error");
                     $("#teamFormButton").attr("disabled", false);
                     $("#teamFormButton").html('Submit');
