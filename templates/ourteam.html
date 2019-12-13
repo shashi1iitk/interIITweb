@@ -4,213 +4,240 @@
 
 <style media="screen">
   .at-section__title {
-  margin: 0 0 70px;
-  color: #000;
-  font-family: 'Roboto', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 2.625rem;
-  text-align: center;
-}
-.at-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background: #FFF;
-  border: 1px solid #E2E9ED;
-}
-.at-grid[data-column="1"] .at-column {
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  flex-basis: 100%;
-}
-.at-grid[data-column="2"] .at-column {
-  width: 50%;
-  max-width: 50%;
-  min-width: 50%;
-  flex-basis: 50%;
-}
-.at-grid[data-column="3"] .at-column {
-  width: 33.3333333333%;
-  max-width: 33.3333333333%;
-  min-width: 33.3333333333%;
-  flex-basis: 33.3333333333%;
-}
-.at-grid[data-column="4"] .at-column {
-  width: 25%;
-  max-width: 25%;
-  min-width: 25%;
-  flex-basis: 25%;
-}
-.at-grid[data-column="5"] .at-column {
-  width: 20%;
-  max-width: 20%;
-  min-width: 20%;
-  flex-basis: 20%;
-}
-.at-grid[data-column="6"] .at-column {
-  width: 16.6666666667%;
-  max-width: 16.6666666667%;
-  min-width: 16.6666666667%;
-  flex-basis: 16.6666666667%;
-}
-.at-grid[data-column="7"] .at-column {
-  width: 14.2857142857%;
-  max-width: 14.2857142857%;
-  min-width: 14.2857142857%;
-  flex-basis: 14.2857142857%;
-}
-.at-grid[data-column="8"] .at-column {
-  width: 12.5%;
-  max-width: 12.5%;
-  min-width: 12.5%;
-  flex-basis: 12.5%;
-}
-.at-grid[data-column="9"] .at-column {
-  width: 11.1111111111%;
-  max-width: 11.1111111111%;
-  min-width: 11.1111111111%;
-  flex-basis: 11.1111111111%;
-}
-.at-column {
-  position: relative;
-  background: #FFF;
-  box-shadow: 0 0 0 1px #E2E9ED;
-  padding: 10px;
-  box-sizing: border-box;
-  transition: box-shadow 0.2s ease, -webkit-transform 0.2s ease;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-  transition: box-shadow 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
-}
-.at-column:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-.at-column:hover {
-  z-index: 1;
-  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-.at-column:hover .at-social {
-  margin: 16px 0 0;
-  opacity: 1;
-}
-@media (max-width: 800px) {
-  .at-column {
-    width: 50% !important;
-    max-width: 50% !important;
-    min-width: 50% !important;
-    flex-basis: 50% !important;
+    margin: 0 0 70px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3.625rem;
+    text-align: center;
   }
-}
-@media (max-width: 600px) {
-  .at-column {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    flex-basis: 100% !important;
+
+  .at-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #FFF;
+    border: 1px solid #E2E9ED;
   }
-}
-.at-user {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  text-align: center;
-}
-.at-user__avatar {
-  width: 98px;
-  height: 98px;
-  border-radius: 100%;
-  margin: 0 auto 20px;
-  overflow: hidden;
-}
-.at-user__avatar img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-}
-.at-user__name {
-  color: #313435;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 2.625rem;
-}
-.at-user__title {
-  color: #6F808A;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.875rem;
-  line-height: 2.375rem;
-}
-.at-social {
-  margin: 0 0 -18px;
-  opacity: 0;
-  transition: margin 0.2s ease, opacity 0.2s ease;
-}
-.at-social__item {
-  display: inline-block;
-  margin: 0 10px;
-}
-.at-social__item a {
-  display: block;
-}
-.at-social__item svg {
-  fill: #515F65;
-  display: block;
-  height: 18px;
-  transition: fill 0.2s ease;
-}
+
+  .at-grid[data-column="1"] .at-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .at-grid[data-column="2"] .at-column {
+    width: 50%;
+    max-width: 50%;
+    min-width: 50%;
+    flex-basis: 50%;
+  }
+
+  .at-grid[data-column="3"] .at-column {
+    width: 33.3333333333%;
+    max-width: 33.3333333333%;
+    min-width: 33.3333333333%;
+    flex-basis: 33.3333333333%;
+  }
+
+  .at-grid[data-column="4"] .at-column {
+    width: 25%;
+    max-width: 25%;
+    min-width: 25%;
+    flex-basis: 25%;
+  }
+
+  .at-grid[data-column="5"] .at-column {
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    flex-basis: 20%;
+  }
+
+  .at-grid[data-column="6"] .at-column {
+    width: 16.6666666667%;
+    max-width: 16.6666666667%;
+    min-width: 16.6666666667%;
+    flex-basis: 16.6666666667%;
+  }
+
+  .at-grid[data-column="7"] .at-column {
+    width: 14.2857142857%;
+    max-width: 14.2857142857%;
+    min-width: 14.2857142857%;
+    flex-basis: 14.2857142857%;
+  }
+
+  .at-grid[data-column="8"] .at-column {
+    width: 12.5%;
+    max-width: 12.5%;
+    min-width: 12.5%;
+    flex-basis: 12.5%;
+  }
+
+  .at-grid[data-column="9"] .at-column {
+    width: 11.1111111111%;
+    max-width: 11.1111111111%;
+    min-width: 11.1111111111%;
+    flex-basis: 11.1111111111%;
+  }
+
+  .at-column {
+    position: relative;
+    background: #FFF;
+    box-shadow: 0 0 0 1px #E2E9ED;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease, -webkit-transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+  }
+
+  .at-column:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  .at-column:hover {
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .at-column:hover .at-social {
+    margin: 16px 0 0;
+    opacity: 1;
+  }
+
+  @media (max-width: 800px) {
+    .at-column {
+      width: 50% !important;
+      max-width: 50% !important;
+      min-width: 50% !important;
+      flex-basis: 50% !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .at-column {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      flex-basis: 100% !important;
+    }
+  }
+
+  .at-user {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+  }
+
+  .at-user__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+  }
+
+  .at-user__avatar img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .at-user__name {
+    color: #313435;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.625rem;
+  }
+
+  .at-user__title {
+    color: #6F808A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    line-height: 2.375rem;
+  }
+
+  .at-social {
+    margin: 0 0 -18px;
+    opacity: 0;
+    transition: margin 0.2s ease, opacity 0.2s ease;
+  }
+
+  .at-social__item {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .at-social__item a {
+    display: block;
+  }
+
+  .at-social__item svg {
+    fill: #515F65;
+    display: block;
+    height: 18px;
+    transition: fill 0.2s ease;
+  }
 
 
-body {
-  background: #FFF;
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-.container1 {
-  max-width: 1170px;
-  width: 100%;
-  margin: 100px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-.fa {
-  padding: 15px;
-  font-size: 20px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-}
+  .container1 {
+    max-width: 1440px;
+    width: 100%;
+    margin: 100px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
 
-.fa-facebook{
-  background: #3B5998;
-  color: white;
-}
+  .fa {
+    padding: 15px;
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
 
-.fa-google{
-  background: #dd4b39;
-  color: white;
-}
-.fa-phone{
-  background: #00b489;
-  color: white;
-}
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+
+  .fa-phone {
+    background: #00b489;
+    color: white;
+  }
 </style>
-  <!-- .fa {
+<!-- .fa {
   padding: 15px;
   font-size: 20px;
   width: 50px;
@@ -232,21 +259,23 @@ body {
 
 <div class="container1">
   <div class="at-section">
-    <div class="at-section__title">The Team That Made It happen</div>
+    <div class="at-section__title">The Team That Made It Happen</div>
   </div>
 
 
-  <div class="at-grid" data-column="3">
+  <div class="at-grid" data-column="4">
 
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/1.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/1.jpg') }}" /></div>
         <div class="at-user__name">Vishal Kumar Singh</div>
         <div class="at-user__title">Co-Convener</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100010338962799" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100010338962799" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a>
+          </li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -254,12 +283,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/2.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/2.jpg') }}" /></div>
         <div class="at-user__name">Akash Bhardwaj</div>
         <div class="at-user__title">Overall Coordinator</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100004687938794" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100004687938794" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a>
+          </li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -267,12 +298,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/3.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/3.jpg') }}" /></div>
         <div class="at-user__name">Piyush Agarwal</div>
         <div class="at-user__title">Overall Coordinator</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/piyush.agrawal.125760" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/piyush.agrawal.125760" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a>
+          </li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -281,12 +314,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/4.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/4.jpg') }}" /></div>
         <div class="at-user__name">Ninaad Lohakare</div>
         <div class="at-user__title">Co-Convener</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/ninaad.lohakare" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/ninaad.lohakare" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a>
+          </li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -294,12 +329,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/5.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/5.jpg') }}" /></div>
         <div class="at-user__name">Mayank Manjeara</div>
         <div class="at-user__title">Overall Coordinator</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/mayank.manjeara" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/mayank.manjeara" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="#" class="fa fa-google" style="text-decoration:none;color:white"></a>
+          </li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -307,12 +344,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/6.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/6.jpg') }}" /></div>
         <div class="at-user__name">Aditya Singhania</div>
         <div class="at-user__title">Overall Coordinator</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/singhaniaditya99" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/singhaniaditya99" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -320,12 +359,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/7.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/7.jpg') }}" /></div>
         <div class="at-user__name">Abhinav Raj Singh </div>
         <div class="at-user__title">Coordinator (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/abhinav.raj.376" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:abhinav.raj.singh619@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/abhinav.raj.376" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:abhinav.raj.singh619@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -333,12 +374,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/8.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/8.jpg') }}" /></div>
         <div class="at-user__name">Vikash Mishra </div>
         <div class="at-user__title">Coordinator (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/vikash1757" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:vikashmishra1757@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/vikash1757" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:vikashmishra1757@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -346,12 +389,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/9.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/9.jpg') }}" /></div>
         <div class="at-user__name">Ahana Khandelwal</div>
         <div class="at-user__title">Coordinator (Design & Ambience)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/ahana.khandelwal.319" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/ahana.khandelwal.319" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -359,12 +404,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/10.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/10.jpg') }}" /></div>
         <div class="at-user__name">Kushagra Ramnani</div>
         <div class="at-user__title">Coordinator (Design & Ambience)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/kushagra1412?ref=br_rs" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/kushagra1412?ref=br_rs" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -372,12 +419,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/11.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/11.jpg') }}" /></div>
         <div class="at-user__name">Abhishek Singh</div>
         <div class="at-user__title">Coordinator (Design & Ambience)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/abhishek97iitkgp" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/abhishek97iitkgp" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -385,12 +434,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/12.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/12.jpg') }}" /></div>
         <div class="at-user__name">Shashi Ranjan</div>
         <div class="at-user__title">Coordinator (Web Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/shashi1iitkgp" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:shashi1iitk@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/shashi1iitkgp" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:shashi1iitk@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -398,12 +449,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/13.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/13.jpg') }}" /></div>
         <div class="at-user__name">Abhinav Dudhagawali</div>
         <div class="at-user__title">Core Team Head (Design & Ambience)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/mandirvahibanega" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/mandirvahibanega" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -411,12 +464,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/14.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/14.jpg') }}" /></div>
         <div class="at-user__name">Shreyash Panat</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/shreyash.panat" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:shreyashpanat@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/shreyash.panat" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:shreyashpanat@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -424,12 +479,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/15.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/15.jpg') }}" /></div>
         <div class="at-user__name">Saurav Chakraborty</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/saurav.chakraborty.3720" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:sauravchakraborty098@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/saurav.chakraborty.3720" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:sauravchakraborty098@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -437,12 +494,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/16.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/16.jpg') }}" /></div>
         <div class="at-user__name">Rahul Singhal</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100017431987792" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:singhalrahul1916@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100017431987792" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:singhalrahul1916@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -450,12 +509,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/17.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/17.jpg') }}" /></div>
         <div class="at-user__name">Yogesh Kumar</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100025152274858" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:imyogiraj.kumar99@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100025152274858" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:imyogiraj.kumar99@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -463,12 +524,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/18.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/18.jpg') }}" /></div>
         <div class="at-user__name">Nihal Singh Verma</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/nihal0singh0verma" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:nihalsinghverma@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/nihal0singh0verma" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:nihalsinghverma@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -476,12 +539,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/19.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/19.jpg') }}" /></div>
         <div class="at-user__name">Ritesh Kumar</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/rksriitkgp" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:rksriitkgp@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/rksriitkgp" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:rksriitkgp@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -489,12 +554,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/20.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/20.jpg') }}" /></div>
         <div class="at-user__name">Sagun Jhunjhunwala</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/sagun.jhunjhunwala" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:sagunjhunjhunwala@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/sagun.jhunjhunwala" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:sagunjhunjhunwala@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -502,12 +569,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/21.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/21.jpg') }}" /></div>
         <div class="at-user__name">Sakshi Bhose</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/sakshi.bhose" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:sakshibhose@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/sakshi.bhose" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:sakshibhose@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -515,12 +584,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/22.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/22.jpg') }}" /></div>
         <div class="at-user__name">Dinesh Chandra</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/dinesh.chandra.9883739" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:dineshchandra970@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/dinesh.chandra.9883739" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:dineshchandra970@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -528,12 +599,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/23.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/23.jpg') }}" /></div>
         <div class="at-user__name">Lakshya Sharma</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100019093513625" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:lakshya5978@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100019093513625" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:lakshya5978@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -541,12 +614,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/24.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/24.jpg') }}" /></div>
         <div class="at-user__name">Amitanshu Kumar</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/amitanshu.kumar.54" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:amitanshukumar.iitkgp@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/amitanshu.kumar.54" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:amitanshukumar.iitkgp@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -554,12 +629,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/25.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/25.jpg') }}" /></div>
         <div class="at-user__name">Abhijeet Kumar Sharma</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100006257556917" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:abhijeetsharma2398@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100006257556917" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:abhijeetsharma2398@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -567,12 +644,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/26.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/26.jpg') }}" /></div>
         <div class="at-user__name">Apurv Gupta</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/apurv.gupta7106" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:apurvg81@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/apurv.gupta7106" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:apurvg81@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -580,12 +659,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/27.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/27.jpg') }}" /></div>
         <div class="at-user__name">Shashank Verma</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/shashankverma47" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:shashankverma47@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/shashankverma47" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:shashankverma47@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -593,24 +674,28 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/28.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/28.jpg') }}" /></div>
         <div class="at-user__name">Anubhav Deep</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/anubhav.deep1" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:anubhav.singh.karnal@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/anubhav.deep1" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:anubhav.singh.karnal@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
     </div>
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/29.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/29.jpg') }}" /></div>
         <div class="at-user__name">Akshat Jain</div>
         <div class="at-user__title">Core Team Head (Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/akshat.jain.1411" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/akshat.jain.1411" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -618,12 +703,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/30.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/30.jpg') }}" /></div>
         <div class="at-user__name">Aman Chourasia</div>
         <div class="at-user__title">Core Team Head (Sponsorship)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/amans.stride" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:achourasia084@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/amans.stride" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:achourasia084@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -631,12 +718,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/31.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/31.jpg') }}" /></div>
         <div class="at-user__name">Abhinav Kumar </div>
         <div class="at-user__title">Core Team Head (Sponsorship)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/abhinav1435" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:abhinavk1437@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/abhinav1435" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:abhinavk1437@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -644,12 +733,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/32.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/32.jpg') }}" /></div>
         <div class="at-user__name">Anuj Verma</div>
         <div class="at-user__title">Core Team Head (Sponsorship)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/profile.php?id=100009756604099" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:varrupsann11@gmail.com" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/profile.php?id=100009756604099" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:varrupsann11@gmail.com" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -657,12 +748,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/33.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/33.jpg') }}" /></div>
         <div class="at-user__name">Neel Shah</div>
         <div class="at-user__title">Core Team Head (Sponsorship)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/Neelshah99" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/Neelshah99" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -670,12 +763,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/34.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/34.jpg') }}" /></div>
         <div class="at-user__name">Soumya Acharya</div>
         <div class="at-user__title">Core Team Head (Video & Photography)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/soumya.acharya13" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/soumya.acharya13" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -683,12 +778,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/35.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/35.jpg') }}" /></div>
         <div class="at-user__name">Hemanth Addada</div>
         <div class="at-user__title">Core Team Head (Video & Photography)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/hemanth.addada" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/hemanth.addada" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -696,12 +793,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/36.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/36.jpg') }}" /></div>
         <div class="at-user__name">Manohar Manu</div>
         <div class="at-user__title">Core Team Head (Video & Photography)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/manohar.meda" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/manohar.meda" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -709,12 +808,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/37.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/37.jpg') }}" /></div>
         <div class="at-user__name">Aadi Swadipto Mondal </div>
         <div class="at-user__title">Core Team Head (Web Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/AadiSwadipto" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/AadiSwadipto" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>
@@ -722,12 +823,14 @@ body {
 
     <div class="at-column">
       <div class="at-user">
-        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/38.jpg') }}"/></div>
+        <div class="at-user__avatar"><img src="{{ url_for('static', filename='interiit/38.jpg') }}" /></div>
         <div class="at-user__name">Ved Prakash</div>
         <div class="at-user__title">Core Team Head (Web Operations)</div>
         <ul class="at-social" style="position:relative;right:5%">
-          <li class="at-social__item" ><a href="https://www.facebook.com/vedprakash.tawar.7" target="_blank" class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
-          <li class="at-social__item"><a href="mailto:" class="fa fa-google" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="https://www.facebook.com/vedprakash.tawar.7" target="_blank"
+              class="fa fa-facebook" style="text-decoration:none;color:white"></a></li>
+          <li class="at-social__item"><a href="mailto:" class="fa fa-google"
+              style="text-decoration:none;color:white"></a></li>
           <li class="at-social__item"><a href="#" class="fa fa-phone" style="text-decoration:none;color:white"></a></li>
         </ul>
       </div>

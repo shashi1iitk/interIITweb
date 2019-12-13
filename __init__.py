@@ -808,7 +808,7 @@ def gallery():
 
 
 @app.route("/download_from")
-def down():
+def download():
     result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     return result
 

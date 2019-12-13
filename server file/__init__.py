@@ -610,6 +610,14 @@ def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
+@app.route("/team")
+def team():
+    return render_template('ourteam.html')
+
+@app.route("/sponsors")
+def sponsors():
+    return render_template('sponsors.html')
+
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
 @login_required
@@ -649,6 +657,11 @@ def download_android_app():
     #We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
+
+@app.route("/download_from")
+def download():
+    result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    return result
 
 
 @app.route("/privacy_policy")
