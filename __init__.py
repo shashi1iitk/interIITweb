@@ -1196,6 +1196,10 @@ def android_app():
     return render_template('android_app.html')
 
 
+@app.route("/time_now")
+def time_now():
+    return str(datetime.now())
+
 @app.route('/setIndividualMatchDetails', methods=['GET', 'POST'])
 @login_required
 def setIndividualMatches():
