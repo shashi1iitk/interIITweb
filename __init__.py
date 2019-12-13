@@ -10,9 +10,8 @@ from pdf2image import convert_from_path
 
 import shutil
 
-
 import pyqrcode
-from flask import Flask, render_template, request, redirect, url_for, flash, send_file
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
@@ -191,31 +190,30 @@ class NewsSubs(UserMixin, db.Model):
     __tablename__ = 'news_subscribers'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(200), nullable=False)
-    timestamp  = db.Column(db.DateTime(100), nullable=False)
+    timestamp = db.Column(db.DateTime(100), nullable=False)
 
 
 class Inquiry(UserMixin, db.Model):
     __tablename__ = 'inquiry'
     id = db.Column(db.Integer, primary_key=True)
-    timestamp  = db.Column(db.DateTime(100), nullable=False)
+    timestamp = db.Column(db.DateTime(100), nullable=False)
     email = db.Column(db.String(200), nullable=False)
     type = db.Column(db.String(400), nullable=False)
-    content  = db.Column(db.String(10000), nullable=False)
-
+    content = db.Column(db.String(10000), nullable=False)
 
 
 @app.route("/qrMaker")
 def qrMaker():
-    people  = Players.query.all()
+    people = Players.query.all()
     c = 0
     for person in people:
-        c = c+1
+        c = c + 1
         print(person.id)
-        name = re.sub('\s+',' ', person.name.upper()).strip()
-        email = re.sub('\s+',' ', person.email).strip()
-        roll_no = re.sub('\s+',' ', person.roll_no).strip()
+        name = re.sub('\s+', ' ', person.name.upper()).strip()
+        email = re.sub('\s+', ' ', person.email).strip()
+        roll_no = re.sub('\s+', ' ', person.roll_no).strip()
 
-        temp_svg  = 'temp_svg.svg'
+        temp_svg = 'temp_svg.svg'
 
         s = email + "^" + roll_no
         url = pyqrcode.create(s)
@@ -239,7 +237,6 @@ def qrMaker():
     return "Ok"
 
 
-
 @app.route("/svgConvertor")
 def svgConvertor():
     qr = os.path.join(os.getcwd(), "static", "profile_qr")
@@ -251,7 +248,7 @@ def svgConvertor():
         files = os.listdir(fo)
         print(folder)
 
-        out_loc = os.path.join(os.getcwd(), "static", "profile_qr_all" , folder)
+        out_loc = os.path.join(os.getcwd(), "static", "profile_qr_all", folder)
         if not os.path.exists(out_loc):
             os.makedirs(out_loc)
 
@@ -260,16 +257,16 @@ def svgConvertor():
             drawing = svg2rlg(rf)
             renderPDF.drawToFile(drawing, "file.pdf")
 
-
             pages = convert_from_path("file.pdf", 300)
             for page in pages:
                 page.save(out_loc + "/" + file + '.jpg', 'JPEG')
 
     return "Ok"
 
+
 @app.route("/Seperate_iitkgp_iitbbs")
 def Seperate_by_college():
-    iitbbs_list = [44,45,40,41,37,38,30,31]
+    iitbbs_list = [44, 45, 40, 41, 37, 38, 30, 31]
     colleges = College.query.order_by(College.id.asc()).all()
     p = 0
     kgp = 0
@@ -278,32 +275,34 @@ def Seperate_by_college():
     for college in colleges:
         students = Players.query.filter_by(college_id=college.id).all()
 
-        if(students != []):
+        if (students != []):
             print(college.clg_name)
 
-            dst_iitkgp = os.path.join(os.getcwd(), "static", "profile_qr_iitkgp_players" , college.clg_name)
+            dst_iitkgp = os.path.join(os.getcwd(), "static", "profile_qr_iitkgp_players", college.clg_name)
             if not os.path.exists(dst_iitkgp):
                 os.makedirs(dst_iitkgp)
+
+            dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players", college.clg_name)
 
             dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players" , college.clg_name)
             if not os.path.exists(dst_iitbbs):
                 os.makedirs(dst_iitbbs)
 
-            dst_staffs = os.path.join(os.getcwd(), "static", "profile_qr_staffs" , college.clg_name)
+            dst_staffs = os.path.join(os.getcwd(), "static", "profile_qr_staffs", college.clg_name)
             if not os.path.exists(dst_staffs):
                 os.makedirs(dst_staffs)
 
-            src = os.path.join(os.getcwd(), "static", "profile_qr_all" , college.clg_name)
+            src = os.path.join(os.getcwd(), "static", "profile_qr_all", college.clg_name)
 
             error = []
             for student in students:
                 src_file = src + "/" + student.name.strip() + " - " + student.email + '.svg' + '.jpg'
-                if(student.selected_sports == "staff"):
+                if (student.selected_sports == "staff"):
                     try:
                         shutil.copy(src_file, dst_staffs)
-                        staff = staff +1
+                        staff = staff + 1
                     except:
-                        p = p+1
+                        p = p + 1
                         error.append(src_file)
                 else:
                     flag_iitbbs = 0
@@ -312,40 +311,35 @@ def Seperate_by_college():
                         if s_id in iitbbs_list:
                             flag_iitbbs = 1
 
-                    if(flag_iitbbs):
+                    if (flag_iitbbs):
                         try:
                             shutil.copy(src_file, dst_iitbbs)
-                            bbs = bbs+1
+                            bbs = bbs + 1
                         except:
-                            p = p+1
+                            p = p + 1
                             error.append(src_file)
 
-                        stud_list =  student.selected_sports
-                        if(set(stud_list).issubset(set(iitbbs_list))):
+                        stud_list = student.selected_sports
+                        if (set(stud_list).issubset(set(iitbbs_list))):
                             try:
                                 shutil.copy(src_file, dst_iitkgp)
-                                kgp = kgp+1
+                                kgp = kgp + 1
                             except:
                                 error.append(src_file)
-                                p = p+1
+                                p = p + 1
                     else:
-                            try:
-                                shutil.copy(src_file, dst_iitkgp)
-                                kgp = kgp+1
-                            except:
-                                error.append(src_file)
-                                p = p+1
+                        try:
+                            shutil.copy(src_file, dst_iitkgp)
+                            kgp = kgp + 1
+                        except:
+                            error.append(src_file)
+                            p = p + 1
                     print(src_file)
     print("error: " + str(p))
     # print("kgp: " + str(kgp))
     # print("bbs: " + str(bbs))
     # print("staff: " + str(staff))
-    print(error)
     return("Ok")
-
-
-
-
 
 
 
@@ -367,11 +361,12 @@ def before_request():
             return redirect(url_for('login'))
         elif current_user.privilege != 0:
             return redirect(url_for('login'))
-    if 'profile_qr' in request.url :
+    if 'profile_qr' in request.url:
         if not current_user.is_authenticated:
             return redirect(url_for('login'))
         elif current_user.privilege != 0:
             return redirect(url_for('login'))
+
 
 @app.route("/register", methods=['GET', 'POST'])
 @login_required
@@ -379,11 +374,11 @@ def register():
     if (request.method == 'POST'):
         print(request.files)
         print(request.form)
-        name = re.sub('\s+',' ', request.form['name'].upper()).strip()
-        email = re.sub('\s+',' ',request.form['email']).strip()
+        name = re.sub('\s+', ' ', request.form['name'].upper()).strip()
+        email = re.sub('\s+', ' ', request.form['email']).strip()
         if Players.query.filter_by(email=email).count() != 0:
             return "Email address already registered!"
-        roll_no = re.sub('\s+',' ', request.form['roll_no']).strip()
+        roll_no = re.sub('\s+', ' ', request.form['roll_no']).strip()
         mobile = request.form['mobile']
         if len(str(mobile)) != 10:
             return "Correct the mobile number please"
@@ -410,7 +405,7 @@ def register():
         profile_img = request.files['profile_img']
         if profile_img.filename == '':
             return "There is some error with the profile image"
-        x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
+        x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@", " ")))
         if not os.path.exists(x):
             os.makedirs(x)
         profile_img.save(os.path.join(x, filename))
@@ -426,7 +421,7 @@ def register():
             qrname = name + " - " + email + '.svg'
             s = email + "^" + roll_no
             url = pyqrcode.create(s)
-            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
+            x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@", " ")))
             if not os.path.exists(x):
                 os.makedirs(x)
             url.svg(os.path.join(x, qrname), scale=8)
@@ -465,6 +460,7 @@ def newsSubscribe():
         except:
             return "Fail"
 
+
 @login_manager.unauthorized_handler
 def unauthorized():
     flash('You must be logged in to view that page.')
@@ -492,7 +488,8 @@ def showCandidates():
             param.append((stud, ' | '.join(gmlst)))
             c_p = c_p + 1
     counts = [c_p, c_s]
-    return render_template('showCandidates.html', params=param, staffs=staff, counts = counts)
+    return render_template('showCandidates.html', params=param, staffs=staff, counts=counts)
+
 
 @app.route("/showCandidatesBySports")
 @login_required
@@ -508,17 +505,19 @@ def showCandidatesBySports():
                 continue
             else:
                 for no in stud.selected_sports.split(','):
-                    if(int(no) == game.id):
+                    if (int(no) == game.id):
                         gmplayer.append(stud)
-        param.append((game.sports_name + '(' + game.category + ')'+ ' [' + 'Max. Players Allowed: ' + str(game.max_player) + ']', gmplayer ))
+        param.append((game.sports_name + '(' + game.category + ')' + ' [' + 'Max. Players Allowed: ' + str(
+            game.max_player) + ']', gmplayer))
     print(param)
 
     return render_template('showCandidatesBySports.html', params=param)
 
+
 @app.route("/allPlayers0")
 @login_required
 def allPlayers0():
-    if(current_user.privilege == 0):
+    if (current_user.privilege == 0):
         students = Players.query.order_by(Players.college_id.asc()).all()
         player = []
         for stud in students:
@@ -539,10 +538,11 @@ def allPlayers0():
     else:
         return "Not allowed!"
 
+
 @app.route("/allPlayers")
 @login_required
 def allPlayers():
-    if(current_user.privilege == 0):
+    if (current_user.privilege == 0):
         # sports = Sports.query.order_by(Sports.id.asc()).all()
         clg = College.query.all()
 
@@ -559,7 +559,7 @@ def allPlayers():
             for stud in candi:
                 if stud.selected_sports.strip(' \n') == "staff":
                     staff.append(stud)
-                    num_staff = num_staff+1
+                    num_staff = num_staff + 1
                 else:
                     gmlst = []
                     for no in stud.selected_sports.split(','):
@@ -567,19 +567,20 @@ def allPlayers():
                         gmlst.append(sp.sports_name + '(' + sp.category + ') ')
                     sel_sp = ' , '.join(gmlst)
                     student.append((stud, sel_sp))
-                    num_stud =num_stud+1
+                    num_stud = num_stud + 1
             # college.append((cl.clg_name,student,staff))
             print(student)
             print(staff)
             cl_details = cl.clg_name + " (" + str(num_stud) + ", " + str(num_staff) + ")"
-            bigl.append((cl_details,student,staff))
+            bigl.append((cl_details, student, staff))
         return render_template('allPlayers.html', bigl=bigl)
         # return "OK"
+
 
 @app.route("/Insights")
 @login_required
 def Insights():
-    if(current_user.privilege == 0):
+    if (current_user.privilege == 0):
         # sports = Sports.query.order_by(Sports.id.asc()).all()
         all = Players.query.order_by(Players.college_id.asc()).all()
         total = 0
@@ -620,7 +621,6 @@ def Insights():
                     if each.food == "Veg":
                         tot_players_female_veg += 1
 
-
             if each.special_inst != "" and each.special_inst != "no" and each.special_inst != "NO" and each.special_inst != "No" and each.special_inst != "None" and each.special_inst != "-":
                 clg = College.query.filter_by(id=each.college_id).first()
                 if each.selected_sports.strip(' \n') == "staff":
@@ -635,8 +635,13 @@ def Insights():
 
         print(special)
 
-        return render_template('Insights.html', total=total, tot_players = tot_players, tot_players_male = tot_players_male, tot_players_male_veg = tot_players_male_veg, tot_players_female =  tot_players_female, tot_players_female_veg = tot_players_female_veg,
-                               tot_staff = tot_staff,tot_staff_male = tot_staff_male,tot_staff_male_veg = tot_staff_male_veg,tot_staff_female = tot_staff_female, tot_staff_female_veg = tot_staff_female_veg, special =special)
+        return render_template('Insights.html', total=total, tot_players=tot_players, tot_players_male=tot_players_male,
+                               tot_players_male_veg=tot_players_male_veg, tot_players_female=tot_players_female,
+                               tot_players_female_veg=tot_players_female_veg,
+                               tot_staff=tot_staff, tot_staff_male=tot_staff_male,
+                               tot_staff_male_veg=tot_staff_male_veg, tot_staff_female=tot_staff_female,
+                               tot_staff_female_veg=tot_staff_female_veg, special=special)
+
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -663,10 +668,11 @@ def login():
 def loginSuccess():
     return render_template('loginSuccess.html')
 
+
 @app.route("/finaliseReg", methods=['GET', 'POST'])
 @login_required
 def finaliseReg():
-    if(current_user.privilege == 1 and request.method == 'POST'):
+    if (current_user.privilege == 1 and request.method == 'POST'):
         id = int(request.data)
         # print(id)
         try:
@@ -799,10 +805,11 @@ def gallery():
     # return render_template('gallery.html', params=params)
     return render_template('gallery.html')
 
+
 @app.route("/download_android_app")
 def download_android_app():
     # result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
-    #We can also delete this file here now
+    # We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
 
@@ -818,10 +825,12 @@ def live():
     # return render_template('live.html', params=params)
     return render_template('live.html')
 
+
 @app.route("/queries")
 def queries():
     # return render_template('live.html', params=params)
     return render_template('queries.html')
+
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -851,12 +860,13 @@ def getLiveMatches_Ajax():
 def fileInquiry(qr_val, type, inqiry):
     try:
         email = qr_val.split("^")[0]
-        entry = Inquiry(email=email, type = type, content = inqiry)
+        entry = Inquiry(email=email, type=type, content=inqiry)
         db.session.add(entry)
         db.session.commit()
         return json.dumps("Success")
     except:
         return json.dumps(EnvironmentError)
+
 
 @app.route('/profile_req_with_qr/<qr_val>', methods=['GET', 'POST'])
 def profile_req_with_qr(qr_val):
@@ -866,7 +876,7 @@ def profile_req_with_qr(qr_val):
         if (player == []):
             return json.dumps("Player_not_found!")
         else:
-            if(player.selected_sports == "staff"):
+            if (player.selected_sports == "staff"):
                 sel_sp = "Staff"
             else:
                 gmlst = []
@@ -874,7 +884,8 @@ def profile_req_with_qr(qr_val):
                     sp = getSport(int(no))
                     gmlst.append(sp.sports_name + '(' + sp.category + ')')
                 sel_sp = ', '.join(gmlst)
-            return_val = {"name": player.name, "email": player.email, "iit": getClgName(player.college_id), "selected_sports": sel_sp}
+            return_val = {"name": player.name, "email": player.email, "iit": getClgName(player.college_id),
+                          "selected_sports": sel_sp}
             return json.dumps([return_val])
     except:
         return json.dumps("Fail")
@@ -889,13 +900,18 @@ def getLiveMatches_Details_Android(game_name):
     games = Sports.query.filter(Sports.sports_name == game_name).all()
     list_live = []
     for game in games:
-        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
-        if(matchl != []):
+        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(
+            Match.sports_id == game.id).all()
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sports_id)
-                dict1 = {"sport_name": sp.sports_name, "unique_id" : match.id, "level": match.level + "(" +  sp.category + ")" , "venue_time": "At " + match.venue + " from "+ str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
+                dict1 = {"sport_name": sp.sports_name, "unique_id": match.id,
+                         "level": match.level + "(" + sp.category + ")",
+                         "venue_time": "At " + match.venue + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
+                         "clg1": getClgName(match.clg_id1), "clg2": getClgName(match.clg_id2),
+                         "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
                 list_live.append(dict1)
-
 
     return json.dumps(list_live)
 
@@ -907,29 +923,36 @@ def getSchedule_Team_Matches_Ajax_Android(game_name, day):
     day0 = "2019-12-14 00:00:00.000000"
     day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
     start_day = day0 + timedelta(days=day)
-    end_day = day0 + timedelta(days=day+1)
+    end_day = day0 + timedelta(days=day + 1)
     print(start_day)
     print(end_day)
 
     games = Sports.query.filter(Sports.sports_name == game_name).all()
     list_all = []
     for game in games:
-        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
-        if(matchl != []):
+        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(
+            Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sports_id)
-                sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name, "unique_id": match.id, "level": match.level,
+                         "venue_time": "At " + match.venue + " on " + str(match.date_time.day) + "/" + str(
+                             match.date_time.month) + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
+                         "clg1": getClgName(match.clg_id1), "clg2": getClgName(match.clg_id2),
+                         "score1": str(match.score1), "score2": str(match.score2),
+                         "winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id),
+                         "status": str(match.status), "commentry": str(match.commentry)}
                 list_all.append(dict1)
-
-
     return json.dumps(list_all)
+
 
 @app.route('/getSchedule_Individual_Matches_Deatils_Android/<game>', methods=['GET', 'POST'])
 def getSchedule_Individual_Matches_Deatils_Android(game):
     game = game.lower()
     sports = Sports.query.all()
-    game_ids =[]
+    game_ids = []
     for sport in sports:
         sp = sport.sports_name.lower()
         if sp.find(game) == 0:
@@ -938,26 +961,32 @@ def getSchedule_Individual_Matches_Deatils_Android(game):
     list_all = []
     for game_id in game_ids:
         matchl = Match_Individual.query.filter(Match_Individual.sport_id == game_id).all()
-        if(matchl != []):
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sport_id)
-                sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": match.venue, "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),"win2":  getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),"win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),"win4": getPlayerName(match.clg_4th_player_id) + " - " + getClgName(match.clg_4th)}
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name, "venue": match.venue,
+                         "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),
+                         "win2": getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),
+                         "win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),
+                         "win4": getPlayerName(match.clg_4th_player_id) + " - " + getClgName(match.clg_4th)}
                 list_all.append(dict1)
 
     for game_id in game_ids:
         matchl = Match_Relay.query.filter(Match_Relay.sport_id == game_id).all()
         print(matchl)
-        if(matchl != []):
-
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sport_id)
-                sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": match.venue, "win1": getClgName(match.clg_1st),"win2": getClgName(match.clg_2nd),"win3": getClgName(match.clg_3rd),"win4": getClgName(match.clg_4th)}
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name, "venue": match.venue, "win1": getClgName(match.clg_1st),
+                         "win2": getClgName(match.clg_2nd), "win3": getClgName(match.clg_3rd),
+                         "win4": getClgName(match.clg_4th)}
                 list_all.append(dict1)
 
 
     return json.dumps(list_all)
+
 
 @app.route('/temp', methods=['GET', 'POST'])
 def temp():
@@ -965,26 +994,29 @@ def temp():
     day0 = "2019-12-14 00:00:00.000000"
     day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
     start_day = day0 + timedelta(days=day)
-    end_day = day0 + timedelta(days=day+1)
+    end_day = day0 + timedelta(days=day + 1)
     print(start_day)
     print(end_day)
     return "Ok"
 
 
 def getClgName(clg_id):
-    if(clg_id == 0):
+    if (clg_id == 0):
         return "None"
-    clg  = College.query.filter(College.id == clg_id).first()
+    clg = College.query.filter(College.id == clg_id).first()
     return clg.clg_name
 
+
 def getPlayerName(p_id):
-    p  = Players.query.filter(Players.id == p_id).first()
+    if (p_id == 0):
+        return "None"
+    p = Players.query.filter(Players.id == p_id).first()
     return p.name
 
-def getSport(sp_id):
-    sp  = Sports.query.filter(Sports.id == sp_id).first()
-    return sp
 
+def getSport(sp_id):
+    sp = Sports.query.filter(Sports.id == sp_id).first()
+    return sp
 
 
 @app.route('/getLiveMatches', methods=['GET', 'POST'])
@@ -1104,11 +1136,12 @@ def setMatchDetails():
 @login_required
 def getPlayersIndividual():
     if (request.method == 'POST'):
-        id_match = request.form.get('sport_id')
+        id_match = request.form.get('match_id')
+        id_sport = Match_Individual.query.filter(Match_Individual.id == int(id_match)).first().sport_id
         player_list = []
         for player in Players.query.all():
             selected_sports = player.selected_sports
-            if (str(id_match) in selected_sports.strip(" \n").split(",")):
+            if (str(id_sport) in selected_sports.strip(" \n").split(",")):
                 name, college = player.name, College.query.filter(player.college_id == College.id).first().clg_name
                 player_list.append({"option": name + ' - ' + college, "id": int(player.id)})
         player_list = {"name": player_list}
@@ -1146,9 +1179,11 @@ def endMatchDetails():
         db.session.commit()
     return redirect(url_for("getLiveMatches"))
 
+
 @app.route("/sports")
 def s1():
     return render_template('sports.html')
+
 
 @app.route("/theLegacy")
 def theLegacy():
@@ -1158,6 +1193,59 @@ def theLegacy():
 @app.route("/android_app")
 def android_app():
     return render_template('android_app.html')
+
+
+@app.route('/setIndividualMatchDetails', methods=['GET', 'POST'])
+@login_required
+def setIndividualMatches():
+    if (current_user.privilege != 3):
+        return redirect(url_for('login'))
+    if (request.method == 'POST'):
+        print(request.form)
+        match = Match_Individual.query.filter(Match_Individual.id == int(request.form.get('matchid'))).first()
+        player1 = int(request.form.get('player1'))
+        clg_1st = Players.query.filter(
+            Players.id == int(request.form.get('player1'))).first().college_id
+        player2 = int(request.form.get('player2'))
+        clg_2nd = Players.query.filter(
+            Players.id == int(request.form.get('player2'))).first().college_id
+        player3 = int(request.form.get('player3'))
+        clg_3rd = Players.query.filter(
+            Players.id == int(request.form.get('player3'))).first().college_id
+        player4 = int(request.form.get('player4'))
+        clg_4th = Players.query.filter(
+            Players.id == int(request.form.get('player4'))).first().college_id
+        players = ",".join([str(player1), str(player2), str(player3), str(player4)])
+        clgs_palying = ",".join([str(clg_1st), str(clg_2nd), str(clg_3rd), str(clg_4th)])
+        match.clgs_playing = clgs_palying
+        match.players = players
+        match.clg_1st = clg_1st
+        match.clg_2nd = clg_2nd
+        match.clg_3rd = clg_3rd
+        match.clg_4th = clg_4th
+        match.clg_1st_player_id = player1
+        match.clg_2nd_player_id = player2
+        match.clg_3rd_player_id = player3
+        match.clg_4th_player_id = player4
+        if (match.level == "Final"):
+            sport = int(match.sport_id)
+            print(sport)
+            row = Point_main.query.filter(Point_main.sports_id == int(sport)).first()
+            print(row)
+            w1 = "row.c_" + str(clg_1st)
+            w2 = "row.c_" + str(clg_2nd)
+            w3 = "row.c_" + str(clg_3rd)
+            w4 = "row.c_" + str(clg_4th)
+            exec("%s += %d" % (w1, 5))
+            exec("%s += %d" % (w2, 3))
+            exec("%s += %d" % (w3, 2))
+            exec("%s += %d" % (w4, 1))
+        try:
+            db.session.commit()
+            return "Success"
+        except:
+            return "Try Again"
+    return ""
 
 
 @app.route('/addMatch', methods=['GET', 'POST'])
@@ -1179,43 +1267,16 @@ def addMatches():
                           status="", commentry="")
             db.session.add(entry)
         elif request.form.get('type') == "individual":
-            player1 = int(request.form.get('player1'))
-            clg_1st = Players.query.filter(
-                Players.id == int(request.form.get('player1'))).first().college_id
-            player2 = int(request.form.get('player2'))
-            clg_2nd = Players.query.filter(
-                Players.id == int(request.form.get('player2'))).first().college_id
-            player3 = int(request.form.get('player3'))
-            clg_3rd = Players.query.filter(
-                Players.id == int(request.form.get('player3'))).first().college_id
-            player4 = int(request.form.get('player4'))
-            clg_4th = Players.query.filter(
-                Players.id == int(request.form.get('player4'))).first().college_id
             lastrec = Match_Individual.query.filter_by(id=db.session.query(func.max(Match_Individual.id))).all()
-            players = ",".join([str(player1), str(player2), str(player3), str(player4)])
-            clgs_palying = ",".join([str(clg_1st), str(clg_2nd), str(clg_3rd), str(clg_4th)])
             cnt = 1 if len(lastrec) == 0 else lastrec[-1].id + 1
             print(cnt)
             entry = Match_Individual(id=cnt, sport_id=request.form.get("sportid"),
-                                     clgs_playing=clgs_palying, players=players,
+                                     clgs_playing="", players="",
                                      date_time=request.form.get('datetime'),
-                                     venue=request.form.get('venue'), clg_1st=clg_1st, clg_2nd=clg_2nd, clg_3rd=clg_3rd,
-                                     clg_4th=clg_4th, clg_1st_player_id=player1, clg_2nd_player_id=player2,
-                                     clg_3rd_player_id=player3, clg_4th_player_id=player4,
+                                     venue=request.form.get('venue'), clg_1st=0, clg_2nd=0, clg_3rd=0,
+                                     clg_4th=0, clg_1st_player_id=0, clg_2nd_player_id=0,
+                                     clg_3rd_player_id=0, clg_4th_player_id=0,
                                      level=request.form.get('level'), status="", comments="")
-            if (entry.level == "Final"):
-                sport = int(request.form.get("sportid"))
-                print(sport)
-                row = Point_main.query.filter(Point_main.sports_id == int(sport)).first()
-                print(row)
-                w1 = "row.c_" + str(entry.clg_1st)
-                w2 = "row.c_" + str(entry.clg_2nd)
-                w3 = "row.c_" + str(entry.clg_3rd)
-                w4 = "row.c_" + str(entry.clg_4th)
-                exec("%s += %d" % (w1, 5))
-                exec("%s += %d" % (w2, 3))
-                exec("%s += %d" % (w3, 2))
-                exec("%s += %d" % (w4, 1))
             db.session.add(entry)
         elif (request.form.get('type') == "relay"):
             lastrec = Match_Relay.query.filter_by(id=db.session.query(func.max(Match_Relay.id))).all()
@@ -1251,7 +1312,14 @@ def addMatches():
                 "clg_name": (College.query.filter(College.id == int(x.college_id)).first()).clg_name} for x in players
                if x.selected_sports != "staff"]
     players.sort(key=lambda x: x["name"])
-    return render_template('addMatch.html', sports=sport, colleges=college, players=players)
+    match_individual = Match_Individual.query.filter(Match_Individual.clg_1st == 0).all()
+    matchs_individual = []
+    for match in match_individual:
+        sport_name = Sports.query.filter(match.sport_id == Sports.id).first()
+        matchs_individual.append([match, sport_name.sports_name +" (" + sport_name.category+")"])
+    print(matchs_individual)
+    return render_template('addMatch.html', sports=sport, colleges=college, players=players, matchesIndividual=matchs_individual)
+
 
 @app.route('/test', methods=['GET', 'POST'])
 def test():
