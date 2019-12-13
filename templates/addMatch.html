@@ -146,10 +146,11 @@
             $('#matchesic').addClass('hide');
             $("#update_individual").attr("disabled", true);
             $("#update_individual").html('Please wait...');
+            console.log(parseInt($('#matchesi option:selected').val()));
+            data = new FormData();
+            data.append('match_id', $('#matchesi option:selected').val());
             $.ajax({
-                data: {
-                    match_id: parseInt($('#matchesi option:selected').val()),
-                },
+                data: data,
                 type: 'POST',
                 url: '/getPlayersIndividual',
                 contentType: false,
