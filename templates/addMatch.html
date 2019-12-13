@@ -120,7 +120,7 @@
                 $.ajax({
                     data: formData,
                     type: 'POST',
-                    url: '/addMatch',
+                    url: '/setRelayMatchDetails',
                     contentType: false,
                     cache: false,
                     processData: false,
@@ -129,6 +129,7 @@
                     if (id === "Success") {
                         swal("Awesome!", "Match details accepted and updated!", "success");
                         $("#relayForm").trigger('reset');
+                        location.reload();
                     } else swal("Sorry!", id, "error");
                     $("#relayFormButton").attr("disabled", false);
                     $("#relayFormButton").html('Submit');
@@ -279,7 +280,7 @@
 
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-                data-target=".bd-example-modal4-lg">Add Individual Matches (Only Final)
+                data-target=".bd-example-modal4-lg">Add Individual/Relay Matches (Only Final/Time-Trial)
         </button>
         <br>
     </center>
@@ -287,8 +288,14 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
                 <form id="addIndividualForm">
-                    <input type="hidden" name="type" value="individual">
                     <div class="row">
+                        <div class="col-md-12 form-group" id="typec">
+                            <label for="typei">Type</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="typei" name="type">
+                                <option value="relay">Relay</option>
+                                <option value="individual">Individual</option>
+                            </select>
+                        </div>
                         <div class="col-md-12 form-group" id="sportic">
                             <label for="sporti">Sport</label><br>
                             <select class="selectpicker form-control" data-live-search="true" id="sporti" name="sportid">
@@ -336,7 +343,7 @@
                 <form id="individualForm">
                     <div class="row">
                         <div class="col-md-12 form-group" id="matchesic">
-                            <label for="sporti">Sport</label><br>
+                            <label for="sporti">Match</label><br>
                             <select class="selectpicker form-control" data-live-search="true" id="matchesi" name="matchid">
                                 {% for match in matchesIndividual %}
                                 <option value="{{match[0].id}}">{{match[1]}}</option>
@@ -372,7 +379,6 @@
     </div>
 
 
-
     <center>
         <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
                 data-target=".bd-example-modal1-lg">Select Relay Match Winners (Only Time-Trial/Final)
@@ -386,37 +392,13 @@
                     <input type="hidden" name="type" value="relay">
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="sportr">Sport</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="sportr"
-                                    style="display:block;" name="sport">
-                                {% for sport in sports %}
-                                <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
+                            <label for="matchr">Match</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" id="matchr"
+                                    style="display:block;" name="matchid">
+                               {% for match in matchesRelay %}
+                                <option value="{{match[0].id}}">{{match[1]}}</option>
                                 {% endfor %}
                             </select><br>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="datetimer">Datetime</label><br>
-                            <div class='input-group date' id='datetimer'>
-                                <input type='text' class="form-control" id="datetimetexti1" name="datetime"/>
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="venuer">Venue</label><br>
-                            <input type='text' class="form-control" id="venuer" name="venue"/>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="levelr">Level</label><br>
-                            <select class="selectpicker form-control" id="levelr"
-                                    style="display:block;" name="level">
-
-                                <!-- <option value="League">Heats</option>
-                                <option value="Semi-Final">Time-Trails</option> -->
-                                <option value="Final">Final</option>
-
-                            </select>
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="colleger1">College Rank 1</label><br>

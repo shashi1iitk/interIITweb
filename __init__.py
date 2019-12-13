@@ -35,7 +35,7 @@ login_manager.init_app(app)
 login_manager.login_view = "log_in"
 login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019_main"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/interiit2019"
 
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -1245,8 +1245,39 @@ def setIndividualMatches():
             return "Success"
         except:
             return "Try Again"
-    return ""
+    return "error"
 
+
+@app.route('/setRelayMatchDetails', methods=['GET', 'POST'])
+@login_required
+def setRelayMatchDetails():
+    if (current_user.privilege != 3):
+        return redirect(url_for('login'))
+    if (request.method == 'POST'):
+        print(request.form)
+        match = Match_Relay.query.filter(Match_Relay.id == int(request.form.get("matchid"))).first()
+        match.clg_1st = int(request.form.get('colleger1'))
+        match.clg_2nd = int(request.form.get('colleger2'))
+        match.clg_3rd = int(request.form.get('colleger3'))
+        match.clg_4th = int(request.form.get('colleger4'))
+        match.status= 1
+        if match.level == "Final":
+            sport = match.sport_id
+            row = Point_main.query.filter(Point_main.sports_id == sport).first()
+            w1 = "row.c_" + str(int(request.form.get('colleger1')))
+            w2 = "row.c_" + str(int(request.form.get('colleger2')))
+            w3 = "row.c_" + str(int(request.form.get('colleger3')))
+            w4 = "row.c_" + str(int(request.form.get('colleger4')))
+            exec("%s += %d" % (w1, 10))
+            exec("%s += %d" % (w2, 6))
+            exec("%s += %d" % (w3, 4))
+            exec("%s += %d" % (w4, 2))
+        try:
+            db.session.commit()
+            return "Success"
+        except:
+            return "Try Again"
+    return "error"
 
 @app.route('/addMatch', methods=['GET', 'POST'])
 @login_required
@@ -1282,23 +1313,10 @@ def addMatches():
             lastrec = Match_Relay.query.filter_by(id=db.session.query(func.max(Match_Relay.id))).all()
             cnt = 1 if len(lastrec) == 0 else lastrec[-1].id + 1
             print(cnt)
-            entry = Match_Relay(id=cnt, sport_id=request.form.get('sport'),
+            entry = Match_Relay(id=cnt, sport_id=int(request.form.get('sportid')),
                                 clgs_playing="", players="", date_time=request.form.get('datetime'),
-                                venue=request.form.get('venue'), clg_1st=int(request.form.get('colleger1')),
-                                clg_2nd=int(request.form.get('colleger2')), clg_3rd=int(request.form.get('colleger3')),
-                                clg_4th=int(request.form.get('colleger4')),
-                                level=request.form.get('level'), status=1, comments="")
-            if entry.level == "Final":
-                sport = entry.sport_id
-                row = Point_main.query.filter(Point_main.sports_id == sport).first()
-                w1 = "row.c_" + str(entry.clg_1st)
-                w2 = "row.c_" + str(entry.clg_2nd)
-                w3 = "row.c_" + str(entry.clg_3rd)
-                w4 = "row.c_" + str(entry.clg_4th)
-                exec("%s += %d" % (w1, 10))
-                exec("%s += %d" % (w2, 6))
-                exec("%s += %d" % (w3, 4))
-                exec("%s += %d" % (w4, 2))
+                                venue=request.form.get('venue'), clg_1st=0, clg_2nd=0, clg_3rd=0,
+                                clg_4th=0, level=request.form.get('level'), status=0, comments="")
             db.session.add(entry)
         try:
             db.session.commit()
@@ -1312,13 +1330,22 @@ def addMatches():
                 "clg_name": (College.query.filter(College.id == int(x.college_id)).first()).clg_name} for x in players
                if x.selected_sports != "staff"]
     players.sort(key=lambda x: x["name"])
+
     match_individual = Match_Individual.query.filter(Match_Individual.clg_1st == 0).all()
     matchs_individual = []
     for match in match_individual:
         sport_name = Sports.query.filter(match.sport_id == Sports.id).first()
         matchs_individual.append([match, sport_name.sports_name +" (" + sport_name.category+")"])
     print(matchs_individual)
-    return render_template('addMatch.html', sports=sport, colleges=college, players=players, matchesIndividual=matchs_individual)
+
+    match_relay = Match_Relay.query.filter(Match_Relay.status == 0).all()
+    matchs_relay = []
+    for match in match_relay:
+        sport_name = Sports.query.filter(match.sport_id == Sports.id).first()
+        matchs_relay.append([match, sport_name.sports_name +" (" + sport_name.category+")"])
+    print(matchs_relay)
+
+    return render_template('addMatch.html', sports=sport, colleges=college, players=players, matchesIndividual=matchs_individual, matchesRelay = matchs_relay)
 
 
 @app.route('/test', methods=['GET', 'POST'])
