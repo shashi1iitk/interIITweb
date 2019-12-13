@@ -25,7 +25,7 @@
             var playersSelected = [];
             playersSelected.push(formData.get('college1'));
             playersSelected.push(formData.get('college2'));
-            if(!hasDuplicates(playersSelected)) {
+            if (!hasDuplicates(playersSelected)) {
                 $.ajax({
                     data: formData,
                     type: 'POST',
@@ -54,8 +54,8 @@
             $("#addIndividualMatchButton").attr("disabled", true);
             $("#addIndividualMatchButton").html('Please wait...');
             $.ajax({
-                data:formData,
-                type:'POST',
+                data: formData,
+                type: 'POST',
                 url: '/addMatch',
                 contentType: false,
                 cache: false,
@@ -69,7 +69,7 @@
                 } else swal("Sorry!", id, "error");
                 $("#addIndividualMatchButton").attr("disabled", false);
                 $("#addIndividualMatchButton").html('Submit');
-                });
+            });
         });
         $('#individualForm').on('submit', function (event) {
             event.preventDefault();
@@ -81,15 +81,15 @@
             playersSelected.push(formData.get('player2'));
             playersSelected.push(formData.get('player3'));
             playersSelected.push(formData.get('player4'));
-            if(!hasDuplicates(playersSelected)){
+            if (!hasDuplicates(playersSelected)) {
                 $.ajax({
-                data: formData,
-                type: 'POST',
-                url: '/setIndividualMatchDetails',
-                contentType: false,
-                cache: false,
-                processData: false,
-                async: true
+                    data: formData,
+                    type: 'POST',
+                    url: '/setIndividualMatchDetails',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    async: true
                 }).done(function (id) {
                     console.log(id);
                     if (id === "Success") {
@@ -100,7 +100,7 @@
                     $("#individualFormButton").attr("disabled", false);
                     $("#individualFormButton").html('Submit');
                 });
-            } else{
+            } else {
                 swal("Duplication!", "Selection contains duplicate elements", "error");
                 $("#individualFormButton").attr("disabled", false);
                 $("#individualFormButton").html('Submit');
@@ -116,7 +116,7 @@
             playersSelected.push(formData.get('colleger2'));
             playersSelected.push(formData.get('colleger3'));
             playersSelected.push(formData.get('colleger4'));
-            if(!hasDuplicates(playersSelected)) {
+            if (!hasDuplicates(playersSelected)) {
                 $.ajax({
                     data: formData,
                     type: 'POST',
@@ -194,269 +194,288 @@
 
 <body>
 
-<main role="main">
+    <main role="main">
 
-    <strong>
-        <center><h2 style="margin-top:5%;">Add Team Match</h2></center>
-    </strong>
+        <strong>
+            <center>
+                <h2 style="margin-top:5%;">Add Team Match</h2>
+            </center>
+        </strong>
 
-    <center>
-        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+        <center>
+            <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
                 data-target=".bd-example-modal-lg">Add Team Match
-        </button>
-        <br>
-    </center>
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-3">
-                <form id="teamForm">
-                    <input type="hidden" name="type" value="team" class="form-control">
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="sport">Sport</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="sport"
+            </button>
+            <br>
+        </center>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3">
+                    <form id="teamForm">
+                        <input type="hidden" name="type" value="team" class="form-control">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="sport">Sport</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="sport"
                                     style="display:block;" name="sport">
-                                {% for sport in sports %}
-                                <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
-                                {% endfor %}
-                            </select><br>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="college1">College-1</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="college1"
+                                    {% for sport in sports %}
+                                    <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
+                                    {% endfor %}
+                                </select><br>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="college1">College-1</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="college1"
                                     style="display:block;" name="college1">
-                                {% for college in colleges %}
-                                <option value="{{college.id}}">{{college.clg_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="college2">College-2</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="college2"
+                                    {% for college in colleges %}
+                                    <option value="{{college.id}}">{{college.clg_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="college2">College-2</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="college2"
                                     style="display:block;" name="college2">
-                                {% for college in colleges %}
-                                <option value="{{college.id}}">{{college.clg_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="datetime">Datetime</label><br>
-                            <div class='input-group date' id='datetime'>
-                                <input type='text' class="form-control" id="datetimetext" name="datetime"/>
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
+                                    {% for college in colleges %}
+                                    <option value="{{college.id}}">{{college.clg_name}}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="venue">Venue</label><br>
-                            <input type='text' class="form-control" id="venue" name="venue"/>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="level">Level</label><br>
-                            <select class="selectpicker form-control" id="level"
-                                    style="display:block;" name="level">
+                            <div class="col-md-12 form-group">
+                                <label for="datetime">Datetime</label><br>
+                                <div class='input-group date' id='datetime'>
+                                    <input type='text' class="form-control" id="datetimetext" name="datetime" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="venue">Venue</label><br>
+                                <input type='text' class="form-control" id="venue" name="venue" />
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="level">Level</label><br>
+                                <select class="selectpicker form-control" id="level" style="display:block;"
+                                    name="level">
 
-                                <option value="League [P-A]">League [P-A]</option>
-                                <option value="League [P-B]">League [P-B]</option>
-                                <option value="Semi-Final 1">Semi-Final 1</option>
-                                <option value="Semi-Final 2">Semi-Final 2</option>
-                                <option value="3rd Place">3rd Place</option>
-                                <option value="Final">Final</option>
+                                    <option value="League [P-A]">League [P-A]</option>
+                                    <option value="League [P-B]">League [P-B]</option>
+                                    <option value="Semi-Final 1">Semi-Final 1</option>
+                                    <option value="Semi-Final 2">Semi-Final 2</option>
+                                    <option value="3rd Place">3rd Place</option>
+                                    <option value="Final">Final</option>
 
-                            </select>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary m-3 " id="teamFormButton">Submit</button>
                         </div>
-                        <button type="submit" class="btn btn-primary m-3 " id="teamFormButton">Submit</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-     <hr>
-    <strong>
-        <center><h2>Select Individual/Realy Match Winners</h2></center>
-    </strong>
+        <hr>
+        <strong>
+            <center>
+                <h2>Add Individual/Relay Match</h2>
+            </center>
+        </strong>
 
-    <center>
-        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-                data-target=".bd-example-modal4-lg">Add Individual/Relay Matches (Only Final/Time-Trial)
-        </button>
-        <br>
-    </center>
-    <div class="modal fade bd-example-modal4-lg" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-3">
-                <form id="addIndividualForm">
-                    <div class="row">
-                        <div class="col-md-12 form-group" id="typec">
-                            <label for="typei">Type</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="typei" name="type">
-                                <option value="relay">Relay</option>
-                                <option value="individual">Individual</option>
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group" id="sportic">
-                            <label for="sporti">Sport</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="sporti" name="sportid">
-                                {% for sport in sports %}
-                                <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group" id="datetimeic">
-                            <label for="datetimetexti">Datetime</label><br>
-                            <div class='input-group date' id='datetimei'>
-                                <input type='text' class="form-control" id="datetimetexti" name="datetime"/>
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
+        <center>
+            <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+                data-target=".bd-example-modal4-lg">Add Individual/Relay Matches (Only Final)
+            </button>
+            <br>
+        </center>
+        <div class="modal fade bd-example-modal4-lg" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3">
+                    <form id="addIndividualForm">
+                        <div class="row">
+                            <div class="col-md-12 form-group" id="typec">
+                                <label for="typei">Type</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="typei"
+                                    name="type">
+                                    <option value="relay">Relay</option>
+                                    <option value="individual">Individual</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group" id="sportic">
+                                <label for="sporti">Sport</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="sporti"
+                                    name="sportid">
+                                    {% for sport in sports %}
+                                    <option value="{{sport.id}}">{{sport.sports_name}} - {{sport.category}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group" id="datetimeic">
+                                <label for="datetimetexti">Datetime</label><br>
+                                <div class='input-group date' id='datetimei'>
+                                    <input type='text' class="form-control" id="datetimetexti" name="datetime" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group" id="venuic">
+                                <label for="venuei">Venue</label><br>
+                                <input type='text' class="form-control" id="venuei" name="venue" />
+                            </div>
+                            <div class="col-md-12 form-group" id="levelic">
+                                <label for="leveli">Level</label><br>
+                                <select class="selectpicker form-control" id="leveli" name="level">
+                                    <option value="Final">Final</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-md-12 form-group" id="venuic">
-                            <label for="venuei">Venue</label><br>
-                            <input type='text' class="form-control" id="venuei" name="venue"/>
-                        </div>
-                        <div class="col-md-12 form-group" id="levelic">
-                            <label for="leveli">Level</label><br>
-                            <select class="selectpicker form-control" id="leveli" name="level">
-                                <option value="Final">Final</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary m-3" id="addIndividualMatchButton">Submit</button>
-                </form>
+                        <button type="submit" class="btn btn-primary m-3" id="addIndividualMatchButton">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+        <hr>
+        <strong>
+            <center>
+                <h2>Select Individual/Realy Match Winners</h2>
+            </center>
+        </strong>
 
-
-    <center>
-        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+        <center>
+            <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
                 data-target=".bd-example-modal2-lg">Select Individual Match Winners (Only Final)
-        </button>
-        <br>
-    </center>
-    <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-3">
-                <form id="individualForm">
-                    <div class="row">
-                        <div class="col-md-12 form-group" id="matchesic">
-                            <label for="sporti">Match</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="matchesi" name="matchid">
-                                {% for match in matchesIndividual %}
-                                <option value="{{match[0].id}}">{{match[1]}}</option>
-                                {% endfor %}
-                            </select>
+            </button>
+            <br>
+        </center>
+        <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3">
+                    <form id="individualForm">
+                        <div class="row">
+                            <div class="col-md-12 form-group" id="matchesic">
+                                <label for="sporti">Match</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="matchesi"
+                                    name="matchid">
+                                    {% for match in matchesIndividual %}
+                                    <option value="{{match[0].id}}">{{match[1]}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button class="btn btn-primary m-3" id="update_individual">Submit</button>
+                            <div class="col-md-12 form-group hide" id="player1c">
+                                <label for="player1">Gold</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="player1"
+                                    name="player1">
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group hide" id="player2c">
+                                <label for="player2">Silver</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="player2"
+                                    name="player2">
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group hide" id="player3c">
+                                <label for="player3">Bronze</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="player3"
+                                    name="player3">
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group hide" id="player4c">
+                                <label for="player4">4th Place</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="player4"
+                                    name="player4">
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary hide m-3"
+                                id="individualFormButton">Submit</button>
                         </div>
-                        <button class="btn btn-primary m-3" id="update_individual">Submit</button>
-                        <div class="col-md-12 form-group hide" id="player1c">
-                            <label for="player1">Gold</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="player1" name="player1">
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group hide" id="player2c">
-                            <label for="player2">Silver</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="player2" name="player2">
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group hide" id="player3c">
-                            <label for="player3">Bronze</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="player3" name="player3">
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group hide" id="player4c">
-                            <label for="player4">4th Place</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="player4" name="player4">
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary hide m-3" id="individualFormButton">Submit</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <center>
-        <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
-                data-target=".bd-example-modal1-lg">Select Relay Match Winners (Only Time-Trial/Final)
-        </button>
-        <br>
-    </center>
-    <div class="modal fade bd-example-modal1-lg" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-3">
-                <form id="relayForm">
-                    <input type="hidden" name="type" value="relay">
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="matchr">Match</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="matchr"
+        <center>
+            <button type="button" class="btn btn-primary m-3 " data-toggle="modal"
+                data-target=".bd-example-modal1-lg">Select Relay Match Winners (Only Final)
+            </button>
+            <br>
+        </center>
+        <div class="modal fade bd-example-modal1-lg" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3">
+                    <form id="relayForm">
+                        <input type="hidden" name="type" value="relay">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="matchr">Match</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="matchr"
                                     style="display:block;" name="matchid">
-                               {% for match in matchesRelay %}
-                                <option value="{{match[0].id}}">{{match[1]}}</option>
-                                {% endfor %}
-                            </select><br>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="colleger1">College Rank 1</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="colleger1"
+                                    {% for match in matchesRelay %}
+                                    <option value="{{match[0].id}}">{{match[1]}}</option>
+                                    {% endfor %}
+                                </select><br>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="colleger1">College Rank 1</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="colleger1"
                                     style="display:block;" name="colleger1">
-                                {% for college in colleges %}
-                                <option value="{{college.id}}">{{college.clg_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="colleger2">College Rank 2</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="colleger2"
+                                    {% for college in colleges %}
+                                    <option value="{{college.id}}">{{college.clg_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="colleger2">College Rank 2</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="colleger2"
                                     style="display:block;" name="colleger2">
-                                {% for college in colleges %}
-                                <option value="{{college.id}}">{{college.clg_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="colleger3">College Rank 3</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="colleger3"
+                                    {% for college in colleges %}
+                                    <option value="{{college.id}}">{{college.clg_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="colleger3">College Rank 3</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="colleger3"
                                     style="display:block;" name="colleger3">
-                                {% for college in colleges %}
-                                <option value="{{college.id}}">{{college.clg_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label for="colleger4">College Rank 4</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" id="colleger4"
+                                    {% for college in colleges %}
+                                    <option value="{{college.id}}">{{college.clg_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label for="colleger4">College Rank 4</label><br>
+                                <select class="selectpicker form-control" data-live-search="true" id="colleger4"
                                     style="display:block;" name="colleger4">
-                                {% for college in colleges %}
-                                <option value="{{college.id}}">{{college.clg_name}}</option>
-                                {% endfor %}
-                            </select>
+                                    {% for college in colleges %}
+                                    <option value="{{college.id}}">{{college.clg_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary m-3 " id="relayFormButton">Submit</button>
                         </div>
-                        <button type="submit" class="btn btn-primary m-3 " id="relayFormButton">Submit</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 
 
-<!-- Bootstrap 4 JavaScript -->
+    <!-- Bootstrap 4 JavaScript -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+    <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
 
 
-{% endblock %}
+    {% endblock %}

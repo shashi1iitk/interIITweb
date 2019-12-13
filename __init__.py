@@ -809,7 +809,7 @@ def gallery():
 @app.route("/download_android_app")
 def download_android_app():
     # result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
-    # We can also delete this file here now
+    # # We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
 
@@ -965,7 +965,7 @@ def getSchedule_Individual_Matches_Deatils_Android(game):
             for match in matchl:
                 sp = getSport(match.sport_id)
                 sport_name = sp.sports_name + "(" + sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": match.venue,
+                dict1 = {"sport_name": sport_name, "venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
                          "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),
                          "win2": getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),
                          "win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),
@@ -979,7 +979,7 @@ def getSchedule_Individual_Matches_Deatils_Android(game):
             for match in matchl:
                 sp = getSport(match.sport_id)
                 sport_name = sp.sports_name + "(" + sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": match.venue, "win1": getClgName(match.clg_1st),
+                dict1 = {"sport_name": sport_name, "venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "win1": getClgName(match.clg_1st),
                          "win2": getClgName(match.clg_2nd), "win3": getClgName(match.clg_3rd),
                          "win4": getClgName(match.clg_4th)}
                 list_all.append(dict1)
@@ -1137,6 +1137,7 @@ def setMatchDetails():
 def getPlayersIndividual():
     if (request.method == 'POST'):
         id_match = request.form.get('match_id')
+        print(id_match)
         id_sport = Match_Individual.query.filter(Match_Individual.id == int(id_match)).first().sport_id
         player_list = []
         for player in Players.query.all():
