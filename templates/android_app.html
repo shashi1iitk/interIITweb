@@ -1,65 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>/* Important stuff for this demo. */
+  <style>
+    /* Important stuff for this demo. */
 
-img {
-  width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
+    img {
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
 
-.pics_in_a_row {
-  display: flex;
-}
+    .pics_in_a_row {
+      display: flex;
+    }
 
-.img1 { flex: 1.3344; }
-.img2 { flex: 1.3345; }
-.img3 { flex: 0.7505; }
-.img4 { flex: 1.5023; }
-.img5 { flex: 0.75; }
+    .img1 {
+      flex: 1.3344;
+    }
 
+    .img2 {
+      flex: 1.3345;
+    }
 
+    .img3 {
+      flex: 0.7505;
+    }
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
+    .img4 {
+      flex: 1.5023;
+    }
 
-<!-- body { -->
-  <!-- background: rebeccapurple; -->
-<!-- } -->
-
-.container {
-  background: white;
-  margin: 0 auto;
-  padding: 5%;
-  width: 75%;
-}
-
-.muted {
-  font-style: italic;
-  color: #666;
-}
-
-p + p {
-  margin-top: -7px;
-}
+    .img5 {
+      flex: 0.75;
+    }
 
 
-.pics_in_a_row {
-  margin: 25px 0;
-}
 
-.pics_in_a_row > div:not(:last-child) {
-  margin-right: 2%;
-}
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
 
-</style>
+    < !-- body {
+      -->< !-- background: rebeccapurple;
+      -->< !--
+    }
+
+    -->.container {
+      background: white;
+      margin: 0 auto;
+      padding: 5%;
+      width: 75%;
+    }
+
+    .muted {
+      font-style: italic;
+      color: #666;
+    }
+
+    p+p {
+      margin-top: -7px;
+    }
+
+
+    .pics_in_a_row {
+      margin: 25px 0;
+    }
+
+    .pics_in_a_row>div:not(:last-child) {
+      margin-right: 2%;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class='container'>
-
+<<<<<<< HEAD
   <div class='pics_in_a_row'>
     <div class='img1'>
       <a href="https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2&fbclid=IwAR0eesnSokKGyk2pZrVni2PvekGBPk9gNfAvaeVfM8UzVXL1kqVNMkwKP4Y"><img style="width:70%"src='{{ url_for('static', filename='img/app.png') }}'></a>
@@ -68,6 +86,21 @@ p + p {
       <a href="/download_from"><img src='{{ url_for('static', filename='img/download_from.png') }}' style="width:70%;border-radius:20px"></a>
     </div>
   </div>
+=======
+  <div class='container'>
+
+    <div class='pics_in_a_row'>
+      <div class='img1'>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2&fbclid=IwAR0eesnSokKGyk2pZrVni2PvekGBPk9gNfAvaeVfM8UzVXL1kqVNMkwKP4Y"><img
+            src='{{ url_for('static', filename='img/app.png') }}'></a>
+      </div>
+      <div class='img2'>
+        <a href="/download_android_app"><img src='{{ url_for('static', filename='img/download_from.png') }}'></a>
+      </div>
+    </div>
+>>>>>>> 177ffe6b24d283b5a594454b997d98f99c175807
 
 </body>
+
 </html>
