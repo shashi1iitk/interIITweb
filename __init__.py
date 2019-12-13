@@ -760,8 +760,11 @@ def schedule():
 
 @app.route("/OurTeam")
 def team():
-    # return render_template('schedule.html', params=params)
     return render_template('ourteam.html')
+
+@app.route("/Sponsors")
+def sponsors():
+    return render_template('sponsors.html')
 
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
