@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/interiit2019.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/livescore.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/livescore.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +44,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -57,18 +62,6 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.init">
     <configuration default="true" type="tests" factoryName="Attests">
@@ -143,6 +136,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Aadi\AppData\Roaming\Subversion</configuration>
   </component>
@@ -185,6 +190,8 @@
       <workItem from="1576249662064" duration="99000" />
       <workItem from="1576256876498" duration="1385000" />
       <workItem from="1576301600203" duration="3151000" />
+      <workItem from="1576325813143" duration="11750000" />
+      <workItem from="1576339184804" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="Scorecard changed">
       <created>1569736895575</created>
@@ -322,15 +329,6 @@
     <option name="localTasksCounter" value="20" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="3">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -388,7 +386,17 @@
     <MESSAGE value="Bug fixed, bug in update_individual data" />
     <option name="LAST_COMMIT_MESSAGE" value="Bug fixed, bug in update_individual data" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="640" y="250" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576339241122">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="250" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576339241122" />
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576339447338">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576339447338" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/interIITweb$init.coverage" NAME="init Coverage Results" MODIFIED="1576303371396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/interIITweb$init.coverage" NAME="init Coverage Results" MODIFIED="1576334305274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

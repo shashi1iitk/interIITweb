@@ -1,21 +1,19 @@
 import json
 import os
 import re
+import shutil
 from datetime import datetime
 from datetime import timedelta
-
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPDF
-from pdf2image import convert_from_path
-
-import shutil
 
 import pyqrcode
 from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
+from pdf2image import convert_from_path
+from reportlab.graphics import renderPDF
 from sqlalchemy import func
+from svglib.svglib import svg2rlg
 
 local_server = True
 app = Flask(__name__)
@@ -284,7 +282,7 @@ def Seperate_by_college():
 
             dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players", college.clg_name)
 
-            dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players" , college.clg_name)
+            dst_iitbbs = os.path.join(os.getcwd(), "static", "profile_qr_iitbbs_players", college.clg_name)
             if not os.path.exists(dst_iitbbs):
                 os.makedirs(dst_iitbbs)
 
@@ -339,8 +337,7 @@ def Seperate_by_college():
     # print("kgp: " + str(kgp))
     # print("bbs: " + str(bbs))
     # print("staff: " + str(staff))
-    return("Ok")
-
+    return ("Ok")
 
 
 @app.route("/")
@@ -764,9 +761,11 @@ def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
+
 @app.route("/team")
 def team():
     return render_template('ourteam.html')
+
 
 @app.route("/sponsors")
 def sponsors():
@@ -806,10 +805,10 @@ def gallery():
     return render_template('gallery.html')
 
 
-
 @app.route("/download_from_interiit_server")
 def download():
-    result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk",
+                       attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     return result
 
 
@@ -819,7 +818,6 @@ def download_android_app():
     # # We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
-
 
 
 @app.route("/privacy_policy")
@@ -898,23 +896,29 @@ def profile_req_with_qr(qr_val):
     except:
         return json.dumps("Fail")
 
+
 @app.route('/getLiveMatches_Details_Android/<game_name>', methods=['GET', 'POST'])
 def getLiveMatches_Details_Android(game_name):
     game_name = game_name
-    
+
     time_now = datetime.now()
 
     games = Sports.query.filter(Sports.sports_name == game_name).all()
     list_live = []
     for game in games:
-        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
-        if(matchl != []):
+        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(
+            Match.sports_id == game.id).all()
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sports_id)
-                dict1 = {"sport_name": sp.sports_name, "unique_id" : match.id, "level": match.level + "(" +  sp.category + ")" , "venue_time": "At " + match.venue + " from "+ str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
+                dict1 = {"sport_name": sp.sports_name, "unique_id": match.id,
+                         "level": match.level + "(" + sp.category + ")",
+                         "venue_time": "At " + match.venue + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
+                         "clg1": getClgName(match.clg_id1), "clg2": getClgName(match.clg_id2),
+                         "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
                 list_live.append(dict1)
 
- 
     return json.dumps(list_live)
 
 
@@ -925,58 +929,82 @@ def getSchedule_Team_Matches_Ajax_Android(game_name, day):
     day0 = "2019-12-14 00:00:00.000000"
     day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
     start_day = day0 + timedelta(days=day)
-    end_day = day0 + timedelta(days=day+1)
+    end_day = day0 + timedelta(days=day + 1)
     print(start_day)
     print(end_day)
 
     games = Sports.query.filter(Sports.sports_name == game_name).all()
     list_all = []
     for game in games:
-        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.sports_id == game.id).order_by(Match.date_time.asc()).all()
-        if(matchl != []):
+        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(
+            Match.sports_id == game.id).order_by(Match.date_time.asc()).all()
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sports_id)
-                sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "datetime": str(match.date_time), "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name, "unique_id": match.id, "datetime": str(match.date_time),
+                         "level": sp.category + ": " + match.level,
+                         "venue_time": "At " + match.venue + " on " + str(match.date_time.day) + "/" + str(
+                             match.date_time.month) + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
+                         "clg1": getClgName(match.clg_id1), "clg2": getClgName(match.clg_id2),
+                         "score1": str(match.score1), "score2": str(match.score2),
+                         "winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id),
+                         "status": str(match.status), "commentry": str(match.commentry)}
                 list_all.append(dict1)
-    list_all = sorted(list_all, key=lambda x : x['datetime'])
- 
+    list_all = sorted(list_all, key=lambda x: x['datetime'])
+
     return json.dumps(list_all)
+
 
 @app.route('/getSchedule_Individual_Matches_Deatils_Android/<game>', methods=['GET', 'POST'])
 def getSchedule_Individual_Matches_Deatils_Android(game):
     game = game.lower()
     sports = Sports.query.all()
-    game_ids =[]
+    game_ids = []
     for sport in sports:
         sp = sport.sports_name.lower()
         if sp.find(game) == 0:
             game_ids.append(sport.id)
-            
+
     list_all = []
     for game_id in game_ids:
-        matchl = Match_Individual.query.filter(Match_Individual.sport_id == game_id).order_by(Match_Individual.date_time.asc()).all()
-        if(matchl != []):
+        matchl = Match_Individual.query.filter(Match_Individual.sport_id == game_id).order_by(
+            Match_Individual.date_time.asc()).all()
+        if (matchl != []):
             for match in matchl:
                 sp = getSport(match.sport_id)
-                sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name,"venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),  "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),"win2":  getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),"win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),"win4": getPlayerName(match.clg_4th_player_id) + " - " + getClgName(match.clg_4th)}
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name,
+                         "venue": "At " + match.venue + " on " + str(match.date_time.day) + "/" + str(
+                             match.date_time.month) + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
+                         "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),
+                         "win2": getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),
+                         "win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),
+                         "win4": getPlayerName(match.clg_4th_player_id) + " - " + getClgName(match.clg_4th)}
                 list_all.append(dict1)
 
     for game_id in game_ids:
         matchl = Match_Relay.query.filter(Match_Relay.sport_id == game_id).order_by(Match_Relay.date_time.asc()).all()
         print(matchl)
-        if(matchl != []):
-            
+        if (matchl != []):
+
             for match in matchl:
                 sp = getSport(match.sport_id)
-                sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "win1": getClgName(match.clg_1st),"win2": getClgName(match.clg_2nd),"win3": getClgName(match.clg_3rd),"win4": getClgName(match.clg_4th)}
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name,
+                         "venue": "At " + match.venue + " on " + str(match.date_time.day) + "/" + str(
+                             match.date_time.month) + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
+                         "win1": getClgName(match.clg_1st), "win2": getClgName(match.clg_2nd),
+                         "win3": getClgName(match.clg_3rd), "win4": getClgName(match.clg_4th)}
                 list_all.append(dict1)
-    
-    list_all = sorted(list_all, key=lambda x : x['venue'])
-    
+
+    list_all = sorted(list_all, key=lambda x: x['venue'])
+
     return json.dumps(list_all)
+
 
 @app.route('/temp', methods=['GET', 'POST'])
 def temp():
@@ -1193,6 +1221,7 @@ def android_app():
 def time_now():
     return str(datetime.now())
 
+
 @app.route('/setIndividualMatchDetails', methods=['GET', 'POST'])
 @login_required
 def setIndividualMatches():
@@ -1258,7 +1287,7 @@ def setRelayMatchDetails():
         match.clg_2nd = int(request.form.get('colleger2'))
         match.clg_3rd = int(request.form.get('colleger3'))
         match.clg_4th = int(request.form.get('colleger4'))
-        match.status= 1
+        match.status = 1
         if match.level == "Final":
             sport = match.sport_id
             row = Point_main.query.filter(Point_main.sports_id == sport).first()
@@ -1276,6 +1305,7 @@ def setRelayMatchDetails():
         except:
             return "Try Again"
     return "error"
+
 
 @app.route('/addMatch', methods=['GET', 'POST'])
 @login_required
@@ -1333,17 +1363,88 @@ def addMatches():
     matchs_individual = []
     for match in match_individual:
         sport_name = Sports.query.filter(match.sport_id == Sports.id).first()
-        matchs_individual.append([match, sport_name.sports_name +" (" + sport_name.category+")"])
+        matchs_individual.append([match, sport_name.sports_name + " (" + sport_name.category + ")"])
     print(matchs_individual)
 
     match_relay = Match_Relay.query.filter(Match_Relay.status == 0).all()
     matchs_relay = []
     for match in match_relay:
         sport_name = Sports.query.filter(match.sport_id == Sports.id).first()
-        matchs_relay.append([match, sport_name.sports_name +" (" + sport_name.category+")"])
+        matchs_relay.append([match, sport_name.sports_name + " (" + sport_name.category + ")"])
     print(matchs_relay)
 
-    return render_template('addMatch.html', sports=sport, colleges=college, players=players, matchesIndividual=matchs_individual, matchesRelay = matchs_relay)
+    return render_template('addMatch.html', sports=sport, colleges=college, players=players,
+                           matchesIndividual=matchs_individual, matchesRelay=matchs_relay)
+
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    sports = Sports.query.all()
+    if (request.method == "POST"):
+        print(request.form)
+        time_now = datetime.now()
+        sport_id = int(request.form.get('sportid'))
+        sport_name = Sports.query.filter(Sports.id == sport_id).first()
+        sport_name = sport_name.sports_name + " " + sport_name.category
+        list_all = []
+        prev_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id != 0).filter(
+            Match.sports_id == sport_id).order_by(Match.date_time.desc()).all()
+        for match in prev_matches:
+            winner_college = College.query.filter(College.id == match.winner_clg_id).first().clg_name
+            clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
+            clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
+            logo1 = College.query.filter(College.id == match.clg_id1).first().logo_url
+            logo2 = College.query.filter(College.id == match.clg_id2).first().logo_url
+            sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
+            category = Sports.query.filter(Sports.id == match.sports_id).first().category
+            sport = sport + " - " + category
+            dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1,
+                     "clg2": clg2, "type": 't',
+                     "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": match.status}
+            list_all.append(dict0)
+
+        prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
+            Match_Individual.clg_1st_player_id != 0).filter(Match_Individual.sport_id == sport_id).order_by(
+            Match_Individual.date_time.desc()).all()
+        for match in prev_matches_individual:
+            sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+            category = Sports.query.filter(Sports.id == match.sport_id).first().category
+            sport = sport + " - " + category
+            player1 = Players.query.filter(Players.id == match.clg_1st_player_id).first()
+            player1 = {"name": player1.name,
+                       "college": College.query.filter(College.id == player1.college_id).first().clg_name}
+            player2 = Players.query.filter(Players.id == match.clg_2nd_player_id).first()
+            player2 = {"name": player2.name,
+                       "college": College.query.filter(College.id == player2.college_id).first().clg_name}
+            player3 = Players.query.filter(Players.id == match.clg_3rd_player_id).first()
+            player3 = {"name": player3.name,
+                       "college": College.query.filter(College.id == player3.college_id).first().clg_name}
+            player4 = Players.query.filter(Players.id == match.clg_4th_player_id).first()
+            player4 = {"name": player4.name,
+                       "college": College.query.filter(College.id == player4.college_id).first().clg_name}
+            dict0 = {"player1": player1, "player2": player2, "player3": player3, "player4": player4, "sport": sport,
+                     "level": match.level, "status": match.status, "type": 'i'}
+            list_all.append(dict0)
+
+        prev_matches_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(
+            Match_Relay.status == 1).order_by(Match_Relay.date_time.desc()).filter(
+            Match_Relay.sport_id == sport_id).all()
+        for match in prev_matches_relay:
+            sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+            category = Sports.query.filter(Sports.id == match.sport_id).first().category
+            sport = sport + " - " + category
+            clg1 = College.query.filter(College.id == match.clg_1st).first().clg_name
+            clg2 = College.query.filter(College.id == match.clg_2nd).first().clg_name
+            clg3 = College.query.filter(College.id == match.clg_3rd).first().clg_name
+            clg4 = College.query.filter(College.id == match.clg_4th).first().clg_name
+            dict0 = {"clg1": clg1, "clg2": clg2, "clg3": clg3, "clg4": clg4, "sport": sport,
+                     "level": match.level, "status": match.comments, "type": 'r'}
+            list_all.append(dict0)
+
+        print(list_all)
+        return json.dumps({"data":list_all, "name":sport_name})
+
+    return render_template("results.html", sports_list=sports)
 
 
 @app.route('/test', methods=['GET', 'POST'])
