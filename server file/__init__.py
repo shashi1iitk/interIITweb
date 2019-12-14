@@ -610,6 +610,14 @@ def schedule():
     # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
+@app.route("/team")
+def team():
+    return render_template('ourteam.html')
+
+@app.route("/sponsors")
+def sponsors():
+    return render_template('sponsors.html')
+
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
 @login_required
@@ -650,6 +658,18 @@ def download_android_app():
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
 
+@app.route("/android_app")
+def android_app():
+    return render_template('android_app.html')
+
+@app.route("/download_from_interiit_server")
+def download():
+    result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    return result
+
+@app.route("/time_now")
+def time_now():
+    return str(datetime.now())
 
 @app.route("/privacy_policy")
 def privacy_policy():

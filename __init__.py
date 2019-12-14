@@ -808,7 +808,7 @@ def gallery():
 
 
 @app.route("/download_from")
-def down():
+def download():
     result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     return result
 
@@ -923,28 +923,29 @@ def getLiveMatches_Details_Android(game_name):
     return json.dumps(list_live)
 
 
-# @app.route('/getSchedule_Team_Matches_Deatils_Android/<game_name>/<day>', methods=['GET', 'POST'])
-# def getSchedule_Team_Matches_Ajax_Android(game_name, day):
-#     game_name = game_name
-#     day = int(day)
-#     day0 = "2019-12-14 00:00:00.000000"
-#     day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
-#     start_day = day0 + timedelta(days=day)
-#     end_day = day0 + timedelta(days=day + 1)
-#     print(start_day)
-#     print(end_day)
-#
-#     games = Sports.query.filter(Sports.sports_name == game_name).all()
-#     list_all = []
-#     for game in games:
-#         matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).order_by(Match.date_time.asc()).all()
-#         if (matchl != []):
-#             for match in matchl:
-#                 sp = getSport(match.sports_id)
-#                 sport_name = sp.sports_name + "(" + sp.category + ")"
-#                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
-#                 list_all.append(dict1)
-#     return json.dumps(list_all)
+@app.route('/getSchedule_Team_Matches_Deatils_Android/<game_name>/<day>', methods=['GET', 'POST'])
+def getSchedule_Team_Matches_Ajax_Android(game_name, day):
+    game_name = game_name
+    day = int(day)
+    day0 = "2019-12-14 00:00:00.000000"
+    day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
+    start_day = day0 + timedelta(days=day)
+    end_day = day0 + timedelta(days=day + 1)
+    print(start_day)
+    print(end_day)
+
+    games = Sports.query.filter(Sports.sports_name == game_name).all()
+    list_all = []
+    for game in games:
+        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).order_by(Match.date_time.asc()).all()
+        if (matchl != []):
+            for match in matchl:
+
+                sp = getSport(match.sports_id)
+                sport_name = sp.sports_name + "(" + sp.category + ")"
+                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
+            list_all.append(dict1)
+    return json.dumps(list_all)
 
 
 @app.route('/getSchedule_Individual_Matches_Deatils_Android/<game>', methods=['GET', 'POST'])
@@ -1197,6 +1198,10 @@ def theLegacy():
 def android_app():
     return render_template('android_app.html')
 
+
+@app.route("/time_now")
+def time_now():
+    return str(datetime.now())
 
 @app.route('/setIndividualMatchDetails', methods=['GET', 'POST'])
 @login_required
