@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3dde08f5-1aba-4abc-aa36-3a202f142dee" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +187,7 @@
       <workItem from="1576301600203" duration="3151000" />
       <workItem from="1576325813143" duration="11750000" />
       <workItem from="1576339184804" duration="75000" />
-      <workItem from="1576339274354" duration="583000" />
+      <workItem from="1576339274354" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="Scorecard changed">
       <created>1569736895575</created>
@@ -331,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576339519159</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Bug fixed 2_1">
+      <created>1576339877714</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1576339877714</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,17 +395,18 @@
     <MESSAGE value="Relay breakdown done" />
     <MESSAGE value="Bug fixed, bug in update_individual data" />
     <MESSAGE value="Bug fixed 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixed 2" />
+    <MESSAGE value="Bug fixed 2_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixed 2_1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="250" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576339241122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="250" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576339241122" />
-    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1576339517314">
+    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1576339876748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576339517314" />
+    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576339876748" />
     <state x="184" y="86" key="MergeDialog" timestamp="1576339850325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -409,14 +415,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="672" y="237" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576339850334" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1576339542494">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1576339890991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576339542494" />
-    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576339447338">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576339890991" />
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576361153217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576339447338" />
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576361153217" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/interIITweb$init.coverage" NAME="init Coverage Results" MODIFIED="1576334305274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
