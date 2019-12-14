@@ -618,6 +618,10 @@ def team():
 def sponsors():
     return render_template('sponsors.html')
 
+@app.route("/sponsors_full")
+def sponsors_full():
+    return render_template('sponsors.html')
+
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
 @login_required

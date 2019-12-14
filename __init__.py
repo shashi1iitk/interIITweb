@@ -769,7 +769,7 @@ def team():
     return render_template('ourteam.html')
 
 @app.route("/sponsors_full")
-def sponsors():
+def sponsors_full():
     return render_template('sponsors.html')
 
 @app.route("/sponsors")
