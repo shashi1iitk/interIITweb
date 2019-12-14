@@ -768,11 +768,11 @@ def schedule():
 def team():
     return render_template('ourteam.html')
 
-@app.route("/sponsors")
+@app.route("/sponsors_full")
 def sponsors():
     return render_template('sponsors.html')
 
-@app.route("/sponsors_mob")
+@app.route("/sponsors")
 def sponsors_mob():
     return render_template('spons_mob.html')
 
