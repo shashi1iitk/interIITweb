@@ -25,9 +25,13 @@
                 $('#fetch').attr("disabled", false);
                 $('#fetch').html('Fetch');
                 console.log(data.name);
-                jQuery.each(data["data"], function(index, val) {
+                if (data["data"].length == 0) {
+                    var no_data = `<h3><center>No matches till now!</center></h3>`
+                    $('#matches').append(no_data);
+                }
+                jQuery.each(data["data"], function (index, val) {
                     console.log(val.logo1);
-                    if(val.type === 't') {
+                    if (val.type === 't') {
                         var content = `<div class="col-md-3">
                             <div class="card m-2 text-center">
                                 <div class="card-header">${data.name}</div>
@@ -55,8 +59,8 @@
                                         </div>
                                      </div>
                                 </div>`;
-                         $('#matches').append(content);
-                    } else if(val.type === 'i'){
+                        $('#matches').append(content);
+                    } else if (val.type === 'i') {
                         var content1 = `<div class="col-md-4">
                             <div class="card m-2 text-center">
                                 <div class="card-header">
@@ -75,7 +79,7 @@
                                 </div>
                             </div></div>`;
                         $('#matches').append(content1);
-                    } else if(val.type === 'r'){
+                    } else if (val.type === 'r') {
                         var content2 = `<div class="col-md-4">
                             <div class="card m-2 text-center">
                                 <div class="card-header">
@@ -105,55 +109,57 @@
 
 <body>
 
-<main role="main">
+    <main role="main">
 
-    <br><br><br><br>
+        <br><br><br><br>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <form>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <select class="selectpicker form-control" data-live-search="true" id="sport" name="sportid">
-                                <option selected>Select Sport</option>
-                                {% for sport in sports_list %}
-                                <option value={{ sport.id }}>{{sport.sports_name}} - {{sport.category}}</option>
-                                {% endfor %}
-                            </select>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <form>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <select class="selectpicker form-control" data-live-search="true" id="sport"
+                                    name="sportid">
+                                    <option selected>Select Sport</option>
+                                    {% for sport in sports_list %}
+                                    <option value={{ sport.id }}>{{sport.sports_name}} - {{sport.category}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <center>
-                        <div id="success"></div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" id="fetch">Fetch</button>
-                        </div>
-                    </center>
-                </form>
+                        <center>
+                            <div id="success"></div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" id="fetch">Fetch</button>
+                            </div>
+                        </center>
+                    </form>
+                </div>
             </div>
+        </div><br>
+        <center>
+            <div class="row" id="matches">
+        </center>
         </div>
-    </div><br>
 
-    <div class="row" id="matches">
+    </main>
 
-    </div>
+    <!-- Bootstrap 4 JavaScript -->
 
-</main>
-
-<!-- Bootstrap 4 JavaScript -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css"
-      rel="stylesheet">
-<script
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css"
+        rel="stylesheet">
+    <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css"
-      rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+    <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
 
 
-{% endblock %}
+    {% endblock %}
