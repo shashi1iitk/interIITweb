@@ -766,10 +766,13 @@ def schedule():
 def team():
     return render_template('ourteam.html')
 
-
-@app.route("/sponsors")
+@app.route("/sponsors_full")
 def sponsors():
     return render_template('sponsors.html')
+
+@app.route("/sponsors")
+def sponsors_mob():
+    return render_template('spons_mob.html')
 
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
@@ -805,6 +808,7 @@ def gallery():
     return render_template('gallery.html')
 
 
+
 @app.route("/download_from_interiit_server")
 def download():
     result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk",
@@ -818,6 +822,7 @@ def download_android_app():
     # # We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
+
 
 
 @app.route("/privacy_policy")
@@ -896,7 +901,6 @@ def profile_req_with_qr(qr_val):
     except:
         return json.dumps("Fail")
 
-
 @app.route('/getLiveMatches_Details_Android/<game_name>', methods=['GET', 'POST'])
 def getLiveMatches_Details_Android(game_name):
     game_name = game_name
@@ -919,6 +923,7 @@ def getLiveMatches_Details_Android(game_name):
                          "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
                 list_live.append(dict1)
 
+ 
     return json.dumps(list_live)
 
 

@@ -1,0 +1,522 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <body class="bg">
+ -->
+
+<style type="text/css">
+	h2,
+	h3 {
+		font-family: "Lobster","Roboto";
+		text-decoration: underline;
+	}
+</style>
+
+<br><br><br>
+
+
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4 col-sm-12">
+		<h2 style="text-align:center">
+			<strong>In Association With</strong>
+			<br>
+		</h2>
+		<div class="thumbnail" style="border:none">
+			<a href="https://shyamsteel.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/shyamsteel.png') }}" alt="Lights"
+					style="width:35%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-1">
+	</div>
+
+	<div class="col-md-4 col-sm-12">
+		<h2 style="text-align:center">
+			<strong>Powered By</strong>
+			<br>
+		</h2>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.vedantalimited.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/vedanta.png') }}" alt="Lights" style="width:40%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-4 col-md-offset-1 col-xs-12" style="margin-left:5">
+		<h2 style="text-align:center;">
+			<strong>Brought To You By </strong>
+		</h2>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.bankofbaroda.in" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/bankofbaroda.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+
+	<div class="col-md-1">
+	</div>
+</div>
+
+<br>
+<br>
+
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Major Sponsor</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://edenrealtygroup.com/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/edenreality.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Major Sponsor</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.hdfcbank.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/hdfcBank.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Pronites Title Sponsor </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.denvergov.org" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/denver.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Associate Sponsor </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.coca-cola.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/cocacola.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Associate Sponsor </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.spartanpoker.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/spartan.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Fashion Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="www.forcenxt.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/forcenxt.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Healthcare Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.medicahospitals.in/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/medicahospitals.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Festival Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://sunburn.in" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/sunburn.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Entertainment Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="http://www.tribevibe.in/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/tribeVibe.jpg') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Insurance Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.licindia.in" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/lic.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Innovation Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.linkedin.com/company/theavenoir" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/avenoir.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Banking Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://karnatakabank.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/karnatakabank.jpg') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Hydration Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.bisleri.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/bisleri.jpg') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Fueled By</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.iocl.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/indianoil.jpg') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Fitness Challenge Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.thunderpod.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/thunderpod.jpg') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Pizza Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.dominos.co.in" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/dominos.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Audio Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.zebronics.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/zebronics.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Marketing Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://economictimes.indiatimes.com/company/rambo-marketing-private-limited-/U20101WB1997PTC085242" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/rambo.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Merchandise Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://fastechfashions.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/fastechfashions.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Apparel Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.aesthetials.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/aestheticwear.jpg') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+
+  </div>
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Greenery Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.indiamart.com/dolly-creations/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/dolly.jpg') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Gifting partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://amleatherindia.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/amleather.jpg') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Snacking Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="http://www.bittufoods.com/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/bittu.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Food Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://smartpind.petpooja.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/smartpindlogo.png') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Food Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.facebook.com/hookthecook/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/hook-the-cook.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Food Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.roosterdelights.com/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/roosters.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+  </div>
+
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Online Media Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://thebridge.in/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/thebridge.png') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+
+
+
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Messaging Partner </strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.tekhook.in" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/tekhook.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Online Media Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://fistosports.com" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/fistosports.png') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+
+
+</div>
+
+
+<!--
+
+                          <div class="row">
+                            <div class="col-md-3 col-md-offset-1 col-xs-6" style="margin-left:5">
+                       				<h3 style="text-align:center;">
+                      					  <strong> </strong>
+                      				</h3>
+                      				<div class="thumbnail" style="border:none">
+                      					<a href="#" target = "_blank">
+                      					<img src = "{{ url_for('static', filename='Spons_Logos/.png') }}" alt="Lights" style="width:40%; margin-top: 15%">
+                      					</a>
+                      				</div>
+                            </div>
+
+                            <div class="col-md-3 col-xs-6" style="margin-left:5%">
+                       				<h3 style="text-align:center;">
+                      					<strong> </strong>
+                      				</h3>
+                      				<div class="thumbnail" style="border:none">
+                      					<BR>
+                      						<a href="#" target = "_blank">
+                      					<img src = "{{ url_for('static', filename='Spons_Logos/.png') }}" alt="Lights" style="width:50%">
+                      						</a>
+                      				</div>
+                          	</div>
+
+                            <div class="col-md-3 col-xs-6" style="margin-left:5%">
+                         				<h3 style="text-align:center;">
+                        					<strong> </strong>
+                        				</h3>
+                        				<div class="thumbnail" style="border:none">
+                        					<BR>
+                        						<a href="#" target = "_blank">
+                        					<img src = "{{ url_for('static', filename='Spons_Logos/.png') }}" alt="Lights" style="width:50%">
+                        						</a>
+                        				</div>
+                            </div>
+                      	</div> -->
+
+<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+{% endblock %}
