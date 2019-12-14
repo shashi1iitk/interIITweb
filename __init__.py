@@ -1103,6 +1103,7 @@ def getLiveMatches():
                  "clg2": clg2, "sport": sport, "venue": match.venue, "level": match.level, "id": match.id,
                  "logo1": logo1, "logo2": logo2}
         list_live.append(dict1)
+    print(list_live)
 
     colleges = College.query.all()
     return render_template('livescore.html', live=list_live, prev=list_prev, prev2=list_prev_individual,
@@ -1114,6 +1115,7 @@ def getLiveMatches():
 @login_required
 def setMatchDetails():
     if (request.method == 'POST'):
+        print(request.form)
         match = Match.query.filter(Match.id == int(request.form.get('id'))).first()
         match.score1 = request.form.get('score1')
         match.score2 = request.form.get('score2')
