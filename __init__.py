@@ -11,7 +11,7 @@ from pdf2image import convert_from_path
 import shutil
 
 import pyqrcode
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
@@ -807,9 +807,9 @@ def gallery():
 
 
 
-@app.route("/download_from")
+@app.route("/download_from_interiit_server")
 def download():
-    result = send_file(r"C:\xampp\htdocs\InterIIT_master\Android App\app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
+    result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     return result
 
 
@@ -819,6 +819,7 @@ def download_android_app():
     # # We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
+
 
 
 @app.route("/privacy_policy")
@@ -897,29 +898,23 @@ def profile_req_with_qr(qr_val):
     except:
         return json.dumps("Fail")
 
-
 @app.route('/getLiveMatches_Details_Android/<game_name>', methods=['GET', 'POST'])
 def getLiveMatches_Details_Android(game_name):
     game_name = game_name
-
+    
     time_now = datetime.now()
 
     games = Sports.query.filter(Sports.sports_name == game_name).all()
     list_live = []
     for game in games:
-        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(
-            Match.sports_id == game.id).all()
-        if (matchl != []):
+        matchl = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).all()
+        if(matchl != []):
             for match in matchl:
                 sp = getSport(match.sports_id)
-                dict1 = {"sport_name": sp.sports_name, "unique_id": match.id,
-                         "level": match.level + "(" + sp.category + ")",
-                         "venue_time": "At " + match.venue + " from " + str(
-                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
-                         "clg1": getClgName(match.clg_id1), "clg2": getClgName(match.clg_id2),
-                         "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
+                dict1 = {"sport_name": sp.sports_name, "unique_id" : match.id, "level": match.level + "(" +  sp.category + ")" , "venue_time": "At " + match.venue + " from "+ str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2), "commentry": str(match.commentry)}
                 list_live.append(dict1)
 
+ 
     return json.dumps(list_live)
 
 
@@ -930,63 +925,58 @@ def getSchedule_Team_Matches_Ajax_Android(game_name, day):
     day0 = "2019-12-14 00:00:00.000000"
     day0 = datetime.strptime(day0, '%Y-%m-%d %H:%M:%S.%f')
     start_day = day0 + timedelta(days=day)
-    end_day = day0 + timedelta(days=day + 1)
+    end_day = day0 + timedelta(days=day+1)
     print(start_day)
     print(end_day)
 
     games = Sports.query.filter(Sports.sports_name == game_name).all()
     list_all = []
     for game in games:
-        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.winner_clg_id == 0).filter(Match.sports_id == game.id).order_by(Match.date_time.asc()).all()
-        if (matchl != []):
+        matchl = Match.query.filter(start_day < Match.date_time).filter(Match.date_time < end_day).filter(Match.sports_id == game.id).order_by(Match.date_time.asc()).all()
+        if(matchl != []):
             for match in matchl:
-
                 sp = getSport(match.sports_id)
-                sport_name = sp.sports_name + "(" + sp.category + ")"
-                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
-            list_all.append(dict1)
+                sport_name = sp.sports_name + "(" +  sp.category + ")"
+                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "datetime": str(match.date_time), "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
+                list_all.append(dict1)
+    list_all = sorted(list_all, key=lambda x : x['datetime'])
+ 
     return json.dumps(list_all)
-
 
 @app.route('/getSchedule_Individual_Matches_Deatils_Android/<game>', methods=['GET', 'POST'])
 def getSchedule_Individual_Matches_Deatils_Android(game):
     game = game.lower()
     sports = Sports.query.all()
-    game_ids = []
+    game_ids =[]
     for sport in sports:
         sp = sport.sports_name.lower()
         if sp.find(game) == 0:
             game_ids.append(sport.id)
-
+            
     list_all = []
     for game_id in game_ids:
         matchl = Match_Individual.query.filter(Match_Individual.sport_id == game_id).order_by(Match_Individual.date_time.asc()).all()
-        if (matchl != []):
+        if(matchl != []):
             for match in matchl:
                 sp = getSport(match.sport_id)
-                sport_name = sp.sports_name + "(" + sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),
-                         "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),
-                         "win2": getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),
-                         "win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),
-                         "win4": getPlayerName(match.clg_4th_player_id) + " - " + getClgName(match.clg_4th)}
+                sport_name = sp.sports_name + "(" +  sp.category + ")"
+                dict1 = {"sport_name": sport_name,"venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])),  "win1": getPlayerName(match.clg_1st_player_id) + " - " + getClgName(match.clg_1st),"win2":  getPlayerName(match.clg_2nd_player_id) + " - " + getClgName(match.clg_2nd),"win3": getPlayerName(match.clg_3rd_player_id) + " - " + getClgName(match.clg_3rd),"win4": getPlayerName(match.clg_4th_player_id) + " - " + getClgName(match.clg_4th)}
                 list_all.append(dict1)
 
     for game_id in game_ids:
         matchl = Match_Relay.query.filter(Match_Relay.sport_id == game_id).order_by(Match_Relay.date_time.asc()).all()
         print(matchl)
-        if (matchl != []):
+        if(matchl != []):
+            
             for match in matchl:
                 sp = getSport(match.sport_id)
-                sport_name = sp.sports_name + "(" + sp.category + ")"
-                dict1 = {"sport_name": sport_name, "venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "win1": getClgName(match.clg_1st),
-                         "win2": getClgName(match.clg_2nd), "win3": getClgName(match.clg_3rd),
-                         "win4": getClgName(match.clg_4th)}
+                sport_name = sp.sports_name + "(" +  sp.category + ")"
+                dict1 = {"sport_name": sport_name, "venue": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "win1": getClgName(match.clg_1st),"win2": getClgName(match.clg_2nd),"win3": getClgName(match.clg_3rd),"win4": getClgName(match.clg_4th)}
                 list_all.append(dict1)
-
-
+    
+    list_all = sorted(list_all, key=lambda x : x['venue'])
+    
     return json.dumps(list_all)
-
 
 @app.route('/temp', methods=['GET', 'POST'])
 def temp():

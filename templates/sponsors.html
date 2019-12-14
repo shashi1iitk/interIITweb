@@ -12,9 +12,9 @@
 
 <style type="text/css">
 	h2,
-	h3,
-		{
-		font: 32px/42px trajan-pro-1, trajan-pro-2;
+	h3 {
+		font-family: "Lobster","Roboto";
+		text-decoration: underline;
 	}
 </style>
 
@@ -45,7 +45,7 @@
 	<div class="col-md-1">
 	</div>
 
-	<div class="col-md-4 col-sm-6">
+	<div class="col-md-4 col-sm-12">
 		<h2 style="text-align:center">
 			<strong>Powered By</strong>
 			<br>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 
-	<div class="col-md-4 col-md-offset-1 col-xs-6" style="margin-left:5">
+	<div class="col-md-4 col-md-offset-1 col-xs-12" style="margin-left:5">
 		<h2 style="text-align:center;">
 			<strong>Brought To You By </strong>
 		</h2>
@@ -215,7 +215,7 @@
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
-			<a href="#" target="_blank">
+			<a href="https://www.linkedin.com/company/theavenoir" target="_blank">
 				<img src="{{ url_for('static', filename='Spons_Logos/avenoir.png') }}" alt="Lights" style="width:50%">
 			</a>
 		</div>
@@ -251,7 +251,7 @@
 
 	<div class="col-md-3 col-xs-5" style="margin-left:5%">
 		<h3 style="text-align:center;">
-			<strong>Fueled By </strong>
+			<strong>Fueled By</strong>
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
@@ -307,7 +307,7 @@
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
-			<a href="#" target="_blank">
+			<a href="https://economictimes.indiatimes.com/company/rambo-marketing-private-limited-/U20101WB1997PTC085242" target="_blank">
 				<img src="{{ url_for('static', filename='Spons_Logos/rambo.png') }}" alt="Lights" style="width:50%">
 			</a>
 		</div>
@@ -331,7 +331,7 @@
 
 	<div class="col-md-3 col-xs-5" style="margin-left:5%">
 		<h3 style="text-align:center;">
-			<strong>Apparel Partner </strong>png
+			<strong>Apparel Partner</strong>
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
@@ -348,7 +348,7 @@
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
-			<a href="#" target="_blank">
+			<a href="https://www.indiamart.com/dolly-creations/" target="_blank">
 				<img src="{{ url_for('static', filename='Spons_Logos/dolly.jpg') }}" alt="Lights" style="width:50%">
 			</a>
 		</div>
@@ -374,7 +374,7 @@
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
-			<a href="#" target="_blank">
+			<a href="http://www.bittufoods.com/" target="_blank">
 				<img src="{{ url_for('static', filename='Spons_Logos/bittu.png') }}" alt="Lights" style="width:50%">
 			</a>
 		</div>
@@ -382,7 +382,7 @@
 
 	<div class="col-md-3 col-xs-5" style="margin-left:5%">
 		<h3 style="text-align:center;">
-			<strong>Food Partners </strong>
+			<strong>Food Partner</strong>
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
@@ -393,6 +393,49 @@
 		</div>
 	</div>
 </div>
+
+
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
+		<h3 style="text-align:center;">
+			<strong>Food Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<a href="https://www.facebook.com/hookthecook/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/hook-the-cook.png') }}" alt="Lights"
+					style="width:40%; margin-top: 15%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Food Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://www.roosterdelights.com/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/roosters.png') }}" alt="Lights" style="width:50%">
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-xs-5" style="margin-left:5%">
+		<h3 style="text-align:center;">
+			<strong>Online Media Partner</strong>
+		</h3>
+		<div class="thumbnail" style="border:none">
+			<BR>
+			<a href="https://thebridge.in/" target="_blank">
+				<img src="{{ url_for('static', filename='Spons_Logos/thebridge.png') }}" alt="Lights"
+					style="width:50%">
+			</a>
+		</div>
+	</div>
+</div>
+
+
 
 <div class="row">
 	<div class="col-md-3 col-md-offset-1 col-xs-5" style="margin-left:5">
@@ -409,7 +452,7 @@
 
 	<div class="col-md-3 col-xs-5" style="margin-left:5%">
 		<h3 style="text-align:center;">
-			<strong> Online Media Partners </strong>
+			<strong>Online Media Partner</strong>
 		</h3>
 		<div class="thumbnail" style="border:none">
 			<BR>
@@ -472,4 +515,6 @@
                         				</div>
                             </div>
                       	</div> -->
+
+<script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
 {% endblock %}

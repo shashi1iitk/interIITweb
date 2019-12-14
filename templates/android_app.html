@@ -1,80 +1,19 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-  <style>
-    /* Important stuff for this demo. */
-
-    img {
-      width: 100%;
-      height: auto;
-      vertical-align: middle;
-    }
-
-    .pics_in_a_row {
-      display: flex;
-    }
-
-    .img1 {
-      flex: 1.3344;
-    }
-
-    .img2 {
-      flex: 1.3345;
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: border-box;
-    }
-
-    < !-- body {
-      -->< !-- background: rebeccapurple;
-      -->< !--
-    }
-
-    -->.container {
-      background: white;
-      margin: 0 auto;
-      padding: 5%;
-      width: 75%;
-    }
-
-    .muted {
-      font-style: italic;
-      color: #666;
-    }
-
-    p+p {
-      margin-top: -7px;
-    }
-
-
-    .pics_in_a_row {
-      margin: 25px 0;
-    }
-
-    .pics_in_a_row>div:not(:last-child) {
-      margin-right: 2%;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class='pics_in_a_row'>
+{% block body %}
+<center>
+  <div class='pics_in_a_row'><br><br><br><br><br><br>
     <div class='img1'>
       <a
         href="https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2&fbclid=IwAR0eesnSokKGyk2pZrVni2PvekGBPk9gNfAvaeVfM8UzVXL1kqVNMkwKP4Y"><img
-          style="width:70%" src='{{ url_for('static', filename='img/app.png') }}'></a>
-    </div>
+          style="width:30%" src='{{ url_for('static', filename='img/app.png') }}'></a>
+    </div><br><br><br><br><br><br><br><br>
     <div class='img2'>
       <a href="/download_from_interiit_server"><img src='{{ url_for('static', filename='img/download_from.png') }}'
-          style="width:70%;border-radius:20px"></a>
+          style="width:30%;border-radius:20px"></a><br><br>
+          <strong><p>Download from our server. Use this option when play store say: The app is incompatible with your phone.</p></strong>
     </div>
-  </div>
+  </div><br><br><br><br><br><br>
+</center>
 
-</body>
-
-</html>
+{% endblock %}
