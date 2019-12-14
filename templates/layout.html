@@ -103,6 +103,17 @@
     }
   </style>
 </head>
+<script type="text/javascript">
+function spons(){
+if (window.innerWidth < 760) {
+    location.href = "http://127.0.0.1:5000/sponsors_mob";
+}
+
+if (window.innerWidth >= 760) {
+    location.href = "http://127.0.0.1:5000/sponsors";
+}}
+</script>
+
 
 <!-- Bootstrap Select Language JavaScript -->
 
@@ -129,7 +140,8 @@
           <li><a href="/live">Live Stream</a></li>
           <li><a href="/gallery">Gallery</a></li>
           <li><a href="/team">Team</a></li>
-          <li><a href="/sponsors">Sponsors</a></li>
+          <li><a href="#" onclick="spons()" >Sponsors</a></li>
+          <!-- <li><a href="/sponsors">Sponsors</a></li> -->
           <!-- <li><a href="/info">Info</a></li> -->
 
           {% if current_user.is_authenticated %} {% if current_user.privilege
