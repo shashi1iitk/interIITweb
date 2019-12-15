@@ -967,13 +967,20 @@ def getSchedule_Team_Matches_Ajax_Android(game_name, day):
                 if(match.winner_clg_id == 0):
                     win_score = ""
                     run_score = ""
+                    status = ""
+                elif(match.winner_clg_id == -1):
+                    win_score = " ("+ str(match.score1)+")"
+                    run_score = " ("+ str(match.score2)+")"
+                    status = "Draw"
                 elif(match.clg_id1 == match.winner_clg_id):
                     win_score = " ("+ str(match.score1)+")"
                     run_score = " ("+ str(match.score2)+")"
+                    status = str(match.status)
                 else:
                     win_score = " ("+ str(match.score2)+")"
                     run_score = " ("+ str(match.score1)+")"
-                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "datetime": str(match.date_time), "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id)+ win_score, "runner": getClgName(match.runner_clg_id) + run_score, "status": str(match.status), "commentry": str(match.commentry)}
+                    status = str(match.status)
+                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "datetime": str(match.date_time), "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id)+ win_score, "runner": getClgName(match.runner_clg_id) + run_score, "status": status, "commentry": str(match.commentry)}
                 list_all.append(dict1)
     list_all = sorted(list_all, key=lambda x : x['datetime'])
  
@@ -1043,6 +1050,8 @@ def temp():
 def getClgName(clg_id):
     if (clg_id == 0):
         return "None"
+    elif(clg_id == -1):
+        return "Nil"
     clg = College.query.filter(College.id == clg_id).first()
     return clg.clg_name
 
@@ -1120,14 +1129,19 @@ def getPlayersIndividual():
 def endMatchDetails():
     if (request.method == 'POST'):
         match = Match.query.filter(Match.id == int(request.form.get('id'))).first()
-        match.winner_clg_id = int(request.form.get('winner_clg_id'))
-        cldisd = [match.clg_id2, match.clg_id1]
-        try:
-            cldisd.remove(int(request.form.get('winner_clg_id')))
-        except:
-            flash("Selected wrong College")
-            return redirect(url_for("getLiveMatches"))
-        match.runner_clg_id = int(cldisd[0])
+        print(request.form.get('winner_clg_id'))
+        if int(request.form.get('winner_clg_id')) == -1:
+            match.winner_clg_id = -1
+            match.runner_clg_id = -1
+        else:
+            match.winner_clg_id = int(request.form.get('winner_clg_id'))
+            cldisd = [match.clg_id2, match.clg_id1]
+            try:
+                cldisd.remove(int(request.form.get('winner_clg_id')))
+            except:
+                flash("Selected wrong college")
+                return redirect(url_for("getLiveMatches"))
+            match.runner_clg_id = int(cldisd[0])
         match.status = request.form.get('status')
         # db.session.commit()
         if (match.level == "Final" or match.level == "3rd Place"):
@@ -1324,7 +1338,12 @@ def results():
         prev_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id != 0).filter(
             Match.sports_id == sport_id).order_by(Match.date_time.desc()).all()
         for match in prev_matches:
-            winner_college = College.query.filter(College.id == match.winner_clg_id).first().clg_name
+            if(match.winner_clg_id == -1):
+                winner_college = "None"
+                status = "Draw"
+            else:
+                winner_college = College.query.filter(College.id == match.winner_clg_id).first().clg_name
+                status = match.status
             clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
             clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
             logo1 = College.query.filter(College.id == match.clg_id1).first().logo_url
@@ -1332,9 +1351,10 @@ def results():
             sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
             category = Sports.query.filter(Sports.id == match.sports_id).first().category
             sport = sport + " - " + category
+            
             dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1,
                      "clg2": clg2, "type": 't',
-                     "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": match.status}
+                     "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": status}
             list_all.append(dict0)
 
         prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
