@@ -137,11 +137,10 @@
           <li><a href="/">Home</a></li>
           <li><a href="/scorecard">Scorecard</a></li>
           <li><a href="/getLiveMatches">Live Score</a></li>
+          <li><a href="/results">Results</a></li>
           <li><a href="/schedule">Schedule</a></li>
           <li><a href="/live">Live Stream</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="#" onclick="spons()">Sponsors</a></li>
+
           <!-- <li><a href="/sponsors">Sponsors</a></li> -->
           <!-- <li><a href="/info">Info</a></li> -->
 
@@ -152,7 +151,7 @@
           {% elif current_user.privilege == 1 %}
           <li><a href="/showCandidates">My Contingent</a></li>
           <li><a href="/showCandidatesBySports">Players(Sports-wise)</a></li>
-          {% elif current_user.privilege == 2 %}
+          {% elif current_user.privilege == 4 or current_user.privilege == 5 or current_user.privilege == 6 %}
           <li><a href="/qrstats">Qr Stats</a></li>
           <li><a href="/qrscanner">Qr Scanner</a></li>
           {% elif current_user.privilege == 3 %}
@@ -160,6 +159,9 @@
           {% endif %}
           <li><a href="/logout">Logout</a></li>
           {% else %}
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="#" onclick="spons()">Sponsors</a></li>
           <li><a href="/login">Login</a></li>
           {% endif %}
         </ul>

@@ -1,38 +1,50 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<style>
+    .swal-overlay {
+        background-color: rgba(43, 165, 137, 0.45);
+    }
+</style>
 
 <script type="text/javascript">
     $(document).ready(function () {
         $('select').selectpicker();
         $('#fetch').on('click', function (event) {
             event.preventDefault();
-            data = new FormData();
-            data.append('sportid', $('#sport option:selected').val());
-            $('#fetch').attr("disabled", true);
-            $('#fetch').html('Please wait...');
-            $.ajax({
-                data: data,
-                type: 'POST',
-                url: '/results',
-                contentType: false,
-                cache: false,
-                processData: false,
-                async: true
-            }).done(function (data) {
-                data = JSON.parse(data);
-                $('#matches').empty();
-                $('#fetch').attr("disabled", false);
-                $('#fetch').html('Fetch');
-                console.log(data.name);
-                if (data["data"].length == 0) {
-                    var no_data = `<h3><center>No matches till now!</center></h3>`
-                    $('#matches').append(no_data);
-                }
-                jQuery.each(data["data"], function (index, val) {
-                    console.log(val.logo1);
-                    if (val.type === 't') {
-                        var content = `<div class="col-md-3">
+            if ($('#sport option:selected').val() == "None") {
+                // swal("Select a sport!")
+                swal("Select a sport!", {
+                    buttons: false,
+                    timer: 3000,
+                });
+            } else {
+                data = new FormData();
+                data.append('sportid', $('#sport option:selected').val());
+                $('#fetch').attr("disabled", true);
+                $('#fetch').html('Please wait...');
+                $.ajax({
+                    data: data,
+                    type: 'POST',
+                    url: '/results',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    async: true
+                }).done(function (data) {
+                    data = JSON.parse(data);
+                    $('#matches').empty();
+                    $('#fetch').attr("disabled", false);
+                    $('#fetch').html('Fetch');
+                    console.log(data.name);
+                    if (data["data"].length == 0) {
+                        var no_data = `<center><h4>----------->> No matches till now!</h4></center>`
+                        $('#matches').append(no_data);
+                    }
+                    jQuery.each(data["data"], function (index, val) {
+                        console.log(val.logo1);
+                        if (val.type === 't') {
+                            var content = `<div class="col-md-3">
                             <div class="card m-2 text-center">
                                 <div class="card-header">${data.name}</div>
                                     <div class="card-body">
@@ -59,9 +71,9 @@
                                         </div>
                                      </div>
                                 </div>`;
-                        $('#matches').append(content);
-                    } else if (val.type === 'i') {
-                        var content1 = `<div class="col-md-4">
+                            $('#matches').append(content);
+                        } else if (val.type === 'i') {
+                            var content1 = `<div class="col-md-4">
                             <div class="card m-2 text-center">
                                 <div class="card-header">
                                     <strong>${data.name}</strong>
@@ -78,9 +90,9 @@
                                     <strong>${val.status}</strong>
                                 </div>
                             </div></div>`;
-                        $('#matches').append(content1);
-                    } else if (val.type === 'r') {
-                        var content2 = `<div class="col-md-4">
+                            $('#matches').append(content1);
+                        } else if (val.type === 'r') {
+                            var content2 = `<div class="col-md-4">
                             <div class="card m-2 text-center">
                                 <div class="card-header">
                                     <strong>${data.name}</strong>
@@ -97,10 +109,11 @@
                                     <strong>${val.status}</strong>
                                 </div>
                             </div></div>`;
-                        $('#matches').append(content2);
-                    }
+                            $('#matches').append(content2);
+                        }
+                    });
                 });
-            });
+            }
         });
     });
 </script>
@@ -121,7 +134,7 @@
                             <div class="form-group floating-label-form-group controls">
                                 <select class="selectpicker form-control" data-live-search="true" id="sport"
                                     name="sportid">
-                                    <option selected>Select Sport</option>
+                                    <option value="None" selected>Select Sport</option>
                                     {% for sport in sports_list %}
                                     <option value={{ sport.id }}>{{sport.sports_name}} - {{sport.category}}</option>
                                     {% endfor %}
@@ -131,7 +144,7 @@
                         <center>
                             <div id="success"></div>
                             <div class="form-group">
-                                <button class="btn btn-primary" id="fetch">Fetch</button>
+                                <button class="btn btn-info" id="fetch">Fetch</button>
                             </div>
                         </center>
                     </form>
@@ -142,6 +155,7 @@
             <div class="row" id="matches">
         </center>
         </div>
+        <br><br>
 
     </main>
 

@@ -28,7 +28,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "log_in"
-login_manager.login_message = u"Please log in to access this page\nइस पृष्ठ का प्रयोग करने केलिए लॉगिन करें"
+login_manager.login_message = u"Please log in to access this page"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:4321@#interiit@localhost/interiit2019"
 
@@ -196,6 +196,15 @@ class Inquiry(UserMixin, db.Model):
     email = db.Column(db.String(200), nullable=False)
     type = db.Column(db.String(400), nullable=False)
     content  = db.Column(db.String(10000), nullable=False)
+
+class QrLogger(UserMixin, db.Model):
+    __tablename__ = 'qr_logger'
+    id = db.Column(db.Integer, primary_key=True)
+    timestamp = db.Column(db.DateTime(100), nullable=False)
+    count_qr_scanner_1 = db.Column(db.Integer, nullable=False)
+    count_qr_scanner_2 = db.Column(db.Integer, nullable=False)
+    count_qr_scanner_3 = db.Column(db.Integer, nullable=False)
+    reset_done_by = db.Column(db.String(100), nullable=False)
 
 
 @app.route("/")
@@ -541,7 +550,7 @@ def qrscanner():
         if (user is None):
             return "Fail"
         elif (user.feeded == 0):
-            user.feeded = 1
+            user.feeded = current_user.privilege
             db.session.commit()
             return "Success"
         else:
@@ -554,16 +563,22 @@ def qrscanner():
 @login_required
 def qrstats():
     if (request.method == 'POST'):
-        print("Ok")
+        permitted_by_1 = Players.query.filter(Players.feeded == 4).count()
+        permitted_by_2 = Players.query.filter(Players.feeded == 5).count()
+        permitted_by_3 = Players.query.filter(Players.feeded == 6).count()
+
+        entry = QrLogger(count_qr_scanner_1 = permitted_by_1, count_qr_scanner_2 = permitted_by_2, count_qr_scanner_3 = permitted_by_3, reset_done_by = current_user.role)
+
+        db.session.add(entry)
+        
         al = Players.query.update({Players.feeded: 0})
         db.session.commit()
         return redirect(url_for("qrstats"))
     else:
-        permitted = Players.query.filter(Players.feeded == 1).count()
-        total = Players.query.count()
-        print(permitted)
-        print(total)
-        stat = {"permitted": permitted, "total": total}
+        permitted_by_u = Players.query.filter(Players.feeded == current_user.privilege).count()
+        total_permitted = Players.query.filter(Players.feeded.in_([4, 5, 6])).count()
+
+        stat = {"permitted_by_u": permitted_by_u, "total_permitted": total_permitted}
         return render_template('qrstats.html', stats=stat)
 
 
@@ -614,13 +629,13 @@ def schedule():
 def team():
     return render_template('ourteam.html')
 
-@app.route("/sponsors")
-def sponsors():
-    return render_template('sponsors.html')
-
 @app.route("/sponsors_full")
 def sponsors_full():
     return render_template('sponsors.html')
+
+@app.route("/sponsors")
+def sponsors_mob():
+    return render_template('spons_mob.html')
 
 
 @app.route("/deletePlayer", methods=['GET', 'POST'])
@@ -655,16 +670,18 @@ def logout():
 def gallery():
     return render_template('gallery.html')
 
+
+@app.route("/android_app")
+def android_app():
+    return render_template('android_app.html')
+
+
 @app.route("/download_android_app")
 def download_android_app():
     # result = send_file(r"/var/www/FlaskApp/FlaskApp/static/app-release.apk", attachment_filename="InterIIT Sports Meet 2019.apk", as_attachment=True)
     #We can also delete this file here now
     # return result
     return redirect("https://play.google.com/store/apps/details?id=com.iitkharagpur.interiitsports2")
-
-@app.route("/android_app")
-def android_app():
-    return render_template('android_app.html')
 
 @app.route("/download_from_interiit_server")
 def download():
@@ -862,82 +879,6 @@ def getSport(sp_id):
 def getLiveMatches():
     time_now = datetime.now()
 
-    prev_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id != 0).order_by(
-        Match.date_time.desc()).all()
-    list_prev = []
-    for match in prev_matches:
-        winner_college = College.query.filter(College.id == match.winner_clg_id).first().clg_name
-        clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
-        clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
-        logo1 = College.query.filter(College.id == match.clg_id1).first().logo_url
-        logo2 = College.query.filter(College.id == match.clg_id2).first().logo_url
-        sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
-        category = Sports.query.filter(Sports.id == match.sports_id).first().category
-        sport = sport + " - " + category
-        dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1,
-                 "clg2": clg2,
-                 "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": match.status}
-        list_prev.append(dict0)
-
-    prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
-        Match_Individual.clg_1st_player_id != 0).order_by(
-        Match_Individual.date_time.desc()).all()
-    list_prev_individual = []
-    for match in prev_matches_individual:
-        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
-        category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        sport = sport + " - " + category
-        player1 = Players.query.filter(Players.id == match.clg_1st_player_id).first()
-        player1 = {"name": player1.name,
-                   "college": College.query.filter(College.id == player1.college_id).first().clg_name}
-        player2 = Players.query.filter(Players.id == match.clg_2nd_player_id).first()
-        player2 = {"name": player2.name,
-                   "college": College.query.filter(College.id == player2.college_id).first().clg_name}
-        player3 = Players.query.filter(Players.id == match.clg_3rd_player_id).first()
-        player3 = {"name": player3.name,
-                   "college": College.query.filter(College.id == player3.college_id).first().clg_name}
-        player4 = Players.query.filter(Players.id == match.clg_4th_player_id).first()
-        player4 = {"name": player4.name,
-                   "college": College.query.filter(College.id == player4.college_id).first().clg_name}
-        dict0 = {"player1": player1, "player2": player2, "player3": player3, "player4": player4, "sport": sport,
-                 "level": match.level, "status": match.status}
-        list_prev_individual.append(dict0)
-
-    live_match_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
-        Match_Individual.clg_1st_player_id == 0).order_by(
-        Match_Individual.date_time.desc()).all()
-    list_live_individual = []
-    for match in live_match_individual:
-        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
-        category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        sport = sport + " - " + category + ' - ' + match.level
-        list_live_individual.append({"sport": sport, "id": match.id})
-
-    prev_matches_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(
-        Match_Relay.status == 1).order_by(Match_Relay.date_time.desc()).all()
-    list_prev_relay = []
-    for match in prev_matches_relay:
-        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
-        category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        sport = sport + " - " + category
-        clg1 = College.query.filter(College.id == match.clg_1st).first().clg_name
-        clg2 = College.query.filter(College.id == match.clg_2nd).first().clg_name
-        clg3 = College.query.filter(College.id == match.clg_3rd).first().clg_name
-        clg4 = College.query.filter(College.id == match.clg_4th).first().clg_name
-        dict0 = {"clg1": clg1, "clg2": clg2, "clg3": clg3, "clg4": clg4, "sport": sport,
-                 "level": match.level, "status": match.comments}
-        list_prev_relay.append(dict0)
-
-    live_match_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(
-        Match_Relay.status == 0).order_by(
-        Match_Relay.date_time.desc()).all()
-    list_live_relay = []
-    for match in live_match_relay:
-        sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
-        category = Sports.query.filter(Sports.id == match.sport_id).first().category
-        sport = sport + " - " + category + ' - ' + match.level
-        list_live_relay.append({"sport": sport, "id": match.id})
-
     live_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id == 0).all()
     list_live = []
     for match in live_matches:
@@ -952,11 +893,10 @@ def getLiveMatches():
                  "clg2": clg2, "sport": sport, "venue": match.venue, "level": match.level, "id": match.id,
                  "logo1": logo1, "logo2": logo2}
         list_live.append(dict1)
+    print(list_live)
 
     colleges = College.query.all()
-    return render_template('livescore.html', live=list_live, prev=list_prev, prev2=list_prev_individual,
-                           live_individual=list_live_individual, prev3=list_prev_relay,
-                           live_relay=list_live_relay, colleges=colleges)
+    return render_template('livescore.html', live=list_live, colleges=colleges)
 
 
 @app.route('/setMatchDetails', methods=['GET', 'POST'])
@@ -1179,6 +1119,74 @@ def addMatches():
 
     return render_template('addMatch.html', sports=sport, colleges=college, players=players, matchesIndividual=matchs_individual, matchesRelay = matchs_relay)
 
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    sports = Sports.query.all()
+    if (request.method == "POST"):
+        print(request.form)
+        time_now = datetime.now()
+        sport_id = int(request.form.get('sportid'))
+        sport_name = Sports.query.filter(Sports.id == sport_id).first()
+        sport_name = sport_name.sports_name + " " + sport_name.category
+        list_all = []
+        prev_matches = Match.query.filter(Match.date_time < time_now).filter(Match.winner_clg_id != 0).filter(
+            Match.sports_id == sport_id).order_by(Match.date_time.desc()).all()
+        for match in prev_matches:
+            winner_college = College.query.filter(College.id == match.winner_clg_id).first().clg_name
+            clg1 = College.query.filter(College.id == match.clg_id1).first().clg_name
+            clg2 = College.query.filter(College.id == match.clg_id2).first().clg_name
+            logo1 = College.query.filter(College.id == match.clg_id1).first().logo_url
+            logo2 = College.query.filter(College.id == match.clg_id2).first().logo_url
+            sport = Sports.query.filter(Sports.id == match.sports_id).first().sports_name
+            category = Sports.query.filter(Sports.id == match.sports_id).first().category
+            sport = sport + " - " + category
+            dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1,
+                     "clg2": clg2, "type": 't',
+                     "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": match.status}
+            list_all.append(dict0)
+
+        prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
+            Match_Individual.clg_1st_player_id != 0).filter(Match_Individual.sport_id == sport_id).order_by(
+            Match_Individual.date_time.desc()).all()
+        for match in prev_matches_individual:
+            sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+            category = Sports.query.filter(Sports.id == match.sport_id).first().category
+            sport = sport + " - " + category
+            player1 = Players.query.filter(Players.id == match.clg_1st_player_id).first()
+            player1 = {"name": player1.name,
+                       "college": College.query.filter(College.id == player1.college_id).first().clg_name}
+            player2 = Players.query.filter(Players.id == match.clg_2nd_player_id).first()
+            player2 = {"name": player2.name,
+                       "college": College.query.filter(College.id == player2.college_id).first().clg_name}
+            player3 = Players.query.filter(Players.id == match.clg_3rd_player_id).first()
+            player3 = {"name": player3.name,
+                       "college": College.query.filter(College.id == player3.college_id).first().clg_name}
+            player4 = Players.query.filter(Players.id == match.clg_4th_player_id).first()
+            player4 = {"name": player4.name,
+                       "college": College.query.filter(College.id == player4.college_id).first().clg_name}
+            dict0 = {"player1": player1, "player2": player2, "player3": player3, "player4": player4, "sport": sport,
+                     "level": match.level, "status": match.status, "type": 'i'}
+            list_all.append(dict0)
+
+        prev_matches_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(
+            Match_Relay.status == 1).order_by(Match_Relay.date_time.desc()).filter(
+            Match_Relay.sport_id == sport_id).all()
+        for match in prev_matches_relay:
+            sport = Sports.query.filter(Sports.id == match.sport_id).first().sports_name
+            category = Sports.query.filter(Sports.id == match.sport_id).first().category
+            sport = sport + " - " + category
+            clg1 = College.query.filter(College.id == match.clg_1st).first().clg_name
+            clg2 = College.query.filter(College.id == match.clg_2nd).first().clg_name
+            clg3 = College.query.filter(College.id == match.clg_3rd).first().clg_name
+            clg4 = College.query.filter(College.id == match.clg_4th).first().clg_name
+            dict0 = {"clg1": clg1, "clg2": clg2, "clg3": clg3, "clg4": clg4, "sport": sport,
+                     "level": match.level, "status": match.comments, "type": 'r'}
+            list_all.append(dict0)
+
+        print(list_all)
+        return json.dumps({"data":list_all, "name":sport_name})
+
+    return render_template("results.html", sports_list=sports)
 
 application = app
 if __name__ == '__main__':
