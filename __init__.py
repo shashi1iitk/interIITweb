@@ -1098,8 +1098,13 @@ def setMatchDetails():
         match.score1 = request.form.get('score1')
         match.score2 = request.form.get('score2')
         match.commentry = request.form.get('commentary')
-        db.session.commit()
-    return redirect(url_for("getLiveMatches"))
+        try:
+            db.session.commit()
+            return "Success"
+        except:
+            return "Error in updating"
+    return "error"
+
 
 
 @app.route("/getPlayersIndividual", methods=['GET', 'POST'])
@@ -1136,8 +1141,7 @@ def endMatchDetails():
             try:
                 cldisd.remove(int(request.form.get('winner_clg_id')))
             except:
-                flash("Selected wrong college")
-                return redirect(url_for("getLiveMatches"))
+                return "Selected wrong college"
             match.runner_clg_id = int(cldisd[0])
         match.status = request.form.get('status')
         # db.session.commit()
@@ -1152,8 +1156,11 @@ def endMatchDetails():
             elif (match.level == "3rd Place"):
                 exec("%s = %d" % (w, 4))
                 exec("%s = %d" % (r, 2))
-
-        db.session.commit()
+        try:
+            db.session.commit()
+            return "Success"
+        except:
+            return "Error in ending match"
     return redirect(url_for("getLiveMatches"))
 
 
