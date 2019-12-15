@@ -777,9 +777,6 @@ def schedule():
     return render_template('schedule.html')
 
 
-@app.route("/team")
-def team():
-    return render_template('ourteam.html')
 
 @app.route("/sponsors_full")
 def sponsors_full():
@@ -1404,6 +1401,27 @@ def results():
 @app.route('/test', methods=['GET', 'POST'])
 def test():
     return render_template('test.html')
+
+
+
+
+
+
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import pprint
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('interiit-3496d59a50f3.json',scope)
+client = gspread.authorize(creds)
+
+sheet = client.open('iit_data').sheet1
+all = sheet.get_all_records()
+@app.route("/team")
+def team():
+    return render_template('ourteam.html',all = all)
+
+
 
 
 # application = app
