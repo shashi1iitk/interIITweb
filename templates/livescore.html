@@ -129,7 +129,8 @@
                                         <div class="form-group">
                                             <label for="commentary">Comment</label>
                                             <input type="text" class="form-control" id="commentary"
-                                                placeholder="Commentary" value="pmatch" name="commentary">
+                                                placeholder="Commentary" value="{{ pmatch.commentry }}"
+                                                name="commentary">
                                         </div>
                                         <button type="submit" class="btn btn-primary" id="update">Submit</button>
                                     </form>
@@ -154,6 +155,7 @@
                                         <div class="form-group">
                                             <label for="colleges">Winner College</label>
                                             <select class="form-control" id="colleges" name="winner_clg_id">
+                                                <option value="-1">Draw</option>
                                                 {% for val in colleges %}
                                                 <option value="{{val.id}}">{{val.clg_name}}</option>
                                                 {% endfor %}

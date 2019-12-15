@@ -804,7 +804,16 @@ def getSchedule_Team_Matches_Ajax_Android(game_name, day):
             for match in matchl:
                 sp = getSport(match.sports_id)
                 sport_name = sp.sports_name + "(" +  sp.category + ")"
-                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "datetime": str(match.date_time), "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id), "runner": getClgName(match.runner_clg_id), "status": str(match.status), "commentry": str(match.commentry)}
+                if(match.winner_clg_id == 0):
+                    win_score = ""
+                    run_score = ""
+                elif(match.clg_id1 == match.winner_clg_id):
+                    win_score = " ("+ str(match.score1)+")"
+                    run_score = " ("+ str(match.score2)+")"
+                else:
+                    win_score = " ("+ str(match.score2)+")"
+                    run_score = " ("+ str(match.score1)+")"
+                dict1 = {"sport_name": sport_name, "unique_id" : match.id, "datetime": str(match.date_time), "level": sp.category + ": " + match.level, "venue_time": "At " +  match.venue + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month)+ " from "+str(":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "clg1": getClgName(match.clg_id1),"clg2": getClgName(match.clg_id2), "score1": str(match.score1), "score2": str(match.score2),"winner": getClgName(match.winner_clg_id)+ win_score, "runner": getClgName(match.runner_clg_id) + run_score, "status": str(match.status), "commentry": str(match.commentry)}
                 list_all.append(dict1)
     list_all = sorted(list_all, key=lambda x : x['datetime'])
  
