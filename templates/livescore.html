@@ -49,48 +49,48 @@
         }, 10000);
 
         {% for pmatch in live %}
-            $("#updateForm_{{pmatch.id}}").on('submit', function (event) {
-                event.preventDefault();
-                var formData = new FormData(document.querySelector('#updateForm_{{pmatch.id}}'));
-                $("#update_{{pmatch.id}}").attr("disabled", true);
-                $("#update_{{pmatch.id}}").html('Updating...');
-                    $.ajax({
-                        data: formData,
-                        type: 'POST',
-                        url: '/setMatchDetails',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        async: true
-                    }).done(function (id) {
-                        console.log(id);
-                        $("#update_{{pmatch.id}}").attr("disabled", false);
-                        $("#update_{{pmatch.id}}").html('Update Details');
-                        if(id !== 'Success'){swal("Try Again!", id, "error");}
-                    });
+        $("#updateForm_{{pmatch.id}}").on('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(document.querySelector('#updateForm_{{pmatch.id}}'));
+            $("#update_{{pmatch.id}}").attr("disabled", true);
+            $("#update_{{pmatch.id}}").html('Updating...');
+            $.ajax({
+                data: formData,
+                type: 'POST',
+                url: '/setMatchDetails',
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: true
+            }).done(function (id) {
+                console.log(id);
+                $("#update_{{pmatch.id}}").attr("disabled", false);
+                $("#update_{{pmatch.id}}").html('Update Details');
+                if (id !== 'Success') { swal("Try Again!", id, "error"); }
             });
+        });
 
-            $("#endForm_{{pmatch.id}}").on('submit', function (event) {
-                event.preventDefault();
-                var formData = new FormData(document.querySelector('#endForm_{{pmatch.id}}'));
-                $("#end_{{pmatch.id}}").attr("disabled", true);
-                $("#end_{{pmatch.id}}").html('Updating...');
-                    $.ajax({
-                        data: formData,
-                        type: 'POST',
-                        url: '/endMatchDetails',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        async: true
-                    }).done(function (id) {
-                        console.log(id);
-                        $("#end_{{pmatch.id}}").attr("disabled", false);
-                        $("#end_{{pmatch.id}}").html('End Match');
-                        if(id !== 'Success'){swal("Try Again!", id, "error");}
-                        else location.reload();
-                    });
+        $("#endForm_{{pmatch.id}}").on('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(document.querySelector('#endForm_{{pmatch.id}}'));
+            $("#end_{{pmatch.id}}").attr("disabled", true);
+            $("#end_{{pmatch.id}}").html('Updating...');
+            $.ajax({
+                data: formData,
+                type: 'POST',
+                url: '/endMatchDetails',
+                contentType: false,
+                cache: false,
+                processData: false,
+                async: true
+            }).done(function (id) {
+                console.log(id);
+                $("#end_{{pmatch.id}}").attr("disabled", false);
+                $("#end_{{pmatch.id}}").html('End Match');
+                if (id !== 'Success') { swal("Try Again!", id, "error"); }
+                else location.reload();
             });
+        });
         {% endfor %}
 
     });
@@ -153,34 +153,37 @@
                         <br>
                         {% if current_user.is_authenticated and current_user.privilege == 3 %}
                         <a href="#" class="btn btn-success" data-toggle="modal"
-                            data-target=".bd-example-modal-lg_{{ pmatch.id }}">Update</a>&ensp;&ensp;&ensp;&ensp;
+                            data-target=".bd-example-modal-lg_{{ pmatch.id }}">Update</a>&ensp;&ensp;
                         {% endif %}
                         <div class="modal fade bd-example-modal-lg_{{ pmatch.id }}" tabindex="-1" role="dialog"
                             aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content p-3">
+                                    <div class="alert alert-success" role="alert">
+                                        {{ pmatch.sport }}
+                                    </div>
                                     <form id="updateForm_{{pmatch.id}}">
                                         <input type="hidden" value="{{ pmatch.id }}" name="id">
                                         <div class="form-group">
-                                            <label for="score1">Score-1</label>
+                                            <label for="score1">{{ pmatch.clg1}}</label>
                                             <input type="text" class="form-control" id="score1" placeholder="Score 1"
                                                 value="{{ pmatch.score1 }}" name="score1">
                                         </div>
                                         <div class="form-group">
-                                            <label for="score2">Score-2</label>
+                                            <label for="score2">{{ pmatch.clg2}}</label>
                                             <input type="text" class="form-control" id="score2" placeholder="Score 2"
                                                 value="{{ pmatch.score2 }}" name="score2">
                                         </div>
                                         <div class="form-group">
                                             <label for="commentary">Comment</label>
                                             <input type="text" class="form-control" id="commentary"
-                                                placeholder="Commentary" value="{{ pmatch.commentry }}"
+                                                placeholder="Write something creative!" value="{{ pmatch.commentry }}"
                                                 name="commentary">
                                         </div>
                                         <button type="submit" class="btn btn-success " id="update_{{pmatch.id}}">Update
                                             Details</button><br><br>
-                                        <div class="alert alert-danger" role="alert">
-                                          Changes will take place after 10s seconds
+                                        <div class="alert alert-warning" role="alert">
+                                            Changes will reflect after 10 seconds
                                         </div>
                                     </form>
                                 </div>
@@ -192,15 +195,14 @@
                         {% endif %}
                         <div class="modal fade bd-example-modal2-lg_{{ pmatch.id }}" tabindex="-1" role="dialog"
                             aria-hidden="true">
+
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content p-3">
+                                    <div class="alert alert-success" role="alert">
+                                        {{ pmatch.sport }}
+                                    </div>
                                     <form id="endForm_{{pmatch.id}}">
                                         <input type="hidden" value="{{pmatch.id}}" name="id">
-                                        <div class="form-group">
-                                            <label for="status">Status</label>
-                                            <input type="text" class="form-control" id="status" placeholder="Status"
-                                                name="status">
-                                        </div>
                                         <div class="form-group">
                                             <label for="colleges">Winner College</label>
                                             <select class="form-control" id="colleges" name="winner_clg_id">
@@ -210,7 +212,13 @@
                                                 {% endfor %}
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn btn-danger end" id="end_{{pmatch.id}}">End Match</button>
+                                        <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <input type="text" class="form-control" id="status"
+                                                placeholder="Write something creative!" name="status">
+                                        </div>
+                                        <button type="submit" class="btn btn-danger end" id="end_{{pmatch.id}}">End
+                                            Match</button>
                                     </form>
                                 </div>
                             </div>

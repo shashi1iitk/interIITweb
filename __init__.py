@@ -1,7 +1,6 @@
 import json
 import os
 import re
-import shutil
 from datetime import datetime
 from datetime import timedelta
 
@@ -11,9 +10,6 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 from pdf2image import convert_from_path
-from reportlab.graphics import renderPDF
-from sqlalchemy import func
-from svglib.svglib import svg2rlg
 
 local_server = True
 app = Flask(__name__)
@@ -209,6 +205,12 @@ class QrLogger(UserMixin, db.Model):
     reset_done_by = db.Column(db.String(100), nullable=False)
 
 
+import shutil
+from reportlab.graphics import renderPDF
+from sqlalchemy import func
+from svglib.svglib import svg2rlg
+
+
 @app.route("/qrMaker")
 def qrMaker():
     people = Players.query.all()
@@ -343,35 +345,7 @@ def Seperate_by_college():
                             p = p + 1
                     print(src_file)
     print("error: " + str(p))
-    # print("kgp: " + str(kgp))
-    # print("bbs: " + str(bbs))
-    # print("staff: " + str(staff))
     return ("Ok")
-
-
-@app.route("/")
-def home():
-    # return render_template('index.html', params=params)
-    return render_template('index.html')
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    return Admins.query.get(user_id)
-
-
-@app.before_request
-def before_request():
-    if 'profile_images' in request.url:
-        if not current_user.is_authenticated:
-            return redirect(url_for('login'))
-        elif current_user.privilege != 0:
-            return redirect(url_for('login'))
-    if 'profile_qr' in request.url:
-        if not current_user.is_authenticated:
-            return redirect(url_for('login'))
-        elif current_user.privilege != 0:
-            return redirect(url_for('login'))
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -399,12 +373,6 @@ def register():
         selected_sports = request.form['selected_sports']
         selected_sports = selected_sports.strip(' \n')
         # lastrec = Players.query.filter_by(id=db.session.query(func.max(Players.id))).all()
-        # if len(lastrec) == 0:
-        #     cnt = 1
-        # else:
-        #     cnt = lastrec[-1].id + 1
-        # print(cnt)
-        # filename = name + "_" + str(cnt) + '.jpg'
         filename = name + " - " + email + '.jpg'
         if "profile_img" not in request.files:
             return "There is some error with the profile image"
@@ -434,24 +402,55 @@ def register():
             db.session.commit()
         except:
             return "Some error occurred. Please try again!"
-        # print("staff")
-        # else:
-        #     try:
-        #         db.session.commit()
-        #         qrname = name + " - " + email + '.svg'
-        #         s = email + "^" + roll_no
-        #         url = pyqrcode.create(s)
-        #         x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.college_id))
-        #         if not os.path.exists(x):
-        #             os.makedirs(x)
-        #         url.svg(os.path.join(x, qrname), scale=8)
-        #     except:
-        #         return "Sorry, I think you should try again"
-        #     print("candidate")
         return "Success"
     sports = Sports.query.all()
     college = College.query.all()
     return render_template('register.html', allSports=sports, college=college)
+
+
+@app.route("/deletePlayer", methods=['GET', 'POST'])
+@login_required
+def deletePlayer():
+    if (request.method == 'POST'):
+        id = int(request.data)
+        print(id)
+        try:
+            plyr = Players.query.filter_by(id=id).first()
+            db.session.delete(Players.query.filter_by(id=id).first())
+            db.session.commit()
+            # x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
+            # qrname = plyr.name + " - " + plyr.email + '.svg'
+            # os.remove(os.path.join(x, qrname))
+            # x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
+            # os.remove(os.path.join(x, plyr.profile_image_url))
+        except Exception:
+            return "Fail"
+    return "Success"
+
+
+@app.route("/")
+def home():
+    return render_template('index.html')
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Admins.query.get(user_id)
+
+
+@app.before_request
+def before_request():
+    if 'profile_images' in request.url:
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 0:
+            return redirect(url_for('login'))
+    if 'profile_qr' in request.url:
+        if not current_user.is_authenticated:
+            return redirect(url_for('login'))
+        elif current_user.privilege != 0:
+            return redirect(url_for('login'))
+
 
 
 @app.route("/newsSubscribe", methods=['POST'])
@@ -574,20 +573,17 @@ def allPlayers():
                     sel_sp = ' , '.join(gmlst)
                     student.append((stud, sel_sp))
                     num_stud = num_stud + 1
-            # college.append((cl.clg_name,student,staff))
             print(student)
             print(staff)
             cl_details = cl.clg_name + " (" + str(num_stud) + ", " + str(num_staff) + ")"
             bigl.append((cl_details, student, staff))
         return render_template('allPlayers.html', bigl=bigl)
-        # return "OK"
 
 
 @app.route("/Insights")
 @login_required
 def Insights():
     if (current_user.privilege == 0):
-        # sports = Sports.query.order_by(Sports.id.asc()).all()
         all = Players.query.order_by(Players.college_id.asc()).all()
         total = 0
 
@@ -696,7 +692,7 @@ def finaliseReg():
 def qrscanner():
     if (request.method == 'POST'):
         qrcont = request.form['content']
-        email, roll = qrcont.split("^")
+        email = qrcont.split("^")[0]
         user = Players.query.filter_by(email=email).first()
         if (user is None):
             return "Fail"
@@ -773,7 +769,6 @@ def scorecard():
 
 @app.route("/schedule")
 def schedule():
-    # return render_template('schedule.html', params=params)
     return render_template('schedule.html')
 
 
@@ -787,24 +782,6 @@ def sponsors_mob():
     return render_template('spons_mob.html')
 
 
-@app.route("/deletePlayer", methods=['GET', 'POST'])
-@login_required
-def deletePlayer():
-    if (request.method == 'POST'):
-        id = int(request.data)
-        print(id)
-        try:
-            plyr = Players.query.filter_by(id=id).first()
-            db.session.delete(Players.query.filter_by(id=id).first())
-            db.session.commit()
-            # x = os.path.join(os.getcwd(), "static", "profile_qr", str(current_user.username.replace("@"," ")))
-            # qrname = plyr.name + " - " + plyr.email + '.svg'
-            # os.remove(os.path.join(x, qrname))
-            # x = os.path.join(os.getcwd(), "static", "profile_images", str(current_user.username.replace("@"," ")))
-            # os.remove(os.path.join(x, plyr.profile_image_url))
-        except Exception:
-            return "Fail"
-    return "Success"
 
 
 @app.route("/logout")
@@ -816,7 +793,6 @@ def logout():
 
 @app.route("/gallery")
 def gallery():
-    # return render_template('gallery.html', params=params)
     return render_template('gallery.html')
 
 
@@ -845,19 +821,16 @@ def time_now():
 
 @app.route("/privacy_policy")
 def privacy_policy():
-    # return render_template('gallery.html', params=params)
     return render_template('privacy_policy.html')
 
 
 @app.route("/live")
 def live():
-    # return render_template('live.html', params=params)
     return render_template('live.html')
 
 
 @app.route("/queries")
 def queries():
-    # return render_template('live.html', params=params)
     return render_template('queries.html')
 
 
@@ -894,7 +867,7 @@ def fileInquiry(qr_val, type, inqiry):
         db.session.commit()
         return json.dumps("Success")
     except:
-        return json.dumps(EnvironmentError)
+        return json.dumps("Fail")
 
 
 @app.route('/profile_req_with_qr/<qr_val>', methods=['GET', 'POST'])
@@ -1080,7 +1053,9 @@ def getLiveMatches():
         category = Sports.query.filter(Sports.id == match.sports_id).first().category
         sport = sport + " - " + category
         dict1 = {"score1": match.score1, "score2": match.score2, "commentry": match.commentry, "clg1": clg1,
-                 "clg2": clg2, "sport": sport, "venue": match.venue, "level": match.level, "id": match.id,
+                 "clg2": clg2, "sport": sport, "venue": "At " + match.venue + " on " + str(match.date_time.day) + "/" + str(
+                             match.date_time.month) + " from " + str(
+                             ":".join(((str(match.date_time)).split(' ')[1]).split(':')[0:2])), "level": match.level, "id": match.id,
                  "logo1": logo1, "logo2": logo2}
         list_live.append(dict1)
     print(list_live)
@@ -1358,7 +1333,7 @@ def results():
             
             dict0 = {"score1": match.score1, "score2": match.score2, "winner": winner_college, "clg1": clg1,
                      "clg2": clg2, "type": 't',
-                     "sport": sport, "level": match.level, "logo1": logo1, "logo2": logo2, "status": status}
+                     "sport": sport, "level": match.level + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month), "logo1": logo1, "logo2": logo2, "status": status}
             list_all.append(dict0)
 
         prev_matches_individual = Match_Individual.query.filter(Match_Individual.date_time < time_now).filter(
@@ -1381,7 +1356,7 @@ def results():
             player4 = {"name": player4.name,
                        "college": College.query.filter(College.id == player4.college_id).first().clg_name}
             dict0 = {"player1": player1, "player2": player2, "player3": player3, "player4": player4, "sport": sport,
-                     "level": match.level, "status": match.status, "type": 'i'}
+                     "level": match.level  + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month), "status": match.status, "type": 'i'}
             list_all.append(dict0)
 
         prev_matches_relay = Match_Relay.query.filter(Match_Relay.date_time < time_now).filter(
@@ -1396,7 +1371,7 @@ def results():
             clg3 = College.query.filter(College.id == match.clg_3rd).first().clg_name
             clg4 = College.query.filter(College.id == match.clg_4th).first().clg_name
             dict0 = {"clg1": clg1, "clg2": clg2, "clg3": clg3, "clg4": clg4, "sport": sport,
-                     "level": match.level, "status": match.comments, "type": 'r'}
+                     "level": match.level + " on "+ str(match.date_time.day)+"/"+ str(match.date_time.month), "status": match.comments, "type": 'r'}
             list_all.append(dict0)
 
         print(list_all)
@@ -1404,6 +1379,10 @@ def results():
 
     return render_template("results.html", sports_list=sports)
 
+
+@app.route("/team")
+def team():
+    return render_template('ourteam.html',all = all)
 
 @app.route('/test', methods=['GET', 'POST'])
 def test():
@@ -1414,26 +1393,31 @@ def test():
 
 
 
-
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pprint
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('interiit-3496d59a50f3.json',scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name('static/interiit-3496d59a50f3.json',scope)
 client = gspread.authorize(creds)
 
 sheet = client.open('iit_data').sheet1
 all = sheet.get_all_records()
-@app.route("/team")
-def team():
-    return render_template('ourteam.html',all = all)
 
 
 
 
-# application = app
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=5000, debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.run(debug=True)
